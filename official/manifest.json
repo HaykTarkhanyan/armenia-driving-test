@@ -1,0 +1,162 @@
+{
+  "abc_en_1.pdf": {
+    "bytes": 15087890,
+    "downloaded_utc": "2026-10-21T20:15:53+00:00",
+    "sha256": "5f370ac753d7ad5a1b10ec3d50030a9d6ba7ad75ce659ee63c1d9d59bbfd075f",
+    "url": "https://www.roadpolice.am/exam/abc/en/1.pdf?v=1790956432",
+    "version": 1790956432,
+    "version_utc": "2026-10-02T15:53:52+00:00"
+  },
+  "abc_en_10.pdf": {
+    "bytes": 79975,
+    "downloaded_utc": "2026-10-21T20:16:34+00:00",
+    "sha256": "9982115a49f2c236a810de34eb6542ea57690b21d06404154808756d4bcde299",
+    "url": "https://www.roadpolice.am/exam/abc/en/10.pdf?v=1790956449",
+    "version": 1790956449,
+    "version_utc": "2026-10-02T15:54:09+00:00"
+  },
+  "abc_en_2.pdf": {
+    "bytes": 1374434,
+    "downloaded_utc": "2026-10-21T20:15:55+00:00",
+    "sha256": "e3ee0031c1a3a280097788712f03da17f40e93968012ab557f0c4fe27232c5ea",
+    "url": "https://www.roadpolice.am/exam/abc/en/2.pdf?v=1790956433",
+    "version": 1790956433,
+    "version_utc": "2026-10-02T15:53:53+00:00"
+  },
+  "abc_en_3.pdf": {
+    "bytes": 75852,
+    "downloaded_utc": "2026-10-21T20:15:56+00:00",
+    "sha256": "b4e866fcf804fc5b642b6b89974d8dff15107b3409ae32b25cd55f879cc3b977",
+    "url": "https://www.roadpolice.am/exam/abc/en/3.pdf?v=1790956433",
+    "version": 1790956433,
+    "version_utc": "2026-10-02T15:53:53+00:00"
+  },
+  "abc_en_4.pdf": {
+    "bytes": 17800824,
+    "downloaded_utc": "2026-10-21T20:16:03+00:00",
+    "sha256": "adc022074f6bdb8b0103cda1fd667d48e16d767d6292f248a3305a49edff51ac",
+    "url": "https://www.roadpolice.am/exam/abc/en/4.pdf?v=1791194719",
+    "version": 1791194719,
+    "version_utc": "2026-10-05T10:05:19+00:00"
+  },
+  "abc_en_5.pdf": {
+    "bytes": 15700190,
+    "downloaded_utc": "2026-10-21T20:16:20+00:00",
+    "sha256": "93a17bc5398c2dcb007fcc745630686fa5b29a648afab168bdd195899784586b",
+    "url": "https://www.roadpolice.am/exam/abc/en/5.pdf?v=1790956441",
+    "version": 1790956441,
+    "version_utc": "2026-10-02T15:54:01+00:00"
+  },
+  "abc_en_6.pdf": {
+    "bytes": 9970350,
+    "downloaded_utc": "2026-10-21T20:16:23+00:00",
+    "sha256": "ffd83e5a7558c552bbf31500b97d9eb74b909fc33e7906a6392bf746e8a499e8",
+    "url": "https://www.roadpolice.am/exam/abc/en/6.pdf?v=1790956443",
+    "version": 1790956443,
+    "version_utc": "2026-10-02T15:54:03+00:00"
+  },
+  "abc_en_7.pdf": {
+    "bytes": 14307925,
+    "downloaded_utc": "2026-10-21T20:16:29+00:00",
+    "sha256": "c8ce4b7253543898abb248a33b92cb487530b3e0a01a41c482a304ae6b27b0c2",
+    "url": "https://www.roadpolice.am/exam/abc/en/7.pdf?v=1790956447",
+    "version": 1790956447,
+    "version_utc": "2026-10-02T15:54:07+00:00"
+  },
+  "abc_en_8.pdf": {
+    "bytes": 702496,
+    "downloaded_utc": "2026-10-21T20:16:30+00:00",
+    "sha256": "8178003d44b5a4af3e52cd56650c6b6b327be68d478bf936e388a33b98707010",
+    "url": "https://www.roadpolice.am/exam/abc/en/8.pdf?v=1790956447",
+    "version": 1790956447,
+    "version_utc": "2026-10-02T15:54:07+00:00"
+  },
+  "abc_en_9.pdf": {
+    "bytes": 8729296,
+    "downloaded_utc": "2026-10-21T20:16:34+00:00",
+    "sha256": "484d0302f0a1c6fb0ad418fcbec2625817faf95b9656c3a4b25212a9960b9aa1",
+    "url": "https://www.roadpolice.am/exam/abc/en/9.pdf?v=1790956449",
+    "version": 1790956449,
+    "version_utc": "2026-10-02T15:54:09+00:00"
+  },
+  "abc_hy_1.pdf": {
+    "bytes": 15116851,
+    "downloaded_utc": "2026-10-21T20:14:57+00:00",
+    "sha256": "37a0412809cdff90786a27289d2d07a15e252b8c757b2ea9237d27e907dd0ddd",
+    "url": "https://www.roadpolice.am/exam/abc/hy/1.pdf?v=1790956366",
+    "version": 1790956366,
+    "version_utc": "2026-10-02T15:52:46+00:00"
+  },
+  "abc_hy_10.pdf": {
+    "bytes": 104364,
+    "downloaded_utc": "2026-10-21T20:15:47+00:00",
+    "sha256": "9924a346bd2b2abe1cb7869162878d4b5d3f572f1631f2d8bfd7501a41fe3024",
+    "url": "https://www.roadpolice.am/exam/abc/hy/10.pdf?v=1790956383",
+    "version": 1790956383,
+    "version_utc": "2026-10-02T15:53:03+00:00"
+  },
+  "abc_hy_2.pdf": {
+    "bytes": 1403633,
+    "downloaded_utc": "2026-10-21T20:14:58+00:00",
+    "sha256": "2997116e8e8d70597ddbdab23dd22639df6fee7ea2791de12beed53e35324a75",
+    "url": "https://www.roadpolice.am/exam/abc/hy/2.pdf?v=1790956366",
+    "version": 1790956366,
+    "version_utc": "2026-10-02T15:52:46+00:00"
+  },
+  "abc_hy_3.pdf": {
+    "bytes": 95310,
+    "downloaded_utc": "2026-10-21T20:14:58+00:00",
+    "sha256": "075dadabd4516e6a554fc6af87248ae52779834cf996af57d61c481ce8a12391",
+    "url": "https://www.roadpolice.am/exam/abc/hy/3.pdf?v=1790956367",
+    "version": 1790956367,
+    "version_utc": "2026-10-02T15:52:47+00:00"
+  },
+  "abc_hy_4.pdf": {
+    "bytes": 17834696,
+    "downloaded_utc": "2026-10-21T20:15:07+00:00",
+    "sha256": "b5f43b0b7b65107425514b5e8b3c53a0cbbd39274481b74796d04d6e452258aa",
+    "url": "https://www.roadpolice.am/exam/abc/hy/4.pdf?v=1791194701",
+    "version": 1791194701,
+    "version_utc": "2026-10-05T10:05:01+00:00"
+  },
+  "abc_hy_5.pdf": {
+    "bytes": 15726538,
+    "downloaded_utc": "2026-10-21T20:15:13+00:00",
+    "sha256": "50c4d59b5b94ab417c4feb380edd0761885bd6872ee505b0bf3562f530398fed",
+    "url": "https://www.roadpolice.am/exam/abc/hy/5.pdf?v=1790956374",
+    "version": 1790956374,
+    "version_utc": "2026-10-02T15:52:54+00:00"
+  },
+  "abc_hy_6.pdf": {
+    "bytes": 9994315,
+    "downloaded_utc": "2026-10-21T20:15:15+00:00",
+    "sha256": "2d3d56d915e60a9913209b57cc8aecd4b2d4d26c1479edb7e364174e6fb2ecfd",
+    "url": "https://www.roadpolice.am/exam/abc/hy/6.pdf?v=1790956377",
+    "version": 1790956377,
+    "version_utc": "2026-10-02T15:52:57+00:00"
+  },
+  "abc_hy_7.pdf": {
+    "bytes": 14336186,
+    "downloaded_utc": "2026-10-21T20:15:42+00:00",
+    "sha256": "89bcb6d500c7cea9371670e598d68449ef945e6c53059382779700eb0ee22a4a",
+    "url": "https://www.roadpolice.am/exam/abc/hy/7.pdf?v=1790956380",
+    "version": 1790956380,
+    "version_utc": "2026-10-02T15:53:00+00:00"
+  },
+  "abc_hy_8.pdf": {
+    "bytes": 723103,
+    "downloaded_utc": "2026-10-21T20:15:43+00:00",
+    "sha256": "d020114ac67889ad7f987552cc31eb07cb87c8f29c37f7656e80d233fd83e0b1",
+    "url": "https://www.roadpolice.am/exam/abc/hy/8.pdf?v=1790956381",
+    "version": 1790956381,
+    "version_utc": "2026-10-02T15:53:01+00:00"
+  },
+  "abc_hy_9.pdf": {
+    "bytes": 8759241,
+    "downloaded_utc": "2026-10-21T20:15:47+00:00",
+    "sha256": "d174ef9cba45966215092315756cddb5a197807e94d8548621edde6bd73dff6d",
+    "url": "https://www.roadpolice.am/exam/abc/hy/9.pdf?v=1790956383",
+    "version": 1790956383,
+    "version_utc": "2026-10-02T15:53:03+00:00"
+  }
+}
