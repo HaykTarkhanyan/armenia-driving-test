@@ -2,6 +2,20 @@
 
 Newest first.
 
+## 8. Rules found by reading every question join the rule list; tested on the questions removed in 2026
+
+- **Date / status:** 2026-10-21, active (Hayk: "look into the questions group by group ... find cool stuff"; 2 reading subagents, one per half of the groups)
+- **Why:** Option-level statistics had missed Hayk's group-3 rule (24/24 once scored per condition), so every group was read question by question. Findings were re-counted with independent code before use. The statistical ones joined `scripts/mine_patterns.py`: first aid longest (31/50, chance 15.8), law definitions longest (23/28, 13.2), bare "Պարտավոր է" (23/29, 13.6), group 8 middle number (7/7), pedestrians + someone (10/10), tram yes (7/7), backing no (8/10), and a never-pick list (55 options, 0 right) used when guessing. "Both/all" is restricted to text questions: 54/97 there, 5/15 with a picture. Because these rules were found on the whole pool, CV cannot remove that selection; so they are also scored on the 118 old questions removed in 2026, which nobody read: both/all 13/22 (7.2), "Արգելվում" 13/20 (8.0), 3-options-last 34/72 (24.0) hold; echo 7/19 (7.9) does not. Result: content rules + never-pick need 714 answers for 95% pass (guessing: 952). Facts (speed table, ages, first-aid numbers ...) are documented in PATTERNS.md, not modelled.
+- **Alternatives rejected:** keeping only rules mined by code (misses statement-level logic); trusting the readers' counts (re-counted instead; one over-broad pattern of mine, "heat" in first aid, was the only disagreement and the readers were right); dropping echo (it passes CV in-pool; kept, flagged as failing out of sample).
+- **What would change this:** A new pool (score every rule on its new questions first), or evidence on the real exam's option order (decides between the two rule-list rows).
+
+## 7. Old pool: no English cross-check; matching normalizes picture labels and needs option or picture similarity
+
+- **Date / status:** 2026-10-21, active; supersedes the English cross-check planned in #5
+- **Why:** The old English PDFs are a different, smaller edition (group 1: 132 answer lines vs 147 in Armenian, 22 vs 25 pages), so card k is not the same question in both. The check used instead: of the 660 old questions whose wording and options are unchanged in 2026, none has a different answer (independent parsers for old and new PDFs). Matching needed two fixes found by reading the flagged pairs: old picture labels are Armenian (Ա/Բ/Գ), new ones Latin (A/B/C), which made identical options look different; and 33 group-3 questions share one stem, so "same wording" only counts if options (rapidfuzz >= 60) or pictures still resemble each other. Result: 976 of 1,094 old questions matched, 557 identical; reading every flagged pair left 3 real key changes (1-34, 1-35, 2-75).
+- **Alternatives rejected:** aligning old English to old Armenian by picture hash (only works for picture questions and adds a weaker check than the 660-question one); reporting the raw "answer text differs" count (110 flags, almost all rewording).
+- **What would change this:** An old English edition of the same size turning up (then the card-by-card check works).
+
 ## 6. Shortcut analysis: per-question guess baseline, folds grouped by wording, exact pass model, "exceptions" baseline
 
 - **Date / status:** 2026-10-21, active (Hayk asked for the same shortcut analysis as in the German project)
@@ -11,7 +25,7 @@ Newest first.
 
 ## 5. Recover the previous pool (June 2026) from the Wayback Machine and match it to the current one
 
-- **Date / status:** 2026-10-21, active (Hayk, not sure of the exam date: "get both pls")
+- **Date / status:** 2026-10-21, active; the English cross-check described below is superseded by #7 (Hayk, not sure of the exam date: "get both pls")
 - **Why:** By point 16 of Decision 385-Ն new questions may be used only 30 days after publication; the current PDFs were published 2026-10-02, so an exam before about 2026-11-01 may still draw from the previous pool. roadpolice.am now answers 404 for the old files (/exam/hy_group_N.pdf), but the Wayback Machine captured them on 2026-06-08 (the old PDFs are Word exports created 2022-04-13, so the old pool dates from 2022). The old PDFs have no question numbers and no green answer, so the old Armenian text is checked against the old English PDFs, and the questions found in both pools must agree with the current answers. Matching is one-to-one: same wording and options first, then same wording, then fuzzy text (rapidfuzz 3.14.6, score >= 85); same-wording twins are told apart by perceptual picture hash (imagehash 4.3.2), since old pictures are 600x300 and new ones 1200x600, so byte hashes never match.
 - **Alternatives rejected:** ignoring the old pool (wrong if the exam is before November); third-party apps for the old pool (unofficial copies; the archive has the official files); difflib for fuzzy matching (1,116 x 1,050 comparisons take minutes in pure Python, rapidfuzz takes seconds); hand-written picture hashing (imagehash is the standard package for this).
 - **What would change this:** The exam date passing 2026-11-01 (then the old pool is history; keep the data, drop it from practice), or roadpolice.am publishing a list of changes.

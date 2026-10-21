@@ -85,6 +85,18 @@ def numeric_values(q) -> list[float] | None:
     return vals if len(set(vals)) == len(vals) else None
 
 
+# Options that are never the right answer anywhere in the pool (55 options, 0 right; PATTERNS.md "Never pick").
+NEVER_RE = re.compile(r"30\s*կմ|վարորդի հայեցող|գնացք|^միայն հետիոտ|ալկոհոլ|սպիրտ|յոդ|քսուք|մոխիր|ձյունով|ապտակ|վալերիան")
+
+
+def guess_chance(q) -> float:
+    """Chance of a blind guess after crossing out never-right options."""
+    k = sum(not NEVER_RE.search(norm(o)) for o in q["options"])
+    if k == 0 or NEVER_RE.search(norm(q["options"][q["answer_index"]])):
+        raise ValueError(f"{q['id']}: the never-pick list would cross out the right answer")
+    return 1 / k
+
+
 def unique_index(flags: list[bool]):
     hits = [i for i, f in enumerate(flags) if f]
     return hits[0] if len(hits) == 1 else None
@@ -93,7 +105,8 @@ def unique_index(flags: list[bool]):
 # ---------------------------------------------------------------- picker rules
 # Each returns the index of the option it picks, or None if it does not fire.
 
-ALL_RE = re.compile(r"բոլոր|երկու դեպքում|երկուսն էլ|երկու պատասխան")
+# the "both / all of the above" meta-option itself, not "բոլոր" inside an ordinary phrase ("all vehicles")
+ALL_RE = re.compile(r"երկու դեպք|երկուսն էլ|բոլոր թվարկ|թվարկած բոլոր|թվարկված բոլոր|բոլոր պատասխան|բոլոր նշված|բոլոր դեպք")
 NONE_RE = re.compile(r"ոչ մեկ|ոչ մի ")
 PICTURE_LABEL = re.compile(r"^[\dA-ZԱ-Ֆa-z]{1,2}$")
 
@@ -117,7 +130,74 @@ def r_shortest(q):
 
 
 def r_all_both(q):
+    # text questions only: with a picture it is at chance (5/15 outside group 3), see PATTERNS.md
+    if q["image"]:
+        return None
     return unique_index([bool(ALL_RE.search(norm(o))) for o in q["options"]])
+
+
+def content_words(s: str) -> set[str]:
+    return {t for t in re.findall(r"\w+", norm(s)) if t not in STOPWORDS and len(t) > 1}
+
+
+def r_echo(q):
+    qw = content_words(q["question"])
+    shared = [len(qw & content_words(o)) for o in q["options"]]
+    return unique_index([n == max(shared) for n in shared]) if max(shared) > 0 and not is_picture_label(q) else None
+
+
+def longest_unique(q):
+    lens = [len(o) for o in q["options"]]
+    return unique_index([n == max(lens) for n in lens])
+
+
+def r_g10_longest(q):
+    """First aid: the full procedure is the longest option."""
+    return longest_unique(q) if q["group"] == 10 else None
+
+
+def r_g2_definition_longest(q):
+    """Law definitions ("... է համարվում"): the complete legal wording is the longest."""
+    if q["group"] != 2 or not re.search(r"համարվում|հավասարեցվում", norm(q["question"])) or r_all_both(q) is not None:
+        return None
+    return longest_unique(q)
+
+
+def r_obligatory(q):
+    """A bare "it is obligatory" option (signals, yielding)."""
+    return unique_index([norm(o).rstrip("։:. ") in ("պարտավոր է", "պարտադիր է", "պարտավոր եք", "պարտավոր ենք")
+                         for o in q["options"]])
+
+
+def r_g8_middle(q):
+    """Group 8, five numeric options: the middle value."""
+    if q["group"] != 8 or len(q["options"]) != 5:
+        return None
+    vals = numeric_values(q)
+    return None if vals is None else sorted(range(5), key=lambda i: vals[i])[2]
+
+
+def r_pedestrians_too(q):
+    """Yield questions: the option naming pedestrians together with another party."""
+    if "զիջ" not in norm(q["question"]):
+        return None
+    return unique_index(["հետիոտ" in norm(o) and " եւ " in f" {norm(o)} " and not norm(o).startswith("միայն")
+                         for o in q["options"]])
+
+
+def r_tram_yes(q):
+    """'Must you yield to the tram?' -> yes."""
+    n = norm(q["question"])
+    if "տրամվայ" not in n or "զիջ" not in n:
+        return None
+    return unique_index([norm(o).rstrip("։:. ") in ("այո", "պարտավոր է", "պարտավոր եք", "պարտավոր ենք") for o in q["options"]])
+
+
+def r_backing_no(q):
+    """Backing (հետընթաց) questions -> no / prohibited."""
+    if "հետընթաց" not in norm(q["question"]):
+        return None
+    return unique_index([norm(o).rstrip("։:. ") in ("ոչ", "արգելվում է") for o in q["options"]])
 
 
 def r_prohibited(q):
@@ -152,8 +232,16 @@ RULES = {
     "pos_5_third": (r_position(5, 2), True, "5 options: the third"),
     "longest": (r_longest, False, "the longest option"),
     "shortest": (r_shortest, False, "the shortest option"),
-    "all_both": (r_all_both, False, "the only 'all / both' option (բոլոր, երկու դեպքում ...)"),
+    "all_both": (r_all_both, False, "the 'both / all of the above' option"),
+    "echo": (r_echo, False, "the option that repeats the most words of the question"),
     "prohibited": (r_prohibited, False, "the only option starting 'Արգելվում'"),
+    "g10_longest": (r_g10_longest, False, "first aid (group 10): the longest option"),
+    "g2_definition_longest": (r_g2_definition_longest, False, "law definitions (group 2, '... համարվում'): the longest option"),
+    "obligatory": (r_obligatory, False, "the bare 'Պարտավոր է / Պարտադիր է' option"),
+    "g8_middle": (r_g8_middle, False, "group 8, five numbers: the middle one"),
+    "pedestrians_too": (r_pedestrians_too, False, "yield questions: the option naming pedestrians and someone else"),
+    "tram_yes": (r_tram_yes, False, "'must you yield to the tram?': yes"),
+    "backing_no": (r_backing_no, False, "backing (հետընթաց) questions: no / prohibited"),
     "permitted": (r_permitted, False, "the only option starting 'Թույլատրվում'"),
     "without_only": (r_without_only, False, "the only option without 'միայն' when 2+ others have it"),
     "numeric_min": (r_numeric("min"), False, "numbers: the smallest"),
@@ -443,6 +531,14 @@ def main() -> None:
         crossout.append({"feature": name, "options": n, "correct": right, "expected": round(expected, 1),
                          "share_correct": round(right / n, 3) if n else None, "ci95": wilson(right, n)})
     out["crossout"] = crossout
+    out["never_pick"] = []
+    for label, rx in [("30 km/h (30 կմ)", r"30\s*կմ"), ("at the driver's discretion (վարորդի հայեցող...)", r"վարորդի հայեցող"),
+                      ("a train condition (գնացք)", r"գնացք"), ("only pedestrians (Միայն հետիոտ...)", r"^միայն հետիոտ"),
+                      ("first-aid folk remedies (alcohol, iodine, ointment, ash, snow, slapping, valerian)",
+                       r"ալկոհոլ|սպիրտ|յոդ|քսուք|մոխիր|ձյունով|ապտակ|վալերիան")]:
+        rows = [(q, i) for q in qs for i, o in enumerate(q["options"]) if re.search(rx, norm(o))]
+        out["never_pick"].append({"pattern": label, "options": len(rows), "right": sum(i == q["answer_index"] for q, i in rows),
+                                  "questions": sorted({q["id"] for q, _ in rows}, key=lambda s: tuple(map(int, s.split("-"))))})
     out["group3"] = group3_analysis(qs)
     g3 = out["group3"]
     log.info(f"group 3: {g3['conditions_prohibiting']}/{g3['conditions']} conditions prohibit; 'provided by design' "
@@ -502,10 +598,14 @@ def main() -> None:
     # strategies -> per-question chance of a right answer without memorizing (held-out predictions)
     guess = {q["id"]: 1 / len(q["options"]) for q in qs}
     strategies = {"guess": guess}
+    # rule strategies guess among the options left after the never-pick list (position_only stays the
+    # pure baseline of the "learn the exceptions" effect)
+    elim = {q["id"]: guess_chance(q) for q in qs}
     for variant in ("position_only", "order_kept", "shuffled"):
+        fallback = guess if variant == "position_only" else elim
         strategies[variant if variant == "position_only" else f"rules_{variant}"] = {
             q["id"]: (1.0 if held[variant][q["id"]][1] == q["answer_index"] else 0.0)
-            if held[variant][q["id"]][1] is not None else guess[q["id"]] for q in qs}
+            if held[variant][q["id"]][1] is not None else fallback[q["id"]] for q in qs}
     out["strategies"] = {}
     for name, p in strategies.items():
         p_by = defaultdict(list)
@@ -520,6 +620,21 @@ def main() -> None:
                  f"memorize for 50/80/95%: {mc['needed']['0.5']}/{mc['needed']['0.8']}/{mc['needed']['0.95']}")
     out["strategies"]["guess"]["study_order"] = memorize_curve(qs, guess)["order"]
     out["pool"]["guess_expected_per_test"] = out["strategies"]["guess"]["expected_score_nothing_memorized"]
+
+    # out of sample: the 2022 questions removed in 2026 were never read while the rules were found
+    old_pool = json.loads((DATA / "old_pool" / "questions.json").read_text(encoding="utf-8"))
+    removed = set(json.loads((ROOT / "results" / "pool_diff.json").read_text(encoding="utf-8"))["summary"]["old_only"])
+    unseen = [{**q, "image": "picture" if q["has_image"] else None} for q in old_pool if q["id"] in removed]
+    out["out_of_sample"] = {"questions": len(unseen), "rules": []}
+    for name, (fn, order, desc) in RULES.items():
+        s = score_rule(unseen, fn)
+        if s["fires"]:
+            out["out_of_sample"]["rules"].append({"rule": name, "description": desc, "needs_option_order": order, **s,
+                                                  "p_value": float(f"{s['p_value']:.3g}")})
+    never = [(q, i) for q in unseen for i, o in enumerate(q["options"]) if NEVER_RE.search(norm(o))]
+    out["out_of_sample"]["never_pick"] = {"options": len(never), "right": sum(i == q["answer_index"] for q, i in never)}
+    for r in out["out_of_sample"]["rules"]:
+        log.info(f"out of sample {r['rule']:22s} fires {r['fires']:3d} right {r['right']:3d} expected {r['expected']:5.1f} p {r['p_value']}")
 
     # "know a share of everything" view: P(pass) if you know a random fraction x of each section
     out["know_fraction"] = []

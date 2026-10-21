@@ -4,11 +4,13 @@ All 1,050 official questions of the Armenian theory exam for a car licence, in A
 correct answer and the picture of every picture question, taken from the Road Police's own PDFs and
 checked against their English version. Facts checked on 2026-10-21.
 
-Status: dataset, exam rules and the shortcut analysis done. Next: the previous (June 2026) pool and
-how it differs, a study app on GitHub Pages, short lessons per topic, an exam-day guide.
+Status: dataset, exam rules, the previous pool (2022-2026) with a question-by-question diff, and a
+group-by-group shortcut and logic analysis are done. Parked: study app, lessons, exam-day guide.
 
-**Shortcuts, in one line:** none get near a pass. The exam needs 18 of 20; guessing scores 7.2, the
-best rule list 8.1, and knowing 95% of the pool gives a 97.5% pass chance. Details: [`PATTERNS.md`](PATTERNS.md).
+**Shortcuts, in one line:** none get near a pass (the exam needs 18 of 20; guessing scores 7.2, all
+rules together 9.0), but the logic in the pool cuts what you must memorize for a 95% pass from 952
+answers to 714, and three answers in the official key contradict the law. Start with
+[`PATTERNS.md`](PATTERNS.md).
 
 ## What is in this repo
 
@@ -23,7 +25,12 @@ best rule list 8.1, and knowing 95% of the pool gives a 97.5% pass chance. Detai
 | [`PATTERNS.md`](PATTERNS.md) | Are there answer shortcuts? 14 rules tested, held-out scores, exact pass chances, how many answers to learn, what to learn first |
 | `reports/patterns_report.html` | Interactive report for the shortcut analysis (open in a browser; one standalone file) |
 | `results/patterns.json` | Raw results of the shortcut analysis (the report is built from it) |
-| `scripts/` | `download_pdfs.py`, `build_dataset.py` (dataset); `mine_patterns.py`, `build_pattern_report.py` (shortcuts) |
+| [`_knowledge/answer_key_errors.md`](_knowledge/answer_key_errors.md) | Where the official key contradicts itself or the law (horn, railway-crossing parking), with the law quoted |
+| `_knowledge/shortcut_hunt_*.md` | Notes from reading every question of every group: fact sheets, tells, give-aways |
+| `data/old_pool/questions.json` | The previous pool (1,094 questions, PDFs from 2022, online until autumn 2026), each with the matching current question (`new_id`) and what changed; pictures only for removed or redrawn ones |
+| `results/pool_diff.json` | Old vs new pool, pair by pair |
+| `official/old_pool/manifest.json` | Wayback Machine capture, size and SHA-256 of each old PDF |
+| `scripts/` | `download_pdfs.py`, `build_dataset.py` (dataset); `download_old_pool.py`, `build_old_pool.py` (old pool); `mine_patterns.py`, `build_pattern_report.py` (shortcuts) |
 | `DECISIONS.md`, `CONVENTIONS.md`, `_learnings/` | Why things are built this way, rules for the data, gotchas found on the way |
 
 ## The exam in one paragraph
@@ -40,7 +47,9 @@ the practical exam (the licence is then marked "automatic only"). Source: Govern
 **Mind the date.** Decision 979-Ն (in force 04.07.2026) split the pool into A/B/C and D/T, and the
 PDFs here were published 2026-10-02 (group 4: 2026-10-05). By point 16 of 385-Ն, new questions may
 be used only 30 days after publication, so an exam before about 2026-11-01 may still draw from the
-previous pool (archived in the Wayback Machine from June 2026).
+previous pool. That pool is in `data/old_pool/`: 118 of its questions are gone (mostly bus, truck and
+tractor questions), 74 are new, and 3 kept questions changed their answer (1-34, 1-35, 2-75; see
+PATTERNS.md).
 
 ## Where the answers come from
 
@@ -61,7 +70,9 @@ Needs `uv` (Python 3.12+); `uv sync` once.
 ```
 uv run python scripts/download_pdfs.py   # ~2 min (measured 105 s), 20 PDFs (Armenian + English), skips unchanged groups
 uv run python scripts/build_dataset.py   # ~5 s, writes data/, questions/, results/crosscheck_en.json
-uv run python scripts/mine_patterns.py   # ~30-45 s -> results/patterns.json
+uv run python scripts/download_old_pool.py   # ~5-15 min, the 2022 pool from the Wayback Machine (slow, resumable)
+uv run python scripts/build_old_pool.py   # ~20 s -> data/old_pool/, results/pool_diff.json
+uv run python scripts/mine_patterns.py   # ~45 s -> results/patterns.json (needs the old pool)
 uv run python scripts/build_pattern_report.py   # ~2 s -> reports/patterns_report.html
 ```
 
@@ -70,3 +81,5 @@ uv run python scripts/build_pattern_report.py   # ~2 s -> reports/patterns_repor
 - Road Police, question PDFs: https://www.roadpolice.am/hy/viv-exam
 - Road Police, FAQ (fees, validity, fast retake): https://www.roadpolice.am/hy/faq
 - Government Decision N 385-Ն (26.03.2020), exam procedure, consolidated: https://www.arlis.am/hy/acts/227433/latest
+- Government Decision N 955-Ն (28.06.2007), traffic rules and faults prohibiting operation, consolidated: https://www.arlis.am/hy/acts/212587/latest
+- Previous question PDFs (2022 editions, captured 2026-06-08): https://web.archive.org/web/20260608181424/https://roadpolice.am/hy/viv-exam

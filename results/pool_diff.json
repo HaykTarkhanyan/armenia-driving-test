@@ -1,0 +1,8973 @@
+{
+ "summary": {
+  "old_questions": 1094,
+  "new_questions": 1050,
+  "matched": 976,
+  "matched_by": {
+   "exact": 660,
+   "none": 118,
+   "fuzzy": 181,
+   "same_question": 134,
+   "picture_question": 1
+  },
+  "identical": 557,
+  "changes": {
+   "picture": 132,
+   "text": 182,
+   "options": 190,
+   "answer": 110
+  },
+  "old_only": [
+   "old-1-2",
+   "old-1-10",
+   "old-1-28",
+   "old-1-30",
+   "old-1-40",
+   "old-1-44",
+   "old-1-45",
+   "old-1-78",
+   "old-1-82",
+   "old-1-95",
+   "old-1-99",
+   "old-1-103",
+   "old-1-105",
+   "old-1-109",
+   "old-1-111",
+   "old-1-120",
+   "old-1-126",
+   "old-2-6",
+   "old-2-35",
+   "old-2-43",
+   "old-2-45",
+   "old-2-48",
+   "old-2-49",
+   "old-2-50",
+   "old-3-28",
+   "old-3-32",
+   "old-3-34",
+   "old-3-39",
+   "old-3-41",
+   "old-3-42",
+   "old-3-43",
+   "old-3-46",
+   "old-3-48",
+   "old-3-50",
+   "old-3-51",
+   "old-3-52",
+   "old-3-53",
+   "old-3-54",
+   "old-3-55",
+   "old-3-56",
+   "old-3-57",
+   "old-3-58",
+   "old-3-59",
+   "old-3-76",
+   "old-4-18",
+   "old-4-41",
+   "old-4-92",
+   "old-4-108",
+   "old-4-132",
+   "old-4-133",
+   "old-4-134",
+   "old-4-138",
+   "old-4-154",
+   "old-4-157",
+   "old-4-172",
+   "old-4-176",
+   "old-5-62",
+   "old-5-83",
+   "old-5-91",
+   "old-6-11",
+   "old-6-36",
+   "old-6-47",
+   "old-6-81",
+   "old-6-85",
+   "old-6-92",
+   "old-7-47",
+   "old-7-54",
+   "old-7-57",
+   "old-7-58",
+   "old-7-64",
+   "old-7-65",
+   "old-7-66",
+   "old-7-72",
+   "old-7-104",
+   "old-7-120",
+   "old-7-123",
+   "old-8-7",
+   "old-8-9",
+   "old-8-10",
+   "old-8-36",
+   "old-8-37",
+   "old-8-39",
+   "old-8-40",
+   "old-8-41",
+   "old-8-42",
+   "old-8-43",
+   "old-8-44",
+   "old-8-46",
+   "old-8-48",
+   "old-8-49",
+   "old-8-50",
+   "old-8-51",
+   "old-8-52",
+   "old-8-53",
+   "old-8-54",
+   "old-8-55",
+   "old-8-56",
+   "old-8-58",
+   "old-8-59",
+   "old-8-60",
+   "old-8-62",
+   "old-8-66",
+   "old-8-68",
+   "old-8-74",
+   "old-9-3",
+   "old-9-4",
+   "old-9-5",
+   "old-9-8",
+   "old-9-66",
+   "old-9-67",
+   "old-9-68",
+   "old-9-69",
+   "old-9-73",
+   "old-9-81",
+   "old-9-103",
+   "old-9-119",
+   "old-10-33",
+   "old-10-34"
+  ],
+  "new_only": [
+   "1-60",
+   "1-68",
+   "1-73",
+   "1-77",
+   "1-90",
+   "1-94",
+   "1-98",
+   "1-100",
+   "1-101",
+   "1-105",
+   "1-107",
+   "1-116",
+   "1-122",
+   "1-135",
+   "1-137",
+   "2-31",
+   "2-42",
+   "2-65",
+   "2-67",
+   "2-69",
+   "2-71",
+   "2-72",
+   "2-73",
+   "2-74",
+   "2-75",
+   "2-76",
+   "2-77",
+   "2-78",
+   "2-79",
+   "2-80",
+   "2-81",
+   "2-82",
+   "3-57",
+   "4-38",
+   "4-87",
+   "4-91",
+   "4-93",
+   "4-101",
+   "4-110",
+   "4-134",
+   "4-135",
+   "4-136",
+   "4-140",
+   "4-146",
+   "4-157",
+   "4-160",
+   "4-175",
+   "4-179",
+   "5-62",
+   "5-83",
+   "5-91",
+   "5-126",
+   "6-5",
+   "6-78",
+   "6-80",
+   "6-84",
+   "6-85",
+   "6-92",
+   "7-65",
+   "7-77",
+   "7-98",
+   "7-109",
+   "7-115",
+   "7-118",
+   "8-41",
+   "8-43",
+   "8-49",
+   "9-3",
+   "9-6",
+   "9-95",
+   "9-98",
+   "9-112",
+   "10-33",
+   "10-34"
+  ]
+ },
+ "pairs": [
+  {
+   "old_id": "old-1-1",
+   "new_id": "1-1",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-2",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-1-3",
+   "new_id": "1-2",
+   "how": "exact",
+   "picture_distance": 30,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-1-4",
+   "new_id": "1-3",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-5",
+   "new_id": "1-4",
+   "how": "exact",
+   "picture_distance": 18,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-1-6",
+   "new_id": "1-5",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-7",
+   "new_id": "1-6",
+   "how": "exact",
+   "picture_distance": 22,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-1-8",
+   "new_id": "1-7",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-9",
+   "new_id": "1-8",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-10",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-1-11",
+   "new_id": "1-9",
+   "how": "exact",
+   "picture_distance": 22,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-1-12",
+   "new_id": "1-10",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-13",
+   "new_id": "1-11",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-14",
+   "new_id": "1-12",
+   "how": "exact",
+   "picture_distance": 18,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-1-15",
+   "new_id": "1-13",
+   "how": "exact",
+   "picture_distance": 10,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-16",
+   "new_id": "1-14",
+   "how": "exact",
+   "picture_distance": 24,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-1-17",
+   "new_id": "1-15",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-18",
+   "new_id": "1-16",
+   "how": "exact",
+   "picture_distance": 8,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-19",
+   "new_id": "1-17",
+   "how": "exact",
+   "picture_distance": 16,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-1-20",
+   "new_id": "1-18",
+   "how": "exact",
+   "picture_distance": 8,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-21",
+   "new_id": "1-19",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-22",
+   "new_id": "1-20",
+   "how": "exact",
+   "picture_distance": 20,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-1-23",
+   "new_id": "1-21",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-24",
+   "new_id": "1-22",
+   "how": "exact",
+   "picture_distance": 10,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-25",
+   "new_id": "1-23",
+   "how": "exact",
+   "picture_distance": 14,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-1-26",
+   "new_id": "1-24",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-27",
+   "new_id": "1-25",
+   "how": "exact",
+   "picture_distance": 16,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-1-28",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-1-29",
+   "new_id": "1-26",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-30",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-1-31",
+   "new_id": "1-27",
+   "how": "exact",
+   "picture_distance": 22,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-1-32",
+   "new_id": "1-28",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-33",
+   "new_id": "1-29",
+   "how": "exact",
+   "picture_distance": 10,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-34",
+   "new_id": "1-30",
+   "how": "exact",
+   "picture_distance": 16,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-1-35",
+   "new_id": "1-31",
+   "how": "exact",
+   "picture_distance": 26,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-1-36",
+   "new_id": "1-32",
+   "how": "exact",
+   "picture_distance": 22,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-1-37",
+   "new_id": "1-33",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-38",
+   "new_id": "1-34",
+   "how": "fuzzy",
+   "score": 92.7,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-1-39",
+   "new_id": "1-35",
+   "how": "fuzzy",
+   "score": 90.0,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-1-40",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-1-41",
+   "new_id": "1-36",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-42",
+   "new_id": "1-37",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-43",
+   "new_id": "1-38",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-44",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-1-45",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-1-46",
+   "new_id": "1-39",
+   "how": "fuzzy",
+   "score": 99.4,
+   "picture_distance": 0,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-1-47",
+   "new_id": "1-40",
+   "how": "fuzzy",
+   "score": 99.4,
+   "picture_distance": 4,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-1-48",
+   "new_id": "1-41",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-49",
+   "new_id": "1-42",
+   "how": "exact",
+   "picture_distance": 12,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-1-50",
+   "new_id": "1-43",
+   "how": "fuzzy",
+   "score": 99.4,
+   "picture_distance": 6,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-1-51",
+   "new_id": "1-44",
+   "how": "exact",
+   "picture_distance": 14,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-1-52",
+   "new_id": "1-45",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-53",
+   "new_id": "1-46",
+   "how": "fuzzy",
+   "score": 99.5,
+   "picture_distance": 0,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-1-54",
+   "new_id": "1-47",
+   "how": "fuzzy",
+   "score": 99.2,
+   "picture_distance": 4,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-1-55",
+   "new_id": "1-48",
+   "how": "fuzzy",
+   "score": 99.3,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-1-56",
+   "new_id": "1-49",
+   "how": "fuzzy",
+   "score": 99.3,
+   "picture_distance": 8,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-1-57",
+   "new_id": "1-50",
+   "how": "fuzzy",
+   "score": 99.4,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-1-58",
+   "new_id": "1-51",
+   "how": "fuzzy",
+   "score": 99.4,
+   "picture_distance": 0,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-1-59",
+   "new_id": "1-52",
+   "how": "fuzzy",
+   "score": 99.3,
+   "picture_distance": 0,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-1-60",
+   "new_id": "1-53",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-61",
+   "new_id": "1-54",
+   "how": "fuzzy",
+   "score": 99.3,
+   "picture_distance": 0,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-1-62",
+   "new_id": "1-55",
+   "how": "fuzzy",
+   "score": 96.3,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-1-63",
+   "new_id": "1-56",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-64",
+   "new_id": "1-57",
+   "how": "same_question",
+   "picture_distance": 2,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-1-65",
+   "new_id": "1-58",
+   "how": "same_question",
+   "picture_distance": 0,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-1-66",
+   "new_id": "1-59",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-67",
+   "new_id": "1-61",
+   "how": "same_question",
+   "picture_distance": 32,
+   "changes": [
+    "options",
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-1-68",
+   "new_id": "1-62",
+   "how": "same_question",
+   "picture_distance": 4,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-1-69",
+   "new_id": "1-63",
+   "how": "fuzzy",
+   "score": 93.4,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-1-70",
+   "new_id": "1-64",
+   "how": "same_question",
+   "picture_distance": 4,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-1-71",
+   "new_id": "1-65",
+   "how": "same_question",
+   "picture_distance": 2,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-1-72",
+   "new_id": "1-66",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-73",
+   "new_id": "1-67",
+   "how": "same_question",
+   "picture_distance": 0,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-1-74",
+   "new_id": "1-69",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-75",
+   "new_id": "1-70",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-76",
+   "new_id": "1-71",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-77",
+   "new_id": "1-72",
+   "how": "fuzzy",
+   "score": 90.1,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-1-78",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-1-79",
+   "new_id": "1-74",
+   "how": "fuzzy",
+   "score": 97.9,
+   "picture_distance": 0,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-1-80",
+   "new_id": "1-75",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-81",
+   "new_id": "1-76",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-82",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-1-83",
+   "new_id": "1-78",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-84",
+   "new_id": "1-79",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-1-85",
+   "new_id": "1-80",
+   "how": "same_question",
+   "picture_distance": 2,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-1-86",
+   "new_id": "1-81",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-87",
+   "new_id": "1-82",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-88",
+   "new_id": "1-83",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-89",
+   "new_id": "1-84",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-90",
+   "new_id": "1-85",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-91",
+   "new_id": "1-86",
+   "how": "fuzzy",
+   "score": 97.1,
+   "picture_distance": 0,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-1-92",
+   "new_id": "1-87",
+   "how": "fuzzy",
+   "score": 93.7,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-1-93",
+   "new_id": "1-88",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-94",
+   "new_id": "1-89",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-95",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-1-96",
+   "new_id": "1-91",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-97",
+   "new_id": "1-92",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-98",
+   "new_id": "1-93",
+   "how": "fuzzy",
+   "score": 93.0,
+   "picture_distance": 4,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-1-99",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-1-100",
+   "new_id": "1-95",
+   "how": "same_question",
+   "picture_distance": 4,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-1-101",
+   "new_id": "1-96",
+   "how": "exact",
+   "picture_distance": 16,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-1-102",
+   "new_id": "1-97",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-103",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-1-104",
+   "new_id": "1-99",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-105",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-1-106",
+   "new_id": "1-102",
+   "how": "fuzzy",
+   "score": 92.0,
+   "picture_distance": 0,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-1-107",
+   "new_id": "1-103",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-108",
+   "new_id": "1-104",
+   "how": "fuzzy",
+   "score": 95.7,
+   "picture_distance": 0,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-1-109",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-1-110",
+   "new_id": "1-106",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-111",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-1-112",
+   "new_id": "1-108",
+   "how": "same_question",
+   "picture_distance": 2,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-1-113",
+   "new_id": "1-109",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-114",
+   "new_id": "1-110",
+   "how": "fuzzy",
+   "score": 86.0,
+   "picture_distance": 6,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-1-115",
+   "new_id": "1-111",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-116",
+   "new_id": "1-112",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-117",
+   "new_id": "1-113",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-118",
+   "new_id": "1-114",
+   "how": "fuzzy",
+   "score": 85.7,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-1-119",
+   "new_id": "1-115",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-120",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-1-121",
+   "new_id": "1-117",
+   "how": "fuzzy",
+   "score": 88.0,
+   "picture_distance": 4,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-1-122",
+   "new_id": "1-118",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-123",
+   "new_id": "1-119",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-124",
+   "new_id": "1-120",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-125",
+   "new_id": "1-121",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-126",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-1-127",
+   "new_id": "1-123",
+   "how": "fuzzy",
+   "score": 90.4,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-1-128",
+   "new_id": "1-124",
+   "how": "fuzzy",
+   "score": 88.5,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-1-129",
+   "new_id": "1-125",
+   "how": "same_question",
+   "picture_distance": 0,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-1-130",
+   "new_id": "1-126",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-131",
+   "new_id": "1-127",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-132",
+   "new_id": "1-128",
+   "how": "fuzzy",
+   "score": 99.5,
+   "picture_distance": 0,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-1-133",
+   "new_id": "1-129",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-134",
+   "new_id": "1-130",
+   "how": "fuzzy",
+   "score": 88.1,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-1-135",
+   "new_id": "1-131",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-136",
+   "new_id": "1-132",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-137",
+   "new_id": "1-133",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-138",
+   "new_id": "1-134",
+   "how": "fuzzy",
+   "score": 93.9,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-1-139",
+   "new_id": "1-136",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-140",
+   "new_id": "1-138",
+   "how": "exact",
+   "picture_distance": 12,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-1-141",
+   "new_id": "1-139",
+   "how": "fuzzy",
+   "score": 93.4,
+   "picture_distance": 0,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-1-142",
+   "new_id": "1-140",
+   "how": "exact",
+   "picture_distance": 22,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-1-143",
+   "new_id": "1-141",
+   "how": "fuzzy",
+   "score": 92.2,
+   "picture_distance": 20,
+   "changes": [
+    "text",
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-1-144",
+   "new_id": "1-142",
+   "how": "fuzzy",
+   "score": 88.7,
+   "picture_distance": 2,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-1-145",
+   "new_id": "1-143",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-146",
+   "new_id": "1-144",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-1-147",
+   "new_id": "1-145",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-1",
+   "new_id": "2-1",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-2-2",
+   "new_id": "2-2",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-3",
+   "new_id": "2-3",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-4",
+   "new_id": "2-4",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-5",
+   "new_id": "2-5",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-6",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-2-7",
+   "new_id": "2-6",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-8",
+   "new_id": "2-7",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-9",
+   "new_id": "2-8",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-10",
+   "new_id": "2-9",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-11",
+   "new_id": "2-10",
+   "how": "fuzzy",
+   "score": 95.4,
+   "picture_distance": null,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-2-12",
+   "new_id": "2-11",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-13",
+   "new_id": "2-12",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-2-14",
+   "new_id": "2-13",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-15",
+   "new_id": "2-14",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-2-16",
+   "new_id": "2-15",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-17",
+   "new_id": "2-16",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-18",
+   "new_id": "2-17",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-19",
+   "new_id": "2-18",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-20",
+   "new_id": "2-19",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-21",
+   "new_id": "2-20",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-2-22",
+   "new_id": "2-21",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-23",
+   "new_id": "2-22",
+   "how": "fuzzy",
+   "score": 90.1,
+   "picture_distance": null,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-2-24",
+   "new_id": "2-23",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-25",
+   "new_id": "2-24",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-26",
+   "new_id": "2-25",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-27",
+   "new_id": "2-26",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-28",
+   "new_id": "2-27",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-2-29",
+   "new_id": "2-28",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-30",
+   "new_id": "2-29",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-2-31",
+   "new_id": "2-30",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-2-32",
+   "new_id": "2-32",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-33",
+   "new_id": "2-33",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-34",
+   "new_id": "2-34",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-35",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-2-36",
+   "new_id": "2-35",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-37",
+   "new_id": "2-36",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-38",
+   "new_id": "2-37",
+   "how": "fuzzy",
+   "score": 88.8,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-2-39",
+   "new_id": "2-38",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-40",
+   "new_id": "2-39",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-41",
+   "new_id": "2-40",
+   "how": "fuzzy",
+   "score": 93.3,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-2-42",
+   "new_id": "2-41",
+   "how": "fuzzy",
+   "score": 93.4,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-2-43",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-2-44",
+   "new_id": "2-43",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-45",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-2-46",
+   "new_id": "2-44",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-47",
+   "new_id": "2-45",
+   "how": "fuzzy",
+   "score": 96.8,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-2-48",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-2-49",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-2-50",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-2-51",
+   "new_id": "2-46",
+   "how": "fuzzy",
+   "score": 87.9,
+   "picture_distance": 0,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-2-52",
+   "new_id": "2-47",
+   "how": "fuzzy",
+   "score": 99.1,
+   "picture_distance": 0,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-2-53",
+   "new_id": "2-48",
+   "how": "fuzzy",
+   "score": 95.3,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-2-54",
+   "new_id": "2-49",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-55",
+   "new_id": "2-50",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-56",
+   "new_id": "2-51",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-57",
+   "new_id": "2-52",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-58",
+   "new_id": "2-53",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-59",
+   "new_id": "2-54",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-60",
+   "new_id": "2-55",
+   "how": "same_question",
+   "picture_distance": 2,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-2-61",
+   "new_id": "2-56",
+   "how": "fuzzy",
+   "score": 94.3,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-2-62",
+   "new_id": "2-57",
+   "how": "same_question",
+   "picture_distance": 2,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-2-63",
+   "new_id": "2-58",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-64",
+   "new_id": "2-59",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-2-65",
+   "new_id": "2-60",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-66",
+   "new_id": "2-61",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-2-67",
+   "new_id": "2-62",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-68",
+   "new_id": "2-63",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-69",
+   "new_id": "2-64",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-2-70",
+   "new_id": "2-66",
+   "how": "fuzzy",
+   "score": 99.6,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-2-71",
+   "new_id": "2-68",
+   "how": "fuzzy",
+   "score": 99.8,
+   "picture_distance": null,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-2-72",
+   "new_id": "2-70",
+   "how": "fuzzy",
+   "score": 99.8,
+   "picture_distance": null,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-3-1",
+   "new_id": "3-1",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-3-2",
+   "new_id": "3-2",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-3-3",
+   "new_id": "3-3",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-3-4",
+   "new_id": "3-4",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-3-5",
+   "new_id": "3-5",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-3-6",
+   "new_id": "3-6",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-3-7",
+   "new_id": "3-7",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-3-8",
+   "new_id": "3-8",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-3-9",
+   "new_id": "3-9",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-3-10",
+   "new_id": "3-10",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-3-11",
+   "new_id": "3-11",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-3-12",
+   "new_id": "3-12",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-3-13",
+   "new_id": "3-13",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-3-14",
+   "new_id": "3-14",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-3-15",
+   "new_id": "3-15",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-3-16",
+   "new_id": "3-16",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-3-17",
+   "new_id": "3-17",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-3-18",
+   "new_id": "3-18",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-3-19",
+   "new_id": "3-19",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-3-20",
+   "new_id": "3-20",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-3-21",
+   "new_id": "3-21",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-3-22",
+   "new_id": "3-22",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-3-23",
+   "new_id": "3-23",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-3-24",
+   "new_id": "3-24",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-3-25",
+   "new_id": "3-25",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-3-26",
+   "new_id": "3-26",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-3-27",
+   "new_id": "3-27",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-3-28",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-3-29",
+   "new_id": "3-28",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-3-30",
+   "new_id": "3-29",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-3-31",
+   "new_id": "3-30",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-3-32",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-3-33",
+   "new_id": "3-31",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-3-34",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-3-35",
+   "new_id": "3-32",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-3-36",
+   "new_id": "3-33",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-3-37",
+   "new_id": "3-34",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-3-38",
+   "new_id": "3-35",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-3-39",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-3-40",
+   "new_id": "3-36",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-3-41",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-3-42",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-3-43",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-3-44",
+   "new_id": "3-37",
+   "how": "fuzzy",
+   "score": 92.0,
+   "picture_distance": null,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-3-45",
+   "new_id": "3-38",
+   "how": "fuzzy",
+   "score": 92.4,
+   "picture_distance": null,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-3-46",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-3-47",
+   "new_id": "3-39",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-3-48",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-3-49",
+   "new_id": "3-56",
+   "how": "fuzzy",
+   "score": 86.4,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-3-50",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-3-51",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-3-52",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-3-53",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-3-54",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-3-55",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-3-56",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-3-57",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-3-58",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-3-59",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-3-60",
+   "new_id": "3-40",
+   "how": "fuzzy",
+   "score": 97.8,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-3-61",
+   "new_id": "3-41",
+   "how": "fuzzy",
+   "score": 98.2,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-3-62",
+   "new_id": "3-42",
+   "how": "fuzzy",
+   "score": 97.8,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-3-63",
+   "new_id": "3-43",
+   "how": "fuzzy",
+   "score": 98.2,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-3-64",
+   "new_id": "3-44",
+   "how": "fuzzy",
+   "score": 97.6,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-3-65",
+   "new_id": "3-45",
+   "how": "fuzzy",
+   "score": 98.2,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-3-66",
+   "new_id": "3-46",
+   "how": "fuzzy",
+   "score": 98.3,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-3-67",
+   "new_id": "3-47",
+   "how": "fuzzy",
+   "score": 98.4,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-3-68",
+   "new_id": "3-48",
+   "how": "fuzzy",
+   "score": 97.7,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-3-69",
+   "new_id": "3-49",
+   "how": "fuzzy",
+   "score": 98.0,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-3-70",
+   "new_id": "3-50",
+   "how": "fuzzy",
+   "score": 97.9,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-3-71",
+   "new_id": "3-51",
+   "how": "fuzzy",
+   "score": 97.9,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-3-72",
+   "new_id": "3-52",
+   "how": "fuzzy",
+   "score": 98.1,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-3-73",
+   "new_id": "3-53",
+   "how": "fuzzy",
+   "score": 98.4,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-3-74",
+   "new_id": "3-54",
+   "how": "fuzzy",
+   "score": 98.5,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-3-75",
+   "new_id": "3-55",
+   "how": "fuzzy",
+   "score": 98.3,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-3-76",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-3-77",
+   "new_id": "3-58",
+   "how": "fuzzy",
+   "score": 97.8,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-3-78",
+   "new_id": "3-59",
+   "how": "fuzzy",
+   "score": 98.7,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-4-1",
+   "new_id": "4-1",
+   "how": "fuzzy",
+   "score": 98.4,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-4-2",
+   "new_id": "4-2",
+   "how": "same_question",
+   "picture_distance": 0,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-4-3",
+   "new_id": "4-3",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-4",
+   "new_id": "4-4",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-5",
+   "new_id": "4-5",
+   "how": "same_question",
+   "picture_distance": 0,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-4-6",
+   "new_id": "4-6",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-7",
+   "new_id": "4-7",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-8",
+   "new_id": "4-8",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-9",
+   "new_id": "4-9",
+   "how": "exact",
+   "picture_distance": 8,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-10",
+   "new_id": "4-10",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-11",
+   "new_id": "4-11",
+   "how": "fuzzy",
+   "score": 96.4,
+   "picture_distance": 4,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-4-12",
+   "new_id": "4-12",
+   "how": "fuzzy",
+   "score": 87.5,
+   "picture_distance": 0,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-4-13",
+   "new_id": "4-13",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-14",
+   "new_id": "4-14",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-15",
+   "new_id": "4-15",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-16",
+   "new_id": "4-16",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-17",
+   "new_id": "4-17",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-18",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-4-19",
+   "new_id": "4-18",
+   "how": "fuzzy",
+   "score": 96.6,
+   "picture_distance": 0,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-4-20",
+   "new_id": "4-19",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-21",
+   "new_id": "4-20",
+   "how": "fuzzy",
+   "score": 93.6,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-4-22",
+   "new_id": "4-21",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-23",
+   "new_id": "4-22",
+   "how": "fuzzy",
+   "score": 96.4,
+   "picture_distance": 0,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-4-24",
+   "new_id": "4-23",
+   "how": "fuzzy",
+   "score": 96.3,
+   "picture_distance": 0,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-4-25",
+   "new_id": "4-24",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-26",
+   "new_id": "4-25",
+   "how": "fuzzy",
+   "score": 86.6,
+   "picture_distance": 14,
+   "changes": [
+    "text",
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-4-27",
+   "new_id": "4-26",
+   "how": "exact",
+   "picture_distance": 10,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-28",
+   "new_id": "4-27",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-29",
+   "new_id": "4-28",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-30",
+   "new_id": "4-29",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-31",
+   "new_id": "4-30",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-32",
+   "new_id": "4-31",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-33",
+   "new_id": "4-32",
+   "how": "exact",
+   "picture_distance": 16,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-4-34",
+   "new_id": "4-33",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-35",
+   "new_id": "4-34",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-36",
+   "new_id": "4-35",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-37",
+   "new_id": "4-36",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-38",
+   "new_id": "4-37",
+   "how": "fuzzy",
+   "score": 88.7,
+   "picture_distance": 14,
+   "changes": [
+    "text",
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-4-39",
+   "new_id": "4-39",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-40",
+   "new_id": "4-40",
+   "how": "same_question",
+   "picture_distance": 8,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-4-41",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-4-42",
+   "new_id": "4-41",
+   "how": "fuzzy",
+   "score": 96.1,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-4-43",
+   "new_id": "4-42",
+   "how": "exact",
+   "picture_distance": 8,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-44",
+   "new_id": "4-43",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-45",
+   "new_id": "4-44",
+   "how": "exact",
+   "picture_distance": 10,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-46",
+   "new_id": "4-45",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-47",
+   "new_id": "4-46",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-48",
+   "new_id": "4-47",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-49",
+   "new_id": "4-48",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-50",
+   "new_id": "4-49",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-51",
+   "new_id": "4-50",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-52",
+   "new_id": "4-51",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-53",
+   "new_id": "4-52",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-54",
+   "new_id": "4-53",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-55",
+   "new_id": "4-54",
+   "how": "same_question",
+   "picture_distance": 2,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-4-56",
+   "new_id": "4-55",
+   "how": "fuzzy",
+   "score": 85.6,
+   "picture_distance": 0,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-4-57",
+   "new_id": "4-56",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-58",
+   "new_id": "4-57",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-59",
+   "new_id": "4-58",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-60",
+   "new_id": "4-59",
+   "how": "fuzzy",
+   "score": 97.9,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-4-61",
+   "new_id": "4-60",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-62",
+   "new_id": "4-61",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-63",
+   "new_id": "4-62",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-64",
+   "new_id": "4-63",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-65",
+   "new_id": "4-64",
+   "how": "same_question",
+   "picture_distance": 2,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-4-66",
+   "new_id": "4-65",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-67",
+   "new_id": "4-66",
+   "how": "fuzzy",
+   "score": 95.1,
+   "picture_distance": 2,
+   "changes": [
+    "text",
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-4-68",
+   "new_id": "4-67",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-69",
+   "new_id": "4-68",
+   "how": "same_question",
+   "picture_distance": 2,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-4-70",
+   "new_id": "4-69",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-71",
+   "new_id": "4-70",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-72",
+   "new_id": "4-71",
+   "how": "same_question",
+   "picture_distance": 2,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-4-73",
+   "new_id": "4-72",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-74",
+   "new_id": "4-73",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-75",
+   "new_id": "4-74",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-76",
+   "new_id": "4-75",
+   "how": "same_question",
+   "picture_distance": 0,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-4-77",
+   "new_id": "4-76",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-78",
+   "new_id": "4-77",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-79",
+   "new_id": "4-78",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-80",
+   "new_id": "4-79",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-81",
+   "new_id": "4-80",
+   "how": "same_question",
+   "picture_distance": 6,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-4-82",
+   "new_id": "4-81",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-83",
+   "new_id": "4-82",
+   "how": "fuzzy",
+   "score": 99.6,
+   "picture_distance": 0,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-4-84",
+   "new_id": "4-83",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-85",
+   "new_id": "4-84",
+   "how": "same_question",
+   "picture_distance": 2,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-4-86",
+   "new_id": "4-85",
+   "how": "same_question",
+   "picture_distance": 2,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-4-87",
+   "new_id": "4-86",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-88",
+   "new_id": "4-88",
+   "how": "same_question",
+   "picture_distance": 2,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-4-89",
+   "new_id": "4-89",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-90",
+   "new_id": "4-90",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-91",
+   "new_id": "4-92",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-92",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-4-93",
+   "new_id": "4-94",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-94",
+   "new_id": "4-95",
+   "how": "fuzzy",
+   "score": 95.8,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-4-95",
+   "new_id": "4-96",
+   "how": "picture_question",
+   "picture_distance": 18,
+   "changes": [
+    "text",
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-4-96",
+   "new_id": "4-97",
+   "how": "fuzzy",
+   "score": 89.8,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-4-97",
+   "new_id": "4-98",
+   "how": "same_question",
+   "picture_distance": 2,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-4-98",
+   "new_id": "4-99",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-99",
+   "new_id": "4-100",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-100",
+   "new_id": "4-102",
+   "how": "exact",
+   "picture_distance": 10,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-101",
+   "new_id": "4-103",
+   "how": "same_question",
+   "picture_distance": 0,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-4-102",
+   "new_id": "4-104",
+   "how": "exact",
+   "picture_distance": 16,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-4-103",
+   "new_id": "4-105",
+   "how": "same_question",
+   "picture_distance": 0,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-4-104",
+   "new_id": "4-106",
+   "how": "exact",
+   "picture_distance": 18,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-4-105",
+   "new_id": "4-107",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-106",
+   "new_id": "4-108",
+   "how": "same_question",
+   "picture_distance": 4,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-4-107",
+   "new_id": "4-109",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-108",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-4-109",
+   "new_id": "4-111",
+   "how": "fuzzy",
+   "score": 85.2,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-4-110",
+   "new_id": "4-112",
+   "how": "exact",
+   "picture_distance": 18,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-4-111",
+   "new_id": "4-113",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-112",
+   "new_id": "4-114",
+   "how": "exact",
+   "picture_distance": 16,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-4-113",
+   "new_id": "4-115",
+   "how": "fuzzy",
+   "score": 87.5,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-4-114",
+   "new_id": "4-116",
+   "how": "same_question",
+   "picture_distance": 2,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-4-115",
+   "new_id": "4-117",
+   "how": "same_question",
+   "picture_distance": 2,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-4-116",
+   "new_id": "4-118",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-117",
+   "new_id": "4-119",
+   "how": "same_question",
+   "picture_distance": 0,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-4-118",
+   "new_id": "4-120",
+   "how": "fuzzy",
+   "score": 90.9,
+   "picture_distance": 2,
+   "changes": [
+    "text",
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-4-119",
+   "new_id": "4-121",
+   "how": "fuzzy",
+   "score": 91.8,
+   "picture_distance": 4,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-4-120",
+   "new_id": "4-122",
+   "how": "fuzzy",
+   "score": 89.3,
+   "picture_distance": 2,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-4-121",
+   "new_id": "4-123",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-122",
+   "new_id": "4-124",
+   "how": "fuzzy",
+   "score": 88.0,
+   "picture_distance": 10,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-4-123",
+   "new_id": "4-125",
+   "how": "same_question",
+   "picture_distance": 2,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-4-124",
+   "new_id": "4-126",
+   "how": "fuzzy",
+   "score": 89.4,
+   "picture_distance": 6,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-4-125",
+   "new_id": "4-127",
+   "how": "exact",
+   "picture_distance": 14,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-4-126",
+   "new_id": "4-128",
+   "how": "same_question",
+   "picture_distance": 0,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-4-127",
+   "new_id": "4-129",
+   "how": "fuzzy",
+   "score": 88.5,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-4-128",
+   "new_id": "4-130",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-129",
+   "new_id": "4-131",
+   "how": "same_question",
+   "picture_distance": 0,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-4-130",
+   "new_id": "4-132",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-131",
+   "new_id": "4-133",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-132",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-4-133",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-4-134",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-4-135",
+   "new_id": "4-137",
+   "how": "same_question",
+   "picture_distance": 2,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-4-136",
+   "new_id": "4-138",
+   "how": "fuzzy",
+   "score": 93.8,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-4-137",
+   "new_id": "4-139",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-138",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-4-139",
+   "new_id": "4-141",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-140",
+   "new_id": "4-142",
+   "how": "fuzzy",
+   "score": 87.3,
+   "picture_distance": 2,
+   "changes": [
+    "text",
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-4-141",
+   "new_id": "4-143",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-142",
+   "new_id": "4-144",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-143",
+   "new_id": "4-145",
+   "how": "same_question",
+   "picture_distance": 2,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-4-144",
+   "new_id": "4-147",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-145",
+   "new_id": "4-148",
+   "how": "same_question",
+   "picture_distance": 4,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-4-146",
+   "new_id": "4-149",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-147",
+   "new_id": "4-150",
+   "how": "exact",
+   "picture_distance": 26,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-4-148",
+   "new_id": "4-151",
+   "how": "exact",
+   "picture_distance": 16,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-4-149",
+   "new_id": "4-152",
+   "how": "exact",
+   "picture_distance": 20,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-4-150",
+   "new_id": "4-153",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-151",
+   "new_id": "4-154",
+   "how": "fuzzy",
+   "score": 92.8,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-4-152",
+   "new_id": "4-155",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-153",
+   "new_id": "4-156",
+   "how": "fuzzy",
+   "score": 87.2,
+   "picture_distance": 4,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-4-154",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-4-155",
+   "new_id": "4-158",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-156",
+   "new_id": "4-159",
+   "how": "same_question",
+   "picture_distance": 4,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-4-157",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-4-158",
+   "new_id": "4-161",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-159",
+   "new_id": "4-162",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-160",
+   "new_id": "4-163",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-161",
+   "new_id": "4-164",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-162",
+   "new_id": "4-165",
+   "how": "fuzzy",
+   "score": 95.7,
+   "picture_distance": 0,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-4-163",
+   "new_id": "4-166",
+   "how": "same_question",
+   "picture_distance": 0,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-4-164",
+   "new_id": "4-167",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-165",
+   "new_id": "4-168",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-166",
+   "new_id": "4-169",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-167",
+   "new_id": "4-170",
+   "how": "same_question",
+   "picture_distance": 2,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-4-168",
+   "new_id": "4-171",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-169",
+   "new_id": "4-172",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-170",
+   "new_id": "4-173",
+   "how": "fuzzy",
+   "score": 85.3,
+   "picture_distance": 4,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-4-171",
+   "new_id": "4-174",
+   "how": "fuzzy",
+   "score": 99.6,
+   "picture_distance": 4,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-4-172",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-4-173",
+   "new_id": "4-176",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-174",
+   "new_id": "4-177",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-175",
+   "new_id": "4-178",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-176",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-5-1",
+   "new_id": "5-1",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-2",
+   "new_id": "5-2",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-3",
+   "new_id": "5-3",
+   "how": "exact",
+   "picture_distance": 22,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-5-4",
+   "new_id": "5-4",
+   "how": "exact",
+   "picture_distance": 14,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-5-5",
+   "new_id": "5-5",
+   "how": "fuzzy",
+   "score": 95.1,
+   "picture_distance": 18,
+   "changes": [
+    "text",
+    "options",
+    "picture",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-5-6",
+   "new_id": "5-6",
+   "how": "exact",
+   "picture_distance": 16,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-5-7",
+   "new_id": "5-7",
+   "how": "exact",
+   "picture_distance": 18,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-5-8",
+   "new_id": "5-8",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-9",
+   "new_id": "5-9",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-10",
+   "new_id": "5-10",
+   "how": "exact",
+   "picture_distance": 12,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-5-11",
+   "new_id": "5-11",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-12",
+   "new_id": "5-12",
+   "how": "exact",
+   "picture_distance": 8,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-13",
+   "new_id": "5-13",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-14",
+   "new_id": "5-14",
+   "how": "fuzzy",
+   "score": 95.0,
+   "picture_distance": 12,
+   "changes": [
+    "text",
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-5-15",
+   "new_id": "5-15",
+   "how": "exact",
+   "picture_distance": 12,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-5-16",
+   "new_id": "5-16",
+   "how": "exact",
+   "picture_distance": 8,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-17",
+   "new_id": "5-17",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-18",
+   "new_id": "5-18",
+   "how": "exact",
+   "picture_distance": 18,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-5-19",
+   "new_id": "5-19",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-20",
+   "new_id": "5-20",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-21",
+   "new_id": "5-21",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-22",
+   "new_id": "5-22",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-23",
+   "new_id": "5-23",
+   "how": "same_question",
+   "picture_distance": 6,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-5-24",
+   "new_id": "5-24",
+   "how": "exact",
+   "picture_distance": 8,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-25",
+   "new_id": "5-25",
+   "how": "exact",
+   "picture_distance": 10,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-26",
+   "new_id": "5-26",
+   "how": "exact",
+   "picture_distance": 10,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-27",
+   "new_id": "5-27",
+   "how": "exact",
+   "picture_distance": 12,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-5-28",
+   "new_id": "5-28",
+   "how": "fuzzy",
+   "score": 94.5,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-5-29",
+   "new_id": "5-29",
+   "how": "fuzzy",
+   "score": 98.2,
+   "picture_distance": 0,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-5-30",
+   "new_id": "5-30",
+   "how": "exact",
+   "picture_distance": 14,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-5-31",
+   "new_id": "5-31",
+   "how": "exact",
+   "picture_distance": 8,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-32",
+   "new_id": "5-32",
+   "how": "exact",
+   "picture_distance": 14,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-5-33",
+   "new_id": "5-33",
+   "how": "exact",
+   "picture_distance": 12,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-5-34",
+   "new_id": "5-34",
+   "how": "exact",
+   "picture_distance": 8,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-35",
+   "new_id": "5-35",
+   "how": "same_question",
+   "picture_distance": 10,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-5-36",
+   "new_id": "5-36",
+   "how": "exact",
+   "picture_distance": 10,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-37",
+   "new_id": "5-37",
+   "how": "exact",
+   "picture_distance": 22,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-5-38",
+   "new_id": "5-38",
+   "how": "exact",
+   "picture_distance": 8,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-39",
+   "new_id": "5-39",
+   "how": "same_question",
+   "picture_distance": 6,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-5-40",
+   "new_id": "5-40",
+   "how": "fuzzy",
+   "score": 96.6,
+   "picture_distance": 10,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-5-41",
+   "new_id": "5-41",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-42",
+   "new_id": "5-42",
+   "how": "exact",
+   "picture_distance": 14,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-5-43",
+   "new_id": "5-43",
+   "how": "exact",
+   "picture_distance": 16,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-5-44",
+   "new_id": "5-44",
+   "how": "exact",
+   "picture_distance": 18,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-5-45",
+   "new_id": "5-45",
+   "how": "exact",
+   "picture_distance": 10,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-46",
+   "new_id": "5-46",
+   "how": "exact",
+   "picture_distance": 14,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-5-47",
+   "new_id": "5-47",
+   "how": "exact",
+   "picture_distance": 12,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-5-48",
+   "new_id": "5-48",
+   "how": "fuzzy",
+   "score": 95.4,
+   "picture_distance": 2,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-5-49",
+   "new_id": "5-49",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-50",
+   "new_id": "5-50",
+   "how": "exact",
+   "picture_distance": 10,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-51",
+   "new_id": "5-51",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-52",
+   "new_id": "5-52",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-53",
+   "new_id": "5-53",
+   "how": "same_question",
+   "picture_distance": 2,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-5-54",
+   "new_id": "5-54",
+   "how": "fuzzy",
+   "score": 97.2,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-5-55",
+   "new_id": "5-55",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-56",
+   "new_id": "5-56",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-57",
+   "new_id": "5-57",
+   "how": "exact",
+   "picture_distance": 8,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-58",
+   "new_id": "5-58",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-59",
+   "new_id": "5-59",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-60",
+   "new_id": "5-60",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-61",
+   "new_id": "5-61",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-62",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-5-63",
+   "new_id": "5-63",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-64",
+   "new_id": "5-64",
+   "how": "same_question",
+   "picture_distance": 18,
+   "changes": [
+    "options",
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-5-65",
+   "new_id": "5-65",
+   "how": "same_question",
+   "picture_distance": 12,
+   "changes": [
+    "options",
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-5-66",
+   "new_id": "5-66",
+   "how": "same_question",
+   "picture_distance": 6,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-5-67",
+   "new_id": "5-67",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-68",
+   "new_id": "5-68",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-69",
+   "new_id": "5-69",
+   "how": "fuzzy",
+   "score": 88.0,
+   "picture_distance": 0,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-5-70",
+   "new_id": "5-70",
+   "how": "fuzzy",
+   "score": 98.6,
+   "picture_distance": 0,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-5-71",
+   "new_id": "5-71",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-72",
+   "new_id": "5-72",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-73",
+   "new_id": "5-73",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-74",
+   "new_id": "5-74",
+   "how": "same_question",
+   "picture_distance": 0,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-5-75",
+   "new_id": "5-75",
+   "how": "fuzzy",
+   "score": 96.7,
+   "picture_distance": 0,
+   "changes": [
+    "text",
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-5-76",
+   "new_id": "5-76",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-77",
+   "new_id": "5-77",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-78",
+   "new_id": "5-78",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-5-79",
+   "new_id": "5-79",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-80",
+   "new_id": "5-80",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-81",
+   "new_id": "5-81",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-82",
+   "new_id": "5-82",
+   "how": "exact",
+   "picture_distance": 20,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-5-83",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-5-84",
+   "new_id": "5-84",
+   "how": "fuzzy",
+   "score": 99.2,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-5-85",
+   "new_id": "5-85",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-86",
+   "new_id": "5-86",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-87",
+   "new_id": "5-87",
+   "how": "same_question",
+   "picture_distance": 12,
+   "changes": [
+    "options",
+    "picture",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-5-88",
+   "new_id": "5-88",
+   "how": "same_question",
+   "picture_distance": 2,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-5-89",
+   "new_id": "5-89",
+   "how": "same_question",
+   "picture_distance": 2,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-5-90",
+   "new_id": "5-90",
+   "how": "same_question",
+   "picture_distance": 2,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-5-91",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-5-92",
+   "new_id": "5-92",
+   "how": "exact",
+   "picture_distance": 22,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-5-93",
+   "new_id": "5-93",
+   "how": "same_question",
+   "picture_distance": 4,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-5-94",
+   "new_id": "5-94",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-95",
+   "new_id": "5-95",
+   "how": "same_question",
+   "picture_distance": 0,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-5-96",
+   "new_id": "5-96",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-97",
+   "new_id": "5-97",
+   "how": "fuzzy",
+   "score": 97.7,
+   "picture_distance": 6,
+   "changes": [
+    "text",
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-5-98",
+   "new_id": "5-98",
+   "how": "same_question",
+   "picture_distance": 2,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-5-99",
+   "new_id": "5-99",
+   "how": "same_question",
+   "picture_distance": 0,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-5-100",
+   "new_id": "5-100",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-101",
+   "new_id": "5-101",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-102",
+   "new_id": "5-102",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-103",
+   "new_id": "5-103",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-104",
+   "new_id": "5-104",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-105",
+   "new_id": "5-105",
+   "how": "exact",
+   "picture_distance": 18,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-5-106",
+   "new_id": "5-106",
+   "how": "same_question",
+   "picture_distance": 4,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-5-107",
+   "new_id": "5-107",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-108",
+   "new_id": "5-108",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-109",
+   "new_id": "5-109",
+   "how": "exact",
+   "picture_distance": 8,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-110",
+   "new_id": "5-110",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-111",
+   "new_id": "5-111",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-112",
+   "new_id": "5-112",
+   "how": "fuzzy",
+   "score": 85.7,
+   "picture_distance": 2,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-5-113",
+   "new_id": "5-113",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-114",
+   "new_id": "5-114",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-115",
+   "new_id": "5-115",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-116",
+   "new_id": "5-116",
+   "how": "same_question",
+   "picture_distance": 4,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-5-117",
+   "new_id": "5-117",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-118",
+   "new_id": "5-118",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-119",
+   "new_id": "5-119",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-120",
+   "new_id": "5-120",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-121",
+   "new_id": "5-121",
+   "how": "same_question",
+   "picture_distance": 4,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-5-122",
+   "new_id": "5-122",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-123",
+   "new_id": "5-123",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-124",
+   "new_id": "5-124",
+   "how": "same_question",
+   "picture_distance": 0,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-5-125",
+   "new_id": "5-125",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-126",
+   "new_id": "5-127",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-127",
+   "new_id": "5-128",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-128",
+   "new_id": "5-129",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-129",
+   "new_id": "5-130",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-130",
+   "new_id": "5-131",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-131",
+   "new_id": "5-132",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-5-132",
+   "new_id": "5-133",
+   "how": "fuzzy",
+   "score": 98.4,
+   "picture_distance": 2,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-5-133",
+   "new_id": "5-134",
+   "how": "fuzzy",
+   "score": 99.2,
+   "picture_distance": 0,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-5-134",
+   "new_id": "5-135",
+   "how": "fuzzy",
+   "score": 99.3,
+   "picture_distance": 0,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-5-135",
+   "new_id": "5-136",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-1",
+   "new_id": "6-1",
+   "how": "fuzzy",
+   "score": 95.9,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-6-2",
+   "new_id": "6-2",
+   "how": "exact",
+   "picture_distance": 20,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-6-3",
+   "new_id": "6-3",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-4",
+   "new_id": "6-4",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-5",
+   "new_id": "6-6",
+   "how": "fuzzy",
+   "score": 97.2,
+   "picture_distance": 8,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-6-6",
+   "new_id": "6-7",
+   "how": "exact",
+   "picture_distance": 12,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-6-7",
+   "new_id": "6-8",
+   "how": "exact",
+   "picture_distance": 16,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-6-8",
+   "new_id": "6-9",
+   "how": "exact",
+   "picture_distance": 10,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-9",
+   "new_id": "6-10",
+   "how": "exact",
+   "picture_distance": 14,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-6-10",
+   "new_id": "6-11",
+   "how": "exact",
+   "picture_distance": 14,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-6-11",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-6-12",
+   "new_id": "6-12",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-13",
+   "new_id": "6-13",
+   "how": "exact",
+   "picture_distance": 18,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-6-14",
+   "new_id": "6-14",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-15",
+   "new_id": "6-15",
+   "how": "exact",
+   "picture_distance": 16,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-6-16",
+   "new_id": "6-16",
+   "how": "same_question",
+   "picture_distance": 2,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-6-17",
+   "new_id": "6-17",
+   "how": "exact",
+   "picture_distance": 10,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-18",
+   "new_id": "6-18",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-19",
+   "new_id": "6-19",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-20",
+   "new_id": "6-20",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-21",
+   "new_id": "6-21",
+   "how": "exact",
+   "picture_distance": 16,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-6-22",
+   "new_id": "6-22",
+   "how": "exact",
+   "picture_distance": 16,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-6-23",
+   "new_id": "6-23",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-24",
+   "new_id": "6-24",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-25",
+   "new_id": "6-25",
+   "how": "fuzzy",
+   "score": 96.4,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-6-26",
+   "new_id": "6-26",
+   "how": "fuzzy",
+   "score": 94.7,
+   "picture_distance": 12,
+   "changes": [
+    "text",
+    "options",
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-6-27",
+   "new_id": "6-27",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-28",
+   "new_id": "6-28",
+   "how": "exact",
+   "picture_distance": 8,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-29",
+   "new_id": "6-29",
+   "how": "exact",
+   "picture_distance": 16,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-6-30",
+   "new_id": "6-30",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-31",
+   "new_id": "6-31",
+   "how": "fuzzy",
+   "score": 96.0,
+   "picture_distance": 14,
+   "changes": [
+    "text",
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-6-32",
+   "new_id": "6-32",
+   "how": "exact",
+   "picture_distance": 20,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-6-33",
+   "new_id": "6-33",
+   "how": "exact",
+   "picture_distance": 20,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-6-34",
+   "new_id": "6-34",
+   "how": "exact",
+   "picture_distance": 10,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-35",
+   "new_id": "6-35",
+   "how": "exact",
+   "picture_distance": 10,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-36",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-6-37",
+   "new_id": "6-36",
+   "how": "exact",
+   "picture_distance": 18,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-6-38",
+   "new_id": "6-37",
+   "how": "exact",
+   "picture_distance": 14,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-6-39",
+   "new_id": "6-38",
+   "how": "exact",
+   "picture_distance": 26,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-6-40",
+   "new_id": "6-39",
+   "how": "exact",
+   "picture_distance": 8,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-41",
+   "new_id": "6-40",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-42",
+   "new_id": "6-41",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-43",
+   "new_id": "6-42",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-44",
+   "new_id": "6-43",
+   "how": "exact",
+   "picture_distance": 12,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-6-45",
+   "new_id": "6-44",
+   "how": "exact",
+   "picture_distance": 8,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-46",
+   "new_id": "6-45",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-47",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-6-48",
+   "new_id": "6-46",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-49",
+   "new_id": "6-47",
+   "how": "same_question",
+   "picture_distance": 0,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-6-50",
+   "new_id": "6-48",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-51",
+   "new_id": "6-49",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-52",
+   "new_id": "6-50",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-53",
+   "new_id": "6-51",
+   "how": "same_question",
+   "picture_distance": 2,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-6-54",
+   "new_id": "6-52",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-55",
+   "new_id": "6-53",
+   "how": "same_question",
+   "picture_distance": 0,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-6-56",
+   "new_id": "6-54",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-57",
+   "new_id": "6-55",
+   "how": "exact",
+   "picture_distance": 10,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-58",
+   "new_id": "6-56",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-59",
+   "new_id": "6-57",
+   "how": "fuzzy",
+   "score": 99.0,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-6-60",
+   "new_id": "6-58",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-61",
+   "new_id": "6-59",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-62",
+   "new_id": "6-60",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-63",
+   "new_id": "6-61",
+   "how": "fuzzy",
+   "score": 96.2,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-6-64",
+   "new_id": "6-62",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-65",
+   "new_id": "6-63",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-66",
+   "new_id": "6-64",
+   "how": "exact",
+   "picture_distance": 22,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-6-67",
+   "new_id": "6-65",
+   "how": "same_question",
+   "picture_distance": 0,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-6-68",
+   "new_id": "6-66",
+   "how": "fuzzy",
+   "score": 95.4,
+   "picture_distance": null,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-6-69",
+   "new_id": "6-67",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-70",
+   "new_id": "6-68",
+   "how": "same_question",
+   "picture_distance": 12,
+   "changes": [
+    "options",
+    "picture",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-6-71",
+   "new_id": "6-69",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-72",
+   "new_id": "6-70",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-73",
+   "new_id": "6-71",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-74",
+   "new_id": "6-72",
+   "how": "fuzzy",
+   "score": 91.9,
+   "picture_distance": 2,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-6-75",
+   "new_id": "6-73",
+   "how": "fuzzy",
+   "score": 94.3,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-6-76",
+   "new_id": "6-74",
+   "how": "same_question",
+   "picture_distance": 0,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-6-77",
+   "new_id": "6-75",
+   "how": "same_question",
+   "picture_distance": 0,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-6-78",
+   "new_id": "6-76",
+   "how": "fuzzy",
+   "score": 92.9,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-6-79",
+   "new_id": "6-77",
+   "how": "fuzzy",
+   "score": 87.9,
+   "picture_distance": 0,
+   "changes": [
+    "text",
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-6-80",
+   "new_id": "6-79",
+   "how": "fuzzy",
+   "score": 89.4,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-6-81",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-6-82",
+   "new_id": "6-81",
+   "how": "fuzzy",
+   "score": 92.2,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-6-83",
+   "new_id": "6-82",
+   "how": "same_question",
+   "picture_distance": 0,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-6-84",
+   "new_id": "6-83",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-85",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-6-86",
+   "new_id": "6-86",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-87",
+   "new_id": "6-87",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-6-88",
+   "new_id": "6-88",
+   "how": "exact",
+   "picture_distance": 14,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-6-89",
+   "new_id": "6-89",
+   "how": "fuzzy",
+   "score": 99.3,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-6-90",
+   "new_id": "6-90",
+   "how": "fuzzy",
+   "score": 93.3,
+   "picture_distance": 0,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-6-91",
+   "new_id": "6-91",
+   "how": "fuzzy",
+   "score": 94.0,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-6-92",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-6-93",
+   "new_id": "6-93",
+   "how": "same_question",
+   "picture_distance": 2,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-6-94",
+   "new_id": "6-94",
+   "how": "fuzzy",
+   "score": 96.3,
+   "picture_distance": 14,
+   "changes": [
+    "text",
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-6-95",
+   "new_id": "6-95",
+   "how": "same_question",
+   "picture_distance": 14,
+   "changes": [
+    "options",
+    "picture",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-7-1",
+   "new_id": "7-1",
+   "how": "exact",
+   "picture_distance": 12,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-7-2",
+   "new_id": "7-2",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-3",
+   "new_id": "7-3",
+   "how": "exact",
+   "picture_distance": 11,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-7-4",
+   "new_id": "7-4",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-5",
+   "new_id": "7-5",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-6",
+   "new_id": "7-6",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-7",
+   "new_id": "7-7",
+   "how": "same_question",
+   "picture_distance": 2,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-7-8",
+   "new_id": "7-8",
+   "how": "same_question",
+   "picture_distance": 6,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-7-9",
+   "new_id": "7-9",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-10",
+   "new_id": "7-10",
+   "how": "same_question",
+   "picture_distance": 10,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-7-11",
+   "new_id": "7-11",
+   "how": "exact",
+   "picture_distance": 12,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-7-12",
+   "new_id": "7-12",
+   "how": "exact",
+   "picture_distance": 11,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-7-13",
+   "new_id": "7-13",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-14",
+   "new_id": "7-14",
+   "how": "exact",
+   "picture_distance": 32,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-7-15",
+   "new_id": "7-15",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-16",
+   "new_id": "7-16",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-17",
+   "new_id": "7-17",
+   "how": "exact",
+   "picture_distance": 10,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-18",
+   "new_id": "7-18",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-19",
+   "new_id": "7-19",
+   "how": "exact",
+   "picture_distance": 11,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-7-20",
+   "new_id": "7-20",
+   "how": "exact",
+   "picture_distance": 14,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-7-21",
+   "new_id": "7-21",
+   "how": "exact",
+   "picture_distance": 12,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-7-22",
+   "new_id": "7-22",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-23",
+   "new_id": "7-23",
+   "how": "same_question",
+   "picture_distance": 2,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-7-24",
+   "new_id": "7-24",
+   "how": "fuzzy",
+   "score": 99.0,
+   "picture_distance": 0,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-7-25",
+   "new_id": "7-25",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-26",
+   "new_id": "7-26",
+   "how": "same_question",
+   "picture_distance": 10,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-7-27",
+   "new_id": "7-27",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-28",
+   "new_id": "7-28",
+   "how": "exact",
+   "picture_distance": 16,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-7-29",
+   "new_id": "7-29",
+   "how": "exact",
+   "picture_distance": 20,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-7-30",
+   "new_id": "7-30",
+   "how": "fuzzy",
+   "score": 96.6,
+   "picture_distance": 38,
+   "changes": [
+    "text",
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-7-31",
+   "new_id": "7-31",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-32",
+   "new_id": "7-32",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-33",
+   "new_id": "7-33",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-34",
+   "new_id": "7-34",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-35",
+   "new_id": "7-35",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-36",
+   "new_id": "7-36",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-37",
+   "new_id": "7-37",
+   "how": "exact",
+   "picture_distance": 8,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-38",
+   "new_id": "7-38",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-39",
+   "new_id": "7-39",
+   "how": "exact",
+   "picture_distance": 30,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-7-40",
+   "new_id": "7-40",
+   "how": "fuzzy",
+   "score": 94.5,
+   "picture_distance": null,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-7-41",
+   "new_id": "7-41",
+   "how": "exact",
+   "picture_distance": 8,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-42",
+   "new_id": "7-42",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-43",
+   "new_id": "7-43",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-44",
+   "new_id": "7-44",
+   "how": "exact",
+   "picture_distance": 16,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-7-45",
+   "new_id": "7-45",
+   "how": "exact",
+   "picture_distance": 14,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-7-46",
+   "new_id": "7-46",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-47",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-7-48",
+   "new_id": "7-47",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-49",
+   "new_id": "7-48",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-50",
+   "new_id": "7-49",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-51",
+   "new_id": "7-50",
+   "how": "exact",
+   "picture_distance": 12,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-7-52",
+   "new_id": "7-51",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-53",
+   "new_id": "7-52",
+   "how": "exact",
+   "picture_distance": 10,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-54",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-7-55",
+   "new_id": "7-53",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-56",
+   "new_id": "7-54",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-57",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-7-58",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-7-59",
+   "new_id": "7-55",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-60",
+   "new_id": "7-56",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-61",
+   "new_id": "7-57",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-62",
+   "new_id": "7-58",
+   "how": "fuzzy",
+   "score": 97.4,
+   "picture_distance": 0,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-7-63",
+   "new_id": "7-59",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-64",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-7-65",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-7-66",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-7-67",
+   "new_id": "7-60",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-68",
+   "new_id": "7-61",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-69",
+   "new_id": "7-62",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-70",
+   "new_id": "7-63",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-71",
+   "new_id": "7-64",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-72",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-7-73",
+   "new_id": "7-66",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-74",
+   "new_id": "7-67",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-75",
+   "new_id": "7-68",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-76",
+   "new_id": "7-69",
+   "how": "same_question",
+   "picture_distance": 2,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-7-77",
+   "new_id": "7-70",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-78",
+   "new_id": "7-71",
+   "how": "exact",
+   "picture_distance": 14,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-7-79",
+   "new_id": "7-72",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-80",
+   "new_id": "7-73",
+   "how": "exact",
+   "picture_distance": 14,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-7-81",
+   "new_id": "7-74",
+   "how": "exact",
+   "picture_distance": 8,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-82",
+   "new_id": "7-75",
+   "how": "same_question",
+   "picture_distance": 2,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-7-83",
+   "new_id": "7-76",
+   "how": "fuzzy",
+   "score": 99.3,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-7-84",
+   "new_id": "7-78",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-85",
+   "new_id": "7-79",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-86",
+   "new_id": "7-80",
+   "how": "exact",
+   "picture_distance": 16,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-7-87",
+   "new_id": "7-81",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-88",
+   "new_id": "7-82",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-89",
+   "new_id": "7-83",
+   "how": "exact",
+   "picture_distance": 16,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-7-90",
+   "new_id": "7-84",
+   "how": "fuzzy",
+   "score": 98.5,
+   "picture_distance": 10,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-7-91",
+   "new_id": "7-85",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-92",
+   "new_id": "7-86",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-93",
+   "new_id": "7-87",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-94",
+   "new_id": "7-88",
+   "how": "exact",
+   "picture_distance": 12,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-7-95",
+   "new_id": "7-89",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-96",
+   "new_id": "7-90",
+   "how": "exact",
+   "picture_distance": 22,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-7-97",
+   "new_id": "7-91",
+   "how": "fuzzy",
+   "score": 96.3,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-7-98",
+   "new_id": "7-92",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-99",
+   "new_id": "7-93",
+   "how": "exact",
+   "picture_distance": 10,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-100",
+   "new_id": "7-94",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-101",
+   "new_id": "7-95",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-102",
+   "new_id": "7-96",
+   "how": "fuzzy",
+   "score": 96.8,
+   "picture_distance": 18,
+   "changes": [
+    "text",
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-7-103",
+   "new_id": "7-97",
+   "how": "fuzzy",
+   "score": 96.5,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-7-104",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-7-105",
+   "new_id": "7-99",
+   "how": "fuzzy",
+   "score": 98.3,
+   "picture_distance": 8,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-7-106",
+   "new_id": "7-100",
+   "how": "fuzzy",
+   "score": 99.3,
+   "picture_distance": 8,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-7-107",
+   "new_id": "7-101",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-108",
+   "new_id": "7-102",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-109",
+   "new_id": "7-103",
+   "how": "same_question",
+   "picture_distance": 4,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-7-110",
+   "new_id": "7-104",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-111",
+   "new_id": "7-105",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-112",
+   "new_id": "7-106",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-113",
+   "new_id": "7-107",
+   "how": "fuzzy",
+   "score": 94.5,
+   "picture_distance": 24,
+   "changes": [
+    "text",
+    "options",
+    "picture",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-7-114",
+   "new_id": "7-108",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-115",
+   "new_id": "7-110",
+   "how": "fuzzy",
+   "score": 99.5,
+   "picture_distance": 4,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-7-116",
+   "new_id": "7-111",
+   "how": "exact",
+   "picture_distance": 22,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-7-117",
+   "new_id": "7-112",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-118",
+   "new_id": "7-113",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-119",
+   "new_id": "7-114",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-120",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-7-121",
+   "new_id": "7-116",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-122",
+   "new_id": "7-117",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-123",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-7-124",
+   "new_id": "7-119",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-125",
+   "new_id": "7-120",
+   "how": "same_question",
+   "picture_distance": 0,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-7-126",
+   "new_id": "7-121",
+   "how": "fuzzy",
+   "score": 87.0,
+   "picture_distance": 2,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-7-127",
+   "new_id": "7-122",
+   "how": "fuzzy",
+   "score": 94.3,
+   "picture_distance": 14,
+   "changes": [
+    "text",
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-7-128",
+   "new_id": "7-123",
+   "how": "fuzzy",
+   "score": 92.0,
+   "picture_distance": 0,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-7-129",
+   "new_id": "7-124",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-130",
+   "new_id": "7-125",
+   "how": "fuzzy",
+   "score": 99.4,
+   "picture_distance": 16,
+   "changes": [
+    "text",
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-7-131",
+   "new_id": "7-126",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-132",
+   "new_id": "7-127",
+   "how": "same_question",
+   "picture_distance": 18,
+   "changes": [
+    "options",
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-7-133",
+   "new_id": "7-128",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-7-134",
+   "new_id": "7-129",
+   "how": "exact",
+   "picture_distance": 20,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-8-1",
+   "new_id": "8-1",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-8-2",
+   "new_id": "8-2",
+   "how": "fuzzy",
+   "score": 99.6,
+   "picture_distance": null,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-8-3",
+   "new_id": "8-3",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-8-4",
+   "new_id": "8-4",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-8-5",
+   "new_id": "8-5",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-8-6",
+   "new_id": "8-6",
+   "how": "exact",
+   "picture_distance": 10,
+   "changes": []
+  },
+  {
+   "old_id": "old-8-7",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-8-8",
+   "new_id": "8-7",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-8-9",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-8-10",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-8-11",
+   "new_id": "8-8",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-8-12",
+   "new_id": "8-9",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-8-13",
+   "new_id": "8-10",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-8-14",
+   "new_id": "8-11",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-8-15",
+   "new_id": "8-12",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-8-16",
+   "new_id": "8-13",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-8-17",
+   "new_id": "8-14",
+   "how": "exact",
+   "picture_distance": 12,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-8-18",
+   "new_id": "8-15",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-8-19",
+   "new_id": "8-16",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-8-20",
+   "new_id": "8-17",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-8-21",
+   "new_id": "8-18",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-8-22",
+   "new_id": "8-19",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-8-23",
+   "new_id": "8-20",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-8-24",
+   "new_id": "8-21",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-8-25",
+   "new_id": "8-22",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-8-26",
+   "new_id": "8-23",
+   "how": "fuzzy",
+   "score": 94.8,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-8-27",
+   "new_id": "8-24",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-8-28",
+   "new_id": "8-25",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-8-29",
+   "new_id": "8-26",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-8-30",
+   "new_id": "8-27",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-8-31",
+   "new_id": "8-28",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-8-32",
+   "new_id": "8-29",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-8-33",
+   "new_id": "8-30",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-8-34",
+   "new_id": "8-31",
+   "how": "fuzzy",
+   "score": 95.7,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-8-35",
+   "new_id": "8-32",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-8-36",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-8-37",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-8-38",
+   "new_id": "8-33",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-8-39",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-8-40",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-8-41",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-8-42",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-8-43",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-8-44",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-8-45",
+   "new_id": "8-34",
+   "how": "fuzzy",
+   "score": 94.8,
+   "picture_distance": null,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-8-46",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-8-47",
+   "new_id": "8-35",
+   "how": "fuzzy",
+   "score": 99.7,
+   "picture_distance": null,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-8-48",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-8-49",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-8-50",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-8-51",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-8-52",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-8-53",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-8-54",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-8-55",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-8-56",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-8-57",
+   "new_id": "8-36",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-8-58",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-8-59",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-8-60",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-8-61",
+   "new_id": "8-37",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-8-62",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-8-63",
+   "new_id": "8-38",
+   "how": "fuzzy",
+   "score": 98.4,
+   "picture_distance": 8,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-8-64",
+   "new_id": "8-39",
+   "how": "fuzzy",
+   "score": 99.5,
+   "picture_distance": 12,
+   "changes": [
+    "text",
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-8-65",
+   "new_id": "8-40",
+   "how": "fuzzy",
+   "score": 89.4,
+   "picture_distance": null,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-8-66",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-8-67",
+   "new_id": "8-42",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-8-68",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-8-69",
+   "new_id": "8-44",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-8-70",
+   "new_id": "8-45",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-8-71",
+   "new_id": "8-46",
+   "how": "fuzzy",
+   "score": 86.7,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-8-72",
+   "new_id": "8-47",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-8-73",
+   "new_id": "8-48",
+   "how": "fuzzy",
+   "score": 94.6,
+   "picture_distance": null,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-8-74",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-8-75",
+   "new_id": "8-50",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-8-76",
+   "new_id": "8-51",
+   "how": "fuzzy",
+   "score": 94.0,
+   "picture_distance": null,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-8-77",
+   "new_id": "8-52",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-8-78",
+   "new_id": "8-53",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-8-79",
+   "new_id": "8-54",
+   "how": "fuzzy",
+   "score": 94.0,
+   "picture_distance": null,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-8-80",
+   "new_id": "8-55",
+   "how": "fuzzy",
+   "score": 94.6,
+   "picture_distance": null,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-9-1",
+   "new_id": "9-1",
+   "how": "fuzzy",
+   "score": 92.3,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-9-2",
+   "new_id": "9-2",
+   "how": "fuzzy",
+   "score": 91.9,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-9-3",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-9-4",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-9-5",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-9-6",
+   "new_id": "9-4",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-7",
+   "new_id": "9-5",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-9-8",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-9-9",
+   "new_id": "9-7",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-10",
+   "new_id": "9-8",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-11",
+   "new_id": "9-9",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-12",
+   "new_id": "9-10",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-13",
+   "new_id": "9-11",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-14",
+   "new_id": "9-12",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-15",
+   "new_id": "9-13",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-16",
+   "new_id": "9-14",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-17",
+   "new_id": "9-15",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-18",
+   "new_id": "9-16",
+   "how": "exact",
+   "picture_distance": 10,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-19",
+   "new_id": "9-17",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-20",
+   "new_id": "9-18",
+   "how": "same_question",
+   "picture_distance": 14,
+   "changes": [
+    "options",
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-9-21",
+   "new_id": "9-19",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-22",
+   "new_id": "9-20",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-23",
+   "new_id": "9-21",
+   "how": "exact",
+   "picture_distance": 12,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-9-24",
+   "new_id": "9-22",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-25",
+   "new_id": "9-23",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-26",
+   "new_id": "9-24",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-27",
+   "new_id": "9-25",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-9-28",
+   "new_id": "9-26",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-29",
+   "new_id": "9-27",
+   "how": "exact",
+   "picture_distance": 16,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-9-30",
+   "new_id": "9-28",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-31",
+   "new_id": "9-29",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-32",
+   "new_id": "9-30",
+   "how": "exact",
+   "picture_distance": 12,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-9-33",
+   "new_id": "9-31",
+   "how": "same_question",
+   "picture_distance": 18,
+   "changes": [
+    "options",
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-9-34",
+   "new_id": "9-32",
+   "how": "exact",
+   "picture_distance": 14,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-9-35",
+   "new_id": "9-33",
+   "how": "exact",
+   "picture_distance": 24,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-9-36",
+   "new_id": "9-34",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-37",
+   "new_id": "9-35",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-38",
+   "new_id": "9-36",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-9-39",
+   "new_id": "9-37",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-40",
+   "new_id": "9-38",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-41",
+   "new_id": "9-39",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-42",
+   "new_id": "9-40",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-43",
+   "new_id": "9-41",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-44",
+   "new_id": "9-42",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-45",
+   "new_id": "9-43",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-46",
+   "new_id": "9-44",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-47",
+   "new_id": "9-45",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-48",
+   "new_id": "9-46",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-49",
+   "new_id": "9-47",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-50",
+   "new_id": "9-48",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-51",
+   "new_id": "9-49",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-52",
+   "new_id": "9-50",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-53",
+   "new_id": "9-51",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-54",
+   "new_id": "9-52",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-55",
+   "new_id": "9-53",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-9-56",
+   "new_id": "9-54",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-57",
+   "new_id": "9-55",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-58",
+   "new_id": "9-56",
+   "how": "fuzzy",
+   "score": 99.8,
+   "picture_distance": null,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-9-59",
+   "new_id": "9-57",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-60",
+   "new_id": "9-58",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-61",
+   "new_id": "9-59",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-62",
+   "new_id": "9-60",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-63",
+   "new_id": "9-61",
+   "how": "fuzzy",
+   "score": 94.2,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-9-64",
+   "new_id": "9-62",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-65",
+   "new_id": "9-63",
+   "how": "exact",
+   "picture_distance": 8,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-66",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-9-67",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-9-68",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-9-69",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-9-70",
+   "new_id": "9-64",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-71",
+   "new_id": "9-65",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-72",
+   "new_id": "9-66",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-73",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-9-74",
+   "new_id": "9-67",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-9-75",
+   "new_id": "9-68",
+   "how": "same_question",
+   "picture_distance": 2,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-9-76",
+   "new_id": "9-69",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-77",
+   "new_id": "9-70",
+   "how": "same_question",
+   "picture_distance": 2,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-9-78",
+   "new_id": "9-71",
+   "how": "same_question",
+   "picture_distance": 0,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-9-79",
+   "new_id": "9-72",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-80",
+   "new_id": "9-73",
+   "how": "exact",
+   "picture_distance": 10,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-81",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-9-82",
+   "new_id": "9-74",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-83",
+   "new_id": "9-75",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-84",
+   "new_id": "9-76",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-85",
+   "new_id": "9-77",
+   "how": "exact",
+   "picture_distance": 16,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-9-86",
+   "new_id": "9-78",
+   "how": "exact",
+   "picture_distance": 16,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-9-87",
+   "new_id": "9-79",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-88",
+   "new_id": "9-80",
+   "how": "exact",
+   "picture_distance": 20,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-9-89",
+   "new_id": "9-81",
+   "how": "same_question",
+   "picture_distance": 4,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-9-90",
+   "new_id": "9-82",
+   "how": "same_question",
+   "picture_distance": 10,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-9-91",
+   "new_id": "9-83",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-92",
+   "new_id": "9-84",
+   "how": "exact",
+   "picture_distance": 8,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-93",
+   "new_id": "9-85",
+   "how": "fuzzy",
+   "score": 97.5,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-9-94",
+   "new_id": "9-86",
+   "how": "exact",
+   "picture_distance": 14,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-9-95",
+   "new_id": "9-87",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-96",
+   "new_id": "9-88",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-97",
+   "new_id": "9-89",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-98",
+   "new_id": "9-90",
+   "how": "same_question",
+   "picture_distance": 16,
+   "changes": [
+    "options",
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-9-99",
+   "new_id": "9-91",
+   "how": "fuzzy",
+   "score": 87.0,
+   "picture_distance": 24,
+   "changes": [
+    "text",
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-9-100",
+   "new_id": "9-92",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-101",
+   "new_id": "9-93",
+   "how": "exact",
+   "picture_distance": 22,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-9-102",
+   "new_id": "9-94",
+   "how": "exact",
+   "picture_distance": 10,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-103",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-9-104",
+   "new_id": "9-96",
+   "how": "fuzzy",
+   "score": 99.1,
+   "picture_distance": 12,
+   "changes": [
+    "text",
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-9-105",
+   "new_id": "9-97",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-106",
+   "new_id": "9-99",
+   "how": "same_question",
+   "picture_distance": 6,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-9-107",
+   "new_id": "9-100",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-108",
+   "new_id": "9-101",
+   "how": "fuzzy",
+   "score": 99.4,
+   "picture_distance": 16,
+   "changes": [
+    "text",
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-9-109",
+   "new_id": "9-102",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-110",
+   "new_id": "9-103",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-111",
+   "new_id": "9-104",
+   "how": "same_question",
+   "picture_distance": 10,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-9-112",
+   "new_id": "9-105",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-113",
+   "new_id": "9-106",
+   "how": "exact",
+   "picture_distance": 30,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-9-114",
+   "new_id": "9-107",
+   "how": "exact",
+   "picture_distance": 26,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-9-115",
+   "new_id": "9-108",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-116",
+   "new_id": "9-109",
+   "how": "same_question",
+   "picture_distance": 4,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-9-117",
+   "new_id": "9-110",
+   "how": "exact",
+   "picture_distance": 18,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-9-118",
+   "new_id": "9-111",
+   "how": "fuzzy",
+   "score": 96.7,
+   "picture_distance": 26,
+   "changes": [
+    "text",
+    "options",
+    "picture",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-9-119",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-9-120",
+   "new_id": "9-113",
+   "how": "exact",
+   "picture_distance": 24,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-9-121",
+   "new_id": "9-114",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-122",
+   "new_id": "9-115",
+   "how": "fuzzy",
+   "score": 87.0,
+   "picture_distance": 4,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-9-123",
+   "new_id": "9-116",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-124",
+   "new_id": "9-117",
+   "how": "exact",
+   "picture_distance": 4,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-125",
+   "new_id": "9-118",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-9-126",
+   "new_id": "9-119",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-10-1",
+   "new_id": "10-1",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-10-2",
+   "new_id": "10-2",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-10-3",
+   "new_id": "10-3",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-10-4",
+   "new_id": "10-4",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-10-5",
+   "new_id": "10-5",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-10-6",
+   "new_id": "10-6",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-10-7",
+   "new_id": "10-7",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-10-8",
+   "new_id": "10-8",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-10-9",
+   "new_id": "10-9",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-10-10",
+   "new_id": "10-10",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-10-11",
+   "new_id": "10-11",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-10-12",
+   "new_id": "10-12",
+   "how": "fuzzy",
+   "score": 99.6,
+   "picture_distance": null,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-10-13",
+   "new_id": "10-13",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-10-14",
+   "new_id": "10-14",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-10-15",
+   "new_id": "10-15",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-10-16",
+   "new_id": "10-16",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-10-17",
+   "new_id": "10-17",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-10-18",
+   "new_id": "10-18",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-10-19",
+   "new_id": "10-19",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-10-20",
+   "new_id": "10-20",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-10-21",
+   "new_id": "10-21",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-10-22",
+   "new_id": "10-22",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-10-23",
+   "new_id": "10-23",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-10-24",
+   "new_id": "10-24",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-10-25",
+   "new_id": "10-25",
+   "how": "fuzzy",
+   "score": 97.4,
+   "picture_distance": null,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-10-26",
+   "new_id": "10-26",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-10-27",
+   "new_id": "10-27",
+   "how": "fuzzy",
+   "score": 87.1,
+   "picture_distance": null,
+   "changes": [
+    "text",
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-10-28",
+   "new_id": "10-28",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-10-29",
+   "new_id": "10-29",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-10-30",
+   "new_id": "10-30",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-10-31",
+   "new_id": "10-31",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-10-32",
+   "new_id": "10-32",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-10-33",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-10-34",
+   "new_id": null,
+   "how": "none",
+   "changes": []
+  },
+  {
+   "old_id": "old-10-35",
+   "new_id": "10-35",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-10-36",
+   "new_id": "10-36",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-10-37",
+   "new_id": "10-37",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-10-38",
+   "new_id": "10-38",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-10-39",
+   "new_id": "10-39",
+   "how": "fuzzy",
+   "score": 95.7,
+   "picture_distance": null,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-10-40",
+   "new_id": "10-40",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-10-41",
+   "new_id": "10-41",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-10-42",
+   "new_id": "10-42",
+   "how": "fuzzy",
+   "score": 86.8,
+   "picture_distance": null,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-10-43",
+   "new_id": "10-43",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-10-44",
+   "new_id": "10-44",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-10-45",
+   "new_id": "10-45",
+   "how": "fuzzy",
+   "score": 93.1,
+   "picture_distance": null,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-10-46",
+   "new_id": "10-46",
+   "how": "fuzzy",
+   "score": 94.4,
+   "picture_distance": null,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-10-47",
+   "new_id": "10-47",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options"
+   ]
+  },
+  {
+   "old_id": "old-10-48",
+   "new_id": "10-48",
+   "how": "fuzzy",
+   "score": 89.6,
+   "picture_distance": null,
+   "changes": [
+    "text"
+   ]
+  },
+  {
+   "old_id": "old-10-49",
+   "new_id": "10-49",
+   "how": "same_question",
+   "picture_distance": null,
+   "changes": [
+    "options",
+    "answer"
+   ]
+  },
+  {
+   "old_id": "old-10-50",
+   "new_id": "10-50",
+   "how": "exact",
+   "picture_distance": null,
+   "changes": []
+  },
+  {
+   "old_id": "old-10-51",
+   "new_id": "10-51",
+   "how": "fuzzy",
+   "score": 94.6,
+   "picture_distance": null,
+   "changes": [
+    "text"
+   ]
+  }
+ ]
+}

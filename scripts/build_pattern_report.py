@@ -99,6 +99,18 @@ def main() -> None:
                          f"<details><summary>The {len(g3['not_prohibiting'])} conditions that do <i>not</i> prohibit "
                          f"(everything else does)</summary><ul>{ok_list}</ul></details>"))
 
+    # 1c. never pick
+    rows = [[html.escape(x["pattern"]), x["options"], x["right"], ", ".join(x["questions"][:12]) + (" ..." if len(x["questions"]) > 12 else "")]
+            for x in r["never_pick"]]
+    parts.append(section("never", "Never pick these options",
+                         f"<p>Options with these words are never the answer anywhere in the pool "
+                         f"({sum(x['options'] for x in r['never_pick'])} options, "
+                         f"{sum(x['right'] for x in r['never_pick'])} right). Cross them out first; the analysis "
+                         "guesses among the remaining options. The \"30 km/h\" one is the best story: the pool keeps "
+                         "offering \"overtaking is allowed if the slow vehicle goes under 30 km/h\", an exemption "
+                         "that does not exist.</p>"
+                         + table(["Option contains", "Options", "Right", "Questions"], rows, [34, 10, 8, 48])))
+
     # 2. pass chance by share known
     kf = r["know_fraction"]
     fig = go.Figure(go.Bar(x=[f"{x['known_share']:.0%}" for x in kf], y=[x["p_pass"] * 100 for x in kf],
@@ -181,6 +193,34 @@ def main() -> None:
                          "guessing (lift 0.99). The word model weighs every option word and is not something a "
                          "person can memorize; its top words are content (\"70կմ\", \"վազանց\"), i.e. it "
                          "memorizes, it does not find tricks.</p>"))
+
+    # 7b. out of sample
+    oos = r["out_of_sample"]
+    rows = [[html.escape(x["description"]) + (" <i>(needs PDF order)</i>" if x["needs_option_order"] else ""),
+             x["fires"], x["right"], x["expected"], f"{x['p_value']:.2g}"]
+            for x in sorted(oos["rules"], key=lambda x: x["p_value"])]
+    parts.append(section("unseen", "Test on questions nobody had seen",
+                         f"<p>The {oos['questions']} questions of the 2022 pool that were removed in 2026 were never "
+                         "read while the rules were found, so they are a true out-of-sample test (small). "
+                         "Consistent with the main pool: \"both / all\", the only \"Արգելվում\" option and "
+                         "\"3 options: the last\". The echo rule does not hold up. With this many rules, one or two "
+                         "p-values under 0.05 are expected by chance (\"shortest\" here: nothing in the main pool). "
+                         f"Never-pick options among them: {oos['never_pick']['options']}, right "
+                         f"{oos['never_pick']['right']}.</p>"
+                         + table(["Rule", "Fires", "Right", "Guessing gets", "p"], rows, [52, 12, 12, 12, 12])))
+
+    # 7c. old vs new pool
+    diff = json.loads((ROOT / "results" / "pool_diff.json").read_text(encoding="utf-8"))["summary"]
+    parts.append(section("oldnew", "Old pool (2022, online until autumn 2026) vs new pool",
+                         f"<p>Old: {diff['old_questions']} questions, new: {diff['new_questions']}. Matched one to one: "
+                         f"{diff['matched']} ({diff['identical']} identical). Removed: {len(diff['old_only'])} "
+                         f"(mostly bus, truck and tractor questions that moved to the D/T pool); added: "
+                         f"{len(diff['new_only'])} (most in group 2, the law). Of the 660 questions with unchanged "
+                         "wording and options, none changed its answer. Real answer changes among the reworded ones, "
+                         "found by reading every flagged pair: <b>1-34 and 1-35</b> (3+ lanes one way: the far-left "
+                         "lane is now allowed both for overtaking and for turning, the old key said turning only) and "
+                         "<b>2-75</b> (the right to drive starts with the licence card or its new digital version: "
+                         "\"both\").</p>"))
 
     # 8. method
     sec = r["pool"]["sections"]

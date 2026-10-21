@@ -1,108 +1,232 @@
-# Answer shortcuts in the Armenian theory exam (A/B/C pool, 1,050 questions)
+# Shortcuts and logic in the Armenian theory exam (A/B/C pool, 1,050 questions)
 
-Analysis run 2026-10-21 on `data/questions.json`. Raw results: `results/patterns.json`. Interactive
-report: `reports/patterns_report.html`. Rebuild: `uv run python scripts/mine_patterns.py` (~30-45 s),
-then `uv run python scripts/build_pattern_report.py` (~2 s, after the first run ~13 s).
+Analysis of `data/questions.json`, 2026-10-21. Raw results: `results/patterns.json`. Interactive report:
+`reports/patterns_report.html`. Rebuild: `uv run python scripts/build_old_pool.py` (~20 s), then
+`uv run python scripts/mine_patterns.py` (~45 s), then `uv run python scripts/build_pattern_report.py`
+(~2 s). Every group was also read question by question (notes in `_knowledge/shortcut_hunt_*.md`,
+whose fact tables were checked in code there); every statistical count below was re-checked
+independently, and the rules marked so are in `scripts/mine_patterns.py`.
 
 ## Verdict
 
-**No trick gets anywhere near a pass. You have to learn the questions.** The exam needs 18 of 20.
-Guessing everything scores 7.2 of 20 on average, the best rule list 8.1.
+**No trick gets near a pass; the exam needs 18 of 20. But the pool is full of logic that turns
+memorizing into understanding.** Guessing everything scores 7.2 of 20; the full rule list below 9.0.
 
 Answers to learn (in the best order) for a given pass chance, by what you do with the rest:
 
 | What you do with the questions you did not learn | Score if you learn nothing | 50% | 80% | 90% | 95% | 99% |
 |---|---|---|---|---|---|---|
 | Guess | 7.2 / 20 | 763 | 872 | 920 | 952 | 997 |
+| Rules + never-pick list, guess the rest (**works with shuffled options**) | 9.0 / 20 | 542 | 634 | 682 | 714 | 759 |
 | Always the usual position, learn its exceptions (needs PDF option order) | 7.7 / 20 | 498 | 558 | 582 | 598 | 620 |
-| Rule list + usual position, learn the exceptions (needs PDF option order) | 8.1 / 20 | 476 | 536 | 560 | 576 | 598 |
-| Content rules, guess the rest (works if options are shuffled) | 7.9 / 20 | 646 | 745 | 793 | 825 | 870 |
+| Rules + usual position, learn the exceptions (needs PDF option order) | 9.0 / 20 | 433 | 493 | 517 | 533 | 555 |
 
-Read the middle rows with care. Almost all of their saving is not a pattern: **any** fixed choice
-(even "always option 1") is right on about 1 in k questions, so if you learn exactly the questions
-where your fixed choice fails, the rest answer themselves. The real patterns add only **22 answers**
-of saving at 95% on top of that (598 -> 576). The trick also needs two things that may not hold:
-the computer test must show the options in PDF order (not verified), and you must reliably know
-which questions you learned as exceptions. If the options are shuffled, the honest row is the last:
-the content rules save about 120 answers compared with guessing.
+- The honest row is the second: about **240 fewer answers to learn** than guessing at 95%.
+- The last two rows depend on a trick that works for **any** fixed rule: a fixed pick is right on about
+  1 in k questions for free, so you learn only the questions where it fails. That needs the computer
+  test to show options in PDF order (not verified) and you to reliably know which questions you
+  learned. The real patterns add 65 answers of saving on top of it (598 -> 533).
+- If you know a share of every section and guess the rest: 80% known -> 52% pass, 90% -> 87%,
+  95% -> 97.5%, 98% -> 99.8%.
 
-The simpler way to see it: if you know a share of every section and guess the rest,
+## The best finds
 
-| Share known | 80% | 85% | 90% | 92% | 94% | 95% | 96% | 98% |
-|---|---|---|---|---|---|---|---|---|
-| P(pass) | 52% | 70% | 87% | 92% | 96% | 97.5% | 98.6% | 99.8% |
+| # | Find | Evidence |
+|---|---|---|
+| 1 | Group 3: every condition with **"կառուցվածքով նախատեսված / չնախատեսված"** prohibits driving; only 28 conditions do not | 24 of 24; Hayk's rule |
+| 2 | **Never pick** an option with "30 կմ/ժ", "վարորդի հայեցողությամբ", a train condition, "Միայն հետիոտ...", or a first-aid folk remedy | 55 options, 0 right |
+| 3 | In a **text** question, the **"both / all of the above"** option | 54 of 97 (chance 31); 13 of 22 on unseen questions |
+| 4 | The only option starting **"Արգելվում"** (prohibited); in group 9 "allowed?" questions 16 of 21 | 52 of 90 (chance 35); 13 of 20 unseen |
+| 5 | **First aid**: the longest option (the complete procedure) | 31 of 50 (chance 16) |
+| 6 | **Law definitions** ("... է համարվում"): the longest option (the full legal wording) | 23 of 28 (chance 13) |
+| 7 | A bare **"Պարտավոր է / Պարտադիր է"** (it is obligatory) | 23 of 29 (chance 14) |
+| 8 | **Yield lists**: the option naming pedestrians together with someone else; "only pedestrians" never | 10 of 10; 0 of 8 |
+| 9 | **"Must you yield to the tram?"**: yes | 7 of 7 |
+| 10 | **Group 8, five numbers**: the middle one (the speed and distance questions) | 7 of 7 |
+| 11 | **Fact sheets**: about 30 facts per group answer 25-75% of each group | 0 contradictions, except the 3 key errors below |
+| 12 | **Three errors in the official key** (horn, railway parking twice) and **3 answers that changed** in October 2026 | checked against the law |
 
-## Group 3: the one rule that is never wrong
+## Never pick
 
-Group 3 (faults and conditions that prohibit operating a vehicle; 2 of every 20 exam questions) has a
-fixed shape: "operating is prohibited if: A / B / both" (3 questions: A / B / C / all). So each
-question says, condition by condition, whether it prohibits. Scoring "is this option the answer"
-hides that: the fuel-cap fault is a wrong option in 3-48 (answer: both) and the right one in 3-58,
-yet it prohibits in both.
+| Option contains | Options | Right |
+|---|---|---|
+| "30 կմ" (30 km/h): the pool keeps offering "overtaking is allowed if the slow vehicle goes under 30 km/h", an exemption that does not exist (9-30 even puts it in the question; the answer is still "prohibited") | 18 | 0 |
+| "վարորդի հայեցողությամբ" (at the driver's discretion) | 6 | 0 |
+| a train condition ("գնացք": "if no train is coming") | 6 | 0 |
+| "Միայն հետիոտ..." (only pedestrians) | 8 | 0 |
+| first-aid folk remedies: alcohol, iodine, ointment, ash, rubbing with snow, slapping, valerian | 11 | 0 |
 
-- **Prohibited is the default:** 87 of the 121 listed conditions prohibit (72%); "both/all" is the
-  answer in 27 of 59 questions.
-- **Every condition with "կառուցվածքով նախատեսված / չնախատեսված" (provided / not provided by the
-  design) prohibits: 24 of 24.** It appears in 23 questions; there the answer is never the other
-  single condition (0 of 23): it is "both" 12 times and that condition 11 times. (Hayk remembered
-  this rule; the option-level analysis above had missed it.)
-- **Only 28 distinct conditions do not prohibit;** everything else does. Learning that list plus the
-  rule above answers every group-3 question. They fall into a few families: lights of a normal colour
-  in their normal place (front: white/yellow/orange turn signals, yellow fog lights, white reflectors;
-  rear: red or orange turn signals, red reflectors, white reversing lights); tyre tread at or above the
-  minimum (car 1.6 mm, truck 1.4-1.6 mm, 2.2 mm); fuel and coolant-temperature gauges, interior
-  lights; the engine running unevenly or overheating; dirty bumpers; signs that are not required (the
-  "doctor" sign, the warning triangle on a motorcycle without sidecar). The full list is in the report
-  and in `results/patterns.json` (`group3.not_prohibiting`).
-- **Contradiction in the official key:** 3-15, 3-35 and 3-49 say a broken horn prohibits driving;
-  3-42 (answer 1) says it does not. The Armenian of 3-42 says "ձայնարկիչ" instead of "ձայնային
-  ազդանշանի սարք", but the official English has "The horn does not operate" in all four. Learn 3-42 as
-  an exception: answer 1.
+Close to never (picture groups, read by hand): a "Yes, if / Permitted only ..." option built on passing,
+a hand signal, beacons, no oncoming traffic, no public transport, daylight, 3.5 t, the sidewalk or
+residents: 0 of 13 (my stricter regex; 0 of 24 in the reading notes). Two conditions are usually right
+instead: "if visibility is at least 100 m" (U-turn, 5 of 6; the miss is on a bridge) and "if it does not
+hinder ..." outside backing questions (5 of 6).
 
-## What carries a (small) signal
+## Group by group
 
-Scored against each question's own guess chance (1/k; options vary from 2 to 5). Whole pool:
+How much each group is worth: a question of group 3 is drawn with 3.4%, group 2 with 2.4%, group 10
+with 2.0%, a traffic-rule question (groups 1, 4-9) with about 1.7%. Learn in that order.
 
-| Rule | Fires | Right | Guessing gets | Lift | Survives Bonferroni (14 rules) |
-|---|---|---|---|---|---|
-| The only option starting "Արգելվում" (prohibited) | 90 | 52 | 35.4 | 1.47 | yes |
-| The only option without "միայն" when 2+ others have it | 79 | 38 | 25.2 | 1.51 | yes |
-| 3 options: the last (needs PDF order) | 568 | 229 | 189.3 | 1.21 | yes |
-| The only "all / both" option (բոլոր, երկու դեպքում ...) | 154 | 62 | 47.4 | 1.31 | no (p 0.007) |
-| 5 options: the third (needs PDF order) | 49 | 18 | 9.8 | 1.84 | no (p 0.005) |
-| The longest option | 901 | 354 | 334.2 | 1.06 | no |
+### Group 3 - faults that prohibit driving (59 q, 2 per test)
 
-Nothing else beat guessing: the shortest option, "Թույլատրվում" (permitted), the largest/smallest/
-middle number, 2-option position (exactly 50/50: 144 vs 143.5). Options with "միայն" (only) are right
-24% of the time against 32% if average: a weak hint to look twice, not a rule.
+Every question reads "operating is prohibited if: A / B / both" (3 have A / B / C / all), so each
+question says, condition by condition, whether it prohibits. Scoring "is this option the answer" hides
+that: the fuel-cap fault is a wrong option in 3-48 (answer: both) and the right one in 3-58.
 
-Held out (5-fold cross-validation, folds grouped by wording so that twin questions never sit on
-both sides): the rule list fires on 393 questions and gets 172 right where guessing gets 124 (lift
-1.39). The usual-position fallback is no better than guessing held out (253 vs 255). A model that
-weighs every option word does 395 vs 325, but its top words are content ("70կմ", "վազանց"): it
-memorizes, it does not find tricks.
+- **Prohibited is the default:** 87 of 121 listed conditions prohibit; "both/all" is the answer in
+  27 of 59.
+- **"Provided by the design" always prohibits: 24 of 24.** Where it appears (23 questions) the answer
+  is never the other single condition: "both" 12 times, that condition 11 times. The law agrees: annex 2
+  of Decision 955-Ն lists missing or broken design equipment.
+- **Only 28 conditions do not prohibit** (full list in the report): lights of a normal colour in their
+  normal place (front: white, yellow or orange turn signals, yellow fog lights, white reflectors; rear:
+  red or orange turn signals, red reflectors, white reversing lights); tread at or above the minimum
+  (car 1.6 mm, truck 1.4-1.6 mm); fuel and coolant-temperature gauges, interior lights; engine running
+  unevenly or overheating; dirty bumpers; signs that are not required ("doctor", the triangle on a
+  motorcycle without sidecar); curtained rear windows when both side mirrors are there.
+- Lights that **do** prohibit: yellow reflectors front or rear, red reversing lights, white rear turn
+  signals, dirty or missing lamps, rear fog lamps wired to the brake lights.
 
-## What to learn first
+### Group 2 - Road Traffic Safety Law (82 q, 2 per test)
 
-Each test draws by section (Decision 385-Ն, point 17), so a question's chance of being on your test
-depends on its group:
+- **Facts** (27 questions): licence ages A/B/C **18**, BE **19**, D/D1 for conscripts **19**,
+  learner **17**; international licence A/B at **18**, C at **21** (so BC and BE/CE holders wait until
+  21); trailer on a B licence up to **750 kg**; register a bought vehicle within **15 days**; national
+  licence **10 years**, international **3 years**, a foreign licence valid **3 months** after entry; a stop
+  is up to **5 min**; insufficient visibility under **300 m**; moped up to **50 cc** / **50 km/h**;
+  passenger car up to **8** seats.
+- **Definitions: the longest option** (23 of 28). The law defines by exclusion: the right definition
+  says "բացառությամբ" (except), the wrong twin "այդ թվում" / "ինչպես նաեւ" (including / as well as).
+  Exceptions to learn: 2-16 (public transport does not include taxis), 2-35 (car = up to 8 seats, the
+  shorter one), 2-62 (passing in lane = without leaving the lane), 2-34 (night = end of dusk to dawn).
+- **Both/all** 11 of 18. The false statements that make "all" wrong: cyclists need goggles (2-10, only
+  the helmet), the seller is responsible for the car's condition (2-23), a power of attorney must be
+  carried (2-27), any road user directing traffic is a regulator (2-30), the learner is liable (2-78,
+  the instructor is), ATVs on public roads (2-82).
 
-| Section | PDF group | Questions | Per test | Chance per question |
+### Group 8 - speed, towing, cargo, people (55 q)
+
+- **Speeds** (all 0 contradictions): **60** in settlements, for groups of children and for people in a
+  truck body; **90** for a car or a truck up to 3.5 t outside settlements, and a car with a trailer on
+  a motorway; **50** for any towing; **20** in a residential zone. A truck up to 3.5 t counts as a
+  passenger car for limits and sign plates (8 of 9; exception 7-89, a parking plate).
+- **Towing**: rigid bar up to **4 m**, rope **4-6 m**; no rope on ice; only motorcycles with a sidecar
+  may be towed; people ride only in a towed car or a towed truck's cab, never in a towed bus.
+- **Cargo**: "long load" sign when it sticks out more than **1 m** at the rear or **0.4 m** at the side;
+  front seat without child seat from **12**; nobody rides in a truck trailer.
+- **Five numbers: the middle one**, 7 of 7 (it is the speed table again).
+
+### Group 9 - signals, beacons, lights, overtaking, crossings (119 q)
+
+- **Facts** (45 questions): blue beacon + siren -> just yield; blue + red + siren -> slow down and yield;
+  priority needs blue **and** siren; yellow beacon gives no priority; hazard lights for an accident, a
+  towed vehicle, a forced stop where stopping is banned, and when dazzled (first action); signal in
+  advance, a hand signal ends just before the manoeuvre, the indicator just after; dip the high beam at
+  **150 m**; rear fog lamp only in insufficient visibility; horn only to prevent an accident; no
+  overtaking at intersections, pedestrian crossings, rail crossings and **100 m** before them
+  (law point 77); warning triangle **15 m** in, **30 m** outside settlements.
+- **"Allowed?" -> "Արգելվում է"** 16 of 21 (only in group 9; elsewhere at chance). The "allowed, if ..."
+  options are right 5 of 29 times here.
+- **Both/all** 10 of 13. False statements: overtaking banned 150 m before a crossing (it is 100 m),
+  the horn to announce overtaking, rear fog lamps in a convoy or tunnel.
+- Same-wording questions here always share the answer (10 of 10 held out): learn one, know all.
+
+### Group 10 - first aid (51 q, 1 per test)
+
+- **The longest option** 31 of 50: the right answer is the full procedure. The 4 misses: 10-5 (seizure:
+  do not touch), 10-8 (bruise: cold and raise), 10-26 (diabetic: sugar first), 10-46 (no drugs).
+- **Positions**: head injury half-lying; fainting lying with legs up; asthma half-sitting; belly injury
+  knees bent; chest injury sitting, leaning to the injured side; unconscious but breathing: recovery
+  position; spine: on the back, do not move.
+- **Numbers**: pulse **60-80**, breathing **12-18** per minute, tourniquet at most **1 h** (warm) /
+  **0.5 h** (cold), cool a burn **20 min**. Scene safety first; spurting bright red = artery, tourniquet
+  above the wound. Cold, not heat, for injuries, except frostbite (warm, never rub with snow).
+- Never pick a folk remedy (see above).
+
+### Groups 1, 4, 5, 6, 7 - the picture groups (684 q)
+
+Mostly decided by the picture; group 5 "who goes first/second/last" (27) and order-of-passage lists
+(21) have no text shortcut at all. What does work:
+
+- **Who yields depends on the manoeuvre**: turning right, "you go first" is right 8 of 10; going
+  straight or making a U-turn, "you go first / no one" is wrong 16 of 17 (reading notes; a stricter
+  re-check finds fewer such questions but agrees on all of them: 4 of 4 and 0 of 2).
+- **Pedestrians are never left out** (yield lists 10 of 10; "only pedestrians" 0 of 8). **Tram:
+  yes, yield** (7 of 7). **Backing** (հետընթաց) -> no / prohibited (8 of 10).
+- **Facts** (99 of 102 questions consistent): U-turn banned on crossings, in tunnels, on and under
+  bridges, at rail crossings and where visibility is under 100 m; a "no left turn" sign does not ban a
+  U-turn; warning signs 50-100 m before the hazard in settlements, 150-300 m outside; box junction: do
+  not enter if you would have to stop in it; a stop line alone does not oblige you to stop, the STOP
+  sign does; rail crossing: stop at the line or sign, otherwise 5 m before the barrier or 10 m from the
+  rail; no stopping with less than 3 m to a solid line; solid yellow line = no stopping, broken yellow =
+  no parking; lane "A" = public transport only; a paved road is the main road over an unpaved one;
+  steep grade: downhill yields to uphill; simultaneous lane change: the car on the left yields.
+- **Both/all does not work with pictures** (5 of 15), and a bare "Բոլոր / Ցանկացած" (all / any) option
+  in sign lists is an anti-tell (10 of 42).
+- 15 pictures are shared by 2-3 questions (7-81 / 7-82: same scene, stopping fine, parking not).
+
+## Errors in the official key
+
+The computer grades against the key, so answer as the key says; these are worth learning precisely
+because the law points the other way. Law quotes: `_knowledge/answer_key_errors.md`.
+
+| Question | Key | Law (Decision 955-Ն) |
+|---|---|---|
+| 7-6 parking distance from a rail crossing | 25 m | 50 m (point 86.4); 7-68 says 50 m |
+| 7-43 same question, other options | 15 m | 50 m |
+| 3-42 horn broken (worded "ձայնարկիչ") | does not prohibit (answer 1) | prohibits (annex 2, item 3); 3-15, 3-35, 3-49 agree with the law |
+
+Also: 2-77 has the same option twice («B», «C», «D»); the key (option 2) is unaffected.
+
+## Old pool vs new pool
+
+The pool online until autumn 2026 (Word files from April 2022, recovered from the Wayback Machine):
+1,094 questions. The new one: 1,050. Matched one to one: 976. Of the 660 with unchanged wording and
+options, none changed its answer. Removed: 118, mostly bus, truck and tractor questions that moved to the
+D/T pool. Added: 74, most of them in the law (group 2). Real answer changes, found by reading every
+flagged pair:
+
+- **1-34, 1-35**: with 3+ lanes in one direction the far-left lane is now allowed both for overtaking
+  and for turning ("both"); the old key said turning only.
+- **2-75**: the right to drive starts with the licence card **or its new digital version** ("both").
+
+Anyone who studied with an app made before October 2026 has these three wrong. The removed questions:
+`data/old_pool/questions.json` (`new_id` null).
+
+## The statistics
+
+Rules scored against each question's own guess chance (1/k). Whole pool:
+
+| Rule | Fires | Right | Guessing gets | Survives Bonferroni (22 rules) |
 |---|---|---|---|---|
-| Faults / conditions prohibiting driving | 3 | 59 | 2 | 3.4% |
-| Road Traffic Safety Law | 2 | 82 | 2 | 2.4% |
-| First aid | 10 | 51 | 1 | 2.0% |
-| Traffic rules | 1, 4-9 | 858 | 15 | 1.7% (if drawn evenly) |
+| Both / all of the above (text questions) | 97 | 54 | 30.7 | yes |
+| 3 options: the last (needs PDF order) | 568 | 229 | 189.3 | yes |
+| The only option starting "Արգելվում" | 90 | 52 | 35.4 | yes |
+| First aid: the longest | 50 | 31 | 15.8 | yes |
+| The only option without "միայն" when 2+ others have it | 79 | 38 | 25.2 | yes |
+| Law definitions: the longest | 28 | 23 | 13.2 | yes |
+| Bare "Պարտավոր է / Պարտադիր է" | 29 | 23 | 13.6 | yes |
+| Yield lists: pedestrians and someone else | 10 | 10 | 3.2 | yes |
+| Group 8, five numbers: the middle | 7 | 7 | 1.4 | yes |
+| Echo: the option repeating the most words of the question | 149 | 73 | 54.8 | yes, but fails on unseen questions |
+| Tram: yes / backing: no | 7 / 10 | 7 / 8 | 3.5 / 4.5 | no (small) |
+| The longest option, pool-wide | 901 | 354 | 334.2 | no |
 
-So: group 3 first (59 short text questions, twice as likely per question as a traffic-rule
-question), then group 2, then group 10, then the traffic rules. The ordered list is
-`strategies.guess.study_order` in `results/patterns.json`.
+**Held out** (5 folds grouped by wording, the list rebuilt on 4 folds and scored on the 5th): 235
+right of 418 where guessing gets 149 (content rules); the word model 395 of 882 (325), but its top
+words are content ("70կմ", "վազանց"): it memorizes, it finds no tricks.
 
-## Caveats
+**On questions nobody had seen** (the 118 removed in 2026, never read while the rules were found):
+both/all 13 of 22 (7.2), "Արգելվում" 13 of 20 (8.0), 3 options last 34 of 72 (24.0) hold up; echo
+(7 of 19, 7.9) does not. With 22 rules tested, one or two p-values under 0.05 are expected by chance
+("shortest" did that here and is nothing in the main pool). Most group rules fire only 1-8 times there.
 
-- Whether the computer test keeps the PDF option order is unknown. Position rules and the
-  "exceptions" trick depend on it; the content rules do not.
-- The law gives no quota per group inside the traffic rules; the model draws those 15 evenly from
-  all 858. A fixed quota per group would shift the chances per question a little.
-- The 3 psychological questions are not in the pool and are assumed passed.
-- The rules were chosen after looking at the data; the held-out numbers are the honest ones.
+**Caveats.** The group rules and facts were found by reading all questions, so their counts are
+in-sample; the unseen test is small. Whether the computer test keeps PDF option order is unknown. The 15
+traffic-rule questions are assumed drawn evenly from 858 (the law gives no quota per group). The 3
+psychological questions are not in the pool and are assumed passed.
+
+**What does not work** (measured): near-twin options, formatting artefacts (punctuation, capitals,
+quote style, եւ/և), negations, "if/except" conditions, "the pool answers itself" by word overlap (35%,
+chance), tram first in order of passage (3 of 10), "the car yields" (8 of 13, chance 6.3), "no one"
+in yield lists (7 of 27), the longest option in groups 1, 5, 6, 8.
