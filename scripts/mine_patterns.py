@@ -1,6 +1,6 @@
 """Answer shortcuts ("patterns") in the 1,050 A/B/C questions: what works, by how much, and what it saves.
 
-    uv run python scripts/mine_patterns.py   # ~30-45 s (measured 29-43 s), writes results/patterns.json
+    uv run python scripts/mine_patterns.py   # ~1-2.5 min (measured 152 s, 6 strategies), writes results/patterns.json
 
 The JSON is the record; scripts/build_pattern_report.py turns it into reports/patterns_report.html.
 
@@ -24,7 +24,9 @@ Position rules ("in 3-option questions pick the last") would only help if the co
 options in PDF order. It does not: the options appear in random order (Hayk, 2026-10-22). The
 strategies are still scored both ways (order kept, and shuffled = position rules off, everything else
 on) to show how much of the order-kept saving is the "learn the exceptions of a fixed rule" effect;
-the shuffled numbers are the ones that apply.
+the shuffled numbers are the ones that apply. The same "learn the exceptions" effect does survive
+shuffling with a fixed pick based on the option's text (fixed_text_pick: the longest option, ties
+broken alphabetically), scored as the strategies fixed_text_only and rules_fixed_text.
 """
 
 import json
@@ -97,6 +99,13 @@ def guess_chance(q) -> float:
     if k == 0 or NEVER_RE.search(norm(q["options"][q["answer_index"]])):
         raise ValueError(f"{q['id']}: the never-pick list would cross out the right answer")
     return 1 / k
+
+
+def fixed_text_pick(q, cross_out_never: bool) -> int:
+    """A fixed pick that ignores the order on screen: the longest option in characters, ties broken
+    alphabetically; optionally among the options left after the never-pick list."""
+    cands = [i for i, o in enumerate(q["options"]) if not (cross_out_never and NEVER_RE.search(norm(o)))]
+    return min(cands, key=lambda i: (-len(q["options"][i]), norm(q["options"][i])))
 
 
 def unique_index(flags: list[bool]):
@@ -608,6 +617,13 @@ def main() -> None:
         strategies[variant if variant == "position_only" else f"rules_{variant}"] = {
             q["id"]: (1.0 if held[variant][q["id"]][1] == q["answer_index"] else 0.0)
             if held[variant][q["id"]][1] is not None else fallback[q["id"]] for q in qs}
+    # "learn the exceptions" with a fixed pick based on the option's text, which survives shuffled
+    # options (a fixed position does not): always the longest option, alone or after the content rules
+    hit = lambda q, i: 1.0 if i == q["answer_index"] else 0.0
+    strategies["fixed_text_only"] = {q["id"]: hit(q, fixed_text_pick(q, False)) for q in qs}
+    strategies["rules_fixed_text"] = {
+        q["id"]: hit(q, held["shuffled"][q["id"]][1] if held["shuffled"][q["id"]][1] is not None
+                     else fixed_text_pick(q, True)) for q in qs}
     out["strategies"] = {}
     for name, p in strategies.items():
         p_by = defaultdict(list)

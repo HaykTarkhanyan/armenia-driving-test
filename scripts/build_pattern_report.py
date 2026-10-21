@@ -19,11 +19,14 @@ RED, BLUE, ORANGE, GREY = "#D90012", "#0033A0", "#F2A800", "#7a7a7a"
 STRATEGY_LABELS = {
     "guess": "Guess what you did not learn",
     "rules_shuffled": "Rules + never-pick list, guess the rest",
+    "rules_fixed_text": "Rules + never-pick list, else the longest option; learn only where that fails",
+    "fixed_text_only": "Always the longest option, learn only where it fails",
     "position_only": "Always the usual position, learn its exceptions (does not apply: the exam shuffles the options)",
     "rules_order_kept": "Rules + usual position, learn the exceptions (does not apply: the exam shuffles the options)",
 }
 ORDER_NOTE = " <i>(position in the PDF: the exam shuffles the options)</i>"
-STRATEGY_COLORS = {"guess": GREY, "position_only": ORANGE, "rules_order_kept": RED, "rules_shuffled": BLUE}
+STRATEGY_COLORS = {"guess": GREY, "rules_shuffled": BLUE, "rules_fixed_text": RED, "fixed_text_only": ORANGE,
+                   "position_only": "#c8c8c8", "rules_order_kept": "#a0a0a0"}
 SECTION_LABELS = {"law": "Road Traffic Safety Law", "faults": "Faults / conditions prohibiting driving",
                   "first_aid": "First aid", "traffic_rules": "Traffic rules"}
 
@@ -64,16 +67,20 @@ def main() -> None:
              *[str(st[k]["memorize_needed"][t]) for t in targets]] for k in STRATEGY_LABELS]
     verdict = (
         "<p><b>No trick gets close to passing.</b> The exam needs 18 of 20 right. Guessing everything gives "
-        f"{st['guess']['expected_score_nothing_memorized']:.1f} of 20 on average; all content rules together "
-        f"{st['rules_shuffled']['expected_score_nothing_memorized']:.1f}. Below: how many of the "
+        f"{st['guess']['expected_score_nothing_memorized']:.1f} of 20 on average; the best strategy "
+        f"{st['rules_fixed_text']['expected_score_nothing_memorized']:.1f}. Below: how many of the "
         f"{r['n']} answers you have to learn (in the best order) for a given pass chance, depending on what you "
-        "do with the rest. <b>The real exam shows the options in random order</b> (Hayk, 2026-10-22), so the "
-        "second row is the one that applies.</p>"
+        "do with the rest. <b>The real exam shows the options in random order</b> (Hayk, 2026-10-22), so only "
+        "the first four rows apply.</p>"
         + table(["What you do with the questions you did not learn", "Score if you learn nothing",
                  "Learn for 50%", "80%", "90%", "95%", "99%"], rows, [40, 12, 12, 9, 9, 9, 9])
-        + "<p>The last two rows would need fixed option positions: any fixed choice (even \"always option 1\") "
-        "is right on about 1 in k questions, so you would learn only the questions where it fails. With "
-        "shuffled options there is no fixed position, so they do not apply.</p>"
+        + "<p><b>\"Learn only where it fails\".</b> A random guess is right about 1 time in k, but you cannot "
+        "know which times. A fixed pick based on the option's text (the longest, ties broken alphabetically) "
+        "gives the same answer under any shuffle, so you can learn exactly the questions where it fails. "
+        "\"Always the longest\" is barely smarter than chance (right on 392 of 1,050, random averages 379); "
+        "the saving comes from being predictable. The catch: on the exam you must recognize which questions "
+        "are safe to answer by length. The last two rows use a fixed <i>position</i> instead, which a shuffle "
+        "breaks, so they do not apply.</p>"
         "<p><b>\"Longest\" means the most characters</b> (letters, spaces and punctuation). Counting words "
         "gives about the same accuracy but decides fewer questions, because word counts tie more often (first "
         "aid: 31 of 50 by characters, 26 of 36 by words).</p>")

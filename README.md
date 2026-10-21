@@ -8,8 +8,9 @@ Status: dataset, exam rules, the previous pool (2022-2026) with a question-by-qu
 group-by-group shortcut and logic analysis are done. Parked: study app, lessons, exam-day guide.
 
 **Shortcuts, in one line:** none get near a pass (the exam needs 18 of 20; guessing scores 7.2, all
-rules together 9.0), but the logic in the pool cuts what you must memorize for a 95% pass from 952
-answers to 714, and three answers in the official key contradict the law. Start with
+rules together 9.3), but the logic in the pool cuts what you must memorize for a 95% pass from 952
+answers to 714, or to 518 if you also answer every unlearned question with the longest option and learn
+only where that fails; and three answers in the official key contradict the law. Start with
 [`PATTERNS.md`](PATTERNS.md).
 
 ## What is in this repo
@@ -72,7 +73,7 @@ uv run python scripts/download_pdfs.py   # ~2 min (measured 105 s), 20 PDFs (Arm
 uv run python scripts/build_dataset.py   # ~5 s, writes data/, questions/, results/crosscheck_en.json
 uv run python scripts/download_old_pool.py   # ~5-15 min, the 2022 pool from the Wayback Machine (slow, resumable)
 uv run python scripts/build_old_pool.py   # ~20 s -> data/old_pool/, results/pool_diff.json
-uv run python scripts/mine_patterns.py   # ~45 s -> results/patterns.json (needs the old pool)
+uv run python scripts/mine_patterns.py   # ~1-2.5 min (measured 152 s) -> results/patterns.json (needs the old pool)
 uv run python scripts/build_pattern_report.py   # ~2 s -> reports/patterns_report.html
 ```
 

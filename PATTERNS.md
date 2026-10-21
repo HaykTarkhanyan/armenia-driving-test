@@ -10,7 +10,7 @@ independently, and the rules marked so are in `scripts/mine_patterns.py`.
 ## Verdict
 
 **No trick gets near a pass; the exam needs 18 of 20. But the pool is full of logic that turns
-memorizing into understanding.** Guessing everything scores 7.2 of 20; the full rule list below 9.0.
+memorizing into understanding.** Guessing everything scores 7.2 of 20; the full rule list below 9.0, or 9.3 with "the longest option" for everything else.
 
 **The real exam shows the options in random order** (Hayk, 2026-10-22), not in the PDF order. So
 every rule below is about the content of an option, never its position.
@@ -20,15 +20,26 @@ Answers to learn (in the best order) for a given pass chance, by what you do wit
 | What you do with the questions you did not learn | Score if you learn nothing | 50% | 80% | 90% | 95% | 99% |
 |---|---|---|---|---|---|---|
 | Guess | 7.2 / 20 | 763 | 872 | 920 | 952 | 997 |
-| **Rules + never-pick list, guess the rest** | **9.0 / 20** | **542** | **634** | **682** | **714** | **759** |
+| Rules + never-pick list, guess the rest | 9.0 / 20 | 542 | 634 | 682 | 714 | 759 |
+| **Rules + never-pick list, else the longest option; learn only where that fails** | **9.3 / 20** | **418** | **478** | **502** | **518** | **540** |
+| Always the longest option, learn only where it fails (no other rules) | 7.3 / 20 | 509 | 569 | 593 | 609 | 631 |
 
-- That is about **240 fewer answers to learn** than guessing at 95%.
+- **The "learn only where it fails" trick.** For a question you did not learn, a random guess is right
+  about 1 time in k, but you cannot know in advance which ones. A **fixed** pick that depends only on
+  the option's text (here: the longest option in characters, ties broken alphabetically) gives the same
+  answer however the options are shuffled, so you can find out now which questions it gets right and
+  skip learning exactly those. "Always the longest" is barely smarter than chance (right on 392 of
+  1,050 questions; random guessing averages 379): the whole saving comes from it being predictable.
+  Combined with the rules: **518 answers for a 95% pass instead of 952**.
+- **The catch:** on the exam you must reliably tell "a question I learned" from "a question where the
+  longest option wins", i.e. recognize the second kind as safe to answer by length. That still means
+  knowing something about every question, so the real saving is smaller than on paper. The row without
+  the trick (714) needs no such bookkeeping.
 - If you know a share of every section and guess the rest: 80% known -> 52% pass, 90% -> 87%,
   95% -> 97.5%, 98% -> 99.8%.
-- Does not apply, because the exam shuffles the options: "always the usual position, learn its
-  exceptions" (598 for 95%) and "rules + usual position" (533). Both lean on a trick that works for
-  any fixed position: a fixed pick is right on about 1 in k questions for free, so you would learn
-  only the questions where it fails. With shuffled options there is no fixed position.
+- Does not apply, because the exam shuffles the options: the same trick with a fixed **position**
+  ("always option 2": 598 for 95%; "rules + usual position": 533). A position changes with every
+  shuffle; the text of an option does not. (These rows are in the report and in `results/patterns.json`.)
 
 **"Longest" means the most characters** (letters, spaces and punctuation), which is what the code
 counts. Counting words gives about the same accuracy but decides fewer questions, because word counts

@@ -2,9 +2,16 @@
 
 Newest first.
 
+## 10. The "learn only where a fixed pick fails" strategy uses a text-based pick, which survives shuffled options
+
+- **Date / status:** 2026-10-22, active; corrects #9, which treated the strategy as position-only (a "you should know" note pointed it out; Hayk: "sure", calculate it)
+- **Why:** A fixed pick based on the option's text (the longest in characters, ties broken alphabetically by normalized text) gives the same answer under any shuffle, so you can learn exactly the questions where it fails. Measured: alone 609 answers for a 95% pass; after the held-out content rules and the never-pick list 518 (guess-the-rest: 714; guessing: 952). The pick itself is barely better than chance (right on 392 of 1,050; random averages 379): the saving comes from predictability. PATTERNS.md states the catch: on the exam you must recognize which questions are safe to answer by length, which still means knowing something about every question.
+- **Alternatives rejected:** leaving 714 as the floor (wrong: the trick was only ruled out for positions); a fallback by option order on screen (changes with each shuffle); choosing the fallback by searching many text picks on the data (overfits; "longest" is the one with a measured, if weak, signal).
+- **What would change this:** Evidence that exam takers cannot use the exceptions list reliably (then report 714 as the practical number), or a better text-based pick that holds up out of sample.
+
 ## 9. The exam shuffles the options: only content rules count; "longest" is measured in characters
 
-- **Date / status:** 2026-10-22, active (Hayk: "pdf order is random"; "clarify ... what longest means based on characters or words")
+- **Date / status:** 2026-10-22, active, revisited 2026-10-22 (#10: a text-based fixed pick survives shuffling) (Hayk: "pdf order is random"; "clarify ... what longest means based on characters or words")
 - **Why:** On the real computer test the options appear in random order, so position rules ("3 options: the last") and the "learn the exceptions of a fixed position" strategies (533 and 598 answers for 95%) do not apply. The applicable result is the content-rule row: 714 answers for 95% (guessing 952). Position rules stay in the analysis as a description of how the questions were written. "Longest" stays character count (Python `len`, spaces and punctuation included): by words it is about as accurate but decides fewer questions because word counts tie (first aid 31/50 by characters vs 26/36 by words; law definitions 23/28 vs 18/25).
 - **Alternatives rejected:** removing the order-kept strategies from the code (they show how large the fixed-position effect is; kept, labelled "does not apply"); switching "longest" to words (fewer questions decided, no accuracy gain).
 - **What would change this:** A test mode that keeps the PDF order (e.g. a different exam program).
