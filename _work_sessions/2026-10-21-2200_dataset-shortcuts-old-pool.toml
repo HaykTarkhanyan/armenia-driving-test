@@ -1,0 +1,46 @@
+title = "New repo: official A/B/C questions, exam rules, shortcut and logic analysis, old pool diff"
+date = "2026-10-21"
+time = "22:00"
+areas = ["official/", "data/", "questions/", "scripts/", "results/", "reports/", "_knowledge/", "_learnings/"]
+
+done = [
+  "Repo created (public, github.com/HaykTarkhanyan/armenia-driving-test); scope chosen by Hayk: A/B/C set (car, automatic), Armenian only, new public repo, shortcut analysis + app + guide + lessons (app/guide/lessons later parked)",
+  "Dataset: 10 official PDFs per language from roadpolice.am (direct download, truststore for the missing intermediate cert), parsed by layout with PyMuPDF 1.28.2; 1,050 questions, 715 pictures; answer line = green option on all; English PDFs agree on every question (0 differences)",
+  "Exam rules from the law in force (385-Ն on ARLIS via Playwright): 3 psych questions, 20 knowledge questions 2/15/2/1 by section, 30 min, 18 to pass; 979-Ն split the pool 04.07.2026; 30-day rule for new questions",
+  "Shortcut analysis (mine_patterns.py, exact pass model, folds grouped by wording, report): no trick near a pass; the 'learn the exceptions of a fixed rule' effect separated from real patterns",
+  "Hayk's group-3 rule confirmed: 'կառուցվածքով (չ)նախատեսված' always prohibits (24/24, scored per condition); 28 non-prohibiting conditions listed",
+  "Old pool (June 2026 capture of the 2022 PDFs) recovered from the Wayback Machine after throttling (attempt 3); parsed (1,094 q) and matched to the new pool: 976 matched, 660 identical wording+options all same answer, 118 removed, 74 added, 3 real answer changes (1-34, 1-35, 2-75)",
+  "Group-by-group reading by 2 subagents (Hayk: find cool stuff, long runs OK); every claim re-counted independently; verified rules added to mine_patterns.py; never-pick list (55 options, 0 right)",
+  "Answer-key errors checked against Decision 955-Ն: 7-6 (25 m) and 7-43 (15 m) vs law 50 m for railway parking; 3-42 horn vs annex 2; 2-77 duplicate option",
+  "Out-of-sample test on the 118 removed questions: both/all, 'Արգելվում', 3-options-last hold; echo does not",
+  "Result: 714 answers to learn for a 95% pass with rules + never-pick (952 guessing)",
+]
+pending = [
+  "Study app, lessons, exam-day guide: parked by Hayk (DEFERRED_TODO.md has the decisions made so far)",
+  "Does the computer exam keep PDF option order? Unknown; decides which rule-list row applies",
+  "The 3 psychological questions: nothing published found",
+]
+next = [
+  "Hayk reads PATTERNS.md / the report and says which parts to turn into study material",
+  "If the app comes back: topics question still open (official groups vs sub-topics)",
+]
+files = [
+  "scripts/common.py", "scripts/download_pdfs.py", "scripts/build_dataset.py", "scripts/download_old_pool.py", "scripts/build_old_pool.py",
+  "scripts/mine_patterns.py", "scripts/build_pattern_report.py", "data/questions.json", "data/questions.csv", "data/images/",
+  "data/old_pool/", "questions/group_NN.md", "results/crosscheck_en.json", "results/patterns.json", "results/pool_diff.json",
+  "reports/patterns_report.html", "official/manifest.json", "official/old_pool/manifest.json",
+  "_knowledge/exam_rules.md", "_knowledge/answer_key_errors.md", "_knowledge/shortcut_hunt_*.md", "PATTERNS.md", "README.md",
+  "DECISIONS.md", "CONVENTIONS.md", "DEFERRED_TODO.md", "_learnings/ (6 files)",
+]
+commits = [
+  "f924db8 dataset, pictures, exam rules",
+  "f651a60 shortcut analysis",
+  "43fc824 group-3 'provided by design' rule, horn contradiction",
+  "5f0dbfb old pool diff, group-by-group logic, answer-key errors",
+]
+notes = """
+No paid API spend. Two subagents read the groups (~640k tokens together).
+Playwright MCP writes evaluate/screenshot files relative to the session's primary directory, which was the
+germany-naturalization-test repo; two stray files landed in its root and were moved to the scratchpad.
+The German repo's own uncommitted change (_work_sessions/2026-10-12-1215_video-texts.toml) was not touched.
+"""
