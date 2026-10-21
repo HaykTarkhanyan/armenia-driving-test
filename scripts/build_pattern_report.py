@@ -79,6 +79,26 @@ def main() -> None:
         "exceptions. If options are shuffled, the honest row is the last one.</p>")
     parts.append(section("verdict", "Verdict", verdict))
 
+    # 1b. group 3 conditions
+    g3 = r["group3"]
+    d = g3["design_rule"]
+    contra = "".join(f"<li>{html.escape(c['condition'])}: questions {', '.join(c['questions'])}</li>" for c in g3["contradictions"])
+    ok_list = "".join(f"<li>{html.escape(t)}</li>" for t in g3["not_prohibiting"])
+    parts.append(section("group3", "Group 3: the rule that is never wrong",
+                         f"<p>All {g3['questions']} questions of group 3 (faults and conditions that prohibit driving, 2 per "
+                         "test) read \"operating is prohibited if: A / B / both\". So each question says, condition by "
+                         f"condition, whether it prohibits. Of {g3['conditions']} conditions, {g3['conditions_prohibiting']} "
+                         f"prohibit ({g3['conditions_prohibiting'] / g3['conditions']:.0%}): <b>prohibited is the default</b>.</p>"
+                         f"<p><b>Every condition with \"կառուցվածքով նախատեսված / չնախատեսված\" (provided / not provided by "
+                         f"the design) prohibits: {d['prohibiting']} of {d['conditions']}.</b> It appears in {d['questions_fired']} "
+                         f"questions; there the answer is never the other single condition ({d['answer_other_single']} times), "
+                         f"it is \"both\" {d['answer_both']} times and that condition {d['answer_design_option']} times.</p>"
+                         f"<p>Contradiction in the official key (the official English says \"The horn does not operate\" in all "
+                         f"of them):</p><ul>{contra}</ul><p>In 3-42 the answer is 1, i.e. a broken horn would not prohibit; "
+                         "in the other three it does. Learn 3-42 as an exception.</p>"
+                         f"<details><summary>The {len(g3['not_prohibiting'])} conditions that do <i>not</i> prohibit "
+                         f"(everything else does)</summary><ul>{ok_list}</ul></details>"))
+
     # 2. pass chance by share known
     kf = r["know_fraction"]
     fig = go.Figure(go.Bar(x=[f"{x['known_share']:.0%}" for x in kf], y=[x["p_pass"] * 100 for x in kf],

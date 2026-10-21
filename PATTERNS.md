@@ -32,6 +32,33 @@ The simpler way to see it: if you know a share of every section and guess the re
 |---|---|---|---|---|---|---|---|---|
 | P(pass) | 52% | 70% | 87% | 92% | 96% | 97.5% | 98.6% | 99.8% |
 
+## Group 3: the one rule that is never wrong
+
+Group 3 (faults and conditions that prohibit operating a vehicle; 2 of every 20 exam questions) has a
+fixed shape: "operating is prohibited if: A / B / both" (3 questions: A / B / C / all). So each
+question says, condition by condition, whether it prohibits. Scoring "is this option the answer"
+hides that: the fuel-cap fault is a wrong option in 3-48 (answer: both) and the right one in 3-58,
+yet it prohibits in both.
+
+- **Prohibited is the default:** 87 of the 121 listed conditions prohibit (72%); "both/all" is the
+  answer in 27 of 59 questions.
+- **Every condition with "կառուցվածքով նախատեսված / չնախատեսված" (provided / not provided by the
+  design) prohibits: 24 of 24.** It appears in 23 questions; there the answer is never the other
+  single condition (0 of 23): it is "both" 12 times and that condition 11 times. (Hayk remembered
+  this rule; the option-level analysis above had missed it.)
+- **Only 28 distinct conditions do not prohibit;** everything else does. Learning that list plus the
+  rule above answers every group-3 question. They fall into a few families: lights of a normal colour
+  in their normal place (front: white/yellow/orange turn signals, yellow fog lights, white reflectors;
+  rear: red or orange turn signals, red reflectors, white reversing lights); tyre tread at or above the
+  minimum (car 1.6 mm, truck 1.4-1.6 mm, 2.2 mm); fuel and coolant-temperature gauges, interior
+  lights; the engine running unevenly or overheating; dirty bumpers; signs that are not required (the
+  "doctor" sign, the warning triangle on a motorcycle without sidecar). The full list is in the report
+  and in `results/patterns.json` (`group3.not_prohibiting`).
+- **Contradiction in the official key:** 3-15, 3-35 and 3-49 say a broken horn prohibits driving;
+  3-42 (answer 1) says it does not. The Armenian of 3-42 says "ձայնարկիչ" instead of "ձայնային
+  ազդանշանի սարք", but the official English has "The horn does not operate" in all four. Learn 3-42 as
+  an exception: answer 1.
+
 ## What carries a (small) signal
 
 Scored against each question's own guess chance (1/k; options vary from 2 to 5). Whole pool:

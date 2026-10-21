@@ -326,6 +326,66 @@ def memorize_curve(qs, p_strategy: dict[str, float]) -> dict:
             "needed": needed}
 
 
+# ---------------------------------------------------------------- group 3: conditions, not options
+# Every group-3 question reads "operating is prohibited if: A / B / both" (3 have A / B / C / all), so
+# each question says, per listed condition, whether it prohibits: answer A -> A yes, B no; "both" ->
+# both yes. Scoring options would miss that a wrong option can still be a prohibiting condition.
+
+DESIGN_RE = re.compile(r"կառուցվածքով\s+(չ)?նախատեսված")
+BOTH_RE = re.compile(r"երկու|բոլոր")
+# One condition worded two ways in Armenian; the official English PDF has "The horn does not operate"
+# in all four questions (3-15, 3-35, 3-42, 3-49), so they are compared as one.
+SAME_CONDITION = {
+    "չի աշխատում ձայնարկիչը": "չի աշխատում ձայնային ազդանշանի սարքը",
+    "ձայնային ազդանշանի սարքով տրվող ազդանշանը չի աշխատում": "չի աշխատում ձայնային ազդանշանի սարքը",
+}
+
+
+def condition_key(text: str) -> str:
+    t = re.sub(r"^եթե\s+", "", norm(text)).rstrip("։:.․ ")
+    return SAME_CONDITION.get(t, t)
+
+
+def group3_analysis(qs) -> dict:
+    g3 = [q for q in qs if q["group"] == 3]
+    conds = []
+    for q in g3:
+        *cs, last = q["options"]
+        if not BOTH_RE.search(norm(last)):
+            raise ValueError(f"{q['id']}: last option {last!r} is not 'both/all'; group 3 layout changed")
+        for i, c in enumerate(cs):
+            conds.append({"qid": q["id"], "text": c, "key": condition_key(c),
+                          "prohibits": q["answer_index"] in (i, len(cs))})
+    labels = defaultdict(set)
+    for c in conds:
+        labels[c["key"]].add(c["prohibits"])
+    contradictions = [{"condition": k, "questions": [c["qid"] for c in conds if c["key"] == k]}
+                      for k, v in sorted(labels.items()) if len(v) > 1]
+    design = [c for c in conds if DESIGN_RE.search(norm(c["text"]))]
+    fired = [q for q in g3 if any(DESIGN_RE.search(norm(o)) for o in q["options"][:-1])]
+    last = lambda q: len(q["options"]) - 1
+    return {
+        "questions": len(g3),
+        "answer_both_or_all": sum(q["answer_index"] == last(q) for q in g3),
+        "conditions": len(conds),
+        "conditions_prohibiting": sum(c["prohibits"] for c in conds),
+        "distinct_conditions": len(labels),
+        "contradictions": contradictions,
+        "design_rule": {
+            "conditions": len(design),
+            "prohibiting": sum(c["prohibits"] for c in design),
+            "questions_fired": len(fired),
+            "answer_both": sum(q["answer_index"] == last(q) for q in fired),
+            "answer_design_option": sum(q["answer_index"] != last(q) and bool(DESIGN_RE.search(norm(q["options"][q["answer_index"]])))
+                                        for q in fired),
+            "answer_other_single": sum(q["answer_index"] != last(q) and not DESIGN_RE.search(norm(q["options"][q["answer_index"]]))
+                                       for q in fired),
+        },
+        "not_prohibiting": sorted({c["text"].rstrip("։:. ") for c in conds
+                                   if labels[c["key"]] == {False}}, key=norm),
+    }
+
+
 # ---------------------------------------------------------------- main
 
 def main() -> None:
@@ -383,6 +443,10 @@ def main() -> None:
         crossout.append({"feature": name, "options": n, "correct": right, "expected": round(expected, 1),
                          "share_correct": round(right / n, 3) if n else None, "ci95": wilson(right, n)})
     out["crossout"] = crossout
+    out["group3"] = group3_analysis(qs)
+    g3 = out["group3"]
+    log.info(f"group 3: {g3['conditions_prohibiting']}/{g3['conditions']} conditions prohibit; 'provided by design' "
+             f"{g3['design_rule']['prohibiting']}/{g3['design_rule']['conditions']}; contradictions {g3['contradictions']}")
 
     # held-out: decision lists and word model, grouped folds
     fold = folds(qs)
