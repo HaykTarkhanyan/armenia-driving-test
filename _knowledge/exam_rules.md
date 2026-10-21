@@ -21,6 +21,9 @@ says **30 minutes** and 5 languages. Do not quote the draft.
 In short: 3 psychological questions (all must be right, otherwise the knowledge test cannot be
 answered), then 20 knowledge questions with 2-5 options, 30 minutes, pass = at least 18 correct.
 
+Not in the law, from experience (Hayk, 2026-10-22): the computer shows the answer options in random
+order, not in the order of the PDFs.
+
 ## How the 20 questions are drawn
 
 > 16. Թեստերի հարցերն ընտրվում են Հայաստանի Հանրապետության ներքին գործերի նախարարության կողմից կազմված հարցաշարի տարբեր բաժիններից` պատահական ընտրության միջոցով: Գիտելիքների ստուգման թեստերի հարցաշարը (փոփոխությունների դեպքում` նաև փոփոխությունները) կազմելուց հետո երկու աշխատանքային օրվա ընթացքում հրապարակվում է Հայաստանի Հանրապետության ներքին գործերի նախարարության պաշտոնական կայքում: Նոր հարցերը գիտելիքների ստուգման թեստերի հարցաշարում կարող են ներառվել հրապարակումից 30 օր հետո:

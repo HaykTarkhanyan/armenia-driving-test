@@ -20,9 +20,11 @@ quota), pass = at least 18 of 20. P(pass) is exact: per section a dynamic progra
 questions are drawn" (without replacement, each question with its own chance of being answered
 right), then the four sections are convolved.
 
-Position rules ("in 3-option questions pick the last") only help if the computer test shows the
-options in PDF order, which is not verified, so the strategies are scored twice: order kept, and
-shuffled (position rules off, everything else on).
+Position rules ("in 3-option questions pick the last") would only help if the computer test showed the
+options in PDF order. It does not: the options appear in random order (Hayk, 2026-10-22). The
+strategies are still scored both ways (order kept, and shuffled = position rules off, everything else
+on) to show how much of the order-kept saving is the "learn the exceptions of a fixed rule" effect;
+the shuffled numbers are the ones that apply.
 """
 
 import json

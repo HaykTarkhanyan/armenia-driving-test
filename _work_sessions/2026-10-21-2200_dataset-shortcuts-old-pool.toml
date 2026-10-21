@@ -14,10 +14,10 @@ done = [
   "Answer-key errors checked against Decision 955-Ն: 7-6 (25 m) and 7-43 (15 m) vs law 50 m for railway parking; 3-42 horn vs annex 2; 2-77 duplicate option",
   "Out-of-sample test on the 118 removed questions: both/all, 'Արգելվում', 3-options-last hold; echo does not",
   "Result: 714 answers to learn for a 95% pass with rules + never-pick (952 guessing)",
+  "2026-10-22: Hayk confirmed the exam shuffles the options; position rules and order-kept strategies marked as not applying; 'longest' documented as characters (DECISIONS #9)",
 ]
 pending = [
   "Study app, lessons, exam-day guide: parked by Hayk (DEFERRED_TODO.md has the decisions made so far)",
-  "Does the computer exam keep PDF option order? Unknown; decides which rule-list row applies",
   "The 3 psychological questions: nothing published found",
 ]
 next = [

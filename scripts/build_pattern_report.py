@@ -18,10 +18,11 @@ log = setup_logging("build_pattern_report")
 RED, BLUE, ORANGE, GREY = "#D90012", "#0033A0", "#F2A800", "#7a7a7a"
 STRATEGY_LABELS = {
     "guess": "Guess what you did not learn",
-    "position_only": "Always the usual position, learn its exceptions (needs PDF option order)",
-    "rules_order_kept": "Rule list + usual position, learn the exceptions (needs PDF option order)",
-    "rules_shuffled": "Content rules, guess the rest (works with shuffled options)",
+    "rules_shuffled": "Rules + never-pick list, guess the rest",
+    "position_only": "Always the usual position, learn its exceptions (does not apply: the exam shuffles the options)",
+    "rules_order_kept": "Rules + usual position, learn the exceptions (does not apply: the exam shuffles the options)",
 }
+ORDER_NOTE = " <i>(position in the PDF: the exam shuffles the options)</i>"
 STRATEGY_COLORS = {"guess": GREY, "position_only": ORANGE, "rules_order_kept": RED, "rules_shuffled": BLUE}
 SECTION_LABELS = {"law": "Road Traffic Safety Law", "faults": "Faults / conditions prohibiting driving",
                   "first_aid": "First aid", "traffic_rules": "Traffic rules"}
@@ -59,24 +60,23 @@ def main() -> None:
 
     # 1. verdict
     targets = ["0.5", "0.8", "0.9", "0.95", "0.99"]
-    rows = [[STRATEGY_LABELS[k], f"{v['expected_score_nothing_memorized']:.1f} / 20",
-             *[str(v["memorize_needed"][t]) for t in targets]] for k, v in st.items()]
+    rows = [[STRATEGY_LABELS[k], f"{st[k]['expected_score_nothing_memorized']:.1f} / 20",
+             *[str(st[k]["memorize_needed"][t]) for t in targets]] for k in STRATEGY_LABELS]
     verdict = (
         "<p><b>No trick gets close to passing.</b> The exam needs 18 of 20 right. Guessing everything gives "
-        f"{st['guess']['expected_score_nothing_memorized']:.1f} of 20 on average; the best rule list "
-        f"{st['rules_order_kept']['expected_score_nothing_memorized']:.1f}. Below: how many of the "
+        f"{st['guess']['expected_score_nothing_memorized']:.1f} of 20 on average; all content rules together "
+        f"{st['rules_shuffled']['expected_score_nothing_memorized']:.1f}. Below: how many of the "
         f"{r['n']} answers you have to learn (in the best order) for a given pass chance, depending on what you "
-        "do with the rest.</p>"
+        "do with the rest. <b>The real exam shows the options in random order</b> (Hayk, 2026-10-22), so the "
+        "second row is the one that applies.</p>"
         + table(["What you do with the questions you did not learn", "Score if you learn nothing",
                  "Learn for 50%", "80%", "90%", "95%", "99%"], rows, [40, 12, 12, 9, 9, 9, 9])
-        + "<p><b>Where the savings really come from.</b> The two middle rows look much cheaper than guessing, but "
-        "almost all of that is not a pattern: any fixed choice (even \"always option 1\") is right on about 1 in "
-        "k questions, so if you learn exactly the questions where your fixed choice fails, the rest answer "
-        "themselves. Compare the two: the content rules add only "
-        f"{st['position_only']['memorize_needed']['0.95'] - st['rules_order_kept']['memorize_needed']['0.95']} "
-        "answers of saving at 95%. And the trick needs two things: the computer test must show the options in "
-        "PDF order (not verified), and you must reliably remember <i>which</i> questions you learned as "
-        "exceptions. If options are shuffled, the honest row is the last one.</p>")
+        + "<p>The last two rows would need fixed option positions: any fixed choice (even \"always option 1\") "
+        "is right on about 1 in k questions, so you would learn only the questions where it fails. With "
+        "shuffled options there is no fixed position, so they do not apply.</p>"
+        "<p><b>\"Longest\" means the most characters</b> (letters, spaces and punctuation). Counting words "
+        "gives about the same accuracy but decides fewer questions, because word counts tie more often (first "
+        "aid: 31 of 50 by characters, 26 of 36 by words).</p>")
     parts.append(section("verdict", "Verdict", verdict))
 
     # 1b. group 3 conditions
@@ -149,14 +149,15 @@ def main() -> None:
     fig.update_layout(barmode="group", title="Where the correct answer sits, by number of options",
                       yaxis=dict(title="share of questions, %", range=[0, 60]), legend=dict(orientation="h", y=-0.2))
     parts.append(section("positions", "Answer position",
-                         "<p>2 options: a perfect 50/50. 3 options: the last is right 40% of the time (33% by "
+                         "<p>How the questions were written; useless on the exam, which shuffles the options. 2 options: a perfect "
+                         "50/50. 3 options: the last is right 40% of the time (33% by "
                          "chance). 5 options: the first is almost never right (2 of 49); half of those 49 are picture "
                          "questions whose options are just labels (1-5) in the picture.</p>" + fig_html(fig)))
 
     # 5. rules
     rows = []
     for x in r["rules"]:
-        rows.append([html.escape(x["description"]) + (" <i>(needs PDF order)</i>" if x["needs_option_order"] else ""),
+        rows.append([html.escape(x["description"]) + (ORDER_NOTE if x["needs_option_order"] else ""),
                      x["fires"], x["right"], x["expected"], x["lift"], f"{x['ci95'][0]:.2f}-{x['ci95'][1]:.2f}",
                      f"{x['p_value']:.2g}" if x["p_value"] is not None else "", "yes" if x["significant_bonferroni"] else ""])
     parts.append(section("rules", "Every rule tested (whole pool)",
@@ -181,22 +182,22 @@ def main() -> None:
     h = r["heldout"]
     rows = [[k.replace("_", " "), v["fires"], v["right"], v["expected"], v["lift"]] for k, v in h.items()]
     full = r["decision_list_full_pool"]
-    lst = "".join(f"<li>{html.escape(x['description'])}</li>" for x in full["order_kept"])
-    fallback = ", ".join(f"{k} options: option {p}" for k, p in full["order_kept_fallback"].items())
+    lst = "".join(f"<li>{html.escape(x['description'])}</li>" for x in full["shuffled"])
     parts.append(section("heldout", "Held-out test (the honest numbers)",
                          "<p>5-fold cross-validation, folds grouped by question wording (26% of questions share "
                          "their wording with another one, only the picture differs; a split that separates twins "
-                         "would leak answers). Each list is re-built on 4 folds and scored on the 5th.</p>"
+                         "would leak answers). Each list is re-built on 4 folds and scored on the 5th. The rows "
+                         "with \"order kept\" and the position fallback do not apply on the exam, which shuffles "
+                         "the options; \"decision list shuffled\" is the one that does.</p>"
                          + table(["Method", "Fires", "Right", "Expected by guessing", "Lift"], rows, [40, 15, 15, 15, 15])
-                         + f"<p>The rule list built on the whole pool (order kept), first match decides:</p><ol>{lst}</ol>"
-                         f"<p>then the usual position ({fallback}). Held out, that fallback is no better than "
-                         "guessing (lift 0.99). The word model weighs every option word and is not something a "
-                         "person can memorize; its top words are content (\"70կմ\", \"վազանց\"), i.e. it "
-                         "memorizes, it does not find tricks.</p>"))
+                         + f"<p>The content rule list built on the whole pool, first match decides:</p><ol>{lst}</ol>"
+                         "<p>then a guess among the options left after the never-pick list. The word model weighs "
+                         "every option word and is not something a person can memorize; its top words are content "
+                         "(\"70կմ\", \"վազանց\"), i.e. it memorizes, it does not find tricks.</p>"))
 
     # 7b. out of sample
     oos = r["out_of_sample"]
-    rows = [[html.escape(x["description"]) + (" <i>(needs PDF order)</i>" if x["needs_option_order"] else ""),
+    rows = [[html.escape(x["description"]) + (ORDER_NOTE if x["needs_option_order"] else ""),
              x["fires"], x["right"], x["expected"], f"{x['p_value']:.2g}"]
             for x in sorted(oos["rules"], key=lambda x: x["p_value"])]
     parts.append(section("unseen", "Test on questions nobody had seen",

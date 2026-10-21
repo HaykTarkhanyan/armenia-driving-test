@@ -12,22 +12,29 @@ independently, and the rules marked so are in `scripts/mine_patterns.py`.
 **No trick gets near a pass; the exam needs 18 of 20. But the pool is full of logic that turns
 memorizing into understanding.** Guessing everything scores 7.2 of 20; the full rule list below 9.0.
 
+**The real exam shows the options in random order** (Hayk, 2026-10-22), not in the PDF order. So
+every rule below is about the content of an option, never its position.
+
 Answers to learn (in the best order) for a given pass chance, by what you do with the rest:
 
 | What you do with the questions you did not learn | Score if you learn nothing | 50% | 80% | 90% | 95% | 99% |
 |---|---|---|---|---|---|---|
 | Guess | 7.2 / 20 | 763 | 872 | 920 | 952 | 997 |
-| Rules + never-pick list, guess the rest (**works with shuffled options**) | 9.0 / 20 | 542 | 634 | 682 | 714 | 759 |
-| Always the usual position, learn its exceptions (needs PDF option order) | 7.7 / 20 | 498 | 558 | 582 | 598 | 620 |
-| Rules + usual position, learn the exceptions (needs PDF option order) | 9.0 / 20 | 433 | 493 | 517 | 533 | 555 |
+| **Rules + never-pick list, guess the rest** | **9.0 / 20** | **542** | **634** | **682** | **714** | **759** |
 
-- The honest row is the second: about **240 fewer answers to learn** than guessing at 95%.
-- The last two rows depend on a trick that works for **any** fixed rule: a fixed pick is right on about
-  1 in k questions for free, so you learn only the questions where it fails. That needs the computer
-  test to show options in PDF order (not verified) and you to reliably know which questions you
-  learned. The real patterns add 65 answers of saving on top of it (598 -> 533).
+- That is about **240 fewer answers to learn** than guessing at 95%.
 - If you know a share of every section and guess the rest: 80% known -> 52% pass, 90% -> 87%,
   95% -> 97.5%, 98% -> 99.8%.
+- Does not apply, because the exam shuffles the options: "always the usual position, learn its
+  exceptions" (598 for 95%) and "rules + usual position" (533). Both lean on a trick that works for
+  any fixed position: a fixed pick is right on about 1 in k questions for free, so you would learn
+  only the questions where it fails. With shuffled options there is no fixed position.
+
+**"Longest" means the most characters** (letters, spaces and punctuation), which is what the code
+counts. Counting words gives about the same accuracy but decides fewer questions, because word counts
+tie more often: first aid 31 of 50 by characters, 26 of 36 by words; law definitions 23 of 28 by
+characters, 18 of 25 by words. On the screen: the option that takes the most room; if two look the
+same, the rule does not decide.
 
 ## The best finds
 
@@ -37,12 +44,12 @@ Answers to learn (in the best order) for a given pass chance, by what you do wit
 | 2 | **Never pick** an option with "30 կմ/ժ", "վարորդի հայեցողությամբ", a train condition, "Միայն հետիոտ...", or a first-aid folk remedy | 55 options, 0 right |
 | 3 | In a **text** question, the **"both / all of the above"** option | 54 of 97 (chance 31); 13 of 22 on unseen questions |
 | 4 | The only option starting **"Արգելվում"** (prohibited); in group 9 "allowed?" questions 16 of 21 | 52 of 90 (chance 35); 13 of 20 unseen |
-| 5 | **First aid**: the longest option (the complete procedure) | 31 of 50 (chance 16) |
-| 6 | **Law definitions** ("... է համարվում"): the longest option (the full legal wording) | 23 of 28 (chance 13) |
+| 5 | **First aid**: the longest option, in characters (the complete procedure) | 31 of 50 (chance 16) |
+| 6 | **Law definitions** ("... է համարվում"): the longest option, in characters (the full legal wording) | 23 of 28 (chance 13) |
 | 7 | A bare **"Պարտավոր է / Պարտադիր է"** (it is obligatory) | 23 of 29 (chance 14) |
 | 8 | **Yield lists**: the option naming pedestrians together with someone else; "only pedestrians" never | 10 of 10; 0 of 8 |
 | 9 | **"Must you yield to the tram?"**: yes | 7 of 7 |
-| 10 | **Group 8, five numbers**: the middle one (the speed and distance questions) | 7 of 7 |
+| 10 | **Group 8, five numbers**: the middle value by size, not by position (the speed and distance questions) | 7 of 7 |
 | 11 | **Fact sheets**: about 30 facts per group answer 25-75% of each group | 0 contradictions, except the 3 key errors below |
 | 12 | **Three errors in the official key** (horn, railway parking twice) and **3 answers that changed** in October 2026 | checked against the law |
 
@@ -95,7 +102,7 @@ that: the fuel-cap fault is a wrong option in 3-48 (answer: both) and the right 
   licence **10 years**, international **3 years**, a foreign licence valid **3 months** after entry; a stop
   is up to **5 min**; insufficient visibility under **300 m**; moped up to **50 cc** / **50 km/h**;
   passenger car up to **8** seats.
-- **Definitions: the longest option** (23 of 28). The law defines by exclusion: the right definition
+- **Definitions: the longest option** in characters (23 of 28; by words 18 of 25). The law defines by exclusion: the right definition
   says "բացառությամբ" (except), the wrong twin "այդ թվում" / "ինչպես նաեւ" (including / as well as).
   Exceptions to learn: 2-16 (public transport does not include taxis), 2-35 (car = up to 8 seats, the
   shorter one), 2-62 (passing in lane = without leaving the lane), 2-34 (night = end of dusk to dawn).
@@ -114,7 +121,8 @@ that: the fuel-cap fault is a wrong option in 3-48 (answer: both) and the right 
   may be towed; people ride only in a towed car or a towed truck's cab, never in a towed bus.
 - **Cargo**: "long load" sign when it sticks out more than **1 m** at the rear or **0.4 m** at the side;
   front seat without child seat from **12**; nobody rides in a truck trailer.
-- **Five numbers: the middle one**, 7 of 7 (it is the speed table again).
+- **Five numbers: the middle value** (the third smallest, wherever it is shown), 7 of 7 (it is the
+  speed table again).
 
 ### Group 9 - signals, beacons, lights, overtaking, crossings (119 q)
 
@@ -133,7 +141,8 @@ that: the fuel-cap fault is a wrong option in 3-48 (answer: both) and the right 
 
 ### Group 10 - first aid (51 q, 1 per test)
 
-- **The longest option** 31 of 50: the right answer is the full procedure. The 4 misses: 10-5 (seizure:
+- **The longest option** in characters, 31 of 50 (by words 26 of 36): the right answer is the full
+  procedure. The 4 misses: 10-5 (seizure:
   do not touch), 10-8 (bruise: cold and raise), 10-26 (diabetic: sugar first), 10-46 (no drugs).
 - **Positions**: head injury half-lying; fainting lying with legs up; asthma half-sitting; belly injury
   knees bent; chest injury sitting, leaning to the injured side; unconscious but breathing: recovery
@@ -200,29 +209,30 @@ Rules scored against each question's own guess chance (1/k). Whole pool:
 | Rule | Fires | Right | Guessing gets | Survives Bonferroni (22 rules) |
 |---|---|---|---|---|
 | Both / all of the above (text questions) | 97 | 54 | 30.7 | yes |
-| 3 options: the last (needs PDF order) | 568 | 229 | 189.3 | yes |
+| 3 options: the last in the PDF (a habit of the question writers; useless on the exam, which shuffles) | 568 | 229 | 189.3 | yes |
 | The only option starting "Արգելվում" | 90 | 52 | 35.4 | yes |
-| First aid: the longest | 50 | 31 | 15.8 | yes |
+| First aid: the longest (characters) | 50 | 31 | 15.8 | yes |
 | The only option without "միայն" when 2+ others have it | 79 | 38 | 25.2 | yes |
-| Law definitions: the longest | 28 | 23 | 13.2 | yes |
+| Law definitions: the longest (characters) | 28 | 23 | 13.2 | yes |
 | Bare "Պարտավոր է / Պարտադիր է" | 29 | 23 | 13.6 | yes |
 | Yield lists: pedestrians and someone else | 10 | 10 | 3.2 | yes |
-| Group 8, five numbers: the middle | 7 | 7 | 1.4 | yes |
+| Group 8, five numbers: the middle value | 7 | 7 | 1.4 | yes |
 | Echo: the option repeating the most words of the question | 149 | 73 | 54.8 | yes, but fails on unseen questions |
 | Tram: yes / backing: no | 7 / 10 | 7 / 8 | 3.5 / 4.5 | no (small) |
-| The longest option, pool-wide | 901 | 354 | 334.2 | no |
+| The longest option, pool-wide (characters; by words 260 of 630, chance 224) | 901 | 354 | 334.2 | no |
 
 **Held out** (5 folds grouped by wording, the list rebuilt on 4 folds and scored on the 5th): 235
 right of 418 where guessing gets 149 (content rules); the word model 395 of 882 (325), but its top
 words are content ("70կմ", "վազանց"): it memorizes, it finds no tricks.
 
 **On questions nobody had seen** (the 118 removed in 2026, never read while the rules were found):
-both/all 13 of 22 (7.2), "Արգելվում" 13 of 20 (8.0), 3 options last 34 of 72 (24.0) hold up; echo
+both/all 13 of 22 (7.2), "Արգելվում" 13 of 20 (8.0) and the PDF habit "3 options: the last" 34 of 72 (24.0) hold up; echo
 (7 of 19, 7.9) does not. With 22 rules tested, one or two p-values under 0.05 are expected by chance
 ("shortest" did that here and is nothing in the main pool). Most group rules fire only 1-8 times there.
 
 **Caveats.** The group rules and facts were found by reading all questions, so their counts are
-in-sample; the unseen test is small. Whether the computer test keeps PDF option order is unknown. The 15
+in-sample; the unseen test is small. The exam shuffles the options, so the position rules only show how
+the questions were written; the strategy numbers above use content rules only. The 15
 traffic-rule questions are assumed drawn evenly from 858 (the law gives no quota per group). The 3
 psychological questions are not in the pool and are assumed passed.
 

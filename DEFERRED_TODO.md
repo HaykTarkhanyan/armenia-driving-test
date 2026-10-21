@@ -8,5 +8,4 @@ Parked ideas, not started.
 - **Watch for a new pool** - re-run `scripts/download_pdfs.py`; it re-downloads only groups whose version stamp changed, then rebuild.
 - **Study app** - parked by Hayk on 2026-10-21 ("dont worry about study app for now"). Decided so far: same stack as the German app, Armenian only, options shuffled except picture-label questions, the old pool as a separate "old questions" set. Topics: undecided (official groups vs finer sub-topics).
 - **Lessons per topic** and the **exam-day guide** - parked with the app. Open points for the guide: is driving-school training now required for B (arka.am says so, the 2024 ministry document says not for A/B/C)? The 3 psychological questions are not published anywhere found so far.
-- **Does the computer exam keep the PDF option order?** Decides which rule-list row of PATTERNS.md applies. Needs someone who took the exam, or a screen recording.
 - **Report the key errors** (7-6, 7-43, 3-42) to the Road Police? Their own law says otherwise.

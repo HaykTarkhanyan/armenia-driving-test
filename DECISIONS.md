@@ -2,6 +2,13 @@
 
 Newest first.
 
+## 9. The exam shuffles the options: only content rules count; "longest" is measured in characters
+
+- **Date / status:** 2026-10-22, active (Hayk: "pdf order is random"; "clarify ... what longest means based on characters or words")
+- **Why:** On the real computer test the options appear in random order, so position rules ("3 options: the last") and the "learn the exceptions of a fixed position" strategies (533 and 598 answers for 95%) do not apply. The applicable result is the content-rule row: 714 answers for 95% (guessing 952). Position rules stay in the analysis as a description of how the questions were written. "Longest" stays character count (Python `len`, spaces and punctuation included): by words it is about as accurate but decides fewer questions because word counts tie (first aid 31/50 by characters vs 26/36 by words; law definitions 23/28 vs 18/25).
+- **Alternatives rejected:** removing the order-kept strategies from the code (they show how large the fixed-position effect is; kept, labelled "does not apply"); switching "longest" to words (fewer questions decided, no accuracy gain).
+- **What would change this:** A test mode that keeps the PDF order (e.g. a different exam program).
+
 ## 8. Rules found by reading every question join the rule list; tested on the questions removed in 2026
 
 - **Date / status:** 2026-10-21, active (Hayk: "look into the questions group by group ... find cool stuff"; 2 reading subagents, one per half of the groups)
@@ -18,7 +25,7 @@ Newest first.
 
 ## 6. Shortcut analysis: per-question guess baseline, folds grouped by wording, exact pass model, "exceptions" baseline
 
-- **Date / status:** 2026-10-21, active (Hayk asked for the same shortcut analysis as in the German project)
+- **Date / status:** 2026-10-21, active, revisited 2026-10-22 (#9: the exam shuffles the options) (Hayk asked for the same shortcut analysis as in the German project)
 - **Why:** Options vary from 2 to 5, so a rule is scored against the sum of 1/k over the questions it fires on, not a flat 25%. 26% of questions share their wording with another (only the picture differs), so cross-validation folds are grouped by normalized wording; otherwise word rules learn answers from twins. P(pass) is exact (dynamic program per section over which questions are drawn, then convolved: 2 of 82, 2 of 59, 1 of 51, 15 of 858, at least 18 of 20), so no simulation noise. A "position only" strategy was added after the first run: with the usual-position fallback the memorize count fell from 601 to 476 for 50%, although that fallback is no better than guessing held out (253 vs 255); the drop came from "learn only what your fixed rule gets wrong", which works for any fixed rule. Against that baseline the real patterns save 22 answers at 95% (598 -> 576). Verdict in PATTERNS.md.
 - **Alternatives rejected:** Monte Carlo for P(pass) (noisy, slower, the exact model is cheap); random folds (leak twins); reporting only the rule list vs guessing (would credit the patterns with ~350 answers of saving that any fixed rule gets).
 - **What would change this:** Evidence on whether the computer test keeps the PDF option order (decides which rows of the table apply), or a published per-group quota for the 15 traffic-rule questions (then draw per group).
