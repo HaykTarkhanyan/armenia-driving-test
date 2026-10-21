@@ -7,4 +7,4 @@ app/dist/
 .playwright-mcp/
 
 # official PDFs: ~15 MB each, re-downloadable; official/manifest.json pins URL, version and SHA-256
-official/*.pdf
+official/**/*.pdf

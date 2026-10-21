@@ -4,8 +4,11 @@ All 1,050 official questions of the Armenian theory exam for a car licence, in A
 correct answer and the picture of every picture question, taken from the Road Police's own PDFs and
 checked against their English version. Facts checked on 2026-10-21.
 
-Status: dataset and exam rules done. Next: answer-pattern analysis ("shortcuts"), a study app on
-GitHub Pages, short lessons per topic, an exam-day guide.
+Status: dataset, exam rules and the shortcut analysis done. Next: the previous (June 2026) pool and
+how it differs, a study app on GitHub Pages, short lessons per topic, an exam-day guide.
+
+**Shortcuts, in one line:** none get near a pass. The exam needs 18 of 20; guessing scores 7.2, the
+best rule list 8.1, and knowing 95% of the pool gives a 97.5% pass chance. Details: [`PATTERNS.md`](PATTERNS.md).
 
 ## What is in this repo
 
@@ -17,7 +20,10 @@ GitHub Pages, short lessons per topic, an exam-day guide.
 | [`_knowledge/exam_rules.md`](_knowledge/exam_rules.md) | The exam rules from the law in force, quoted word for word, and which PDF group is which exam section |
 | `official/manifest.json` | URL, version date, size and SHA-256 of each downloaded PDF (the PDFs themselves are not in git) |
 | `results/crosscheck_en.json` | Armenian vs English PDFs, question by question: 0 differences |
-| `scripts/` | `download_pdfs.py`, `build_dataset.py` |
+| [`PATTERNS.md`](PATTERNS.md) | Are there answer shortcuts? 14 rules tested, held-out scores, exact pass chances, how many answers to learn, what to learn first |
+| `reports/patterns_report.html` | Interactive report for the shortcut analysis (open in a browser; one standalone file) |
+| `results/patterns.json` | Raw results of the shortcut analysis (the report is built from it) |
+| `scripts/` | `download_pdfs.py`, `build_dataset.py` (dataset); `mine_patterns.py`, `build_pattern_report.py` (shortcuts) |
 | `DECISIONS.md`, `CONVENTIONS.md`, `_learnings/` | Why things are built this way, rules for the data, gotchas found on the way |
 
 ## The exam in one paragraph
@@ -55,6 +61,8 @@ Needs `uv` (Python 3.12+); `uv sync` once.
 ```
 uv run python scripts/download_pdfs.py   # ~2 min (measured 105 s), 20 PDFs (Armenian + English), skips unchanged groups
 uv run python scripts/build_dataset.py   # ~5 s, writes data/, questions/, results/crosscheck_en.json
+uv run python scripts/mine_patterns.py   # ~30-45 s -> results/patterns.json
+uv run python scripts/build_pattern_report.py   # ~2 s -> reports/patterns_report.html
 ```
 
 ## Sources

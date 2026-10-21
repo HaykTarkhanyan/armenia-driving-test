@@ -2,6 +2,20 @@
 
 Newest first.
 
+## 6. Shortcut analysis: per-question guess baseline, folds grouped by wording, exact pass model, "exceptions" baseline
+
+- **Date / status:** 2026-10-21, active (Hayk asked for the same shortcut analysis as in the German project)
+- **Why:** Options vary from 2 to 5, so a rule is scored against the sum of 1/k over the questions it fires on, not a flat 25%. 26% of questions share their wording with another (only the picture differs), so cross-validation folds are grouped by normalized wording; otherwise word rules learn answers from twins. P(pass) is exact (dynamic program per section over which questions are drawn, then convolved: 2 of 82, 2 of 59, 1 of 51, 15 of 858, at least 18 of 20), so no simulation noise. A "position only" strategy was added after the first run: with the usual-position fallback the memorize count fell from 601 to 476 for 50%, although that fallback is no better than guessing held out (253 vs 255); the drop came from "learn only what your fixed rule gets wrong", which works for any fixed rule. Against that baseline the real patterns save 22 answers at 95% (598 -> 576). Verdict in PATTERNS.md.
+- **Alternatives rejected:** Monte Carlo for P(pass) (noisy, slower, the exact model is cheap); random folds (leak twins); reporting only the rule list vs guessing (would credit the patterns with ~350 answers of saving that any fixed rule gets).
+- **What would change this:** Evidence on whether the computer test keeps the PDF option order (decides which rows of the table apply), or a published per-group quota for the 15 traffic-rule questions (then draw per group).
+
+## 5. Recover the previous pool (June 2026) from the Wayback Machine and match it to the current one
+
+- **Date / status:** 2026-10-21, active (Hayk, not sure of the exam date: "get both pls")
+- **Why:** By point 16 of Decision 385-Ն new questions may be used only 30 days after publication; the current PDFs were published 2026-10-02, so an exam before about 2026-11-01 may still draw from the previous pool. roadpolice.am now answers 404 for the old files (/exam/hy_group_N.pdf), but the Wayback Machine captured them on 2026-06-08 (the old PDFs are Word exports created 2022-04-13, so the old pool dates from 2022). The old PDFs have no question numbers and no green answer, so the old Armenian text is checked against the old English PDFs, and the questions found in both pools must agree with the current answers. Matching is one-to-one: same wording and options first, then same wording, then fuzzy text (rapidfuzz 3.14.6, score >= 85); same-wording twins are told apart by perceptual picture hash (imagehash 4.3.2), since old pictures are 600x300 and new ones 1200x600, so byte hashes never match.
+- **Alternatives rejected:** ignoring the old pool (wrong if the exam is before November); third-party apps for the old pool (unofficial copies; the archive has the official files); difflib for fuzzy matching (1,116 x 1,050 comparisons take minutes in pure Python, rapidfuzz takes seconds); hand-written picture hashing (imagehash is the standard package for this).
+- **What would change this:** The exam date passing 2026-11-01 (then the old pool is history; keep the data, drop it from practice), or roadpolice.am publishing a list of changes.
+
 ## 4. The official PDFs stay out of git; a manifest pins them, the extracted pictures are committed
 
 - **Date / status:** 2026-10-21, active
