@@ -1,0 +1,24 @@
+title = "New official edition (2026-11-06) and the Armenian study app"
+date = "2026-11-23"
+time = "15:08"
+areas = ["app/", ".github/workflows/", "scripts/", "data/", "questions/", "results/", "reports/", "_knowledge/"]
+
+done = [
+  "Downloaded all 20 PDFs (118 s): every file had a new version stamp, 2026-11-06, from a new PDF generator",
+  "Updated the parser to the new colors and font sizes; all checks pass, Armenian and English agree on all 1,050 answers",
+  "scripts/non_essential/diff_editions.py compared the editions by wording, options and picture hash: 0 added, 0 removed, 1 answer changed (6-84), 1 option corrected (2-77), 4 moved to another group, 181 renumbered",
+  "Re-ran the old-pool match, the shortcut analysis and the report; shortcut numbers moved by at most 1 question (95% pass: 518 -> 519 answers)",
+  "Built the study app: practice by group, not-known-yet rounds, mistakes, timed mock exam with the official 2+2+1+15 draw, shuffled options, exact pass chance, progress export/import, old questions as a separate set, warnings on 7-6, 7-43, 3-42 and 6-84",
+  "Checks: 18 unit tests (the pass chance matches the Python model), build, GitHub Actions build and deploy, Playwright on the live site at 390 px: 5 pages, pictures in 7 sampled questions, old pool, a full mock exam, 0 console errors",
+]
+pending = [
+  "Hayk has not reviewed the Armenian interface wording or the group titles, which I wrote",
+  "The report copy made on the Desktop on 2026-10-22 is no longer there; the current report is reports/patterns_report.html",
+]
+next = [
+  "Hayk tries the app on his phone",
+  "If a new edition appears: re-run download, build_dataset, diff_editions, build_old_pool, and add a progress migration before deploying (DEFERRED_TODO.md)",
+]
+files = ["app/", ".github/workflows/pages.yml", "scripts/build_dataset.py", "scripts/non_essential/diff_editions.py", "results/edition_diff_2026-11-06.json", "PATTERNS.md", "DECISIONS.md", "README.md", "DEFERRED_TODO.md"]
+commits = ["17bd0b6 New official edition (2026-11-06): parser, data, analysis", "d987bcd Study app in Armenian: practice, mock exam, progress, old questions"]
+notes = "No API spend. Whether the exam computer already uses the new key for 6-84 is not published. The 3 psychological questions are not public, so the mock exam has only the 20 knowledge questions."
