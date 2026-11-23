@@ -10,9 +10,9 @@
    "same_question": 134,
    "picture_question": 1
   },
-  "identical": 557,
+  "identical": 558,
   "changes": {
-   "picture": 132,
+   "picture": 131,
    "text": 182,
    "options": 190,
    "answer": 110
@@ -172,20 +172,20 @@
    "2-82",
    "3-57",
    "4-38",
-   "4-87",
-   "4-91",
+   "4-89",
    "4-93",
-   "4-101",
-   "4-110",
-   "4-134",
-   "4-135",
+   "4-95",
+   "4-103",
+   "4-112",
    "4-136",
-   "4-140",
-   "4-146",
-   "4-157",
-   "4-160",
-   "4-175",
-   "4-179",
+   "4-137",
+   "4-138",
+   "4-142",
+   "4-148",
+   "4-159",
+   "4-162",
+   "4-177",
+   "4-181",
    "5-62",
    "5-83",
    "5-91",
@@ -199,12 +199,12 @@
    "7-65",
    "7-77",
    "7-98",
-   "7-109",
-   "7-115",
-   "7-118",
+   "7-107",
+   "7-113",
+   "7-116",
+   "8-39",
    "8-41",
-   "8-43",
-   "8-49",
+   "8-47",
    "9-3",
    "9-6",
    "9-95",
@@ -445,7 +445,7 @@
    "old_id": "old-1-31",
    "new_id": "1-27",
    "how": "exact",
-   "picture_distance": 22,
+   "picture_distance": 24,
    "changes": [
     "picture"
    ]
@@ -794,7 +794,7 @@
    "old_id": "old-1-71",
    "new_id": "1-65",
    "how": "same_question",
-   "picture_distance": 2,
+   "picture_distance": 4,
    "changes": [
     "options",
     "answer"
@@ -1019,7 +1019,7 @@
    "old_id": "old-1-100",
    "new_id": "1-95",
    "how": "same_question",
-   "picture_distance": 4,
+   "picture_distance": 2,
    "changes": [
     "options"
    ]
@@ -1864,7 +1864,7 @@
    "old_id": "old-2-59",
    "new_id": "2-54",
    "how": "exact",
-   "picture_distance": 2,
+   "picture_distance": 4,
    "changes": []
   },
   {
@@ -2627,7 +2627,7 @@
    "new_id": "4-1",
    "how": "fuzzy",
    "score": 98.4,
-   "picture_distance": 2,
+   "picture_distance": 4,
    "changes": [
     "text"
    ]
@@ -2683,7 +2683,7 @@
    "old_id": "old-4-8",
    "new_id": "4-8",
    "how": "exact",
-   "picture_distance": 2,
+   "picture_distance": 0,
    "changes": []
   },
   {
@@ -2879,7 +2879,7 @@
    "old_id": "old-4-33",
    "new_id": "4-32",
    "how": "exact",
-   "picture_distance": 16,
+   "picture_distance": 14,
    "changes": [
     "picture"
    ]
@@ -2934,7 +2934,7 @@
    "old_id": "old-4-40",
    "new_id": "4-40",
    "how": "same_question",
-   "picture_distance": 8,
+   "picture_distance": 10,
    "changes": [
     "options"
    ]
@@ -3001,7 +3001,7 @@
    "old_id": "old-4-49",
    "new_id": "4-48",
    "how": "exact",
-   "picture_distance": 6,
+   "picture_distance": 4,
    "changes": []
   },
   {
@@ -3065,7 +3065,7 @@
    "old_id": "old-4-57",
    "new_id": "4-56",
    "how": "exact",
-   "picture_distance": 2,
+   "picture_distance": 0,
    "changes": []
   },
   {
@@ -3096,7 +3096,7 @@
    "old_id": "old-4-61",
    "new_id": "4-60",
    "how": "exact",
-   "picture_distance": 0,
+   "picture_distance": 2,
    "changes": []
   },
   {
@@ -3241,16 +3241,16 @@
   },
   {
    "old_id": "old-4-80",
-   "new_id": "4-79",
+   "new_id": "4-81",
    "how": "exact",
    "picture_distance": 2,
    "changes": []
   },
   {
    "old_id": "old-4-81",
-   "new_id": "4-80",
+   "new_id": "4-82",
    "how": "same_question",
-   "picture_distance": 6,
+   "picture_distance": 8,
    "changes": [
     "options",
     "answer"
@@ -3258,31 +3258,31 @@
   },
   {
    "old_id": "old-4-82",
-   "new_id": "4-81",
+   "new_id": "4-83",
    "how": "exact",
-   "picture_distance": 6,
+   "picture_distance": 8,
    "changes": []
   },
   {
    "old_id": "old-4-83",
-   "new_id": "4-82",
+   "new_id": "4-84",
    "how": "fuzzy",
    "score": 99.6,
-   "picture_distance": 0,
+   "picture_distance": 2,
    "changes": [
     "text"
    ]
   },
   {
    "old_id": "old-4-84",
-   "new_id": "4-83",
+   "new_id": "4-85",
    "how": "exact",
    "picture_distance": 0,
    "changes": []
   },
   {
    "old_id": "old-4-85",
-   "new_id": "4-84",
+   "new_id": "4-86",
    "how": "same_question",
    "picture_distance": 2,
    "changes": [
@@ -3291,7 +3291,7 @@
   },
   {
    "old_id": "old-4-86",
-   "new_id": "4-85",
+   "new_id": "4-87",
    "how": "same_question",
    "picture_distance": 2,
    "changes": [
@@ -3300,14 +3300,14 @@
   },
   {
    "old_id": "old-4-87",
-   "new_id": "4-86",
+   "new_id": "4-88",
    "how": "exact",
    "picture_distance": 2,
    "changes": []
   },
   {
    "old_id": "old-4-88",
-   "new_id": "4-88",
+   "new_id": "4-90",
    "how": "same_question",
    "picture_distance": 2,
    "changes": [
@@ -3316,21 +3316,21 @@
   },
   {
    "old_id": "old-4-89",
-   "new_id": "4-89",
+   "new_id": "4-91",
    "how": "exact",
    "picture_distance": 4,
    "changes": []
   },
   {
    "old_id": "old-4-90",
-   "new_id": "4-90",
+   "new_id": "4-92",
    "how": "exact",
    "picture_distance": 4,
    "changes": []
   },
   {
    "old_id": "old-4-91",
-   "new_id": "4-92",
+   "new_id": "4-94",
    "how": "exact",
    "picture_distance": 4,
    "changes": []
@@ -3343,14 +3343,14 @@
   },
   {
    "old_id": "old-4-93",
-   "new_id": "4-94",
+   "new_id": "4-96",
    "how": "exact",
    "picture_distance": 4,
    "changes": []
   },
   {
    "old_id": "old-4-94",
-   "new_id": "4-95",
+   "new_id": "4-97",
    "how": "fuzzy",
    "score": 95.8,
    "picture_distance": 2,
@@ -3360,7 +3360,7 @@
   },
   {
    "old_id": "old-4-95",
-   "new_id": "4-96",
+   "new_id": "4-98",
    "how": "picture_question",
    "picture_distance": 18,
    "changes": [
@@ -3370,7 +3370,7 @@
   },
   {
    "old_id": "old-4-96",
-   "new_id": "4-97",
+   "new_id": "4-99",
    "how": "fuzzy",
    "score": 89.8,
    "picture_distance": 2,
@@ -3380,7 +3380,7 @@
   },
   {
    "old_id": "old-4-97",
-   "new_id": "4-98",
+   "new_id": "4-100",
    "how": "same_question",
    "picture_distance": 2,
    "changes": [
@@ -3389,28 +3389,28 @@
   },
   {
    "old_id": "old-4-98",
-   "new_id": "4-99",
+   "new_id": "4-101",
    "how": "exact",
    "picture_distance": 0,
    "changes": []
   },
   {
    "old_id": "old-4-99",
-   "new_id": "4-100",
+   "new_id": "4-102",
    "how": "exact",
    "picture_distance": 2,
    "changes": []
   },
   {
    "old_id": "old-4-100",
-   "new_id": "4-102",
+   "new_id": "4-104",
    "how": "exact",
    "picture_distance": 10,
    "changes": []
   },
   {
    "old_id": "old-4-101",
-   "new_id": "4-103",
+   "new_id": "4-105",
    "how": "same_question",
    "picture_distance": 0,
    "changes": [
@@ -3419,7 +3419,7 @@
   },
   {
    "old_id": "old-4-102",
-   "new_id": "4-104",
+   "new_id": "4-106",
    "how": "exact",
    "picture_distance": 16,
    "changes": [
@@ -3428,7 +3428,7 @@
   },
   {
    "old_id": "old-4-103",
-   "new_id": "4-105",
+   "new_id": "4-107",
    "how": "same_question",
    "picture_distance": 0,
    "changes": [
@@ -3438,7 +3438,7 @@
   },
   {
    "old_id": "old-4-104",
-   "new_id": "4-106",
+   "new_id": "4-108",
    "how": "exact",
    "picture_distance": 18,
    "changes": [
@@ -3447,14 +3447,14 @@
   },
   {
    "old_id": "old-4-105",
-   "new_id": "4-107",
+   "new_id": "4-109",
    "how": "exact",
    "picture_distance": 2,
    "changes": []
   },
   {
    "old_id": "old-4-106",
-   "new_id": "4-108",
+   "new_id": "4-110",
    "how": "same_question",
    "picture_distance": 4,
    "changes": [
@@ -3464,7 +3464,7 @@
   },
   {
    "old_id": "old-4-107",
-   "new_id": "4-109",
+   "new_id": "4-111",
    "how": "exact",
    "picture_distance": 0,
    "changes": []
@@ -3477,7 +3477,7 @@
   },
   {
    "old_id": "old-4-109",
-   "new_id": "4-111",
+   "new_id": "4-113",
    "how": "fuzzy",
    "score": 85.2,
    "picture_distance": 2,
@@ -3487,22 +3487,6 @@
   },
   {
    "old_id": "old-4-110",
-   "new_id": "4-112",
-   "how": "exact",
-   "picture_distance": 18,
-   "changes": [
-    "picture"
-   ]
-  },
-  {
-   "old_id": "old-4-111",
-   "new_id": "4-113",
-   "how": "exact",
-   "picture_distance": 2,
-   "changes": []
-  },
-  {
-   "old_id": "old-4-112",
    "new_id": "4-114",
    "how": "exact",
    "picture_distance": 16,
@@ -3511,8 +3495,24 @@
    ]
   },
   {
-   "old_id": "old-4-113",
+   "old_id": "old-4-111",
    "new_id": "4-115",
+   "how": "exact",
+   "picture_distance": 2,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-112",
+   "new_id": "4-116",
+   "how": "exact",
+   "picture_distance": 16,
+   "changes": [
+    "picture"
+   ]
+  },
+  {
+   "old_id": "old-4-113",
+   "new_id": "4-117",
    "how": "fuzzy",
    "score": 87.5,
    "picture_distance": 2,
@@ -3522,7 +3522,7 @@
   },
   {
    "old_id": "old-4-114",
-   "new_id": "4-116",
+   "new_id": "4-118",
    "how": "same_question",
    "picture_distance": 2,
    "changes": [
@@ -3531,7 +3531,7 @@
   },
   {
    "old_id": "old-4-115",
-   "new_id": "4-117",
+   "new_id": "4-119",
    "how": "same_question",
    "picture_distance": 2,
    "changes": [
@@ -3541,14 +3541,14 @@
   },
   {
    "old_id": "old-4-116",
-   "new_id": "4-118",
+   "new_id": "4-120",
    "how": "exact",
    "picture_distance": 0,
    "changes": []
   },
   {
    "old_id": "old-4-117",
-   "new_id": "4-119",
+   "new_id": "4-121",
    "how": "same_question",
    "picture_distance": 0,
    "changes": [
@@ -3558,7 +3558,7 @@
   },
   {
    "old_id": "old-4-118",
-   "new_id": "4-120",
+   "new_id": "4-122",
    "how": "fuzzy",
    "score": 90.9,
    "picture_distance": 2,
@@ -3569,7 +3569,7 @@
   },
   {
    "old_id": "old-4-119",
-   "new_id": "4-121",
+   "new_id": "4-123",
    "how": "fuzzy",
    "score": 91.8,
    "picture_distance": 4,
@@ -3579,7 +3579,7 @@
   },
   {
    "old_id": "old-4-120",
-   "new_id": "4-122",
+   "new_id": "4-124",
    "how": "fuzzy",
    "score": 89.3,
    "picture_distance": 2,
@@ -3591,14 +3591,14 @@
   },
   {
    "old_id": "old-4-121",
-   "new_id": "4-123",
+   "new_id": "4-125",
    "how": "exact",
    "picture_distance": 2,
    "changes": []
   },
   {
    "old_id": "old-4-122",
-   "new_id": "4-124",
+   "new_id": "4-126",
    "how": "fuzzy",
    "score": 88.0,
    "picture_distance": 10,
@@ -3608,7 +3608,7 @@
   },
   {
    "old_id": "old-4-123",
-   "new_id": "4-125",
+   "new_id": "4-127",
    "how": "same_question",
    "picture_distance": 2,
    "changes": [
@@ -3617,7 +3617,7 @@
   },
   {
    "old_id": "old-4-124",
-   "new_id": "4-126",
+   "new_id": "4-128",
    "how": "fuzzy",
    "score": 89.4,
    "picture_distance": 6,
@@ -3627,7 +3627,7 @@
   },
   {
    "old_id": "old-4-125",
-   "new_id": "4-127",
+   "new_id": "4-129",
    "how": "exact",
    "picture_distance": 14,
    "changes": [
@@ -3636,7 +3636,7 @@
   },
   {
    "old_id": "old-4-126",
-   "new_id": "4-128",
+   "new_id": "4-130",
    "how": "same_question",
    "picture_distance": 0,
    "changes": [
@@ -3646,7 +3646,7 @@
   },
   {
    "old_id": "old-4-127",
-   "new_id": "4-129",
+   "new_id": "4-131",
    "how": "fuzzy",
    "score": 88.5,
    "picture_distance": 2,
@@ -3656,14 +3656,14 @@
   },
   {
    "old_id": "old-4-128",
-   "new_id": "4-130",
+   "new_id": "4-132",
    "how": "exact",
    "picture_distance": 2,
    "changes": []
   },
   {
    "old_id": "old-4-129",
-   "new_id": "4-131",
+   "new_id": "4-133",
    "how": "same_question",
    "picture_distance": 0,
    "changes": [
@@ -3672,14 +3672,14 @@
   },
   {
    "old_id": "old-4-130",
-   "new_id": "4-132",
+   "new_id": "4-134",
    "how": "exact",
    "picture_distance": 4,
    "changes": []
   },
   {
    "old_id": "old-4-131",
-   "new_id": "4-133",
+   "new_id": "4-135",
    "how": "exact",
    "picture_distance": 0,
    "changes": []
@@ -3704,7 +3704,7 @@
   },
   {
    "old_id": "old-4-135",
-   "new_id": "4-137",
+   "new_id": "4-139",
    "how": "same_question",
    "picture_distance": 2,
    "changes": [
@@ -3713,7 +3713,7 @@
   },
   {
    "old_id": "old-4-136",
-   "new_id": "4-138",
+   "new_id": "4-140",
    "how": "fuzzy",
    "score": 93.8,
    "picture_distance": null,
@@ -3725,7 +3725,7 @@
   },
   {
    "old_id": "old-4-137",
-   "new_id": "4-139",
+   "new_id": "4-141",
    "how": "exact",
    "picture_distance": 0,
    "changes": []
@@ -3738,14 +3738,14 @@
   },
   {
    "old_id": "old-4-139",
-   "new_id": "4-141",
+   "new_id": "4-143",
    "how": "exact",
    "picture_distance": 4,
    "changes": []
   },
   {
    "old_id": "old-4-140",
-   "new_id": "4-142",
+   "new_id": "4-144",
    "how": "fuzzy",
    "score": 87.3,
    "picture_distance": 2,
@@ -3756,21 +3756,21 @@
   },
   {
    "old_id": "old-4-141",
-   "new_id": "4-143",
+   "new_id": "4-145",
    "how": "exact",
    "picture_distance": 2,
    "changes": []
   },
   {
    "old_id": "old-4-142",
-   "new_id": "4-144",
+   "new_id": "4-146",
    "how": "exact",
    "picture_distance": 4,
    "changes": []
   },
   {
    "old_id": "old-4-143",
-   "new_id": "4-145",
+   "new_id": "4-147",
    "how": "same_question",
    "picture_distance": 2,
    "changes": [
@@ -3779,14 +3779,14 @@
   },
   {
    "old_id": "old-4-144",
-   "new_id": "4-147",
+   "new_id": "4-149",
    "how": "exact",
    "picture_distance": 6,
    "changes": []
   },
   {
    "old_id": "old-4-145",
-   "new_id": "4-148",
+   "new_id": "4-150",
    "how": "same_question",
    "picture_distance": 4,
    "changes": [
@@ -3795,14 +3795,14 @@
   },
   {
    "old_id": "old-4-146",
-   "new_id": "4-149",
+   "new_id": "4-151",
    "how": "exact",
    "picture_distance": 6,
    "changes": []
   },
   {
    "old_id": "old-4-147",
-   "new_id": "4-150",
+   "new_id": "4-152",
    "how": "exact",
    "picture_distance": 26,
    "changes": [
@@ -3811,16 +3811,16 @@
   },
   {
    "old_id": "old-4-148",
-   "new_id": "4-151",
+   "new_id": "4-153",
    "how": "exact",
-   "picture_distance": 16,
+   "picture_distance": 18,
    "changes": [
     "picture"
    ]
   },
   {
    "old_id": "old-4-149",
-   "new_id": "4-152",
+   "new_id": "4-154",
    "how": "exact",
    "picture_distance": 20,
    "changes": [
@@ -3829,14 +3829,14 @@
   },
   {
    "old_id": "old-4-150",
-   "new_id": "4-153",
+   "new_id": "4-155",
    "how": "exact",
    "picture_distance": 0,
    "changes": []
   },
   {
    "old_id": "old-4-151",
-   "new_id": "4-154",
+   "new_id": "4-156",
    "how": "fuzzy",
    "score": 92.8,
    "picture_distance": 2,
@@ -3846,14 +3846,14 @@
   },
   {
    "old_id": "old-4-152",
-   "new_id": "4-155",
+   "new_id": "4-157",
    "how": "exact",
    "picture_distance": 6,
    "changes": []
   },
   {
    "old_id": "old-4-153",
-   "new_id": "4-156",
+   "new_id": "4-158",
    "how": "fuzzy",
    "score": 87.2,
    "picture_distance": 4,
@@ -3869,14 +3869,14 @@
   },
   {
    "old_id": "old-4-155",
-   "new_id": "4-158",
+   "new_id": "4-160",
    "how": "exact",
    "picture_distance": 0,
    "changes": []
   },
   {
    "old_id": "old-4-156",
-   "new_id": "4-159",
+   "new_id": "4-161",
    "how": "same_question",
    "picture_distance": 4,
    "changes": [
@@ -3892,35 +3892,35 @@
   },
   {
    "old_id": "old-4-158",
-   "new_id": "4-161",
+   "new_id": "4-163",
    "how": "exact",
    "picture_distance": 2,
    "changes": []
   },
   {
    "old_id": "old-4-159",
-   "new_id": "4-162",
+   "new_id": "4-164",
    "how": "exact",
    "picture_distance": 4,
    "changes": []
   },
   {
    "old_id": "old-4-160",
-   "new_id": "4-163",
+   "new_id": "4-165",
    "how": "exact",
    "picture_distance": 0,
    "changes": []
   },
   {
    "old_id": "old-4-161",
-   "new_id": "4-164",
+   "new_id": "4-166",
    "how": "exact",
-   "picture_distance": 2,
+   "picture_distance": 4,
    "changes": []
   },
   {
    "old_id": "old-4-162",
-   "new_id": "4-165",
+   "new_id": "4-167",
    "how": "fuzzy",
    "score": 95.7,
    "picture_distance": 0,
@@ -3930,7 +3930,7 @@
   },
   {
    "old_id": "old-4-163",
-   "new_id": "4-166",
+   "new_id": "4-168",
    "how": "same_question",
    "picture_distance": 0,
    "changes": [
@@ -3939,28 +3939,28 @@
   },
   {
    "old_id": "old-4-164",
-   "new_id": "4-167",
-   "how": "exact",
-   "picture_distance": 0,
-   "changes": []
-  },
-  {
-   "old_id": "old-4-165",
-   "new_id": "4-168",
-   "how": "exact",
-   "picture_distance": 6,
-   "changes": []
-  },
-  {
-   "old_id": "old-4-166",
    "new_id": "4-169",
    "how": "exact",
    "picture_distance": 0,
    "changes": []
   },
   {
-   "old_id": "old-4-167",
+   "old_id": "old-4-165",
    "new_id": "4-170",
+   "how": "exact",
+   "picture_distance": 6,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-166",
+   "new_id": "4-171",
+   "how": "exact",
+   "picture_distance": 0,
+   "changes": []
+  },
+  {
+   "old_id": "old-4-167",
+   "new_id": "4-172",
    "how": "same_question",
    "picture_distance": 2,
    "changes": [
@@ -3970,21 +3970,21 @@
   },
   {
    "old_id": "old-4-168",
-   "new_id": "4-171",
+   "new_id": "4-173",
    "how": "exact",
    "picture_distance": 2,
    "changes": []
   },
   {
    "old_id": "old-4-169",
-   "new_id": "4-172",
+   "new_id": "4-174",
    "how": "exact",
    "picture_distance": 2,
    "changes": []
   },
   {
    "old_id": "old-4-170",
-   "new_id": "4-173",
+   "new_id": "4-175",
    "how": "fuzzy",
    "score": 85.3,
    "picture_distance": 4,
@@ -3994,7 +3994,7 @@
   },
   {
    "old_id": "old-4-171",
-   "new_id": "4-174",
+   "new_id": "4-176",
    "how": "fuzzy",
    "score": 99.6,
    "picture_distance": 4,
@@ -4010,21 +4010,21 @@
   },
   {
    "old_id": "old-4-173",
-   "new_id": "4-176",
+   "new_id": "4-178",
    "how": "exact",
    "picture_distance": 2,
    "changes": []
   },
   {
    "old_id": "old-4-174",
-   "new_id": "4-177",
+   "new_id": "4-179",
    "how": "exact",
    "picture_distance": 0,
    "changes": []
   },
   {
    "old_id": "old-4-175",
-   "new_id": "4-178",
+   "new_id": "4-180",
    "how": "exact",
    "picture_distance": 0,
    "changes": []
@@ -4234,8 +4234,10 @@
    "old_id": "old-5-25",
    "new_id": "5-25",
    "how": "exact",
-   "picture_distance": 10,
-   "changes": []
+   "picture_distance": 12,
+   "changes": [
+    "picture"
+   ]
   },
   {
    "old_id": "old-5-26",
@@ -4318,7 +4320,7 @@
    "old_id": "old-5-35",
    "new_id": "5-35",
    "how": "same_question",
-   "picture_distance": 10,
+   "picture_distance": 8,
    "changes": [
     "options",
     "answer"
@@ -4344,7 +4346,7 @@
    "old_id": "old-5-38",
    "new_id": "5-38",
    "how": "exact",
-   "picture_distance": 8,
+   "picture_distance": 10,
    "changes": []
   },
   {
@@ -4421,10 +4423,8 @@
    "old_id": "old-5-47",
    "new_id": "5-47",
    "how": "exact",
-   "picture_distance": 12,
-   "changes": [
-    "picture"
-   ]
+   "picture_distance": 10,
+   "changes": []
   },
   {
    "old_id": "old-5-48",
@@ -4903,7 +4903,7 @@
    "old_id": "old-5-106",
    "new_id": "5-106",
    "how": "same_question",
-   "picture_distance": 4,
+   "picture_distance": 2,
    "changes": [
     "options",
     "answer"
@@ -5649,7 +5649,7 @@
    "old_id": "old-6-65",
    "new_id": "6-63",
    "how": "exact",
-   "picture_distance": 2,
+   "picture_distance": 4,
    "changes": []
   },
   {
@@ -5942,7 +5942,7 @@
    "old_id": "old-7-3",
    "new_id": "7-3",
    "how": "exact",
-   "picture_distance": 11,
+   "picture_distance": 13,
    "changes": [
     "picture"
    ]
@@ -6017,7 +6017,7 @@
    "old_id": "old-7-12",
    "new_id": "7-12",
    "how": "exact",
-   "picture_distance": 11,
+   "picture_distance": 13,
    "changes": [
     "picture"
    ]
@@ -6026,7 +6026,7 @@
    "old_id": "old-7-13",
    "new_id": "7-13",
    "how": "exact",
-   "picture_distance": 2,
+   "picture_distance": 0,
    "changes": []
   },
   {
@@ -6042,14 +6042,14 @@
    "old_id": "old-7-15",
    "new_id": "7-15",
    "how": "exact",
-   "picture_distance": 6,
+   "picture_distance": 10,
    "changes": []
   },
   {
    "old_id": "old-7-16",
    "new_id": "7-16",
    "how": "exact",
-   "picture_distance": 2,
+   "picture_distance": 4,
    "changes": []
   },
   {
@@ -6070,7 +6070,7 @@
    "old_id": "old-7-19",
    "new_id": "7-19",
    "how": "exact",
-   "picture_distance": 11,
+   "picture_distance": 13,
    "changes": [
     "picture"
    ]
@@ -6079,10 +6079,8 @@
    "old_id": "old-7-20",
    "new_id": "7-20",
    "how": "exact",
-   "picture_distance": 14,
-   "changes": [
-    "picture"
-   ]
+   "picture_distance": 8,
+   "changes": []
   },
   {
    "old_id": "old-7-21",
@@ -6146,7 +6144,7 @@
    "old_id": "old-7-28",
    "new_id": "7-28",
    "how": "exact",
-   "picture_distance": 16,
+   "picture_distance": 18,
    "changes": [
     "picture"
    ]
@@ -6570,7 +6568,7 @@
    "old_id": "old-7-85",
    "new_id": "7-79",
    "how": "exact",
-   "picture_distance": 4,
+   "picture_distance": 2,
    "changes": []
   },
   {
@@ -6728,7 +6726,7 @@
   },
   {
    "old_id": "old-7-105",
-   "new_id": "7-99",
+   "new_id": "1-146",
    "how": "fuzzy",
    "score": 98.3,
    "picture_distance": 8,
@@ -6738,7 +6736,7 @@
   },
   {
    "old_id": "old-7-106",
-   "new_id": "7-100",
+   "new_id": "1-147",
    "how": "fuzzy",
    "score": 99.3,
    "picture_distance": 8,
@@ -6748,51 +6746,51 @@
   },
   {
    "old_id": "old-7-107",
-   "new_id": "7-101",
+   "new_id": "7-99",
    "how": "exact",
    "picture_distance": 0,
    "changes": []
   },
   {
    "old_id": "old-7-108",
-   "new_id": "7-102",
+   "new_id": "7-100",
    "how": "exact",
    "picture_distance": 2,
    "changes": []
   },
   {
    "old_id": "old-7-109",
-   "new_id": "7-103",
+   "new_id": "7-101",
    "how": "same_question",
-   "picture_distance": 4,
+   "picture_distance": 2,
    "changes": [
     "options"
    ]
   },
   {
    "old_id": "old-7-110",
-   "new_id": "7-104",
+   "new_id": "7-102",
    "how": "exact",
    "picture_distance": 2,
    "changes": []
   },
   {
    "old_id": "old-7-111",
-   "new_id": "7-105",
+   "new_id": "7-103",
    "how": "exact",
    "picture_distance": 2,
    "changes": []
   },
   {
    "old_id": "old-7-112",
-   "new_id": "7-106",
+   "new_id": "7-104",
    "how": "exact",
    "picture_distance": 2,
    "changes": []
   },
   {
    "old_id": "old-7-113",
-   "new_id": "7-107",
+   "new_id": "7-105",
    "how": "fuzzy",
    "score": 94.5,
    "picture_distance": 24,
@@ -6805,14 +6803,14 @@
   },
   {
    "old_id": "old-7-114",
-   "new_id": "7-108",
+   "new_id": "7-106",
    "how": "exact",
    "picture_distance": 2,
    "changes": []
   },
   {
    "old_id": "old-7-115",
-   "new_id": "7-110",
+   "new_id": "7-108",
    "how": "fuzzy",
    "score": 99.5,
    "picture_distance": 4,
@@ -6822,7 +6820,7 @@
   },
   {
    "old_id": "old-7-116",
-   "new_id": "7-111",
+   "new_id": "7-109",
    "how": "exact",
    "picture_distance": 22,
    "changes": [
@@ -6831,21 +6829,21 @@
   },
   {
    "old_id": "old-7-117",
-   "new_id": "7-112",
+   "new_id": "7-110",
    "how": "exact",
    "picture_distance": 2,
    "changes": []
   },
   {
    "old_id": "old-7-118",
-   "new_id": "7-113",
+   "new_id": "7-111",
    "how": "exact",
    "picture_distance": 0,
    "changes": []
   },
   {
    "old_id": "old-7-119",
-   "new_id": "7-114",
+   "new_id": "7-112",
    "how": "exact",
    "picture_distance": 6,
    "changes": []
@@ -6858,14 +6856,14 @@
   },
   {
    "old_id": "old-7-121",
-   "new_id": "7-116",
+   "new_id": "7-114",
    "how": "exact",
    "picture_distance": 0,
    "changes": []
   },
   {
    "old_id": "old-7-122",
-   "new_id": "7-117",
+   "new_id": "7-115",
    "how": "exact",
    "picture_distance": null,
    "changes": []
@@ -6878,14 +6876,14 @@
   },
   {
    "old_id": "old-7-124",
-   "new_id": "7-119",
+   "new_id": "7-117",
    "how": "exact",
    "picture_distance": 6,
    "changes": []
   },
   {
    "old_id": "old-7-125",
-   "new_id": "7-120",
+   "new_id": "7-118",
    "how": "same_question",
    "picture_distance": 0,
    "changes": [
@@ -6895,7 +6893,7 @@
   },
   {
    "old_id": "old-7-126",
-   "new_id": "7-121",
+   "new_id": "7-119",
    "how": "fuzzy",
    "score": 87.0,
    "picture_distance": 2,
@@ -6905,7 +6903,7 @@
   },
   {
    "old_id": "old-7-127",
-   "new_id": "7-122",
+   "new_id": "7-120",
    "how": "fuzzy",
    "score": 94.3,
    "picture_distance": 14,
@@ -6916,7 +6914,7 @@
   },
   {
    "old_id": "old-7-128",
-   "new_id": "7-123",
+   "new_id": "7-121",
    "how": "fuzzy",
    "score": 92.0,
    "picture_distance": 0,
@@ -6926,14 +6924,14 @@
   },
   {
    "old_id": "old-7-129",
-   "new_id": "7-124",
+   "new_id": "7-122",
    "how": "exact",
    "picture_distance": 2,
    "changes": []
   },
   {
    "old_id": "old-7-130",
-   "new_id": "7-125",
+   "new_id": "7-123",
    "how": "fuzzy",
    "score": 99.4,
    "picture_distance": 16,
@@ -6944,14 +6942,14 @@
   },
   {
    "old_id": "old-7-131",
-   "new_id": "7-126",
+   "new_id": "7-124",
    "how": "exact",
    "picture_distance": 6,
    "changes": []
   },
   {
    "old_id": "old-7-132",
-   "new_id": "7-127",
+   "new_id": "7-125",
    "how": "same_question",
    "picture_distance": 18,
    "changes": [
@@ -6961,14 +6959,14 @@
   },
   {
    "old_id": "old-7-133",
-   "new_id": "7-128",
+   "new_id": "7-126",
    "how": "exact",
    "picture_distance": 0,
    "changes": []
   },
   {
    "old_id": "old-7-134",
-   "new_id": "7-129",
+   "new_id": "7-127",
    "how": "exact",
    "picture_distance": 20,
    "changes": [
@@ -6994,14 +6992,14 @@
   },
   {
    "old_id": "old-8-3",
-   "new_id": "8-3",
+   "new_id": "4-79",
    "how": "exact",
    "picture_distance": 4,
    "changes": []
   },
   {
    "old_id": "old-8-4",
-   "new_id": "8-4",
+   "new_id": "8-3",
    "how": "same_question",
    "picture_distance": null,
    "changes": [
@@ -7011,7 +7009,7 @@
   },
   {
    "old_id": "old-8-5",
-   "new_id": "8-5",
+   "new_id": "8-4",
    "how": "same_question",
    "picture_distance": null,
    "changes": [
@@ -7021,7 +7019,7 @@
   },
   {
    "old_id": "old-8-6",
-   "new_id": "8-6",
+   "new_id": "4-80",
    "how": "exact",
    "picture_distance": 10,
    "changes": []
@@ -7034,7 +7032,7 @@
   },
   {
    "old_id": "old-8-8",
-   "new_id": "8-7",
+   "new_id": "8-5",
    "how": "same_question",
    "picture_distance": null,
    "changes": [
@@ -7056,49 +7054,49 @@
   },
   {
    "old_id": "old-8-11",
-   "new_id": "8-8",
+   "new_id": "8-6",
    "how": "exact",
    "picture_distance": null,
    "changes": []
   },
   {
    "old_id": "old-8-12",
-   "new_id": "8-9",
+   "new_id": "8-7",
    "how": "exact",
    "picture_distance": null,
    "changes": []
   },
   {
    "old_id": "old-8-13",
-   "new_id": "8-10",
+   "new_id": "8-8",
    "how": "exact",
    "picture_distance": null,
    "changes": []
   },
   {
    "old_id": "old-8-14",
-   "new_id": "8-11",
+   "new_id": "8-9",
    "how": "exact",
    "picture_distance": null,
    "changes": []
   },
   {
    "old_id": "old-8-15",
-   "new_id": "8-12",
+   "new_id": "8-10",
    "how": "exact",
    "picture_distance": null,
    "changes": []
   },
   {
    "old_id": "old-8-16",
-   "new_id": "8-13",
+   "new_id": "8-11",
    "how": "exact",
    "picture_distance": null,
    "changes": []
   },
   {
    "old_id": "old-8-17",
-   "new_id": "8-14",
+   "new_id": "8-12",
    "how": "exact",
    "picture_distance": 12,
    "changes": [
@@ -7107,42 +7105,42 @@
   },
   {
    "old_id": "old-8-18",
-   "new_id": "8-15",
+   "new_id": "8-13",
    "how": "exact",
    "picture_distance": null,
    "changes": []
   },
   {
    "old_id": "old-8-19",
-   "new_id": "8-16",
+   "new_id": "8-14",
    "how": "exact",
    "picture_distance": null,
    "changes": []
   },
   {
    "old_id": "old-8-20",
-   "new_id": "8-17",
+   "new_id": "8-15",
    "how": "exact",
    "picture_distance": null,
    "changes": []
   },
   {
    "old_id": "old-8-21",
-   "new_id": "8-18",
+   "new_id": "8-16",
    "how": "exact",
    "picture_distance": null,
    "changes": []
   },
   {
    "old_id": "old-8-22",
-   "new_id": "8-19",
+   "new_id": "8-17",
    "how": "exact",
    "picture_distance": null,
    "changes": []
   },
   {
    "old_id": "old-8-23",
-   "new_id": "8-20",
+   "new_id": "8-18",
    "how": "same_question",
    "picture_distance": null,
    "changes": [
@@ -7151,21 +7149,21 @@
   },
   {
    "old_id": "old-8-24",
-   "new_id": "8-21",
+   "new_id": "8-19",
    "how": "exact",
    "picture_distance": null,
    "changes": []
   },
   {
    "old_id": "old-8-25",
-   "new_id": "8-22",
+   "new_id": "8-20",
    "how": "exact",
    "picture_distance": null,
    "changes": []
   },
   {
    "old_id": "old-8-26",
-   "new_id": "8-23",
+   "new_id": "8-21",
    "how": "fuzzy",
    "score": 94.8,
    "picture_distance": null,
@@ -7177,56 +7175,56 @@
   },
   {
    "old_id": "old-8-27",
-   "new_id": "8-24",
+   "new_id": "8-22",
    "how": "exact",
    "picture_distance": null,
    "changes": []
   },
   {
    "old_id": "old-8-28",
-   "new_id": "8-25",
+   "new_id": "8-23",
    "how": "exact",
    "picture_distance": null,
    "changes": []
   },
   {
    "old_id": "old-8-29",
-   "new_id": "8-26",
+   "new_id": "8-24",
    "how": "exact",
    "picture_distance": null,
    "changes": []
   },
   {
    "old_id": "old-8-30",
-   "new_id": "8-27",
+   "new_id": "8-25",
    "how": "exact",
    "picture_distance": null,
    "changes": []
   },
   {
    "old_id": "old-8-31",
-   "new_id": "8-28",
+   "new_id": "8-26",
    "how": "exact",
    "picture_distance": null,
    "changes": []
   },
   {
    "old_id": "old-8-32",
-   "new_id": "8-29",
+   "new_id": "8-27",
    "how": "exact",
    "picture_distance": null,
    "changes": []
   },
   {
    "old_id": "old-8-33",
-   "new_id": "8-30",
+   "new_id": "8-28",
    "how": "exact",
    "picture_distance": null,
    "changes": []
   },
   {
    "old_id": "old-8-34",
-   "new_id": "8-31",
+   "new_id": "8-29",
    "how": "fuzzy",
    "score": 95.7,
    "picture_distance": null,
@@ -7238,7 +7236,7 @@
   },
   {
    "old_id": "old-8-35",
-   "new_id": "8-32",
+   "new_id": "8-30",
    "how": "exact",
    "picture_distance": null,
    "changes": []
@@ -7257,7 +7255,7 @@
   },
   {
    "old_id": "old-8-38",
-   "new_id": "8-33",
+   "new_id": "8-31",
    "how": "exact",
    "picture_distance": null,
    "changes": []
@@ -7300,7 +7298,7 @@
   },
   {
    "old_id": "old-8-45",
-   "new_id": "8-34",
+   "new_id": "8-32",
    "how": "fuzzy",
    "score": 94.8,
    "picture_distance": null,
@@ -7316,7 +7314,7 @@
   },
   {
    "old_id": "old-8-47",
-   "new_id": "8-35",
+   "new_id": "8-33",
    "how": "fuzzy",
    "score": 99.7,
    "picture_distance": null,
@@ -7380,7 +7378,7 @@
   },
   {
    "old_id": "old-8-57",
-   "new_id": "8-36",
+   "new_id": "8-34",
    "how": "exact",
    "picture_distance": null,
    "changes": []
@@ -7405,7 +7403,7 @@
   },
   {
    "old_id": "old-8-61",
-   "new_id": "8-37",
+   "new_id": "8-35",
    "how": "same_question",
    "picture_distance": null,
    "changes": [
@@ -7421,7 +7419,7 @@
   },
   {
    "old_id": "old-8-63",
-   "new_id": "8-38",
+   "new_id": "8-36",
    "how": "fuzzy",
    "score": 98.4,
    "picture_distance": 8,
@@ -7431,7 +7429,7 @@
   },
   {
    "old_id": "old-8-64",
-   "new_id": "8-39",
+   "new_id": "8-37",
    "how": "fuzzy",
    "score": 99.5,
    "picture_distance": 12,
@@ -7442,7 +7440,7 @@
   },
   {
    "old_id": "old-8-65",
-   "new_id": "8-40",
+   "new_id": "8-38",
    "how": "fuzzy",
    "score": 89.4,
    "picture_distance": null,
@@ -7458,7 +7456,7 @@
   },
   {
    "old_id": "old-8-67",
-   "new_id": "8-42",
+   "new_id": "8-40",
    "how": "same_question",
    "picture_distance": null,
    "changes": [
@@ -7473,7 +7471,7 @@
   },
   {
    "old_id": "old-8-69",
-   "new_id": "8-44",
+   "new_id": "8-42",
    "how": "same_question",
    "picture_distance": null,
    "changes": [
@@ -7483,7 +7481,7 @@
   },
   {
    "old_id": "old-8-70",
-   "new_id": "8-45",
+   "new_id": "8-43",
    "how": "same_question",
    "picture_distance": null,
    "changes": [
@@ -7493,7 +7491,7 @@
   },
   {
    "old_id": "old-8-71",
-   "new_id": "8-46",
+   "new_id": "8-44",
    "how": "fuzzy",
    "score": 86.7,
    "picture_distance": null,
@@ -7505,7 +7503,7 @@
   },
   {
    "old_id": "old-8-72",
-   "new_id": "8-47",
+   "new_id": "8-45",
    "how": "same_question",
    "picture_distance": null,
    "changes": [
@@ -7514,7 +7512,7 @@
   },
   {
    "old_id": "old-8-73",
-   "new_id": "8-48",
+   "new_id": "8-46",
    "how": "fuzzy",
    "score": 94.6,
    "picture_distance": null,
@@ -7530,7 +7528,7 @@
   },
   {
    "old_id": "old-8-75",
-   "new_id": "8-50",
+   "new_id": "8-48",
    "how": "same_question",
    "picture_distance": null,
    "changes": [
@@ -7539,7 +7537,7 @@
   },
   {
    "old_id": "old-8-76",
-   "new_id": "8-51",
+   "new_id": "8-49",
    "how": "fuzzy",
    "score": 94.0,
    "picture_distance": null,
@@ -7549,7 +7547,7 @@
   },
   {
    "old_id": "old-8-77",
-   "new_id": "8-52",
+   "new_id": "8-50",
    "how": "same_question",
    "picture_distance": null,
    "changes": [
@@ -7558,14 +7556,14 @@
   },
   {
    "old_id": "old-8-78",
-   "new_id": "8-53",
+   "new_id": "8-51",
    "how": "exact",
    "picture_distance": null,
    "changes": []
   },
   {
    "old_id": "old-8-79",
-   "new_id": "8-54",
+   "new_id": "8-52",
    "how": "fuzzy",
    "score": 94.0,
    "picture_distance": null,
@@ -7575,7 +7573,7 @@
   },
   {
    "old_id": "old-8-80",
-   "new_id": "8-55",
+   "new_id": "8-53",
    "how": "fuzzy",
    "score": 94.6,
    "picture_distance": null,
@@ -7849,7 +7847,7 @@
    "old_id": "old-9-35",
    "new_id": "9-33",
    "how": "exact",
-   "picture_distance": 24,
+   "picture_distance": 22,
    "changes": [
     "picture"
    ]

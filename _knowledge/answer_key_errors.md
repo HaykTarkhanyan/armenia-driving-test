@@ -36,5 +36,13 @@ English PDF says "The horn does not operate" in all four. On the exam: 3-42 -> 1
 
 ## 3. A data defect
 
-2-77 has the same option twice: option 1 «B», «C», «D» and option 4 «B»,«C», «D», (differently
-punctuated). The key is option 2 («C», «D», «T»), so the duplicate does not decide the answer.
+2-77 had the same option twice: option 1 «B», «C», «D» and option 4 «B»,«C», «D», (differently
+punctuated). The key is option 2 («C», «D», «T»), so the duplicate did not decide the answer. The
+edition of 2026-11-06 corrected option 4 to «B»,«C», «D1».
+
+## 4. A key corrected in November 2026
+
+6-84 (traffic officer with a raised arm): until the edition of 2026-11-06 the key was "արգելվում է"
+(prohibited). It is now "թույլատրվում է, եթե նա հնարավորություն չունի առանց կտրուկ արգելակելու կանգնել
+«Կանգ-գծի» առջև". The new key fits the picture. The three errors above are still in the November
+edition, under the same numbers.

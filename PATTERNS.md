@@ -1,6 +1,6 @@
 # Shortcuts and logic in the Armenian theory exam (A/B/C pool, 1,050 questions)
 
-Analysis of `data/questions.json`, 2026-10-21. Raw results: `results/patterns.json`. Interactive report:
+Analysis of `data/questions.json`, 2026-10-21, re-run on the edition of 2026-11-06 (see "The November edition"). Raw results: `results/patterns.json`. Interactive report:
 `reports/patterns_report.html`. Rebuild: `uv run python scripts/build_old_pool.py` (~20 s), then
 `uv run python scripts/mine_patterns.py` (~45 s), then `uv run python scripts/build_pattern_report.py`
 (~2 s). Every group was also read question by question (notes in `_knowledge/shortcut_hunt_*.md`,
@@ -10,7 +10,7 @@ independently, and the rules marked so are in `scripts/mine_patterns.py`.
 ## Verdict
 
 **No trick gets near a pass; the exam needs 18 of 20. But the pool is full of logic that turns
-memorizing into understanding.** Guessing everything scores 7.2 of 20; the full rule list below 9.0, or 9.3 with "the longest option" for everything else.
+memorizing into understanding.** Guessing everything scores 7.2 of 20; the full rule list below 9.0, or 9.25 with "the longest option" for everything else.
 
 **The real exam shows the options in random order** (Hayk, 2026-10-22), not in the PDF order. So
 every rule below is about the content of an option, never its position.
@@ -20,25 +20,25 @@ Answers to learn (in the best order) for a given pass chance, by what you do wit
 | What you do with the questions you did not learn | Score if you learn nothing | 50% | 80% | 90% | 95% | 99% |
 |---|---|---|---|---|---|---|
 | Guess | 7.2 / 20 | 763 | 872 | 920 | 952 | 997 |
-| Rules + never-pick list, guess the rest | 9.0 / 20 | 542 | 634 | 682 | 714 | 759 |
-| **Rules + never-pick list, else the longest option; learn only where that fails** | **9.3 / 20** | **418** | **478** | **502** | **518** | **540** |
-| Always the longest option, learn only where it fails (no other rules) | 7.3 / 20 | 509 | 569 | 593 | 609 | 631 |
+| Rules + never-pick list, guess the rest | 9.0 / 20 | 543 | 635 | 683 | 715 | 760 |
+| **Rules + never-pick list, else the longest option; learn only where that fails** | **9.25 / 20** | **419** | **479** | **503** | **519** | **541** |
+| Always the longest option, learn only where it fails (no other rules) | 7.4 / 20 | 508 | 568 | 592 | 608 | 630 |
 
 - **The "learn only where it fails" trick.** For a question you did not learn, a random guess is right
   about 1 time in k, but you cannot know in advance which ones. A **fixed** pick that depends only on
   the option's text (here: the longest option in characters, ties broken alphabetically) gives the same
   answer however the options are shuffled, so you can find out now which questions it gets right and
-  skip learning exactly those. "Always the longest" is barely smarter than chance (right on 392 of
+  skip learning exactly those. "Always the longest" is barely smarter than chance (right on 393 of
   1,050 questions; random guessing averages 379): the whole saving comes from it being predictable.
-  Combined with the rules: **518 answers for a 95% pass instead of 952**.
+  Combined with the rules: **519 answers for a 95% pass instead of 952**.
 - **The catch:** on the exam you must reliably tell "a question I learned" from "a question where the
   longest option wins", i.e. recognize the second kind as safe to answer by length. That still means
   knowing something about every question, so the real saving is smaller than on paper. The row without
-  the trick (714) needs no such bookkeeping.
+  the trick (715) needs no such bookkeeping.
 - If you know a share of every section and guess the rest: 80% known -> 52% pass, 90% -> 87%,
   95% -> 97.5%, 98% -> 99.8%.
 - Does not apply, because the exam shuffles the options: the same trick with a fixed **position**
-  ("always option 2": 598 for 95%; "rules + usual position": 533). A position changes with every
+  ("always option 2": 597 for 95%; "rules + usual position": 534). A position changes with every
   shuffle; the text of an option does not. (These rows are in the report and in `results/patterns.json`.)
 
 **"Longest" means the most characters** (letters, spaces and punctuation), which is what the code
@@ -54,7 +54,7 @@ same, the rule does not decide.
 | 1 | Group 3: every condition with **"կառուցվածքով նախատեսված / չնախատեսված"** prohibits driving; only 28 conditions do not | 24 of 24; Hayk's rule |
 | 2 | **Never pick** an option with "30 կմ/ժ", "վարորդի հայեցողությամբ", a train condition, "Միայն հետիոտ...", or a first-aid folk remedy | 55 options, 0 right |
 | 3 | In a **text** question, the **"both / all of the above"** option | 54 of 97 (chance 31); 13 of 22 on unseen questions |
-| 4 | The only option starting **"Արգելվում"** (prohibited); in group 9 "allowed?" questions 16 of 21 | 52 of 90 (chance 35); 13 of 20 unseen |
+| 4 | The only option starting **"Արգելվում"** (prohibited); in group 9 "allowed?" questions 16 of 21 | 51 of 90 (chance 35); 13 of 20 unseen |
 | 5 | **First aid**: the longest option, in characters (the complete procedure) | 31 of 50 (chance 16) |
 | 6 | **Law definitions** ("... է համարվում"): the longest option, in characters (the full legal wording) | 23 of 28 (chance 13) |
 | 7 | A bare **"Պարտավոր է / Պարտադիր է"** (it is obligatory) | 23 of 29 (chance 14) |
@@ -62,7 +62,7 @@ same, the rule does not decide.
 | 9 | **"Must you yield to the tram?"**: yes | 7 of 7 |
 | 10 | **Group 8, five numbers**: the middle value by size, not by position (the speed and distance questions) | 7 of 7 |
 | 11 | **Fact sheets**: about 30 facts per group answer 25-75% of each group | 0 contradictions, except the 3 key errors below |
-| 12 | **Three errors in the official key** (horn, railway parking twice) and **3 answers that changed** in October 2026 | checked against the law |
+| 12 | **Three errors in the official key** (horn, railway parking twice) and **4 answers that changed** in 2026 (3 in October, 6-84 in November) | checked against the law |
 
 ## Never pick
 
@@ -122,7 +122,7 @@ that: the fuel-cap fault is a wrong option in 3-48 (answer: both) and the right 
   carried (2-27), any road user directing traffic is a regulator (2-30), the learner is liable (2-78,
   the instructor is), ATVs on public roads (2-82).
 
-### Group 8 - speed, towing, cargo, people (55 q)
+### Group 8 - speed, towing, cargo, people (53 q)
 
 - **Speeds** (all 0 contradictions): **60** in settlements, for groups of children and for people in a
   truck body; **90** for a car or a truck up to 3.5 t outside settlements, and a car with a trailer on
@@ -163,7 +163,7 @@ that: the fuel-cap fault is a wrong option in 3-48 (answer: both) and the right 
   above the wound. Cold, not heat, for injuries, except frostbite (warm, never rub with snow).
 - Never pick a folk remedy (see above).
 
-### Groups 1, 4, 5, 6, 7 - the picture groups (684 q)
+### Groups 1, 4, 5, 6, 7 - the picture groups (686 q)
 
 Mostly decided by the picture; group 5 "who goes first/second/last" (27) and order-of-passage lists
 (21) have no text shortcut at all. What does work:
@@ -196,7 +196,21 @@ because the law points the other way. Law quotes: `_knowledge/answer_key_errors.
 | 7-43 same question, other options | 15 m | 50 m |
 | 3-42 horn broken (worded "ձայնարկիչ") | does not prohibit (answer 1) | prohibits (annex 2, item 3); 3-15, 3-35, 3-49 agree with the law |
 
-Also: 2-77 has the same option twice («B», «C», «D»); the key (option 2) is unaffected.
+2-77 had the same option twice («B», «C», «D»); the November edition corrected the second one to «B»,«C», «D1». The key (option 2) is unaffected.
+
+## The November edition (2026-11-06)
+
+The site regenerated all PDFs on 2026-11-06 (new generator, every picture re-encoded). Compared with the
+October edition by wording, options and picture content (`results/edition_diff_2026-11-06.json`): all
+1,050 questions are still there and none is new.
+
+- **One answer changed: 6-84.** Officer with a raised arm: the key went from "prohibited" to "allowed if you
+  cannot stop before the stop line without hard braking". The new key fits the picture.
+- **2-77:** one option corrected (see above).
+- **Four questions moved to another group:** 7-99 -> 1-146, 7-100 -> 1-147, 8-3 -> 4-79, 8-6 -> 4-80.
+- **181 more questions only got a new number** (groups 4, 7 and 8), so a question number from before
+  November can now mean a different question. All numbers in this file are the November ones.
+- The shortcut numbers moved by at most 1 question (for example 518 -> 519 answers for a 95% pass).
 
 ## Old pool vs new pool
 
@@ -220,8 +234,8 @@ Rules scored against each question's own guess chance (1/k). Whole pool:
 | Rule | Fires | Right | Guessing gets | Survives Bonferroni (22 rules) |
 |---|---|---|---|---|
 | Both / all of the above (text questions) | 97 | 54 | 30.7 | yes |
-| 3 options: the last in the PDF (a habit of the question writers; useless on the exam, which shuffles) | 568 | 229 | 189.3 | yes |
-| The only option starting "Արգելվում" | 90 | 52 | 35.4 | yes |
+| 3 options: the last in the PDF (a habit of the question writers; useless on the exam, which shuffles) | 568 | 230 | 189.3 | yes |
+| The only option starting "Արգելվում" | 90 | 51 | 35.4 | yes |
 | First aid: the longest (characters) | 50 | 31 | 15.8 | yes |
 | The only option without "միայն" when 2+ others have it | 79 | 38 | 25.2 | yes |
 | Law definitions: the longest (characters) | 28 | 23 | 13.2 | yes |

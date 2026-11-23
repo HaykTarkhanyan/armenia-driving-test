@@ -54,6 +54,10 @@ from all 858, or a fixed number per group). The groups look topical (4: signs, 5
 - Point 16: new questions may be used 30 days after publication, i.e. not before about 2026-11-01
   (group 4: about 2026-11-04). An exam before then may still use the previous pool. What exactly
   changed on 2026-10-02 is unknown without the old PDFs.
+- roadpolice.am regenerated all A/B/C PDFs again on 2026-11-06. No question was added or removed, so the
+  30-day rule has nothing new to delay; one answer changed (6-84), and 185 questions got a new number
+  (`results/edition_diff_2026-11-06.json`). Whether the exam computer switched to the 6-84 key on that
+  day is not published.
 
 ## Automatic gearbox (point 30)
 

@@ -77,7 +77,7 @@ def main() -> None:
         + "<p><b>\"Learn only where it fails\".</b> A random guess is right about 1 time in k, but you cannot "
         "know which times. A fixed pick based on the option's text (the longest, ties broken alphabetically) "
         "gives the same answer under any shuffle, so you can learn exactly the questions where it fails. "
-        "\"Always the longest\" is barely smarter than chance (right on 392 of 1,050, random averages 379); "
+        "\"Always the longest\" is barely smarter than chance (right on 393 of 1,050, random averages 379); "
         "the saving comes from being predictable. The catch: on the exam you must recognize which questions "
         "are safe to answer by length. The last two rows use a fixed <i>position</i> instead, which a shuffle "
         "breaks, so they do not apply.</p>"

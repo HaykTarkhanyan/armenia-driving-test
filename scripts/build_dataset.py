@@ -8,14 +8,15 @@ Writes:
     questions/group_NN.md                       readable list per group, pictures inline
     results/crosscheck_en.json                  Armenian vs English PDFs: same options count, answer, picture
 
-The PDFs are laid out by a generator (ReportLab) with fixed positions and colors, so every text line
-is classified by its x position, font size and color instead of by regex on plain text:
+The PDFs are laid out by a generator (since the 2026-11-06 edition Chromium/Skia, before that ReportLab)
+with fixed positions and colors, so every text line is classified by its x position, font size and color
+instead of by regex on plain text:
 
-    x=43  blue, 10.6 pt          question number ("12."; for 3-digit numbers the text starts on the same line)
-    x=69  10.6 pt semibold       question text (wrapped lines too)
+    x=43  blue, 10.5 pt          question number ("12."; for 3-digit numbers the text starts on the same line)
+    x=69  10.5 pt semibold       question text (wrapped lines too)
     x=69  10 pt, grey or green   option number; green = the correct option
     x=89  10 pt                  option text (a line with no option number beside it continues the option)
-    x=69  9.4 pt bold, green     answer line "Պատ.՝ N" (English: "Answer: N")
+    x=69  9.5 pt bold, green     answer line "Պատ.՝ N" (English: "Answer: N")
     8.5 pt                       running header and page footer, skipped
 
 The answer is read twice, from the answer line and from the green option, and the build fails if they
@@ -38,10 +39,11 @@ from common import DATA, GROUPS, OFFICIAL, ROOT, setup_logging
 
 log = setup_logging("build_dataset")
 
-GREEN = 0x12703A
-BLUE = 0x0F5BA7
+GREEN = 0x0B6B3A
+BLUE = 0x0F5CA8
 GREY = 0x6B7280
-DARK = 0x1B1B1F
+
+QUESTION_SIZE, OPTION_SIZE, ANSWER_SIZE = 10.5, 10.0, 9.5
 
 QUESTION_X, BODY_X, OPTION_TEXT_X = 43, 69, 89
 X_TOL = 3.0      # pt; positions are exact in practice, tolerance only absorbs rounding
@@ -124,15 +126,15 @@ def parse_pdf(path: Path, group: int) -> tuple[int, list[Question]]:
             if q is None:
                 raise ValueError(f"{path.name} p{pno}: text before the first question: {text!r}")
 
-            if near(x, BODY_X) and size == 10.6:
+            if near(x, BODY_X) and size == QUESTION_SIZE:
                 if q.options:
                     raise ValueError(f"{q.id}: question text after the options: {text!r}")
                 q.text.append(text)
-            elif near(x, BODY_X) and size == 9.4:
+            elif near(x, BODY_X) and size == ANSWER_SIZE:
                 if color != GREEN or not (m := ANSWER_RE.search(text)):
                     raise ValueError(f"{q.id}: unexpected answer line {text!r} color {color:#x}")
                 q.answer_line = int(m.group(1))
-            elif near(x, BODY_X) and size == 10.0 and (m := OPTNUM_RE.match(text)):
+            elif near(x, BODY_X) and size == OPTION_SIZE and (m := OPTNUM_RE.match(text)):
                 if int(m.group(1)) != len(q.options) + 1:
                     raise ValueError(f"{q.id}: option number {m.group(1)} after {len(q.options)} options")
                 if color not in (GREEN, GREY):
@@ -140,7 +142,7 @@ def parse_pdf(path: Path, group: int) -> tuple[int, list[Question]]:
                 q.options.append([])
                 q.option_green.append(color == GREEN)
                 last_optnum_y = y
-            elif near(x, OPTION_TEXT_X) and size == 10.0:
+            elif near(x, OPTION_TEXT_X) and size == OPTION_SIZE:
                 if not q.options:
                     raise ValueError(f"{q.id}: option text before any option number: {text!r}")
                 is_new = last_optnum_y is not None and abs(y - last_optnum_y) <= SAME_ROW
@@ -197,12 +199,14 @@ def write_outputs(questions: list[Question]) -> None:
     img_dir = DATA / "images"
     img_dir.mkdir(parents=True, exist_ok=True)
     records = []
+    written: set[str] = set()
     for q in questions:
         image = None
         if q.images:
             im = q.images[0]
             image = f"images/{q.id}.{im['ext']}"
             (DATA / image).write_bytes(im["bytes"])
+            written.add(Path(image).name)
         records.append({
             "id": q.id,
             "group": q.group,
@@ -213,6 +217,12 @@ def write_outputs(questions: list[Question]) -> None:
             "image": image,
             "pdf_page": q.page,
         })
+    # A question that left the pool must not leave its picture behind.
+    stale = sorted(f for f in img_dir.iterdir() if f.is_file() and f.name not in written)
+    for f in stale:
+        f.unlink()
+    if stale:
+        log.info(f"removed {len(stale)} pictures of questions no longer in the pool: {[f.name for f in stale]}")
     (DATA / "questions.json").write_text(json.dumps(records, ensure_ascii=False, indent=1), encoding="utf-8")
 
     max_opts = max(len(r["options"]) for r in records)

@@ -2,6 +2,20 @@
 
 Newest first.
 
+## 12. Study app: same stack as the German app, official groups as topics, saved progress tied to the edition
+
+- **Date / status:** 2026-11-23, active. Hayk asked to start the app; stack, Armenian only, shuffled options and the separate old set were decided on 2026-10-21. Using the 10 official groups as topics is my default for the open question.
+- **Why:** React 19 + Vite + zod on GitHub Pages is already proven in the German app. Options are shuffled because the real exam shuffles them, except the 33 questions whose options are only picture labels ("1, 2, 3"). Topics follow the groups because the exam draws by them and they need no hand-made mapping of 1,050 questions. Saved progress carries the pool's edition because the site renumbered 181 questions on 2026-11-06: an old "4-81" is another question today, so a document from another edition is refused rather than silently applied to the wrong questions. The pass chance is exact (per-section subset table), and a test checks it against `results/patterns.json`.
+- **Alternatives rejected:** finer sub-topics (needs a curated mapping; can come later without changing stored answers); ids based on question content (the wording itself gets corrected, as in 2-77); keeping progress across editions without a mapping (wrong questions marked as known).
+- **What would change this:** Hayk prefers finer topics; or a new edition arrives while someone is studying, then add an id migration from `results/edition_diff_<date>.json` before deploying it.
+
+## 11. The November 2026 edition replaces the October one; editions are compared by content
+
+- **Date / status:** 2026-11-23, active
+- **Why:** roadpolice.am regenerated all PDFs on 2026-11-06 with a new generator, so the parser's colors and font sizes were updated (all its checks still pass; Armenian and English agree on all 1,050). Every picture was re-encoded, so byte comparison is useless; `scripts/non_essential/diff_editions.py` compares wording, options and perceptual picture hash. Result: 0 added, 0 removed, 1 answer changed (6-84), 1 option corrected (2-77), 4 questions moved to another group, 181 renumbered inside their group. The shortcut numbers moved by at most 1 question.
+- **Alternatives rejected:** keeping the October data (6-84 would teach the old key); treating the new numbers as new questions (they are the same 1,050).
+- **What would change this:** Evidence that the exam computer still uses the October key for 6-84.
+
 ## 10. The "learn only where a fixed pick fails" strategy uses a text-based pick, which survives shuffled options
 
 - **Date / status:** 2026-10-22, active; corrects #9, which treated the strategy as position-only (a "you should know" note pointed it out; Hayk: "sure", calculate it)
