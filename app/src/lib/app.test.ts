@@ -6,6 +6,7 @@ import { drawExam, EXAM, expectedScore, passProbability, scoreExam, sectionDistr
 import { correctIndices, finishExam, newExam } from './examFlow.ts'
 import { OLD_BY_ID, OLD_QUESTIONS, REMOVED_IDS } from './oldPool.ts'
 import { EDITION as CURRENT_EDITION, FINGERPRINT, migrateAnswer, migrateExam, MIGRATIONS, migrationPath, type Migration } from './editions.ts'
+import { parseExplanations } from './explanations.ts'
 import { displayOrder, isLabelQuestion, latinPictureLabels } from './options.ts'
 import { EDITION, emptyProgress, mergeFromServer, mergeLocal, parseProgress, ProgressError, type Answer, type Progress } from './progress.ts'
 import { lastWrong, perExam, readiness, sectionIds, statusById, statusOf } from './stats.ts'
@@ -247,6 +248,24 @@ describe('editions of the question pool', () => {
     expect(migrateExam(exam, steps)).toEqual({ questionIds: ['4-85', '2-5'], orders: [[0, 1], [1, 0, 2]], answers: [1, 1] })
     expect(migrateExam({ ...exam, questionIds: ['8-3', '2-5'] }, steps)).toBeNull()
     expect(migrateExam({ ...exam, questionIds: ['2-9', '2-5'] }, steps)).toBeNull()
+  })
+})
+
+describe('explanations', () => {
+  const raw = JSON.parse(fs.readFileSync(new URL('../../../data/explanations.json', import.meta.url), 'utf8')) as { edition: string; explanations: Record<string, unknown> }
+
+  it('belong to this edition and to real questions', () => {
+    expect(parseExplanations(raw).size).toBe(Object.keys(raw.explanations).length)
+    expect(() => parseExplanations({ ...raw, edition: '1999-01-01' })).toThrow(/edition/)
+    expect(() => parseExplanations({ ...raw, explanations: { '99-1': { text: 'x', source: 'rules', ref: null } } })).toThrow(/unknown question/)
+  })
+
+  it('use Armenian punctuation and never name an option by its position, because options are shuffled', () => {
+    for (const [id, e] of parseExplanations(raw)) {
+      expect(e.text, id).toMatch(/։$/)
+      expect(e.text, id).not.toMatch(/[Ա-և][:;?]|[․–—“”]/)
+      expect(e.text, id).not.toMatch(/(առաջին|երկրորդ|երրորդ|չորրորդ|վերջին) տարբերակ/)
+    }
   })
 })
 

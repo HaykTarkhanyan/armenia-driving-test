@@ -18,6 +18,7 @@ done = [
   "Independent Opus review of the whole app: 15 findings, each reproduced or checked against the key. All fixed except the two decisions listed under pending",
   "Review fixes: tokens must match the account on screen, reset lasts across devices (generation), editions change only with the questions and carry id migrations (data/edition.json, enforced by a test), refused rows no longer block sync, daily limits and a 400 MB storage cap, expired sign-ins keep progress on screen, guests make no request to Neon, neutral answer markers, correct picture labels, and corrected guides (first aid, tram, groups 7, 8, 9)",
   "Final checks: 55 unit tests; 19 sync and 56 account checks on a temporary Neon branch before the live migration; the sync check, install check, guest check and Google redirect passed on the live site after the deploy",
+  "Explanations pilot: 30 questions across all 10 groups, written from the traffic rules and the road safety law with the point cited, first aid from CDC and Mayo Clinic. Follows the Armenian guide in sample_problems_qysu; its lint reports 0 errors. Shown after answering, never in a mock exam. 57 unit tests pass",
 ]
 pending = [
   "A real Google login has not been run through the final version. The database shows one Google login from before the review fixes; the automated checks use a test account and stop at Google's login page",
@@ -27,6 +28,8 @@ pending = [
   "Q10: whether inactive accounts should be deleted automatically after a set time. They are kept until the user deletes them, and the notice says so",
   "Q6: his own Google OAuth client, so the sign-in screen shows the app's name instead of Neon's (steps in backend/README.md)",
   "Q2: whether to put the updated report back on the Desktop. The copy from 2026-10-22 is gone; the current one is reports/patterns_report.html",
+  "Hayk reviews the 30 pilot explanations (reports/explanations_review.html) before the other 1,020 are written; that rollout is estimated at 4-6 million new tokens",
+  "1-54: a dark object at the picture edge may be a traffic light; the explanation assumes no working signal",
 ]
 next = [
   "Hayk installs the app on his phone, signs in with Google, answers a few questions and checks that they appear on a second device",
@@ -70,6 +73,8 @@ commits = [
   "2885f8f Privacy page and account deletion",
   "0d23c26 Fix all 15 findings from the independent review",
   "cafb2fd Session log: exact check counts for the review fixes",
-  "this commit: the full session log",
+  "8965f2f Session log 2026-11-23: full record of the session",
+  "e61aa91 Session log: remove an unverified usage figure",
+  "this commit: explanations pilot for 30 questions",
 ]
 notes = "No paid API spend; Neon stays on the Free plan. Live changes outside git: Neon migrations 001 and 002 and the API function on branch main. The temporary branches delete-test and fixes-test were deleted. Claude's password test account stays, with its login only in the gitignored .env.local. The review used one Opus agent in a private clone with no access to production. Known limits: requests sent directly to Neon Auth are outside the app's rate limits, and if the shared daily limit is reached, syncing pauses for everyone until the next UTC day while progress keeps saving on devices. Still unknown: whether the exam computer already uses the new key for 6-84, and the 3 psychological questions, which are not public."

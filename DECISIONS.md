@@ -2,6 +2,15 @@
 
 Newest first.
 
+## 19. Explanations are written from the law, not copied, and start with a 30-question pilot
+
+- **Date / status:** 2026-11-23, active. Hayk asked for explanations ("search the web, if none create them"), chose a pilot of 30 first and the current 1,050 questions only.
+- **Why:** Other Armenian sites have explanations, but drv.am and varordakan.am forbid copying their content (drv.am also forbids automated access), so none are reused. Each explanation is written from Government Decision 955-Ն (rules, annex 1; faults, annex 2) and law ՀՕ-166-Ն, both marked in force on ARLIS on 2026-11-23, and cites the point. First aid is not in those acts and cites CDC and Mayo Clinic. Where the official key contradicts the law, the explanation says so and the exam answer stays the key's. The Armenian follows `sample_problems_qysu/armenian_style` (GUIDE.md, OWNER_ANSWERS.md); its lint reports 0 errors on the pilot. Explanations load as a separate file after the first answer (12 kB for 30, so about 430 kB for all) and never appear during a mock exam.
+- **Measured:** the pilot took 86,075 output and 377,785 new input tokens, including the one-time setup. Doing the other 1,020 the same way would take roughly 4-6 million new tokens, more than the 2-3 million guessed before the pilot.
+- **Alternatives rejected:** copying from those sites (their terms forbid it, and their accuracy is unchecked); putting the text in the main bundle (slower first load for everyone); writing all 1,050 before Hayk had seen the style (one bad habit would repeat 1,050 times).
+- **Not checked:** no native speaker has read the pilot yet. In 1-54 a dark object at the top edge of the picture may be a traffic light; the explanation assumes no working signal.
+- **What would change this:** Hayk's review of the pilot, or a source that explicitly allows reuse.
+
 ## 18. Fixes from the independent review: progress survives resets, new editions and expired sign-ins
 
 - **Date / status:** 2026-11-23, active. Supersedes the part of #12 that refused progress from another edition. An independent Opus review found 15 problems; Hayk said to fix all.

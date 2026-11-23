@@ -13,3 +13,6 @@ official/**/*.pdf
 .neon
 .env
 .env.*
+
+# Review comments on HTML pages stay on this PC
+*.comments.json
