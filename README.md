@@ -84,6 +84,8 @@ uv run python scripts/build_old_pool.py   # ~20 s -> data/old_pool/, results/poo
 uv run python scripts/mine_patterns.py   # ~1-2.5 min (measured 152 s) -> results/patterns.json (needs the old pool)
 uv run python scripts/build_pattern_report.py   # ~2 s -> reports/patterns_report.html
 uv run python scripts/build_hints.py   # ~2 s -> data/hints.json (the hint after each answer in the app)
+uv run python scripts/non_essential/diff_editions.py --before <commit> --label <date>   # after a new download, ~20 s
+uv run python scripts/non_essential/new_edition.py --label <date>   # keeps saved progress valid, ~1 s
 ```
 
 ## Sources

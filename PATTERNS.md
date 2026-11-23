@@ -54,13 +54,13 @@ same, the rule does not decide.
 | 1 | Group 3: every condition with **"կառուցվածքով նախատեսված / չնախատեսված"** prohibits driving; only 28 conditions do not | 24 of 24; Hayk's rule |
 | 2 | **Never pick** an option with "30 կմ/ժ", "վարորդի հայեցողությամբ", a train condition, "Միայն հետիոտ...", or a first-aid folk remedy | 55 options, 0 right |
 | 3 | In a **text** question, the **"both / all of the above"** option | 54 of 97 (chance 31); 13 of 22 on unseen questions |
-| 4 | The only option starting **"Արգելվում"** (prohibited); in group 9 "allowed?" questions 16 of 21 | 51 of 90 (chance 35); 13 of 20 unseen |
+| 4 | The only option starting **"Արգելվում"** (prohibited); in group 9 "allowed?" questions 17 of 22 | 51 of 90 (chance 35); 13 of 20 unseen |
 | 5 | **First aid**: the longest option, in characters (the complete procedure) | 31 of 50 (chance 16) |
 | 6 | **Law definitions** ("... է համարվում"): the longest option, in characters (the full legal wording) | 23 of 28 (chance 13) |
 | 7 | A bare **"Պարտավոր է / Պարտադիր է"** (it is obligatory) | 23 of 29 (chance 14) |
 | 8 | **Yield lists**: the option naming pedestrians together with someone else; "only pedestrians" never | 10 of 10; 0 of 8 |
-| 9 | **"Must you yield to the tram?"**: yes | 7 of 7 |
-| 10 | **Group 8, five numbers**: the middle value by size, not by position (the speed and distance questions) | 7 of 7 |
+| 9 | **"Must you yield to the tram?"**, when the question itself asks it: yes. When the tram appears only in the options, yielding is right 3 of 7 | 7 of 7 |
+| 10 | **Group 8, five numbers**: the middle value by size, not by position (the speed and distance questions; the miss is 8-19) | 7 of 8 |
 | 11 | **Fact sheets**: about 30 facts per group answer 25-75% of each group | 0 contradictions, except the 3 key errors below |
 | 12 | **Three errors in the official key** (horn, railway parking twice) and **4 answers that changed** in 2026 (3 in October, 6-84 in November) | checked against the law |
 
@@ -130,9 +130,9 @@ that: the fuel-cap fault is a wrong option in 3-48 (answer: both) and the right 
   passenger car for limits and sign plates (8 of 9; exception 7-89, a parking plate).
 - **Towing**: rigid bar up to **4 m**, rope **4-6 m**; no rope on ice; only motorcycles with a sidecar
   may be towed; people ride only in a towed car or a towed truck's cab, never in a towed bus.
-- **Cargo**: "long load" sign when it sticks out more than **1 m** at the rear or **0.4 m** at the side;
+- **Cargo**: the «Մեծ եզրաչափերով բեռ» sign when it sticks out more than **1 m** at the rear or **0.4 m** at the side;
   front seat without child seat from **12**; nobody rides in a truck trailer.
-- **Five numbers: the middle value** (the third smallest, wherever it is shown), 7 of 7 (it is the
+- **Five numbers: the middle value** (the third smallest, wherever it is shown), 7 of 8, the miss being 8-19 (it is the
   speed table again).
 
 ### Group 9 - signals, beacons, lights, overtaking, crossings (119 q)
@@ -144,7 +144,7 @@ that: the fuel-cap fault is a wrong option in 3-48 (answer: both) and the right 
   **150 m**; rear fog lamp only in insufficient visibility; horn only to prevent an accident; no
   overtaking at intersections, pedestrian crossings, rail crossings and **100 m** before them
   (law point 77); warning triangle **15 m** in, **30 m** outside settlements.
-- **"Allowed?" -> "Արգելվում է"** 16 of 21 (only in group 9; elsewhere at chance). The "allowed, if ..."
+- **"Allowed?" -> "Արգելվում է"** 17 of 22 (only in group 9; elsewhere at chance). The "allowed, if ..."
   options are right 5 of 29 times here.
 - **Both/all** 10 of 13. False statements: overtaking banned 150 m before a crossing (it is 100 m),
   the horn to announce overtaking, rear fog lamps in a convoy or tunnel.
@@ -153,7 +153,7 @@ that: the fuel-cap fault is a wrong option in 3-48 (answer: both) and the right 
 ### Group 10 - first aid (51 q, 1 per test)
 
 - **The longest option** in characters, 31 of 50 (by words 26 of 36): the right answer is the full
-  procedure. The 4 misses: 10-5 (seizure:
+  procedure. It misses 19 of the 50, most of them covered by the facts below. The 4 the facts do not cover: 10-5 (seizure:
   do not touch), 10-8 (bruise: cold and raise), 10-26 (diabetic: sugar first), 10-46 (no drugs).
 - **Positions**: head injury half-lying; fainting lying with legs up; asthma half-sitting; belly injury
   knees bent; chest injury sitting, leaning to the injured side; unconscious but breathing: recovery
@@ -172,7 +172,7 @@ Mostly decided by the picture; group 5 "who goes first/second/last" (27) and ord
   straight or making a U-turn, "you go first / no one" is wrong 16 of 17 (reading notes; a stricter
   re-check finds fewer such questions but agrees on all of them: 4 of 4 and 0 of 2).
 - **Pedestrians are never left out** (yield lists 10 of 10; "only pedestrians" 0 of 8). **Tram:
-  yes, yield** (7 of 7). **Backing** (հետընթաց) -> no / prohibited (8 of 10).
+  yes, yield** (7 of 7 when the question asks it directly; 3 of 7 when the tram is only in the options). **Backing** (հետընթաց) -> no / prohibited (8 of 10).
 - **Facts** (99 of 102 questions consistent): U-turn banned on crossings, in tunnels, on and under
   bridges, at rail crossings and where visibility is under 100 m; a "no left turn" sign does not ban a
   U-turn; warning signs 50-100 m before the hazard in settlements, 150-300 m outside; box junction: do
@@ -241,7 +241,7 @@ Rules scored against each question's own guess chance (1/k). Whole pool:
 | Law definitions: the longest (characters) | 28 | 23 | 13.2 | yes |
 | Bare "Պարտավոր է / Պարտադիր է" | 29 | 23 | 13.6 | yes |
 | Yield lists: pedestrians and someone else | 10 | 10 | 3.2 | yes |
-| Group 8, five numbers: the middle value | 7 | 7 | 1.4 | yes |
+| Group 8, five numbers: the middle value | 8 | 7 | 1.6 | yes |
 | Echo: the option repeating the most words of the question | 149 | 73 | 54.8 | yes, but fails on unseen questions |
 | Tram: yes / backing: no | 7 / 10 | 7 / 8 | 3.5 / 4.5 | no (small) |
 | The longest option, pool-wide (characters; by words 260 of 630, chance 224) | 901 | 354 | 334.2 | no |

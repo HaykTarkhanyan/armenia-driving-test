@@ -32,6 +32,8 @@ export const ExamRow = z
 
 export const SyncBody = z.strictObject({
   edition: Edition,
+  /** How many resets this device knows about. Left out by app versions from before resets were tracked. */
+  generation: z.number().int().min(0).optional(),
   answers: z.array(AnswerRow).max(SYNC_LIMITS.answers),
   exams: z.array(ExamRow).max(SYNC_LIMITS.exams),
 })

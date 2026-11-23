@@ -34,12 +34,15 @@ function buildSession(source: string, arg: string): Session | string {
     return { title: 'Ընտրված հարցեր', ids, empty: '', allHref: null, next: null }
   }
   if (source === 'today') {
+    // arg = "<round size>-<anything that makes the link new>"
+    const wanted = Number.parseInt(arg, 10)
+    const goal = getSettings().dailyGoal
     return {
       title: 'Այսօրվա պարապմունք',
-      ids: todayMix(getProgress().answers, getSettings().dailyGoal),
+      ids: todayMix(getProgress().answers, wanted >= 1 && wanted <= 50 ? wanted : goal),
       empty: '',
       allHref: null,
-      next: { href: link('practice', 'today', String(Date.now())), label: 'Պարապել ևս' },
+      next: { href: link('practice', 'today', `${goal}-${Date.now()}`), label: 'Պարապել ևս' },
     }
   }
   if (source === 'mistakes') {

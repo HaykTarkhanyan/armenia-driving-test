@@ -185,7 +185,12 @@ def r_g8_middle(q):
     if q["group"] != 8 or len(q["options"]) != 5:
         return None
     vals = numeric_values(q)
-    return None if vals is None else sorted(range(5), key=lambda i: vals[i])[2]
+    if vals is None:  # ranges such as "4 - 6մ" sort by start, then end (8-19 is the one miss of this rule)
+        ranges = [re.search(r"(\d+(?:[.,]\d+)?)\s*-\s*(\d+(?:[.,]\d+)?)", o) for o in q["options"]]
+        if not all(ranges):
+            return None
+        vals = [(float(m[1].replace(",", ".")), float(m[2].replace(",", "."))) for m in ranges]
+    return sorted(range(5), key=lambda i: vals[i])[2]
 
 
 def r_pedestrians_too(q):

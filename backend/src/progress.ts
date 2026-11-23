@@ -1,9 +1,9 @@
-// The three things the API does with a user's progress. Every query is filtered by the verified user id.
-import { USER_LIMITS } from './config.ts'
+// What the API does with a user's data. Every query is filtered by the verified user id.
+import type { PoolClient } from 'pg'
+import { STORAGE_LIMIT_BYTES, USER_LIMITS } from './config.ts'
 import { withTransaction } from './db.ts'
 import { HttpError } from './errors.ts'
 import type { AnswerRow, ExamRow, SyncBody } from './schema.ts'
-import type { PoolClient } from 'pg'
 
 /** A token stays valid for up to 15 minutes after its account is deleted: it must not be able to bring data back. */
 async function requireAccount(client: PoolClient, userId: string): Promise<void> {
@@ -11,40 +11,61 @@ async function requireAccount(client: PoolClient, userId: string): Promise<void>
   if (rowCount !== 1) throw new HttpError(410, 'account_deleted', 'This account has been deleted.')
 }
 
-/** Everything for one edition, from one snapshot, plus how many answers belong to other editions. */
+/** One writer per user at a time: sync, reset and delete wait for each other. */
+async function lockUser(client: PoolClient, userId: string): Promise<void> {
+  await client.query('SELECT pg_advisory_xact_lock(hashtextextended($1, 0))', [userId])
+}
+
+type DbAnswer = { id: string; qid: string; chosen: number; correct: boolean; at: Date; mode: 'practice' | 'exam' }
+type DbExam = {
+  id: string
+  started_at: string
+  finished_at: string
+  question_ids: string[]
+  orders: number[][]
+  answers: (number | null)[]
+  score: number
+  passed: boolean
+  timed_out: boolean
+}
+
+const answerRow = (r: DbAnswer): AnswerRow => ({ id: r.id, qid: r.qid, chosen: r.chosen, correct: r.correct, at: r.at.toISOString(), mode: r.mode })
+const examRow = (r: DbExam): ExamRow => ({
+  id: r.id,
+  startedAt: Number(r.started_at),
+  finishedAt: Number(r.finished_at),
+  questionIds: r.question_ids,
+  orders: r.orders,
+  answers: r.answers,
+  score: r.score,
+  passed: r.passed,
+  timedOut: r.timed_out,
+})
+
+const ANSWER_COLUMNS = 'id, qid, chosen, correct, at, mode'
+const EXAM_COLUMNS = 'id, started_at, finished_at, question_ids, orders, answers, score, passed, timed_out'
+
+/** Everything from one snapshot. Rows of earlier editions come separately, tagged, so the app can translate their
+ * question numbers. `generation` and `resetAt` tell a device whether its local rows predate a reset. */
 export async function loadState(userId: string, edition: string) {
   return withTransaction('BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY', async (client) => {
     await requireAccount(client, userId)
-    const answers = await client.query(
-      `SELECT id, qid, chosen, correct, at, mode FROM answers WHERE user_id = $1 AND edition = $2 ORDER BY at, id`,
-      [userId, edition],
-    )
-    const exams = await client.query(
-      `SELECT id, started_at, finished_at, question_ids, orders, answers, score, passed, timed_out
-         FROM exams WHERE user_id = $1 AND edition = $2 ORDER BY finished_at, id`,
-      [userId, edition],
-    )
-    const other = await client.query(`SELECT count(*)::int AS n FROM answers WHERE user_id = $1 AND edition <> $2`, [userId, edition])
+    const answers = await client.query<DbAnswer & { edition: string }>(`SELECT edition, ${ANSWER_COLUMNS} FROM answers WHERE user_id = $1 ORDER BY at, id`, [userId])
+    const exams = await client.query<DbExam & { edition: string }>(`SELECT edition, ${EXAM_COLUMNS} FROM exams WHERE user_id = $1 ORDER BY finished_at, id`, [userId])
+    const state = await client.query<{ generation: number; reset_at: Date }>('SELECT generation, reset_at FROM user_state WHERE user_id = $1', [userId])
+    const older = {
+      answers: answers.rows.filter((r) => r.edition !== edition).map((r) => ({ ...answerRow(r), edition: r.edition })),
+      exams: exams.rows.filter((r) => r.edition !== edition).map((r) => ({ ...examRow(r), edition: r.edition })),
+    }
     return {
       serverTime: new Date().toISOString(),
       edition,
-      answers: answers.rows.map(
-        (r): AnswerRow => ({ id: r.id, qid: r.qid, chosen: r.chosen, correct: r.correct, at: (r.at as Date).toISOString(), mode: r.mode }),
-      ),
-      exams: exams.rows.map(
-        (r): ExamRow => ({
-          id: r.id,
-          startedAt: Number(r.started_at),
-          finishedAt: Number(r.finished_at),
-          questionIds: r.question_ids,
-          orders: r.orders,
-          answers: r.answers,
-          score: r.score,
-          passed: r.passed,
-          timedOut: r.timed_out,
-        }),
-      ),
-      otherEditionAnswers: other.rows[0].n as number,
+      generation: state.rows[0]?.generation ?? 0,
+      resetAt: state.rows[0]?.reset_at.toISOString() ?? null,
+      answers: answers.rows.filter((r) => r.edition === edition).map(answerRow),
+      exams: exams.rows.filter((r) => r.edition === edition).map(examRow),
+      older,
+      otherEditionAnswers: older.answers.length,
     }
   })
 }
@@ -52,9 +73,17 @@ export async function loadState(userId: string, edition: string) {
 /** One idempotent batch: a row whose id is already stored is skipped, so a retry after a timeout is always safe. */
 export async function applySync(userId: string, body: SyncBody) {
   return withTransaction('BEGIN', async (client) => {
-    // One sync per user at a time, so the limit check below cannot be raced.
-    await client.query('SELECT pg_advisory_xact_lock(hashtextextended($1, 0))', [userId])
+    await lockUser(client, userId) // also keeps the limit check below from being raced
     await requireAccount(client, userId)
+    const state = await client.query<{ generation: number }>('SELECT generation FROM user_state WHERE user_id = $1', [userId])
+    const generation = state.rows[0]?.generation ?? 0
+    if ((body.generation ?? 0) !== generation) {
+      throw new HttpError(409, 'progress_reset', 'This progress was reset on another device. Load the current state before uploading.')
+    }
+    const size = await client.query<{ bytes: string }>('SELECT pg_database_size(current_database()) AS bytes')
+    if (Number(size.rows[0].bytes) > STORAGE_LIMIT_BYTES) {
+      throw new HttpError(507, 'storage_full', 'The database is near its free limit, so new progress cannot be saved right now.')
+    }
     let answersInserted = 0
     if (body.answers.length > 0) {
       const a = body.answers
@@ -97,22 +126,62 @@ export async function applySync(userId: string, body: SyncBody) {
  * link and tokens, sessions, IP addresses and device details (foreign keys ON DELETE CASCADE in neon_auth). */
 export async function deleteAccount(userId: string) {
   return withTransaction('BEGIN', async (client) => {
-    await client.query('SELECT pg_advisory_xact_lock(hashtextextended($1, 0))', [userId]) // waits for a running sync
+    await lockUser(client, userId) // waits for a running sync
     await requireAccount(client, userId)
     const answers = await client.query('DELETE FROM answers WHERE user_id = $1', [userId])
     const exams = await client.query('DELETE FROM exams WHERE user_id = $1', [userId])
+    await client.query('DELETE FROM user_state WHERE user_id = $1', [userId])
+    await client.query('DELETE FROM api_usage WHERE user_id = $1', [userId])
     const user = await client.query('DELETE FROM neon_auth."user" WHERE id = $1::uuid', [userId])
     if (user.rowCount !== 1) throw new Error(`deleteAccount removed ${user.rowCount} users`)
     return { ok: true, answersDeleted: answers.rowCount ?? 0, examsDeleted: exams.rowCount ?? 0 }
   })
 }
 
-/** "Reset" in the app: removes all of this user's progress, in every edition. */
+/** "Reset": removes all of this user's progress in every edition and starts a new generation, so that other devices
+ * drop their older rows instead of uploading them back. */
 export async function deleteProgress(userId: string) {
   return withTransaction('BEGIN', async (client) => {
+    await lockUser(client, userId)
     await requireAccount(client, userId)
     const answers = await client.query('DELETE FROM answers WHERE user_id = $1', [userId])
     const exams = await client.query('DELETE FROM exams WHERE user_id = $1', [userId])
-    return { ok: true, answersDeleted: answers.rowCount ?? 0, examsDeleted: exams.rowCount ?? 0 }
+    const state = await client.query<{ generation: number; reset_at: Date }>(
+      `INSERT INTO user_state AS s (user_id, generation, reset_at) VALUES ($1, 1, clock_timestamp())
+       ON CONFLICT (user_id) DO UPDATE SET generation = s.generation + 1, reset_at = clock_timestamp()
+       RETURNING generation, reset_at`,
+      [userId],
+    )
+    return {
+      ok: true,
+      answersDeleted: answers.rowCount ?? 0,
+      examsDeleted: exams.rowCount ?? 0,
+      generation: state.rows[0].generation,
+      resetAt: state.rows[0].reset_at.toISOString(),
+    }
+  })
+}
+
+/** A copy of everything stored about this user. Columns are listed by name so login tokens and passwords never leave. */
+export async function exportAccount(userId: string) {
+  return withTransaction('BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY', async (client) => {
+    await requireAccount(client, userId)
+    const profile = await client.query('SELECT id, name, email, "emailVerified", image, "createdAt", "updatedAt" FROM neon_auth."user" WHERE id = $1::uuid', [userId])
+    const logins = await client.query('SELECT "providerId", "accountId", scope, "createdAt", "updatedAt" FROM neon_auth.account WHERE "userId" = $1::uuid', [userId])
+    const sessions = await client.query('SELECT "createdAt", "updatedAt", "expiresAt", "ipAddress", "userAgent" FROM neon_auth.session WHERE "userId" = $1::uuid ORDER BY "createdAt"', [userId])
+    const answers = await client.query<DbAnswer & { edition: string }>(`SELECT edition, ${ANSWER_COLUMNS} FROM answers WHERE user_id = $1 ORDER BY at, id`, [userId])
+    const exams = await client.query<DbExam & { edition: string }>(`SELECT edition, ${EXAM_COLUMNS} FROM exams WHERE user_id = $1 ORDER BY finished_at, id`, [userId])
+    const reset = await client.query('SELECT generation, reset_at FROM user_state WHERE user_id = $1', [userId])
+    const usage = await client.query(`SELECT to_char(day, 'YYYY-MM-DD') AS day, requests, windows FROM api_usage WHERE user_id = $1 ORDER BY day`, [userId])
+    return {
+      exportedAt: new Date().toISOString(),
+      profile: profile.rows[0],
+      logins: logins.rows,
+      sessions: sessions.rows,
+      answers: answers.rows.map((r) => ({ ...answerRow(r), edition: r.edition })),
+      exams: exams.rows.map((r) => ({ ...examRow(r), edition: r.edition })),
+      resets: reset.rows[0] ?? null,
+      dailyUsage: usage.rows,
+    }
   })
 }

@@ -3,16 +3,20 @@
 // server (sync.ts). Invalid stored data is reported, never silently replaced. `chosen` and exam answers are option
 // indices in PDF order, whatever order was on screen.
 //
-// The document is tied to the edition of the pool, because the site renumbered 181 questions between two editions:
-// an old "4-81" is a different question today. A document from another edition is refused, not reinterpreted.
+// The document is tied to the edition of the pool, because the site renumbered 181 questions between two editions: an
+// old "4-81" is a different question today. A document from an earlier edition is translated (editions.ts); one from an
+// edition this version does not know is refused, not reinterpreted.
 import { useSyncExternalStore } from 'react'
 import { z } from 'zod'
+import { EDITION, migrateAnswer, migrateExam, migrationPath, type Migration } from './editions.ts'
+
+export { EDITION }
 
 const KEY_PREFIX = 'armenia-driving-test.progress.v2'
 export const GUEST_KEY = `${KEY_PREFIX}.guest`
 export const userKey = (userId: string): string => `${KEY_PREFIX}.user.${userId}`
 const LAST_USER_KEY = 'armenia-driving-test.last-user'
-export const EDITION: string = __EDITION__
+const SIGNING_IN_KEY = 'armenia-driving-test.signing-in'
 
 const QuestionId = z.string().regex(/^(old-)?\d+-\d+$/)
 const OptionIndex = z.number().int().min(0).max(4)
@@ -46,6 +50,8 @@ export const ProgressSchema = z.strictObject({
   exams: z.array(ExamResultSchema),
   activeExam: ActiveExamSchema.nullable(),
   pending: z.strictObject({ answers: z.array(z.uuid()), exams: z.array(z.uuid()) }),
+  /** How many times this account's progress was reset, as far as this device knows (sync.ts). */
+  generation: z.number().int().min(0).default(0),
 })
 export const AnswerRowSchema = AnswerSchema
 export type Answer = z.infer<typeof AnswerSchema>
@@ -54,7 +60,7 @@ export type ExamResult = z.infer<typeof ExamResultSchema>
 export type Progress = z.infer<typeof ProgressSchema>
 
 export function emptyProgress(): Progress {
-  return { version: 2, edition: EDITION, answers: [], exams: [], activeExam: null, pending: { answers: [], exams: [] } }
+  return { version: 2, edition: EDITION, answers: [], exams: [], activeExam: null, pending: { answers: [], exams: [] }, generation: 0 }
 }
 
 export class ProgressError extends Error {
@@ -79,13 +85,31 @@ export function parseProgress(text: string, source: string): Progress {
     const issues = result.error.issues.slice(0, 5).map((i) => `${i.path.join('.') || '(root)'}: ${i.message}`)
     throw new ProgressError(`${source} առաջընթացի ֆայլ չի թվում. ${issues.join('; ')}`, text)
   }
-  if (result.data.edition !== EDITION) {
+  if (result.data.edition === EDITION) return result.data
+  const steps = migrationPath(result.data.edition)
+  if (steps === null) {
     throw new ProgressError(
-      `${source} պահվել է հարցաշարի ${result.data.edition} տարբերակով, իսկ այժմ գործում է ${EDITION} տարբերակը։ Հարցերի համարները կարող էին փոխվել, ուստի այն չի բեռնվել։`,
+      `${source} պահվել է հարցաշարի ${result.data.edition} տարբերակով, որը հավելվածի այս տարբերակը չի ճանաչում (այժմ՝ ${EDITION})։ Թարմացրու էջը։`,
       text,
     )
   }
-  return result.data
+  return translate(result.data, steps)
+}
+
+/** The document in the current edition's question numbers. */
+function translate(p: Progress, steps: Migration[]): Progress {
+  const answers = p.answers.flatMap((a) => migrateAnswer(a, steps) ?? [])
+  const exams = p.exams.flatMap((e) => migrateExam(e, steps) ?? [])
+  const keptAnswers = new Set(answers.map((a) => a.id))
+  const keptExams = new Set(exams.map((e) => e.id))
+  return {
+    ...p,
+    edition: EDITION,
+    answers,
+    exams,
+    activeExam: p.activeExam === null ? null : migrateExam(p.activeExam, steps),
+    pending: { answers: p.pending.answers.filter((id) => keptAnswers.has(id)), exams: p.pending.exams.filter((id) => keptExams.has(id)) },
+  }
 }
 
 // ---------------------------------------------------------------- merging (pure, tested)
@@ -114,6 +138,23 @@ export function mergeFromServer(local: Progress, server: Pick<Progress, 'answers
       answers: local.answers.filter((a) => !onServer.answers.has(a.id)).map((a) => a.id),
       exams: local.exams.filter((e) => !onServer.exams.has(e.id)).map((e) => e.id),
     },
+  }
+}
+
+/** Applies a reset made on another device: rows from before it are gone for good, rows made after it are kept. */
+export function applyServerGeneration(local: Progress, generation: number, resetAt: string | null): Progress {
+  if (local.generation === generation) return local
+  if (resetAt === null) return { ...local, generation }
+  const answers = local.answers.filter((a) => a.at > resetAt)
+  const exams = local.exams.filter((e) => new Date(e.finishedAt).toISOString() > resetAt)
+  const keptAnswers = new Set(answers.map((a) => a.id))
+  const keptExams = new Set(exams.map((e) => e.id))
+  return {
+    ...local,
+    generation,
+    answers,
+    exams,
+    pending: { answers: local.pending.answers.filter((id) => keptAnswers.has(id)), exams: local.pending.exams.filter((id) => keptExams.has(id)) },
   }
 }
 
@@ -255,6 +296,21 @@ export function addFinishedExam(result: ExamResult, logged: readonly Answer[]): 
 }
 
 // ---------------------------------------------------------------- accounts (used by sync.ts)
+
+/** Set just before leaving for Google, so that the app asks who is signed in when the browser comes back. */
+export function markSigningIn(): void {
+  localStorage.setItem(SIGNING_IN_KEY, '1')
+}
+
+export function clearSigningIn(): void {
+  localStorage.removeItem(SIGNING_IN_KEY)
+}
+
+export function takeSigningIn(): boolean {
+  const was = localStorage.getItem(SIGNING_IN_KEY) !== null
+  clearSigningIn()
+  return was
+}
 
 export function rememberedUser(): string | null {
   return localStorage.getItem(LAST_USER_KEY)

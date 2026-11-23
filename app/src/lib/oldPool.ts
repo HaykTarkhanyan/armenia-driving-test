@@ -4,7 +4,7 @@ import { z } from 'zod'
 import oldJson from '../../../data/old_pool/questions.json' with { type: 'json' }
 import { parse, QUESTION_BY_ID, type Question } from './data.ts'
 import { GROUP_NUMBERS } from './groups.ts'
-import { isLabelQuestion } from './options.ts'
+import { isLabelQuestion, latinPictureLabels } from './options.ts'
 
 const RawOldSchema = z.strictObject({
   id: z.string().regex(/^old-\d+-\d+$/),
@@ -37,15 +37,23 @@ function pictureOf(q: z.infer<typeof RawOldSchema>): string | null {
   return current.imageUrl
 }
 
+/** The old texts label pictures Ա, Բ, Գ. A picture borrowed from the current pool shows A, B, C. */
+function borrowsLatinPicture(q: z.infer<typeof RawOldSchema>): boolean {
+  if (q.image !== null || !q.has_image || q.new_id === null) return false
+  const current = QUESTION_BY_ID.get(q.new_id)
+  return current !== undefined && /(?<![\p{L}\p{N}])[ABCD](?![\p{L}\p{N}])/u.test(`${current.question} ${current.options.join(' ')}`)
+}
+
 export const OLD_QUESTIONS: Question[] = raw.map((q) => {
   if (q.answer_index >= q.options.length) throw new Error(`old question ${q.id}: answer is outside its options`)
   if (q.question === '' && !q.has_image) throw new Error(`old question ${q.id} has neither text nor a picture`)
+  const label = borrowsLatinPicture(q) ? latinPictureLabels : (text: string) => text
   return {
     id: q.id,
     group: q.group,
     number: q.number,
-    question: q.question === '' ? 'Հարցը նկարում է։' : q.question,
-    options: q.options,
+    question: q.question === '' ? 'Հարցը նկարում է։' : label(q.question),
+    options: q.options.map(label),
     answerIndex: q.answer_index,
     imageUrl: pictureOf(q),
     fixedOrder: isLabelQuestion(q.options),

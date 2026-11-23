@@ -5,8 +5,6 @@ import { hintFor, hintText } from '../lib/hints.ts'
 import { link } from '../lib/router.ts'
 import { Sign } from './Icons.tsx'
 
-const KEYS = 'ԱԲԳԴԵ'
-
 type Props = {
   question: Question
   /** Option indices (PDF order) in the order they are shown. */
@@ -57,7 +55,7 @@ export function QuestionCard({ question, order, chosen, reveal, onChoose, label 
       <p className="question-text">{question.question}</p>
       {question.imageUrl && <Picture src={question.imageUrl} alt={`Հարց ${question.group}-${question.number}-ի նկարը`} />}
       <div className="options">
-        {order.map((i, shown) => {
+        {order.map((i) => {
           const classes = ['option']
           if (chosen === i) classes.push('chosen')
           if (reveal && i === question.answerIndex) classes.push('correct')
@@ -71,7 +69,8 @@ export function QuestionCard({ question, order, chosen, reveal, onChoose, label 
               disabled={!onChoose}
               onClick={() => onChoose?.(i)}
             >
-              {!question.fixedOrder && <span className="option-key">{KEYS[shown]}</span>}
+              {/* A plain marker: a letter or number here would clash with labels such as "Միայն A" or "1 և 3". */}
+              {!question.fixedOrder && <span className="option-key" aria-hidden="true">{reveal && i === question.answerIndex ? '✓' : reveal && chosen === i ? '✕' : ''}</span>}
               <span className="option-text">{question.options[i]}</span>
             </button>
           )

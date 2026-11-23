@@ -29,7 +29,8 @@ export function correctIndices(questionIds: readonly string[]): number[] {
 export function finishExam(exam: ActiveExam, now: number, timedOut: boolean): { result: ExamResult; logged: Answer[] } {
   const correct = correctIndices(exam.questionIds)
   const score = scoreExam(exam.answers, correct)
-  const end = Math.min(now, exam.startedAt + EXAM.minutes * 60_000)
+  // Never before the start: the phone's clock can be corrected backward during an exam.
+  const end = Math.max(exam.startedAt, Math.min(now, exam.startedAt + EXAM.minutes * 60_000))
   const at = new Date(end).toISOString()
   const logged: Answer[] = []
   exam.questionIds.forEach((qid, i) => {

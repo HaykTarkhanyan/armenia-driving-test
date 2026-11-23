@@ -101,6 +101,7 @@ def sign_in(p: Page, auth: str, email: str, password: str) -> int:
             body: JSON.stringify({ email, password }) })).status""",
         {"auth": auth, "email": email, "password": password},
     )
+    p.evaluate("() => localStorage.setItem('armenia-driving-test.signing-in', '1')")
     p.reload(wait_until="load")
     p.wait_for_selector(".sync-dot.ok", timeout=40_000)
     return status
@@ -145,10 +146,11 @@ def status_of(url: str, headers: dict[str, str] | None = None) -> int:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--base", default="http://localhost:4179/armenia-driving-test/")
+    ap.add_argument("--env", help="env file of a test branch; its service addresses replace those in .env.local")
     args = ap.parse_args()
     setup_logging()
     t0 = time.time()
-    env = dotenv_values(REPO_ROOT / ".env.local", encoding="utf-8")
+    env = {**dotenv_values(REPO_ROOT / ".env.local", encoding="utf-8"), **(dotenv_values(args.env, encoding="utf-8") if args.env else {})}
     auth, api = env["NEON_AUTH_BASE_URL"].rstrip("/"), env["NEON_FUNCTION_API_BASE_URL"].rstrip("/")
     email, password = env["ARMENIA_TEST_EMAIL"], env["ARMENIA_TEST_PASSWORD"]
 

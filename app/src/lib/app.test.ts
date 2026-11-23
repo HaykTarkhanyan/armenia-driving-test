@@ -1,10 +1,12 @@
+import { createHash } from 'node:crypto'
 import fs from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import { groupIds, QUESTION_BY_ID, QUESTIONS } from './data.ts'
 import { drawExam, EXAM, expectedScore, passProbability, scoreExam, sectionDistribution, SECTIONS } from './exam.ts'
 import { correctIndices, finishExam, newExam } from './examFlow.ts'
 import { OLD_BY_ID, OLD_QUESTIONS, REMOVED_IDS } from './oldPool.ts'
-import { displayOrder, isLabelQuestion } from './options.ts'
+import { EDITION as CURRENT_EDITION, FINGERPRINT, migrateAnswer, migrateExam, MIGRATIONS, migrationPath, type Migration } from './editions.ts'
+import { displayOrder, isLabelQuestion, latinPictureLabels } from './options.ts'
 import { EDITION, emptyProgress, mergeFromServer, mergeLocal, parseProgress, ProgressError, type Answer, type Progress } from './progress.ts'
 import { lastWrong, perExam, readiness, sectionIds, statusById, statusOf } from './stats.ts'
 import { GENERAL_ITEMS, GUIDES } from '../content/guides.ts'
@@ -183,7 +185,7 @@ describe('shortcut guides', () => {
     expect(statLabel('design')).toBe('23 / 23')
     expect(statLabel('tram_yes')).toBe('7 / 7')
     expect(statLabel('pedestrians_too')).toBe('10 / 10')
-    expect(statLabel('g8_middle')).toBe('7 / 7')
+    expect(statLabel('g8_middle')).toBe('7 / 8')
     expect(statLabel('g10_longest')).toBe('31 / 50')
     expect(statLabel('all_both')).toBe('54 / 97')
   })
@@ -206,6 +208,60 @@ describe('shortcut guides', () => {
     expect(perExam(2)).toEqual({ count: 2, exact: true })
     expect(perExam(10)).toEqual({ count: 1, exact: true })
     expect(perExam(4).exact).toBe(false)
+  })
+})
+
+describe('editions of the question pool', () => {
+  it('data/edition.json describes the questions being deployed', () => {
+    const raw = JSON.parse(fs.readFileSync(new URL('../../../data/questions.json', import.meta.url), 'utf8')) as { id: string; question: string; options: string[] }[]
+    const canonical = JSON.stringify(raw.map((q) => [q.id, q.question, q.options]))
+    const now = createHash('sha256').update(canonical, 'utf8').digest('hex')
+    expect(now, 'The questions changed: run scripts/non_essential/diff_editions.py and new_edition.py, or saved progress would point at the wrong questions').toBe(FINGERPRINT)
+  })
+
+  it('every earlier edition has a way to the current one', () => {
+    for (const m of MIGRATIONS) expect(migrationPath(m.from), m.from).not.toBeNull()
+    expect(migrationPath(CURRENT_EDITION)).toEqual([])
+    expect(migrationPath('1999-01-01')).toBeNull()
+  })
+
+  const steps: Migration[] = [
+    { from: 'e1', to: 'e2', ids: { '4-81': '4-83', '7-99': '1-146' }, removed: ['8-3'], reorder: { '2-5': [1, 0, 2] }, unsafe: ['2-9'] },
+    { from: 'e2', to: 'e3', ids: { '4-83': '4-85' }, removed: [], reorder: {}, unsafe: [] },
+  ]
+
+  it('follows a chain of editions', () => {
+    expect(migrationPath('e1', 'e3', steps)).toEqual(steps)
+    expect(migrationPath('e3', 'e1', steps)).toBeNull()
+  })
+
+  it('translates an answer: new number, new option position, or gone', () => {
+    expect(migrateAnswer({ qid: '4-81', chosen: 2 }, steps)).toEqual({ qid: '4-85', chosen: 2 })
+    expect(migrateAnswer({ qid: '2-5', chosen: 0 }, steps)).toEqual({ qid: '2-5', chosen: 1 })
+    expect(migrateAnswer({ qid: '8-3', chosen: 0 }, steps)).toBeNull()
+    expect(migrateAnswer({ qid: '1-1', chosen: 1 }, steps)).toEqual({ qid: '1-1', chosen: 1 })
+  })
+
+  it('translates an exam, or drops it when it can no longer be shown', () => {
+    const exam = { questionIds: ['4-81', '2-5'], orders: [[0, 1], [0, 1, 2]], answers: [1, 0] as (number | null)[] }
+    expect(migrateExam(exam, steps)).toEqual({ questionIds: ['4-85', '2-5'], orders: [[0, 1], [1, 0, 2]], answers: [1, 1] })
+    expect(migrateExam({ ...exam, questionIds: ['8-3', '2-5'] }, steps)).toBeNull()
+    expect(migrateExam({ ...exam, questionIds: ['2-9', '2-5'] }, steps)).toBeNull()
+  })
+})
+
+describe('picture labels', () => {
+  it('writes standalone Armenian labels the way the picture shows them', () => {
+    expect(latinPictureLabels('Միայն Ա')).toBe('Միայն A')
+    expect(latinPictureLabels('Բ և Գ')).toBe('B և C')
+    expect(latinPictureLabels('Արգելվում է')).toBe('Արգելվում է')
+    expect(QUESTION_BY_ID.get('9-93')?.options).toEqual(['Ցանկացած', 'Միայն A', 'Միայն B'])
+  })
+
+  it('old questions that borrow a current picture use its labels', () => {
+    const borrowed = OLD_QUESTIONS.filter((q) => q.imageUrl !== null && [...QUESTION_BY_ID.values()].some((c) => c.imageUrl === q.imageUrl && c.options.some((o) => /(^|\s)[ABC]($|\s)/.test(o))))
+    expect(borrowed.length).toBeGreaterThan(0)
+    for (const q of borrowed) for (const o of q.options) expect(o, q.id).not.toMatch(/(^|\s)[ԱԲԳ]($|\s)/)
   })
 })
 

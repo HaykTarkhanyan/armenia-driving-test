@@ -267,22 +267,6 @@
    "significant_bonferroni": true
   },
   {
-   "rule": "g8_middle",
-   "description": "group 8, five numbers: the middle one",
-   "needs_option_order": false,
-   "fires": 7,
-   "right": 7,
-   "expected": 1.4,
-   "precision": 1.0,
-   "lift": 5.0,
-   "ci95": [
-    0.646,
-    1.0
-   ],
-   "p_value": 1.28e-05,
-   "significant_bonferroni": true
-  },
-  {
    "rule": "pos_4_second",
    "description": "4 options: the second",
    "needs_option_order": true,
@@ -297,6 +281,22 @@
    ],
    "p_value": 0.169,
    "significant_bonferroni": false
+  },
+  {
+   "rule": "g8_middle",
+   "description": "group 8, five numbers: the middle one",
+   "needs_option_order": false,
+   "fires": 8,
+   "right": 7,
+   "expected": 1.6,
+   "precision": 0.875,
+   "lift": 4.38,
+   "ci95": [
+    0.529,
+    0.978
+   ],
+   "p_value": 8.45e-05,
+   "significant_bonferroni": true
   },
   {
    "rule": "backing_no",
@@ -753,7 +753,8 @@
      "g10_longest",
      "obligatory",
      "without_only",
-     "g2_definition_longest"
+     "g2_definition_longest",
+     "g8_middle"
     ],
     [
      "all_both",
@@ -1165,6 +1166,10 @@
    {
     "rule": "g2_definition_longest",
     "description": "law definitions (group 2, '... համարվում'): the longest option"
+   },
+   {
+    "rule": "g8_middle",
+    "description": "group 8, five numbers: the middle one"
    },
    {
     "rule": "pedestrians_too",

@@ -16,6 +16,7 @@ done = [
   "New interface: bottom tabs, road meter to 18, topics grouped under the 4 exam parts, tap-to-zoom pictures, Noto Sans Armenian; no overflow at 320-1280 px",
   "Stats page (streak, totals, score trend, daily bars, calendar, topics, hardest questions, exams), bright/dark/auto theme, daily goal with today's practice, question search, exam breakdown by part, install button, large text, settings page",
   "Privacy page in Armenian based on the real auth schema, and Delete my account (login and progress in one transaction); 30 checks passed on a temporary Neon branch, which was then deleted",
+  "Independent Opus review: 15 findings, all reproduced or checked against the key. Fixed: wrong-account protection, durable reset (generation), editions by content with id migrations, refused rows no longer block sync, daily limits and storage cap, expired sign-in keeps progress, guests make no auth request, full data export, neutral answer markers, picture labels, guide errors. 55 unit tests; 18+ sync and 57 account checks passed on a temporary branch before the live migration",
 ]
 pending = [
   "Hayk has not reviewed the Armenian interface wording, the group titles or the shortcut guides, which I wrote",

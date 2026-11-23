@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { downloadText, exportFileName, useProgress } from '../lib/progress.ts'
+import { useProgress } from '../lib/progress.ts'
 import { link } from '../lib/router.ts'
-import { deleteAccountNow, flush, signOutNow, startGoogleSignIn, useSyncState } from '../lib/sync.ts'
+import { continueAsGuest, deleteAccountNow, downloadMyData, flush, signOutNow, startGoogleSignIn, useSyncState } from '../lib/sync.ts'
 
 export function GoogleButton({ primary = true }: { primary?: boolean }) {
   const [busy, setBusy] = useState(false)
@@ -58,8 +58,8 @@ function DeleteAccount() {
         Կջնջվեն քո մուտքը, անունը, էլ. հասցեն և ամբողջ առաջընթացը՝ {progress.answers.length} պատասխան և {progress.exams.length} քննություն։ Սա հնարավոր չէ հետ շրջել։
       </p>
       <div className="actions">
-        <button type="button" onClick={() => downloadText(JSON.stringify(progress), exportFileName())}>
-          Նախ արտահանել
+        <button type="button" onClick={() => downloadMyData().catch((err: unknown) => setError(err instanceof Error ? err.message : String(err)))}>
+          Նախ ներբեռնել տվյալներս
         </button>
         <button
           type="button"
@@ -89,7 +89,7 @@ function DeleteAccount() {
 export function HeaderAccount() {
   const { account, phase } = useSyncState()
   if (phase === 'checking') return null
-  const dot = phase === 'error' ? 'bad' : phase === 'offline' || phase === 'saving' ? 'wait' : 'ok'
+  const dot = phase === 'error' ? 'bad' : phase === 'offline' || phase === 'saving' || phase === 'limited' ? 'wait' : 'ok'
   return (
     <a className="account-link" href={link('settings')} aria-label="Հաշիվ և կարգավորումներ">
       {account ? (
@@ -104,9 +104,27 @@ export function HeaderAccount() {
   )
 }
 
+/** The sign-in ran out. Nothing is lost, and the screen must say so: this used to look like an empty account. */
+function ExpiredCard() {
+  const progress = useProgress()
+  return (
+    <div className="card notice">
+      <h2>Մուտքի ժամկետը լրացել է</h2>
+      <p>Քո {progress.answers.length} պատասխանը պահված է այս սարքում։ Մուտք գործիր նորից, որ առաջընթացդ շարունակի պահվել բոլոր սարքերում։</p>
+      <div className="actions">
+        <GoogleButton />
+        <button type="button" onClick={continueAsGuest}>
+          Շարունակել առանց հաշվի
+        </button>
+      </div>
+    </div>
+  )
+}
+
 /** Invitation on the home page, only for someone without an account. */
 export function SignInCard() {
   const { phase } = useSyncState()
+  if (phase === 'expired') return <ExpiredCard />
   if (phase !== 'guest') return null
   return (
     <div className="card">
@@ -125,6 +143,7 @@ export function AccountCard() {
   const [error, setError] = useState<string | null>(null)
   const left = progress.pending.answers.length + progress.pending.exams.length
   if (sync.phase === 'checking') return null
+  if (sync.phase === 'expired') return <ExpiredCard />
   if (sync.account === null) {
     return (
       <div className="card">
@@ -141,9 +160,11 @@ export function AccountCard() {
       ? 'Պահվում է...'
       : sync.phase === 'offline'
         ? `Ինտերնետ չկա. ${left} գրառում կուղարկվի, երբ կապը վերականգնվի։`
-        : left > 0
-          ? `${left} գրառում սպասում է ուղարկման։`
-          : 'Ամբողջ առաջընթացը պահված է։'
+        : sync.message
+          ? sync.message
+          : left > 0
+            ? `${left} գրառում սպասում է ուղարկման։`
+            : 'Ամբողջ առաջընթացը պահված է։'
   return (
     <div className="card">
       <h2>Հաշիվ</h2>
@@ -170,6 +191,9 @@ export function AccountCard() {
           }}
         >
           Դուրս գալ
+        </button>
+        <button type="button" onClick={() => downloadMyData().catch((err: unknown) => setError(err instanceof Error ? err.message : String(err)))}>
+          Ներբեռնել իմ բոլոր տվյալները
         </button>
       </div>
       {error && <p className="bad-text small">{error}</p>}

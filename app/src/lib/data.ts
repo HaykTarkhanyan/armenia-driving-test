@@ -4,7 +4,7 @@ import { z } from 'zod'
 import questionsJson from '../../../data/questions.json' with { type: 'json' }
 import { GROUP_NUMBERS } from './groups.ts'
 import { KEY_NOTES } from './notes.ts'
-import { isLabelQuestion } from './options.ts'
+import { isLabelQuestion, latinPictureLabels } from './options.ts'
 
 const RawQuestionSchema = z.strictObject({
   id: z.string().regex(/^\d+-\d+$/),
@@ -50,6 +50,9 @@ export function currentImageUrl(path: string): string {
 
 const raw = parse(z.array(RawQuestionSchema), questionsJson as unknown, 'data/questions.json')
 
+// The official text of this question says Ա and Բ, but its picture is labelled A and B.
+const LATIN_PICTURE = new Set(['9-93'])
+
 export const QUESTIONS: Question[] = raw.map((q) => {
   if (q.answer_index >= q.options.length) throw new Error(`question ${q.id}: answer ${q.answer_index} is outside its options`)
   if (q.id !== `${q.group}-${q.number}`) throw new Error(`question ${q.id}: id does not match group ${q.group}, number ${q.number}`)
@@ -58,7 +61,7 @@ export const QUESTIONS: Question[] = raw.map((q) => {
     group: q.group,
     number: q.number,
     question: q.question,
-    options: q.options,
+    options: LATIN_PICTURE.has(q.id) ? q.options.map(latinPictureLabels) : q.options,
     answerIndex: q.answer_index,
     imageUrl: q.image === null ? null : currentImageUrl(q.image),
     fixedOrder: isLabelQuestion(q.options),

@@ -8,6 +8,12 @@ export function isLabelQuestion(options: readonly string[]): boolean {
   return options.every((o) => LABEL.test(o.trim()))
 }
 
+/** Some texts name a picture's labels in Armenian (Ա, Բ, Գ, Դ) while the picture itself shows A, B, C, D. */
+export function latinPictureLabels(text: string): string {
+  const latin: Record<string, string> = { Ա: 'A', Բ: 'B', Գ: 'C', Դ: 'D' }
+  return text.replace(/(?<![\p{L}\p{N}])[ԱԲԳԴ](?![\p{L}\p{N}])/gu, (m) => latin[m])
+}
+
 /** Option indices in the order they are shown. */
 export function displayOrder(optionCount: number, fixed: boolean, rand: () => number = Math.random): number[] {
   const order = Array.from({ length: optionCount }, (_, i) => i)

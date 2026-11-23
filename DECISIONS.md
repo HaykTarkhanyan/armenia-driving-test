@@ -2,6 +2,16 @@
 
 Newest first.
 
+## 18. Fixes from the independent review: progress survives resets, new editions and expired sign-ins
+
+- **Date / status:** 2026-11-23, active. Supersedes the part of #12 that refused progress from another edition. An independent Opus review found 15 problems; Hayk said to fix all.
+- **Why:** (F1) a request is sent only if its token belongs to the account on screen, because the sign-in cookie is shared between tabs. (F2) `user_state.generation` counts resets; a device behind on resets drops its older rows and may not upload them. (F3) the edition now changes only when the questions do (`data/edition.json`, fingerprint checked by a test that blocks the deploy), and `migrations` translates old question numbers on the device, so server rows never need rewriting. (F4) a row the server refuses is narrowed down by halves and skipped until the next start, so it blocks nothing. (F5) per-account and global daily limits on 5-minute active windows, because compute is billed by time awake: 72 windows cost at most about 93 of the 100 free CU-hours; writes stop at a 400 MB database. (F6) an expired sign-in keeps the progress on screen and asks to sign in. (F10) someone who never signed in makes no request to the sign-in service. (F14) answer markers are neutral circles, because letters clashed with labels like "Միայն A". F7, F8, F9 and two counts in the guides were corrected against the official key.
+- **Checked:** regression tests for each account bug against a fake server, then the real API and app on a temporary Neon branch before the live migration.
+- **Alternatives rejected:** comparing reset times alone (a device's clock can be wrong, so a generation number decides and the time only separates rows on a stale device); rewriting server rows at each new edition (a risky migration that must be timed with the app deploy); a permanent quarantine list for refused rows (a bug in the app would then lose them for good); rate limiting in memory only (lost whenever the function restarts).
+- **Known limits:** a blocked client on a fresh function instance still wakes the database once to read its counter, and requests sent directly to Neon Auth are outside these limits. When the global limit is hit, syncing pauses for everyone until the next UTC day, while progress keeps saving on devices.
+- **Open, Hayk's decisions:** a private contact in the privacy notice, and whether inactive accounts should be deleted after some period.
+- **What would change this:** real traffic reaching the global limit (then raise it or move off the Free plan), or a need to keep the study timer of a device across editions.
+
 ## 17. A privacy page and "Delete my account": login and progress are removed in one transaction
 
 - **Date / status:** 2026-11-23, active. Hayk asked for it after the note that public Google sign-in stored personal data with no notice and no way to delete it.

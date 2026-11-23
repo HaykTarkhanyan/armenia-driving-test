@@ -38,7 +38,7 @@ export function TodayCard() {
       <div className="today-bar" role="progressbar" aria-valuenow={Math.min(done, goal)} aria-valuemin={0} aria-valuemax={goal} aria-label="Այսօրվա նպատակ">
         <span style={{ width: `${Math.min(100, (100 * done) / goal)}%` }} />
       </div>
-      <a className="button today-go" href={link('practice', 'today', String(done))}>
+      <a className="button today-go" href={link('practice', 'today', `${done > 0 && !reached ? left : goal}-${done}`)}>
         {done === 0 ? 'Սկսել այսօրվա պարապմունքը' : reached ? 'Պարապել ևս' : `Շարունակել, մնաց ${left} հարց`}
       </a>
       {!streak.doneToday && streak.current > 0 && <p>Պատասխանիր գոնե մեկ հարցի, որ շարքը չընդհատվի։</p>}

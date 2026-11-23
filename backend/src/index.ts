@@ -4,6 +4,7 @@
 //   POST   /v1/sync              auth: one batched, idempotent upload of answers and exams
 //   DELETE /v1/progress          auth: removes all of this user's progress ("Reset" in the app)
 //   DELETE /v1/account           auth: removes this user's progress and login for good
+//   GET    /v1/export            auth: a copy of everything stored about this user, without login tokens
 import { Hono } from 'hono'
 import { bodyLimit } from 'hono/body-limit'
 import { compress } from 'hono/compress'
@@ -12,9 +13,10 @@ import { DatabaseError } from 'pg'
 import { requireUser } from './auth.ts'
 import { ALLOWED_ORIGINS, API_VERSION, isAllowedOrigin, MAX_BODY_BYTES } from './config.ts'
 import { errorResponse, HttpError, zodDetails } from './errors.ts'
-import { applySync, deleteAccount, deleteProgress, loadState } from './progress.ts'
+import { applySync, deleteAccount, deleteProgress, exportAccount, loadState } from './progress.ts'
 import { Edition, SyncBody } from './schema.ts'
 import type { AppEnv } from './types.ts'
+import { limitUsage } from './usage.ts'
 
 const app = new Hono<AppEnv>()
 
@@ -63,7 +65,7 @@ app.use('*', compress())
 
 app.get('/v1/health', (c) => c.json({ ok: true, service: 'armenia-driving-test-api', apiVersion: API_VERSION, time: new Date().toISOString() }))
 
-app.get('/v1/state', requireUser, async (c) => {
+app.get('/v1/state', requireUser, limitUsage, async (c) => {
   const edition = Edition.safeParse(c.req.query('edition'))
   if (!edition.success) throw new HttpError(400, 'invalid_query', '"edition" must be a date like 2026-11-06.')
   return c.json(await loadState(c.get('userId'), edition.data))
@@ -72,6 +74,7 @@ app.get('/v1/state', requireUser, async (c) => {
 app.post(
   '/v1/sync',
   requireUser,
+  limitUsage,
   bodyLimit({
     maxSize: MAX_BODY_BYTES,
     onError: (c) => errorResponse(c, new HttpError(413, 'payload_too_large', `The sync body is larger than ${MAX_BODY_BYTES} bytes. Split it into smaller batches.`)),
@@ -97,6 +100,8 @@ app.post(
 app.delete('/v1/progress', requireUser, async (c) => c.json(await deleteProgress(c.get('userId'))))
 
 app.delete('/v1/account', requireUser, async (c) => c.json(await deleteAccount(c.get('userId'))))
+
+app.get('/v1/export', requireUser, async (c) => c.json(await exportAccount(c.get('userId'))))
 
 app.notFound((c) => errorResponse(c, new HttpError(404, 'not_found', `No route for ${c.req.method} ${c.req.path}.`)))
 

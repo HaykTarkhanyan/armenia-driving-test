@@ -25,13 +25,19 @@ Postgres (tables in db/migrations/)
 | Route | Auth | What |
 |---|---|---|
 | `GET /v1/health` | no | Does not touch the database |
-| `GET /v1/state?edition=2026-11-06` | yes | This user's answers and exams for that edition, plus how many answers belong to other editions |
-| `POST /v1/sync` | yes | `{ edition, answers: [...], exams: [...] }`, at most 500 answers and 20 exams. Idempotent: a stored id is skipped, so retries are safe |
-| `DELETE /v1/progress` | yes | Removes all of this user's progress ("Reset" in the app) |
+| `GET /v1/state?edition=2026-11-06` | yes | This user's answers and exams for that edition, rows of earlier editions under `older` (the app translates their question numbers), and the reset `generation` |
+| `POST /v1/sync` | yes | `{ edition, generation, answers: [...], exams: [...] }`, at most 500 answers and 20 exams. Idempotent: a stored id is skipped, so retries are safe. A device behind on resets gets 409 `progress_reset` |
+| `DELETE /v1/progress` | yes | Removes all of this user's progress and starts a new generation, so other devices cannot upload their old rows back |
 | `DELETE /v1/account` | yes | Removes this user's progress and login in one transaction (Google link and tokens, sessions, IP addresses). A token of a deleted account gets 410 `account_deleted` |
+| `GET /v1/export` | yes | A copy of everything stored about this user, without login tokens or passwords |
 
 Only `https://hayktarkhanyan.github.io` and localhost ports 5175 and 4179 may call it from a browser. Each account may
 keep 30,000 answers and 300 exams (`src/config.ts`), because anyone with a Google account can sign up.
+
+Reading and writing progress is limited per day (`src/usage.ts`): 1,500 requests and 36 active 5-minute windows per account,
+72 windows for everybody together, which keeps compute under about 93 of the 100 free CU-hours a month. New writes stop at a
+400 MB database. When a limit is hit, progress stays on the device and uploads later; reset, export and delete always work.
+Not covered: requests sent directly to Neon Auth, which this API cannot see.
 
 ## Who can sign in
 

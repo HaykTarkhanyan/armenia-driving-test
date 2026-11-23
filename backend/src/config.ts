@@ -18,6 +18,12 @@ export const SYNC_LIMITS = { answers: 500, exams: 20 } as const
  * 0.5 GB database. Answering all 2,144 questions ten times is about 21,000 answers. */
 export const USER_LIMITS = { answers: 30_000, exams: 300 } as const
 
+/** Daily limits on reading and writing progress (usage.ts). A window is a 5-minute slot with at least one request. */
+export const USAGE_LIMITS = { userRequestsPerDay: 1500, userWindowsPerDay: 36, totalWindowsPerDay: 72 } as const
+
+/** New progress is refused above this database size; the Free plan allows 512 MB. */
+export const STORAGE_LIMIT_BYTES = 400 * 1024 * 1024
+
 /** Read a variable Neon injects into the function. Missing means the service is not set up: fail at start. */
 export function requireEnv(name: string): string {
   const value = process.env[name]

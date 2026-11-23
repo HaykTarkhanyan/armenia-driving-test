@@ -985,13 +985,14 @@ details > summary {
   display: grid;
   flex: none;
   place-items: center;
-  width: 28px;
-  height: 28px;
-  margin-right: 4px;
+  width: 24px;
+  height: 24px;
+  margin-right: 6px;
+  border: 2px solid var(--line);
   border-radius: 50%;
-  background: var(--track);
-  font-size: 0.86rem;
-  font-weight: 750;
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1;
 }
 
 .option-text {
@@ -1005,6 +1006,7 @@ details > summary {
 }
 
 .option.chosen .option-key {
+  border-color: var(--primary);
   background: var(--primary);
   color: var(--on-primary);
 }
@@ -1015,6 +1017,7 @@ details > summary {
 }
 
 .option.correct .option-key {
+  border-color: var(--green);
   background: var(--green);
   color: var(--surface);
 }
@@ -1025,6 +1028,7 @@ details > summary {
 }
 
 .option.wrong .option-key {
+  border-color: var(--red);
   background: var(--red);
   color: var(--surface);
 }
