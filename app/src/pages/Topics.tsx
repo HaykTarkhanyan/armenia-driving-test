@@ -36,7 +36,7 @@ export function Topics() {
             <h2>
               {s.name}՝ {s.draw} հարց
             </h2>
-            {s.groups.length > 1 && <p>Այս {s.draw} հարցը ընտրվում է ներքևի {s.groups.length} թեմաներից միասին։ Թեմայի տակ գրված է, թե միջինում քանիսն է դրանից ընկնում։</p>}
+            {s.groups.length > 1 && <p>Այս {s.draw} հարցն ընտրվում է ներքևի {s.groups.length} թեմաներից միասին։ Թեմայի տակ գրված է, թե միջինում քանիսն է դրանցից ընկնում։</p>}
           </div>
           {s.groups.map((g) => (
             <GroupRow key={g} group={g} statuses={statuses} />

@@ -5,7 +5,7 @@ import { Sign } from './Icons.tsx'
 
 const KIND_NAMES: [GuideKind, string][] = [
   ['rule', 'Կանոն'],
-  ['lean', 'Հաճախ է աշխատում'],
+  ['lean', 'Հաճախ է գործում'],
   ['never', 'Չընտրել'],
   ['exception', 'Բացառություն'],
 ]

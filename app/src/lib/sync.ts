@@ -374,8 +374,8 @@ export async function signOutNow(): Promise<void> {
   await flush()
   const left = pendingCount()
   const examRunning = getLoadError() === null && getProgress().activeExam !== null
-  if (examRunning && !window.confirm('Ունես չավարտված քննություն։ Դուրս գալ միևնույն է։ Այն կշարունակվի, երբ նորից մուտք գործես այս սարքից, եթե ժամանակը դեռ չի լրացել։')) return
-  if (left > 0 && !window.confirm(`${left} պատասխան դեռ չի պահվել սերվերում։ Դուրս գալ միևնույն է։ Դրանք կուղարկվեն, երբ նորից մուտք գործես այս սարքից։`)) return
+  if (examRunning && !window.confirm('Ունես չավարտված քննություն։ Այն կշարունակվի, երբ նորից մուտք գործես այս սարքից, եթե ժամանակը դեռ չի լրացել։ Դուրս գա՞լ։')) return
+  if (left > 0 && !window.confirm(`${left} պատասխան դեռ չի պահվել սերվերում։ Դրանք կուղարկվեն, երբ նորից մուտք գործես այս սարքից։ Դուրս գա՞լ։`)) return
   await signOut()
   if (account && left === 0 && !examRunning) removeStoredAccount(account.id)
   useStorageOf(null)

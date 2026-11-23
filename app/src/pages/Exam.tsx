@@ -238,7 +238,7 @@ function ExamResultView({ result }: { result: ExamResult }) {
           {result.score} / {EXAM.questions}
         </div>
         <div>
-          <b>{result.passed ? 'Հանձնված է' : 'Չի հանձնված'}</b> (անհրաժեշտ է {EXAM.passMark})
+          <b>{result.passed ? 'Հանձնված է' : 'Հանձնված չէ'}</b> (անհրաժեշտ է {EXAM.passMark})
           <div className="muted">
             {formatDateTime(result.finishedAt)} · տևեց {formatClock(result.finishedAt - result.startedAt)}
             {result.timedOut ? ' · ժամանակը լրացավ' : ''}
