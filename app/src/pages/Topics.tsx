@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { ExamMix } from '../components/ExamMix.tsx'
 import { Chevron } from '../components/Icons.tsx'
 import { groupIds, QUESTIONS } from '../lib/data.ts'
@@ -6,6 +6,7 @@ import { EXAM, SECTIONS } from '../lib/exam.ts'
 import { groupTitle } from '../lib/groups.ts'
 import { useProgress } from '../lib/progress.ts'
 import { link } from '../lib/router.ts'
+import { searchQuestions } from '../lib/search.ts'
 import { countStatuses, lastWrong, perExam, statusById, type Status } from '../lib/stats.ts'
 
 const ALL_IDS = QUESTIONS.map((q) => q.id)
@@ -28,6 +29,7 @@ export function Topics() {
           </div>
         )}
       </div>
+      <QuestionSearch />
       {SECTIONS.map((s) => (
         <section key={s.key} className={`part-${s.key}`}>
           <div className="part">
@@ -49,6 +51,37 @@ export function Topics() {
         <Chevron />
       </a>
     </>
+  )
+}
+
+/** Find any question by number ("4-85") or words, with its official answer. */
+function QuestionSearch() {
+  const [query, setQuery] = useState('')
+  const { hits, total } = useMemo(() => searchQuestions(query), [query])
+  const typed = query.trim().length > 0
+  return (
+    <div className="card">
+      <input className="search" type="search" placeholder="Փնտրել հարց՝ բառով կամ համարով (4-85)" aria-label="Փնտրել հարց" value={query} onChange={(e) => setQuery(e.target.value)} />
+      {typed && hits.length === 0 && <p className="muted small" style={{ margin: '8px 0 0' }}>Չգտնվեց։ Գրիր առնվազն 3 տառ կամ հարցի համարը։</p>}
+      {hits.length > 0 && (
+        <>
+          <p className="muted small" style={{ margin: '8px 0 0' }}>
+            Գտնվեց {total} հարց{total > hits.length ? `, ցույց է տրված ${hits.length}-ը` : ''}
+          </p>
+          <ul className="search-hits">
+            {hits.map((q) => (
+              <li key={q.id}>
+                <a href={link('practice', 'list', q.id)}>
+                  <small>{q.id}</small>
+                  {q.question}
+                  <b>{q.options[q.answerIndex]}</b>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+    </div>
   )
 }
 

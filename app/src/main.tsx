@@ -2,7 +2,12 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import '@fontsource-variable/noto-sans-armenian/wdth.css'
 import { App } from './App.tsx'
+import { initInstall } from './lib/install.ts'
+import { initAppearance } from './lib/settings.ts'
 import './styles.css'
+
+initAppearance()
+initInstall()
 
 // The service worker makes the app installable on Android (DECISIONS.md #13). Only in the built app: the dev server has
 // no /armenia-driving-test/ base and needs no install. A failed registration reaches the page's error banner (index.html).

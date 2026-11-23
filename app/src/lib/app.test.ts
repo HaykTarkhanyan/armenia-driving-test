@@ -9,6 +9,9 @@ import { EDITION, emptyProgress, mergeFromServer, mergeLocal, parseProgress, Pro
 import { lastWrong, perExam, readiness, sectionIds, statusById, statusOf } from './stats.ts'
 import { GENERAL_ITEMS, GUIDES } from '../content/guides.ts'
 import { hintFor, hintText, statLabel } from './hints.ts'
+import { addDays, calendarWeeks, dailyActivity, hardest, lastDays, scoreTrend, streaks } from './insights.ts'
+import { todayMix } from './mix.ts'
+import { searchQuestions } from './search.ts'
 
 function seeded(seed = 509): () => number {
   let s = seed
@@ -203,6 +206,80 @@ describe('shortcut guides', () => {
     expect(perExam(2)).toEqual({ count: 2, exact: true })
     expect(perExam(10)).toEqual({ count: 1, exact: true })
     expect(perExam(4).exact).toBe(false)
+  })
+})
+
+describe('stats', () => {
+  const on = (qid: string, day: string, correct: boolean, hour = 12) => answer(qid, correct, new Date(`${day}T${String(hour).padStart(2, '0')}:00:00`).toISOString())
+
+  it('counts a streak that is still alive before today is studied, and the best run', () => {
+    expect(streaks(['2026-11-21', '2026-11-22', '2026-11-23'], '2026-11-23')).toEqual({ current: 3, best: 3, doneToday: true })
+    expect(streaks(['2026-11-21', '2026-11-22'], '2026-11-23')).toEqual({ current: 2, best: 2, doneToday: false })
+    expect(streaks(['2026-11-20', '2026-11-21'], '2026-11-23').current).toBe(0)
+    expect(streaks(['2026-11-01', '2026-11-02', '2026-11-03', '2026-11-04', '2026-11-23'], '2026-11-23')).toEqual({ current: 1, best: 4, doneToday: true })
+    expect(streaks([], '2026-11-23')).toEqual({ current: 0, best: 0, doneToday: false })
+  })
+
+  it('crosses month ends and daylight saving when counting days', () => {
+    expect(addDays('2026-10-31', 1)).toBe('2026-11-01')
+    expect(addDays('2026-03-01', -1)).toBe('2026-02-28')
+    expect(lastDays('2026-11-02', 3)).toEqual(['2026-10-31', '2026-11-01', '2026-11-02'])
+  })
+
+  it('groups answers by local day', () => {
+    const days = dailyActivity([on('1-1', '2026-11-22', true), on('1-2', '2026-11-22', false), on('1-3', '2026-11-23', true)])
+    expect(days.get('2026-11-22')).toEqual({ total: 2, right: 1 })
+    expect(days.get('2026-11-23')).toEqual({ total: 1, right: 1 })
+  })
+
+  it('score trend starts at the guess score, and rises only when a question becomes known', () => {
+    const guess = readiness(statusById([], QUESTIONS.map((q) => q.id))).expected
+    const log = [on('3-1', '2026-11-21', true), on('3-1', '2026-11-22', true), on('3-1', '2026-11-23', false)]
+    const [d0, d1, d2, d3] = scoreTrend(log, ['2026-11-20', '2026-11-21', '2026-11-22', '2026-11-23'])
+    expect(d0.score).toBeCloseTo(guess, 9)
+    expect(d1.score).toBeCloseTo(guess, 9) // one right answer is not yet "known"
+    expect(d2.score).toBeGreaterThan(guess)
+    expect(d3.score).toBeCloseTo(guess, 9) // a wrong answer takes it back
+    const statuses = statusById(log.slice(0, 2), QUESTIONS.map((q) => q.id))
+    expect(d2.score).toBeCloseTo(readiness(statuses).expected, 9)
+  })
+
+  it('lists only questions missed at least twice, most missed first', () => {
+    const log = [on('1-1', '2026-11-20', false), on('1-1', '2026-11-21', false), on('1-2', '2026-11-20', false), on('2-1', '2026-11-20', false), on('2-1', '2026-11-21', false), on('2-1', '2026-11-22', false)]
+    expect(hardest(log, 5).map((h) => h.id)).toEqual(['2-1', '1-1'])
+  })
+
+  it('builds whole Monday-first weeks with no future days', () => {
+    const weeks = calendarWeeks('2026-11-25', 2) // a Wednesday
+    expect(weeks[0][0]).toBe('2026-11-16')
+    expect(weeks[1][2]).toBe('2026-11-25')
+    expect(weeks[1][3]).toBeNull()
+  })
+})
+
+describe("today's practice", () => {
+  it('gives the requested number of different questions', () => {
+    const mix = todayMix([], 20, new Date('2026-11-23T12:00:00'), seeded())
+    expect(mix).toHaveLength(20)
+    expect(new Set(mix).size).toBe(20)
+    expect(mix.every((id) => id.startsWith('3-'))).toBe(true) // new learners start with the highest-value group
+  })
+
+  it('puts mistakes in, and does not fill a round with what was just answered right', () => {
+    const now = new Date('2026-11-23T12:00:00')
+    const log = [answer('5-1', false, '2026-11-22T10:00:00.000Z'), answer('3-1', true, new Date('2026-11-23T11:00:00').toISOString())]
+    const mix = todayMix(log, 10, now, seeded())
+    expect(mix).toContain('5-1')
+    expect(mix).not.toContain('3-1')
+  })
+})
+
+describe('question search', () => {
+  it('finds by number and by words, treating և and եւ as one', () => {
+    expect(searchQuestions('4-85').hits.map((q) => q.id)).toEqual(['4-85'])
+    expect(searchQuestions('Կառուցվածքով').total).toBeGreaterThan(5)
+    expect(searchQuestions('երթևեկության').total).toBe(searchQuestions('երթեւեկության').total)
+    expect(searchQuestions('ա').hits).toEqual([])
   })
 })
 

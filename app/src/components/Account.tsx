@@ -35,7 +35,7 @@ export function HeaderAccount() {
   if (phase === 'checking') return null
   const dot = phase === 'error' ? 'bad' : phase === 'offline' || phase === 'saving' ? 'wait' : 'ok'
   return (
-    <a className="account-link" href={link('progress')}>
+    <a className="account-link" href={link('settings')} aria-label="Հաշիվ և կարգավորումներ">
       {account ? (
         <>
           <span className={`sync-dot ${dot}`} aria-hidden="true" />

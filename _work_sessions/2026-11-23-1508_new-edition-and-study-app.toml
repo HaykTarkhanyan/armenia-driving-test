@@ -14,6 +14,7 @@ done = [
   "Accounts: new free Neon project, Google sign-in, Hono API, password sign-up closed, per-account limits; guest progress moves into the account; sync_check.py passes 19 checks on the live site with two browser devices",
   "Shortcut guide in Armenian for all 10 groups, a general page, and a hint after each answer (254 questions); 162 stated facts checked by script against the official key",
   "New interface: bottom tabs, road meter to 18, topics grouped under the 4 exam parts, tap-to-zoom pictures, Noto Sans Armenian; no overflow at 320-1280 px",
+  "Stats page (streak, totals, score trend, daily bars, calendar, topics, hardest questions, exams), bright/dark/auto theme, daily goal with today's practice, question search, exam breakdown by part, install button, large text, settings page",
 ]
 pending = [
   "Hayk has not reviewed the Armenian interface wording, the group titles or the shortcut guides, which I wrote",

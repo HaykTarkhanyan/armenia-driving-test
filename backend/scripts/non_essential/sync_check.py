@@ -120,7 +120,7 @@ def answer_some(p: Page, group: int, n: int) -> None:
 
 
 def save_now(p: Page) -> None:
-    go(p, "#/progress")
+    go(p, "#/settings")
     button = p.get_by_role("button", name="Պահել հիմա")
     button.wait_for(timeout=5_000)
     button.click()
@@ -128,7 +128,7 @@ def save_now(p: Page) -> None:
 
 
 def clear_server(p: Page) -> None:
-    go(p, "#/progress")
+    go(p, "#/settings")
     p.get_by_role("button", name="Զրոյացնել").click()
     wait_doc(p, "d.answers === 0 && d.exams === 0")
 
@@ -206,7 +206,7 @@ def main() -> None:
         wait_doc(b, "d.exams === 1 && d.answers === 25")
         check(True, "device B sees the exam")
 
-        go(a, "#/progress")
+        go(a, "#/settings")
         a.get_by_role("button", name="Դուրս գալ").click()
         a.wait_for_function("() => document.querySelector('.account-link')?.textContent === 'Մուտք'", timeout=20_000)
         check(doc(a) is None, "sign-out removes the account's copy from the device")

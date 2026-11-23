@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="light dark" />
     <title>Վարորդական քննություն</title>
-    <meta name="theme-color" content="#0033a0" />
+    <meta name="theme-color" content="#ffffff" />
+    <script>
+      // Before the first paint, so a saved theme never flashes the other one.
+      ;(function () {
+        var s = JSON.parse(localStorage.getItem('armenia-driving-test.settings.v1') || '{}')
+        if (s.theme === 'light' || s.theme === 'dark') document.documentElement.dataset.theme = s.theme
+        if (s.textSize === 'large') document.documentElement.dataset.size = 'large'
+      })()
+    </script>
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png" />
     <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />

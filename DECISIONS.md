@@ -2,6 +2,14 @@
 
 Newest first.
 
+## 16. A stats page, an explicit bright/dark theme, and "today's practice" as the main action
+
+- **Date / status:** 2026-11-23, active. Hayk asked for a stats page with streak and progress, more UX improvements, and a bright theme, because the app only followed the phone's dark setting.
+- **Why:** The theme is a choice now (bright, dark, or follow the device), one tap in the header, applied before the first paint so a saved theme never flashes the other one. The Առաջընթաց tab shows the streak, four totals, the expected score over 30 days against 18, answers per day, an activity calendar, progress by topic, the most-missed questions and mock exams. A day counts for the streak with at least one answer, and a streak survives until the end of the next day. Charts are plain HTML/SVG; their colours passed the dataviz palette validator in both themes (light `#2f62d6` / `#d97a00`, dark `#5a8aee` / `#d27c05`), and blue/orange stays readable for red-green colour blindness.
+- **UX additions, chosen as the largest gaps:** a one-tap "today's practice" (mistakes, half-learned, then new questions in exam-value order) with a daily goal; question search; a per-part breakdown on the exam result; an install button using Chrome's prompt; a larger text size; a separate settings page.
+- **Alternatives rejected:** a chart library (Plotly is over 3 MB on a phone for six small charts); syncing preferences (they are per device, and it would need a backend change); a spaced-repetition scheduler (the mix is simpler and the "known" rule already exists); bookmarks for now (needs a new synced table).
+- **What would change this:** Hayk wanting the goal or theme to follow the account, or review intervals instead of the simple mix.
+
 ## 15. Shortcuts live in the app: an Armenian guide per group, a hint after each answer, and a road-sign interface
 
 - **Date / status:** 2026-11-23, active. Hayk asked for a shortcut text per group, the shortcuts in the app, UI/UX improvements, and a fix for "15 questions from 7 groups", which read as if the exam had far more than 20 questions.

@@ -1,19 +1,19 @@
 import { useMemo } from 'react'
 import { SignInCard } from '../components/Account.tsx'
-import { Chevron, ExamIcon } from '../components/Icons.tsx'
-import { Sign } from '../components/Icons.tsx'
+import { Chevron, ExamIcon, Sign } from '../components/Icons.tsx'
 import { Readiness } from '../components/Readiness.tsx'
+import { TodayCard } from '../components/Today.tsx'
 import { groupIds, QUESTIONS } from '../lib/data.ts'
-import { EXAM } from '../lib/exam.ts'
+import { EXAM, SECTIONS } from '../lib/exam.ts'
 import { groupTitle } from '../lib/groups.ts'
+import { installApp, useCanInstall } from '../lib/install.ts'
+import { STUDY_ORDER } from '../lib/mix.ts'
 import { useProgress } from '../lib/progress.ts'
 import { link } from '../lib/router.ts'
+import { updateSettings, useSettings } from '../lib/settings.ts'
 import { countStatuses, lastWrong, statusById } from '../lib/stats.ts'
 
 const ALL_IDS = QUESTIONS.map((q) => q.id)
-
-// Highest chance of being on the test first: a group 3 question 3.4%, group 2 2.4%, group 10 2.0%, the rest about 1.7%.
-const STUDY_ORDER = [3, 2, 10, 1, 4, 5, 6, 7, 8, 9]
 
 /** Calendar days in local time: an exam at 23:00 is "yesterday" the next morning, not "today". */
 function daysAgo(t: number): string {
@@ -30,6 +30,8 @@ export function Home() {
   const statuses = useMemo(() => statusById(progress.answers, ALL_IDS), [progress.answers])
   const mistakes = useMemo(() => lastWrong(progress.answers, ALL_IDS), [progress.answers])
   const lastExam = progress.exams.at(-1)
+  const canInstall = useCanInstall()
+  const { installDismissed } = useSettings()
   const next = STUDY_ORDER.map((g) => {
     const ids = groupIds(g)
     return { g, total: ids.length, open: ids.length - countStatuses(ids, statuses).known }
@@ -42,15 +44,31 @@ export function Home() {
         </div>
       )}
       <Readiness />
+      <TodayCard />
+      {canInstall && !installDismissed && (
+        <div className="card">
+          <b>Տեղադրիր հեռախոսում</b>
+          <p className="muted small">Հավելվածը կբացվի առանձին պատուհանով՝ առանց բրաուզերի։</p>
+          <div className="actions">
+            <button type="button" className="primary" onClick={() => void installApp()}>
+              Տեղադրել
+            </button>
+            <button type="button" onClick={() => updateSettings({ installDismissed: true })}>
+              Հետո
+            </button>
+          </div>
+        </div>
+      )}
       {next ? (
-        <a className="next-up" href={link('topics', String(next.g))}>
-          <small>Հաջորդ թեման</small>
-          <b>
-            {next.g}. {groupTitle(next.g)}
-          </b>
-          <small>
-            Մնացել է սովորել {next.open} հարց {next.total}-ից
-          </small>
+        <a className={`row-link part-${SECTIONS.find((s) => (s.groups as readonly number[]).includes(next.g))?.key}`} href={link('topics', String(next.g))}>
+          <span className="group-num">{next.g}</span>
+          <div>
+            <b>{groupTitle(next.g)}</b>
+            <small>
+              Հաջորդ թեման, մնաց {next.open} / {next.total} հարց
+            </small>
+          </div>
+          <Chevron />
         </a>
       ) : (
         <div className="card">Սովորել ես բոլոր {QUESTIONS.length} հարցերը։ Ստուգիր քեզ փորձնական քննությամբ։</div>

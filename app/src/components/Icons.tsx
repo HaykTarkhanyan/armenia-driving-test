@@ -50,6 +50,25 @@ export const Chevron = () => (
   </Line>
 )
 
+export const Flame = () => (
+  <Line>
+    <path d="M12 3c.6 3.2 5.5 5.6 5.5 11a5.5 5.5 0 0 1-11 0c0-2.3 1-3.8 2.3-5 .2 1.6.9 2.6 1.9 3.1C10.300 9 10.700 6 12 3z" />
+  </Line>
+)
+
+export const SunIcon = () => (
+  <Line>
+    <circle cx="12" cy="12" r="4" />
+    <path d="M12 2.500v2.500M12 19v2.500M2.500 12H5M19 12h2.500M5.300 5.300l1.800 1.800M16.900 16.900l1.800 1.800M5.300 18.700l1.800-1.800M16.900 7.100l1.800-1.800" />
+  </Line>
+)
+
+export const MoonIcon = () => (
+  <Line>
+    <path d="M20 14.500A8 8 0 0 1 9.500 4a8 8 0 1 0 10.500 10.500z" />
+  </Line>
+)
+
 /** The road-sign shape that says what kind of shortcut this is. */
 export function Sign({ kind }: { kind: GuideKind }) {
   return (

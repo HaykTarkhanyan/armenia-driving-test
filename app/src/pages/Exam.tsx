@@ -2,8 +2,9 @@ import { Fragment, useEffect, useState } from 'react'
 import { ExamMix } from '../components/ExamMix.tsx'
 import { QuestionCard } from '../components/QuestionCard.tsx'
 import { questionById } from '../lib/data.ts'
-import { EXAM } from '../lib/exam.ts'
+import { EXAM, SECTIONS } from '../lib/exam.ts'
 import { correctIndices, finishExam, formatClock, newExam, remainingMs } from '../lib/examFlow.ts'
+import { formatDateTime } from '../lib/insights.ts'
 import { addFinishedExam, getProgress, updateProgress, useProgress, type ActiveExam, type ExamResult } from '../lib/progress.ts'
 import { go, link } from '../lib/router.ts'
 import { flush } from '../lib/sync.ts'
@@ -75,7 +76,7 @@ export function ExamHistory({ exams }: { exams: ExamResult[] }) {
         {[...exams].reverse().map((e) => (
           <tr key={e.id}>
             <td>
-              <a href={link('exam', 'result', e.id)}>{new Date(e.finishedAt).toLocaleString('hy-AM')}</a>
+              <a href={link('exam', 'result', e.id)}>{formatDateTime(e.finishedAt)}</a>
             </td>
             <td className="num">
               {e.score} / {EXAM.questions}
@@ -239,10 +240,28 @@ function ExamResultView({ result }: { result: ExamResult }) {
         <div>
           <b>{result.passed ? 'Հանձնված է' : 'Չի հանձնված'}</b> (անհրաժեշտ է {EXAM.passMark})
           <div className="muted">
-            {new Date(result.finishedAt).toLocaleString('hy-AM')} · տևեց {formatClock(result.finishedAt - result.startedAt)}
+            {formatDateTime(result.finishedAt)} · տևեց {formatClock(result.finishedAt - result.startedAt)}
             {result.timedOut ? ' · ժամանակը լրացավ' : ''}
           </div>
         </div>
+      </div>
+      <div className="card">
+        <h2>Ըստ բաժինների</h2>
+        {SECTIONS.map((s) => {
+          const inPart = rows.filter((r) => (s.groups as readonly number[]).includes(questionById(r.id).group))
+          const got = inPart.filter((r) => r.right).length
+          return (
+            <div key={s.key} className={`part-score part-${s.key}`}>
+              <span>{s.name}</span>
+              <b>
+                {got} / {inPart.length}
+              </b>
+              <span className="bar">
+                <span className="seg" style={{ width: `${(100 * got) / inPart.length}%` }} />
+              </span>
+            </div>
+          )
+        })}
       </div>
       <div className="actions">
         {wrong.length > 0 && (

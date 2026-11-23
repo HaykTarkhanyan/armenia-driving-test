@@ -1,14 +1,16 @@
 import { lazy, Suspense, useEffect, type ReactNode } from 'react'
 import { HeaderAccount } from './components/Account.tsx'
-import { ExamIcon, HomeIcon, ProgressIcon, ShortcutsIcon, TopicsIcon } from './components/Icons.tsx'
+import { ExamIcon, HomeIcon, MoonIcon, ProgressIcon, ShortcutsIcon, SunIcon, TopicsIcon } from './components/Icons.tsx'
 import { downloadText, emptyProgress, replaceProgress, useHasActiveExam, useLoadError, type ProgressError } from './lib/progress.ts'
 import { link, useRoute } from './lib/router.ts'
+import { effectiveTheme, updateSettings, useSettings } from './lib/settings.ts'
 import { boot } from './lib/sync.ts'
 import { ExamPage, finishExpiredExam } from './pages/Exam.tsx'
 import { GroupPage } from './pages/GroupPage.tsx'
 import { Home } from './pages/Home.tsx'
 import { Practice } from './pages/Practice.tsx'
 import { ProgressPage } from './pages/Progress.tsx'
+import { SettingsPage } from './pages/Settings.tsx'
 import { Shortcuts } from './pages/Shortcuts.tsx'
 import { Topics } from './pages/Topics.tsx'
 
@@ -27,6 +29,8 @@ export function App() {
   const route = useRoute()
   const loadError = useLoadError()
   const examRunning = useHasActiveExam()
+  const settings = useSettings()
+  const theme = effectiveTheme(settings)
   const page = route[0] ?? ''
   const path = route.join('/')
   useEffect(() => {
@@ -45,7 +49,7 @@ export function App() {
     <>
       <header>
         <a className="brand" href={link()}>
-          Վարորդական քննություն
+          Վարորդական<span className="brand-long"> քննություն</span>
         </a>
         {!focus && (
           <nav className="tabbar" aria-label="Գլխավոր ընտրացանկ">
@@ -57,7 +61,18 @@ export function App() {
             ))}
           </nav>
         )}
-        <HeaderAccount />
+        <div className="header-tools">
+          <button
+            type="button"
+            className="icon-btn"
+            aria-label={theme === 'dark' ? 'Միացնել բաց թեման' : 'Միացնել մուգ թեման'}
+            title={theme === 'dark' ? 'Բաց թեմա' : 'Մուգ թեմա'}
+            onClick={() => updateSettings({ theme: theme === 'dark' ? 'light' : 'dark' })}
+          >
+            {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+          </button>
+          <HeaderAccount />
+        </div>
       </header>
       <main className={focus ? 'focus' : ''}>{loadError ? <Recovery error={loadError} /> : <Page route={route} />}</main>
     </>
@@ -84,6 +99,8 @@ function Page({ route }: { route: string[] }) {
       )
     case 'progress':
       return <ProgressPage />
+    case 'settings':
+      return <SettingsPage />
     default:
       return (
         <div className="card">

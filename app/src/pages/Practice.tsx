@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react'
 import { QuestionCard } from '../components/QuestionCard.tsx'
+import { streakWord, useToday } from '../components/Today.tsx'
 import { groupIds, QUESTION_BY_ID, QUESTIONS, type Question } from '../lib/data.ts'
 import { GROUP_NUMBERS, groupTitle } from '../lib/groups.ts'
 import { displayOrder } from '../lib/options.ts'
+import { todayMix } from '../lib/mix.ts'
 import { getProgress, recordAnswer } from '../lib/progress.ts'
 import { link } from '../lib/router.ts'
+import { getSettings } from '../lib/settings.ts'
 import { lastWrong, statusById } from '../lib/stats.ts'
 
 export type Session = {
@@ -15,7 +18,7 @@ export type Session = {
   /** Link to practice everything when "not known yet" is empty. */
   allHref: string | null
   /** The next set to practice, offered at the end. */
-  next: { href: string; title: string } | null
+  next: { href: string; label: string } | null
 }
 
 const ALL_IDS = QUESTIONS.map((q) => q.id)
@@ -30,6 +33,15 @@ function buildSession(source: string, arg: string): Session | string {
     if (ids.some((id) => !QUESTION_BY_ID.has(id))) return `«${arg}»-ը հարցերի ցանկ չէ։`
     return { title: 'Ընտրված հարցեր', ids, empty: '', allHref: null, next: null }
   }
+  if (source === 'today') {
+    return {
+      title: 'Այսօրվա պարապմունք',
+      ids: todayMix(getProgress().answers, getSettings().dailyGoal),
+      empty: '',
+      allHref: null,
+      next: { href: link('practice', 'today', String(Date.now())), label: 'Պարապել ևս' },
+    }
+  }
   if (source === 'mistakes') {
     return {
       title: 'Իմ սխալները',
@@ -43,7 +55,7 @@ function buildSession(source: string, arg: string): Session | string {
   if (!GROUP_NUMBERS.some((g) => g === group)) return `«${source}» խումբ չկա։`
   const position = GROUP_NUMBERS.findIndex((g) => g === group)
   const nextGroup = GROUP_NUMBERS[position + 1]
-  const next = nextGroup === undefined ? null : { href: link('practice', String(nextGroup), 'open'), title: groupTitle(nextGroup) }
+  const next = nextGroup === undefined ? null : { href: link('practice', String(nextGroup), 'open'), label: `Հաջորդ թեման՝ ${groupTitle(nextGroup)}` }
   const ids = groupIds(group)
   if (arg === 'all') return { title: groupTitle(group), ids, empty: '', allHref: null, next }
   if (arg === 'open') {
@@ -70,13 +82,24 @@ export function Practice({ source, arg }: { source: string; arg: string }) {
     )
   }
   const inGroup = GROUP_NUMBERS.some((g) => String(g) === source)
+  const fromHome = source === 'today' || source === 'mistakes'
   return (
     <PracticeRunner
       session={session}
       questionOf={(id) => QUESTION_BY_ID.get(id)}
-      backHref={inGroup ? link('topics', source) : link('topics')}
-      backLabel={inGroup ? 'Թեմա' : 'Թեմաներ'}
+      backHref={inGroup ? link('topics', source) : fromHome ? link() : link('topics')}
+      backLabel={inGroup ? 'Թեմա' : fromHome ? 'Գլխավոր' : 'Թեմաներ'}
     />
+  )
+}
+
+/** After a round: what it did for today's goal and the streak. */
+function RoundStreak() {
+  const { done, goal, streak } = useToday()
+  return (
+    <p className="muted">
+      {streakWord(streak.current)}։ Այսօր՝ {done} / {goal} հարց։
+    </p>
   )
 }
 
@@ -173,6 +196,7 @@ export function PracticeRunner({ session, questionOf, backHref, backLabel }: Run
         <p className="big-line">
           {results.length - missed.length} / {results.length} ճիշտ
         </p>
+        <RoundStreak />
         {missed.length > 0 && (
           <ul className="missed">
             {missed.map((id) => {
@@ -199,7 +223,7 @@ export function PracticeRunner({ session, questionOf, backHref, backLabel }: Run
           </button>
           {session.next && (
             <a className="button" href={session.next.href}>
-              Հաջորդ թեման՝ {session.next.title}
+              {session.next.label}
             </a>
           )}
           <a className="button" href={backHref}>

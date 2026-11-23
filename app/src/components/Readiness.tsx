@@ -6,7 +6,7 @@ import { readiness, statusById } from '../lib/stats.ts'
 
 const ALL_IDS = QUESTIONS.map((q) => q.id)
 
-function chance(p: number): string {
+export function chance(p: number): string {
   if (p < 0.01) return '1%-ից պակաս'
   if (p > 0.99) return '99%-ից ավելի'
   return `${Math.round(p * 100)}%`
