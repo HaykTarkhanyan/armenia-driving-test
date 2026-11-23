@@ -22,7 +22,7 @@ export function GoogleButton({ primary = true }: { primary?: boolean }) {
           })
         }}
       >
-        {busy ? 'Սպասիր...' : 'Մուտք Google-ով'}
+        {busy ? 'Սպասեք...' : 'Մուտք Google-ով'}
       </button>
       {error && <p className="bad-text small">{error}</p>}
     </>
@@ -33,7 +33,7 @@ export function GoogleButton({ primary = true }: { primary?: boolean }) {
 function SignInNote() {
   return (
     <p className="muted small" style={{ margin: '8px 0 0' }}>
-      Մուտք գործելիս պահվում են քո անունը, էլ. հասցեն և առաջընթացը։ <a href={link('privacy')}>Մանրամասն</a>
+      Մուտք գործելիս պահվում են ձեր անունը, էլ. հասցեն և առաջընթացը։ <a href={link('privacy')}>Մանրամասն</a>
     </p>
   )
 }
@@ -55,7 +55,7 @@ function DeleteAccount() {
     <div className="danger-box" role="group" aria-label="Հաշվի ջնջում">
       <b>Ջնջե՞լ հաշիվը</b>
       <p>
-        Կջնջվեն քո մուտքը, անունը, էլ. հասցեն և ամբողջ առաջընթացը՝ {progress.answers.length} պատասխան և {progress.exams.length} քննություն։ Սա հնարավոր չէ հետ շրջել։
+        Կջնջվեն ձեր մուտքը, անունը, էլ. հասցեն և ամբողջ առաջընթացը՝ {progress.answers.length} պատասխան և {progress.exams.length} քննություն։ Սա հնարավոր չէ հետ շրջել։
       </p>
       <div className="actions">
         <button type="button" onClick={() => downloadMyData().catch((err: unknown) => setError(err instanceof Error ? err.message : String(err)))}>
@@ -110,7 +110,7 @@ function ExpiredCard() {
   return (
     <div className="card notice">
       <h2>Մուտքի ժամկետը լրացել է</h2>
-      <p>Քո {progress.answers.length} պատասխանը պահված է այս սարքում։ Մուտք գործիր նորից, որ առաջընթացդ շարունակի պահվել բոլոր սարքերում։</p>
+      <p>Ձեր {progress.answers.length} պատասխանը պահված է այս սարքում։ Մուտք գործեք նորից, որ ձեր առաջընթացը շարունակի պահվել բոլոր սարքերում։</p>
       <div className="actions">
         <GoogleButton />
         <button type="button" onClick={continueAsGuest}>
@@ -128,8 +128,8 @@ export function SignInCard() {
   if (phase !== 'guest') return null
   return (
     <div className="card">
-      <h2>Պահիր առաջընթացդ</h2>
-      <p>Մուտք գործիր Google հաշվով, և առաջընթացդ կպահվի բոլոր սարքերում։ Այս սարքում արդեն արածդ նույնպես կտեղափոխվի հաշվիդ մեջ։</p>
+      <h2>Պահեք ձեր առաջընթացը</h2>
+      <p>Մուտք գործեք Google հաշվով, և ձեր առաջընթացը կպահվի բոլոր սարքերում։ Այս սարքում արդեն արածը նույնպես կտեղափոխվի ձեր հաշվի մեջ։</p>
       <GoogleButton />
       <SignInNote />
     </div>
@@ -149,7 +149,7 @@ export function AccountCard() {
       <div className="card">
         <h2>Հաշիվ</h2>
         {sync.message && <p className={sync.phase === 'error' ? 'bad-text' : 'ok-text'}>{sync.message}</p>}
-        <p className="muted">Առանց հաշվի առաջընթացը պահվում է միայն այս սարքում։ Մուտք գործիր, որ այն հասանելի լինի բոլոր սարքերում։</p>
+        <p className="muted">Առանց հաշվի առաջընթացը պահվում է միայն այս սարքում։ Մուտք գործեք, որ այն հասանելի լինի բոլոր սարքերում։</p>
         <GoogleButton />
         <SignInNote />
       </div>

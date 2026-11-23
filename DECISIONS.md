@@ -2,6 +2,16 @@
 
 Newest first.
 
+## 20. All 1,050 explanations are live, address the reader in the plural, and were checked by two independent reviewers
+
+- **Date / status:** 2026-11-23, active. Extends #19. After the pilot Hayk approved 10 writers and 2 reviewers, and asked to apply the Armenian guidelines to the app's existing text.
+- **Why:** Ten writers produced the other 1,020 explanations. A script checked each one: the cited point exists, numbers appear in the question or the cited text, Armenian lint, no option named by position. Two reviewers then read all 1,050 against the law and the pictures: 13 findings, 12 corrected. The `armenian-writing` skill requires plural reader address, and the official questions use «Դուք», so the interface, guides and explanations moved from «դու» to «դուք». The data file is 422 kB (65 kB gzipped) and loads after the first answer.
+- **Measured:** writers 3,058,799 tokens, reviewers 1,261,937, together 4,320,736 (the main session is not included).
+- **Found:** in 30 questions the explanation says the official answer differs from the law or current medical guidance, or that no source supports it; 16 of them are first aid. The app still grades by the official key, because the exam does. The record is `results/explanations_flags_2026-11-23.json`, the page for reading it `reports/explanations_review.html`.
+- **Alternatives rejected:** changing answers to match the law (learners would fail the real exam); hiding the conflicts (10-28 would teach moving a fallen power line); keeping «դու» (against the guide); reviewing only a sample (the first pass of a checker had already missed 7 lint errors).
+- **Not checked:** no native speaker has read the full set. Many pictures were reviewed on contact sheets, enlarging only doubtful ones. Mayo Clinic and Red Cross returned 403, so 10-1, 10-14 and 10-18 rest on search excerpts. In 1-48 a lit red traffic light may face the driver, and the explanation follows the official answer.
+- **What would change this:** corrections from Hayk or from learners, a new edition (a test blocks the deploy until the explanations are mapped), or a corrected official key.
+
 ## 19. Explanations are written from the law, not copied, and start with a 30-question pilot
 
 - **Date / status:** 2026-11-23, active. Hayk asked for explanations ("search the web, if none create them"), chose a pilot of 30 first and the current 1,050 questions only.

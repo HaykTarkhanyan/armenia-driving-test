@@ -26,7 +26,7 @@
         function show(msg) {
           var el = document.createElement('div')
           el.className = 'fatal'
-          el.textContent = 'Սխալ առաջացավ. ' + msg + '\nՎերջին գործողությունը կարող է չպահպանվել։ Թարմացրու էջը. եթե սխալը կրկնվի, Առաջընթաց էջից արտահանիր տվյալները։'
+          el.textContent = 'Սխալ առաջացավ. ' + msg + '\nՎերջին գործողությունը կարող է չպահպանվել։ Թարմացրեք էջը. եթե սխալը կրկնվի, Առաջընթաց էջից արտահանեք տվյալները։'
           document.body.appendChild(el)
         }
         window.addEventListener('error', function (e) { show(e.message) })

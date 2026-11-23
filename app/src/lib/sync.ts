@@ -296,7 +296,7 @@ async function refreshFromServer(): Promise<void> {
     setState({ otherEditionAnswers: unknown })
     return
   }
-  throw new Error('Առաջընթացը չհաջողվեց բեռնել։ Թարմացրու էջը։')
+  throw new Error('Առաջընթացը չհաջողվեց բեռնել։ Թարմացրեք էջը։')
 }
 
 async function loadAccount(user: AuthUser): Promise<void> {
@@ -374,8 +374,8 @@ export async function signOutNow(): Promise<void> {
   await flush()
   const left = pendingCount()
   const examRunning = getLoadError() === null && getProgress().activeExam !== null
-  if (examRunning && !window.confirm('Ունես չավարտված քննություն։ Այն կշարունակվի, երբ նորից մուտք գործես այս սարքից, եթե ժամանակը դեռ չի լրացել։ Դուրս գա՞լ։')) return
-  if (left > 0 && !window.confirm(`${left} պատասխան դեռ չի պահվել սերվերում։ Դրանք կուղարկվեն, երբ նորից մուտք գործես այս սարքից։ Դուրս գա՞լ։`)) return
+  if (examRunning && !window.confirm('Ունեք չավարտված քննություն։ Այն կշարունակվի, երբ նորից մուտք գործեք այս սարքից, եթե ժամանակը դեռ չի լրացել։ Դուրս գա՞լ։')) return
+  if (left > 0 && !window.confirm(`${left} պատասխան դեռ չի պահվել սերվերում։ Դրանք կուղարկվեն, երբ նորից մուտք գործեք այս սարքից։ Դուրս գա՞լ։`)) return
   await signOut()
   if (account && left === 0 && !examRunning) removeStoredAccount(account.id)
   useStorageOf(null)
@@ -384,7 +384,7 @@ export async function signOutNow(): Promise<void> {
 
 /** Removes the login and all progress from the server, then this device's copy of them. Cannot be undone. */
 export async function deleteAccountNow(): Promise<void> {
-  if (state.account === null) throw new Error('Մուտք գործած չես։')
+  if (state.account === null) throw new Error('Մուտք գործած չեք։')
   if (uploading) await uploading
   try {
     await api('/v1/account', { method: 'DELETE' })
@@ -394,7 +394,7 @@ export async function deleteAccountNow(): Promise<void> {
   }
   // The session no longer exists on the server; this only clears the browser's cookie and the SDK's cache.
   await signOut().catch((err: unknown) => console.error('Sign-out after deleting the account failed', err))
-  leaveDeletedAccount('Հաշիվդ և ամբողջ առաջընթացդ ջնջվեցին։')
+  leaveDeletedAccount('Ձեր հաշիվը և ամբողջ առաջընթացը ջնջվեցին։')
 }
 
 /** "Reset": for an account the server starts a new generation, so other devices drop their older rows too. */

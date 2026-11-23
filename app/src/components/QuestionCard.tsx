@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import type { Question } from '../lib/data.ts'
-import { SOURCES, useExplanation } from '../lib/explanations.ts'
+import { citation, useExplanation } from '../lib/explanations.ts'
 import { groupTitle } from '../lib/groups.ts'
 import { hintFor, hintText } from '../lib/hints.ts'
 import { link } from '../lib/router.ts'
@@ -48,14 +48,13 @@ function WhyThisAnswer({ id }: { id: string }) {
   const state = useExplanation(id)
   if (state.status === 'loading' || state.status === 'none') return null
   if (state.status === 'error') return <p className="explanation bad-text">{state.message}</p>
-  const { text, source, ref } = state.explanation
+  const { label, url } = citation(state.explanation)
   return (
     <div className="explanation">
       <strong>Ինչո՞ւ</strong>
-      <p>{text}</p>
-      <a href={SOURCES[source].url} target="_blank" rel="noreferrer">
-        Աղբյուր՝ {SOURCES[source].label}
-        {ref && `, ${ref}`}
+      <p>{state.explanation.text}</p>
+      <a href={url} target="_blank" rel="noreferrer">
+        Աղբյուր՝ {label}
       </a>
     </div>
   )

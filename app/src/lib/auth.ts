@@ -109,10 +109,10 @@ export async function getToken(opts: { fresh?: boolean } = {}): Promise<string> 
   const what = 'Սերվերի բանալու ստացում'
   const data = await call(what, async () => (await auth()).getSession())
   const token = (data as { session?: { token?: unknown } } | null)?.session?.token
-  if (typeof token !== 'string' || token === '') throw new AuthFailure(`${what}. մուտք գործած չես, կամ բրաուզերն արգելափակել է մուտքի cookie-ն`, false)
+  if (typeof token !== 'string' || token === '') throw new AuthFailure(`${what}. մուտք գործած չեք, կամ բրաուզերն արգելափակել է մուտքի cookie-ն`, false)
   if (jwtExpiry(token) === null) throw new AuthFailure(`${what}. սերվերը բանալի չուղարկեց`, false)
   if (opts.fresh && token === lastToken) {
-    throw new AuthFailure(`${what}. սերվերն ասում է, որ բանալին ժամկետանց է։ Ստուգիր, որ սարքի ժամն ու ամսաթիվը ճիշտ են, հետո թարմացրու էջը։`, false)
+    throw new AuthFailure(`${what}. սերվերն ասում է, որ բանալին ժամկետանց է։ Ստուգեք, որ սարքի ժամն ու ամսաթիվը ճիշտ են, հետո թարմացրեք էջը։`, false)
   }
   lastToken = token
   return token

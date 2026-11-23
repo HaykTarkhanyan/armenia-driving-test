@@ -28,7 +28,7 @@ only where that fails; and three answers in the official key contradict the law.
 | [`questions/group_01.md`](questions/group_01.md) ... `group_10.md` | All questions per group, correct answer bold with ✅, pictures inline. Start here. |
 | `data/questions.json` / `.csv` | Same, machine-readable: `id` ("4-145" = group 4, question 145), `question`, `options` (2-5), `answer_index` (0-based; the CSV's `answer` is 1-based like the PDF), `image` |
 | `data/images/` | 715 pictures, exactly as embedded in the PDFs (66 MB) |
-| `data/explanations.json` | Why each answer is right, with the rule it comes from (30 of 1,050 so far, a pilot) |
+| `data/explanations.json` | Why each answer is right, with the rule it comes from (all 1,050 questions) |
 | [`_knowledge/exam_rules.md`](_knowledge/exam_rules.md) | The exam rules from the law in force, quoted word for word, and which PDF group is which exam section |
 | `official/manifest.json` | URL, version date, size and SHA-256 of each downloaded PDF (the PDFs themselves are not in git) |
 | `results/crosscheck_en.json` | Armenian vs English PDFs, question by question: 0 differences |

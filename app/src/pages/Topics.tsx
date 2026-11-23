@@ -62,7 +62,7 @@ function QuestionSearch() {
   return (
     <div className="card">
       <input className="search" type="search" placeholder="Փնտրել հարց՝ բառով կամ համարով (4-85)" aria-label="Փնտրել հարց" value={query} onChange={(e) => setQuery(e.target.value)} />
-      {typed && hits.length === 0 && <p className="muted small" style={{ margin: '8px 0 0' }}>Չգտնվեց։ Գրիր առնվազն 3 տառ կամ հարցի համարը։</p>}
+      {typed && hits.length === 0 && <p className="muted small" style={{ margin: '8px 0 0' }}>Չգտնվեց։ Գրեք առնվազն 3 տառ կամ հարցի համարը։</p>}
       {hits.length > 0 && (
         <>
           <p className="muted small" style={{ margin: '8px 0 0' }}>

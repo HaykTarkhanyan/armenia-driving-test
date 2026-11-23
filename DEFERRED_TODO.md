@@ -8,7 +8,9 @@ Parked ideas, not started.
 - **Watch for a new pool** - re-run `scripts/download_pdfs.py`; it re-downloads only groups whose version stamp changed, then rebuild.
 - **Own Google OAuth client** - sign-in uses Neon's shared credentials, so Google's screen shows Neon's name. Steps are in `backend/README.md`.
 - **A real contact in the privacy notice** - it names the GitHub account and issue page. GDPR expects an identifiable, reachable controller; Hayk decides what to publish (DECISIONS.md #17, #18).
-- **Explanations for the other 1,020 questions** - 30 are done as a pilot (DECISIONS.md #19). The rest wait for Hayk's review of the wording and his OK on the token cost.
+- **Native read of the explanations** - all 1,050 are live and reviewed by agents, but no native speaker has read them. Start with `reports/explanations_review.html` (64 flagged questions).
+- **1-48** - a lit red traffic light may face the driver in the picture; the explanation follows the official answer (DECISIONS.md #20).
+- **First-aid guide** - it teaches the exam answers. Only the power-line rule carries a real-life warning so far, while 16 explanations note a difference from medical guidance.
 - **A retention period for inactive accounts** - accounts are kept until the user deletes them, and the notice says so. Deleting people's accounts automatically is Hayk's decision.
 - **Bookmark a question** - needs a new synced table in the backend.
 - **Finer topics in the app** - the app uses the 10 official groups (DECISIONS.md #12); sub-topics need a curated mapping of the 1,050 questions.

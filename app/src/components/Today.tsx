@@ -41,7 +41,7 @@ export function TodayCard() {
       <a className="button today-go" href={link('practice', 'today', `${done > 0 && !reached ? left : goal}-${done}`)}>
         {done === 0 ? 'Սկսել այսօրվա պարապմունքը' : reached ? 'Պարապել ևս' : `Շարունակել, մնաց ${left} հարց`}
       </a>
-      {!streak.doneToday && streak.current > 0 && <p>Պատասխանիր գոնե մեկ հարցի, որ շարքը չընդհատվի։</p>}
+      {!streak.doneToday && streak.current > 0 && <p>Պատասխանեք գոնե մեկ հարցի, որ շարքը չընդհատվի։</p>}
     </section>
   )
 }

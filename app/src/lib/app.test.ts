@@ -257,7 +257,8 @@ describe('explanations', () => {
   it('belong to this edition and to real questions', () => {
     expect(parseExplanations(raw).size).toBe(Object.keys(raw.explanations).length)
     expect(() => parseExplanations({ ...raw, edition: '1999-01-01' })).toThrow(/edition/)
-    expect(() => parseExplanations({ ...raw, explanations: { '99-1': { text: 'x', source: 'rules', ref: null } } })).toThrow(/unknown question/)
+    expect(() => parseExplanations({ ...raw, explanations: { '99-1': { text: 'x', source: 'rules', ref: 'կետ 1' } } })).toThrow(/unknown question/)
+    expect(() => parseExplanations({ ...raw, explanations: { '1-1': { text: 'x', source: 'web', ref: 'CDC' } } })).toThrow()
   })
 
   it('use Armenian punctuation and never name an option by its position, because options are shuffled', () => {

@@ -27,7 +27,7 @@ function buildSession(set: string, mode: string): Session | string {
     return {
       title: `${found.title} · դեռ չսովորած`,
       ids: found.ids.filter((id) => statuses.get(id) !== 'known'),
-      empty: 'Այստեղի բոլոր հարցերն արդեն սովորել ես։',
+      empty: 'Այստեղի բոլոր հարցերն արդեն սովորել եք։',
       allHref: link('old', 'practice', set, 'all'),
       next: null,
     }
@@ -64,7 +64,7 @@ function OldList() {
           Նախորդ հարցաշարը՝ {OLD_QUESTIONS.length} հարց (2022 թ. ֆայլերը)։ Դրանցից {REMOVED_IDS.length}-ն այլևս չկան ներկայիս հարցաշարում։
         </p>
         <p className="muted small">
-          Որոշ պատասխաններ այստեղ հնացած են։ Քննության համար սովորիր «Թեմաներ» էջից. այստեղի պատասխանները չեն ազդում հանձնելու հավանականության վրա։
+          Որոշ պատասխաններ այստեղ հնացած են։ Քննության համար սովորեք «Թեմաներ» էջից. այստեղի պատասխանները չեն ազդում հանձնելու հավանականության վրա։
         </p>
       </div>
       <div className="card">

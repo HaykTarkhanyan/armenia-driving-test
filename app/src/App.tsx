@@ -120,7 +120,7 @@ function Recovery({ error }: { error: ProgressError }) {
     <div className="card error">
       <h2>Պահված առաջընթացը չհաջողվեց բեռնել</h2>
       <p>{error.message}</p>
-      <p>Եթե ուզում ես պահել տվյալները, նախ ներբեռնիր դրանք, հետո սկսիր նորից։</p>
+      <p>Եթե ուզում եք պահել տվյալները, նախ ներբեռնեք դրանք, հետո սկսեք նորից։</p>
       <div className="actions">
         {error.raw !== null && (
           <button type="button" onClick={() => downloadText(error.raw ?? '', 'armenia-driving-test-progress-broken.json')}>

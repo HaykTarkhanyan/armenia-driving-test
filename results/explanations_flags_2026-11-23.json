@@ -1,0 +1,393 @@
+{
+ "date": "2026-11-23",
+ "note": "Writers' flags and the independent reviewers' findings. Flag kinds: key_vs_law, picture_unclear, no_rule_found, other. Findings were checked by hand and applied, except that 1-48 needs a look at the picture.",
+ "flags": [
+  {
+   "id": "1-4",
+   "kind": "picture_unclear",
+   "note": "The truck hides the lane line opposite the yard; the visible parts are solid, and a solid 1.1 could not be crossed, so the key holds only if the line is broken there."
+  },
+  {
+   "id": "1-6",
+   "kind": "other",
+   "note": "Signs 4.1.1 and 6.3.1 stand together and the rules set no precedence between them; the text follows the key, that 4.1.1 rules out the U-turn."
+  },
+  {
+   "id": "1-9",
+   "kind": "other",
+   "note": "Same picture as 1-6: 4.1.1 next to the U-turn sign 6.3.1, with no stated precedence in the rules."
+  },
+  {
+   "id": "1-48",
+   "kind": "picture_unclear",
+   "note": "A red signal on the far right pole seems to face the driver; if it applies, nobody may enter. The text uses only sign 2.4 and point 99."
+  },
+  {
+   "id": "1-59",
+   "kind": "other",
+   "note": "The key holds only if the truck has stopped (brake lights on): passing a moving truck by leaving the lane is overtaking, banned at intersections by point 77.1."
+  },
+  {
+   "id": "1-64",
+   "kind": "no_rule_found",
+   "note": "Both A and B start from the left edge lane; no point requires a U-turn to end in the right lane, so nothing found rules out B."
+  },
+  {
+   "id": "1-80",
+   "kind": "other",
+   "note": "Key holds only if the white car counts as starting from a stop (point 36); if both count as simultaneous lane changers, point 39 makes the LEFT car (yellow) yield, the opposite of the key."
+  },
+  {
+   "id": "1-110",
+   "kind": "other",
+   "note": "That a filling station is adjacent territory comes from law 166 article 2; the single-source ref cites only point 38 of the rules."
+  },
+  {
+   "id": "1-128",
+   "kind": "other",
+   "note": "No rule says literally that entering a roundabout needs the right indicator; the explanation derives it from point 36 and sign 4.3."
+  },
+  {
+   "id": "1-138",
+   "kind": "other",
+   "note": "That a filling station is adjacent territory comes from law 166 article 2; the single-source ref cites only point 38 of the rules."
+  },
+  {
+   "id": "2-13",
+   "kind": "other",
+   "note": "The law's forced-stop definition does not name a traffic jam; the key needs reading a jam as an 'obstacle that appeared on the road'."
+  },
+  {
+   "id": "2-49",
+   "kind": "other",
+   "note": "The rules' definition of an obstacle (point 3.12) does not explicitly exclude a car stopped in a jam; the exclusion is inferred from its example list."
+  },
+  {
+   "id": "2-52",
+   "kind": "other",
+   "note": "No text says outright that a median does not split a crossing into two intersections; the explanation rests on the article 2 definition and the key."
+  },
+  {
+   "id": "2-57",
+   "kind": "picture_unclear",
+   "note": "The left photo shows a wide unpaved area joining the road; it is read as a side road because the key calls it an intersection."
+  },
+  {
+   "id": "2-69",
+   "kind": "other",
+   "note": "A distractor is partly true: article 2 also equates tricycles up to 400 kg with motorcycles, but only if engine power is at most 15 kW, which the option omits."
+  },
+  {
+   "id": "3-57",
+   "kind": "key_vs_law",
+   "note": "Key says both prohibit, but annex 2 point 3.6 exempts identification signs from the colour rules, so the rear 'oversized load' sign is not a fault; only the 0.7 mm moped tyre is."
+  },
+  {
+   "id": "4-29",
+   "kind": "other",
+   "note": "Picture shows the right part of the Dangerous cargo plate in red; Form N 3 says orange, so the text does not name the colour."
+  },
+  {
+   "id": "4-30",
+   "kind": "other",
+   "note": "Question says sign 3.31 removes all restrictions; the rule limits it to signs 3.16, 3.20, 3.22, 3.24 and 3.26-3.30."
+  },
+  {
+   "id": "4-60",
+   "kind": "key_vs_law",
+   "note": "Key says stop before the sign; sign 2.5 at a junction requires stopping before the stop line or, without one, before the edge of the crossing carriageway (before the sign applies only at railway crossings and quarantine posts)."
+  },
+  {
+   "id": "4-78",
+   "kind": "picture_unclear",
+   "note": "A lit red traffic light is visible beyond the STOP sign; if it faces the driver, point 173 makes the light override sign 2.5. The text covers only the sign, as the key does."
+  },
+  {
+   "id": "4-87",
+   "kind": "picture_unclear",
+   "note": "The text assumes trajectory B is made on the crossing and A just past it, which fits the key and sign 4.1.1, but the exact position of A relative to the far edge is hard to read."
+  },
+  {
+   "id": "4-100",
+   "kind": "picture_unclear",
+   "note": "The marked car stands level with the End of settlement sign, not clearly past it; the text says it is at that sign, where the 3.28 zone ends."
+  },
+  {
+   "id": "4-112",
+   "kind": "other",
+   "note": "Question says signs 5.1 and 5.3 ban driving below 40 km/h; point 116.2 bans vehicles that by specification or condition cannot exceed 40 km/h, so the text states the rule as written."
+  },
+  {
+   "id": "4-137",
+   "kind": "other",
+   "note": "Key counts Customs (3.17.1) as needing permission to continue; the rules state permission only for 3.17.2, and 3.17.1 only bans passing without stopping."
+  },
+  {
+   "id": "4-168",
+   "kind": "key_vs_law",
+   "note": "Key is A or C, but sign 3.18.1 bans only the right turn (D); nothing in the picture or rules bans B, so the law supports all except D."
+  },
+  {
+   "id": "5-9",
+   "kind": "picture_unclear",
+   "note": "The red van is drawn with its rear toward the junction, as if driving away; the key only works if it is entering, so the text does not rely on its direction."
+  },
+  {
+   "id": "5-70",
+   "kind": "key_vs_law",
+   "note": "Point 88 excepts only right and left turns from the no-entry-into-a-jam rule; the key also allows a U-turn."
+  },
+  {
+   "id": "5-107",
+   "kind": "other",
+   "note": "No point states this case: the blue car approaches from the left, so literal point 98 does not make the U-turner yield; the text uses the usual reasoning that it ends up on the right during the U-turn."
+  },
+  {
+   "id": "5-109",
+   "kind": "picture_unclear",
+   "note": "The back of a diamond sign stands on the far-left corner; if the straight road were main the driver would not yield, so the key holds only if the junction is equal or the main road bends toward the truck."
+  },
+  {
+   "id": "5-118",
+   "kind": "picture_unclear",
+   "note": "The motorcycle is small and its white rectangle could be a rear plate; the key needs it to be oncoming."
+  },
+  {
+   "id": "6-8",
+   "kind": "picture_unclear",
+   "note": "Officer is drawn with both arms spread (old pool picture too), but the key only fits right arm forward toward the green car; the text says so."
+  },
+  {
+   "id": "6-9",
+   "kind": "picture_unclear",
+   "note": "Same drawing as 6-8: both arms spread, while the key (red and green may turn right) only fits right arm forward toward the green car; the text says so."
+  },
+  {
+   "id": "6-75",
+   "kind": "picture_unclear",
+   "note": "Officer's body is drawn facing the driver with the arm out to the side. The text takes the arm direction as his front (driver on his left, U-turning car at his back). Reading the driver as on his chest side also gives the key, through point 45."
+  },
+  {
+   "id": "7-39",
+   "kind": "key_vs_law",
+   "note": "Key says the red car on the left of a one-way road also broke the rule, but 3.28 acts only on its own side and 79.2 allows left-side parking; the L-shaped line in the picture may mean the sign covers both sides."
+  },
+  {
+   "id": "7-52",
+   "kind": "other",
+   "note": "If this bus is public transport, point 85 bans stopping outside a stop point and the picture shows no stop sign, yet the key says nobody broke a rule."
+  },
+  {
+   "id": "7-62",
+   "kind": "other",
+   "note": "Car C's ban relies on reading 84.4 'in the direction of movement' as the oncoming lane's direction; the rule does not spell this out and no distance is drawn for C."
+  },
+  {
+   "id": "7-75",
+   "kind": "picture_unclear",
+   "note": "A motorcycle at the curb with 3 m to the solid line would breach 84.3 if parked (as 7-96 treats it); the key clears it and the picture does not show whether it is riding or parked."
+  },
+  {
+   "id": "7-79",
+   "kind": "other",
+   "note": "Answer rests on reading the drawn 5 m as measured along the curved curb, so the straight distance to the crossing edge is under 5 m; the rule does not say how to measure it."
+  },
+  {
+   "id": "7-107",
+   "kind": "key_vs_law",
+   "note": "Key says No, but 2.4 and 1.13 only require yielding, so entering without hindering the car on the main road is not prohibited."
+  },
+  {
+   "id": "7-110",
+   "kind": "no_rule_found",
+   "note": "The current rules define the edge line 1.2 only as solid; no broken edge line for two-lane roads exists in Decision 955."
+  },
+  {
+   "id": "7-119",
+   "kind": "picture_unclear",
+   "note": "The key describes a solid line (1.1), but the picture shows a broken centre line, which may be crossed."
+  },
+  {
+   "id": "9-8",
+   "kind": "other",
+   "note": "Point 3(6) calls only a stop with a lane shift a maneuver, while the key says a signal is needed in all cases; the text keeps the law's wording."
+  },
+  {
+   "id": "9-31",
+   "kind": "picture_unclear",
+   "note": "The red car is already in the middle lane beside the roadworks; the text reads this as going around an obstacle (77.4), the only rule that fits the key, but the picture shows no lane shift."
+  },
+  {
+   "id": "9-33",
+   "kind": "picture_unclear",
+   "note": "The picture cannot show the distance; the law does not say the three-stripe plate is the farthest one, and a repeated 1.1 can stand as close as 50 m, so 'not yet within 100 m' is inferred from the key."
+  },
+  {
+   "id": "9-46",
+   "kind": "other",
+   "note": "Point 26 lets blue-beacon drivers on urgent duty depart from section XII (railway crossings); the question does not mention a beacon, so the key holds for an ordinary service task and the text states the exception."
+  },
+  {
+   "id": "9-71",
+   "kind": "picture_unclear",
+   "note": "The raised arm looks almost the same as in 9-68, where the key says braking; here the key says right turn, and only a slight elbow bend separates them."
+  },
+  {
+   "id": "9-82",
+   "kind": "picture_unclear",
+   "note": "The cart is already in the middle lane beside the broken-down car and the truck; the text reads this as going around an obstacle (77.4), the only rule that fits the key, but the picture shows no lane shift."
+  },
+  {
+   "id": "9-86",
+   "kind": "picture_unclear",
+   "note": "The yellow car at the crest appears between the solid and broken lines, in what the answer treats as our own left lane."
+  },
+  {
+   "id": "9-102",
+   "kind": "key_vs_law",
+   "note": "Key says right indicator for a U-turn at a roundabout; point 37 ties the U-turn to the left signal and no rule sets a separate roundabout procedure."
+  },
+  {
+   "id": "10-3",
+   "kind": "key_vs_law",
+   "note": "Key says press the upper part of the nose; NHS says pinch just above the nostrils, leaning forward, for 10-15 minutes."
+  },
+  {
+   "id": "10-12",
+   "kind": "other",
+   "note": "Direct pressure is a wrong option in the key, but MedlinePlus advises it for an open fracture if bleeding continues."
+  },
+  {
+   "id": "10-16",
+   "kind": "key_vs_law",
+   "note": "Key includes pressing an artery pressure point; IFRC 2025 says first aiders should not use pressure points."
+  },
+  {
+   "id": "10-19",
+   "kind": "key_vs_law",
+   "note": "Key gives 60-80 bpm; MedlinePlus gives 60-100 bpm for resting adults, so the 80-100 option is also partly normal."
+  },
+  {
+   "id": "10-20",
+   "kind": "key_vs_law",
+   "note": "Key gives 12-18 breaths per minute; MedlinePlus gives 12-20 for resting adults."
+  },
+  {
+   "id": "10-22",
+   "kind": "key_vs_law",
+   "note": "Key adds a cold compress for suspected internal abdominal bleeding; IFRC says lie down, keep warm, call EMS and does not mention cold."
+  },
+  {
+   "id": "10-28",
+   "kind": "key_vs_law",
+   "note": "Key says remove a fallen wire with an insulating object; MedlinePlus forbids rescue near live high-voltage lines and coming within 6 m until power is off. Safety-critical."
+  },
+  {
+   "id": "10-29",
+   "kind": "key_vs_law",
+   "note": "Key says help only with sterile gloves; IFRC accepts any gloves or hands covered with plastic bags or cloth."
+  },
+  {
+   "id": "10-33",
+   "kind": "no_rule_found",
+   "note": "No page on the trusted sites states the adult leg-and-head injury pattern for a low car; text says so and gives only the IFRC spinal caution."
+  },
+  {
+   "id": "10-34",
+   "kind": "no_rule_found",
+   "note": "No page on the trusted sites states the child pelvis-and-chest injury pattern for a low car; text says so and gives only the IFRC spinal caution."
+  },
+  {
+   "id": "10-39",
+   "kind": "key_vs_law",
+   "note": "Key says lay the person on the back on a hard flat surface; IFRC says leave them as found and keep them still."
+  },
+  {
+   "id": "10-41",
+   "kind": "key_vs_law",
+   "note": "Key puts an unconscious head-injury casualty in the recovery position; MedlinePlus treats them as a spinal injury, rolls them only for vomiting, and says not to press directly on a wound if a skull fracture is suspected."
+  },
+  {
+   "id": "10-43",
+   "kind": "key_vs_law",
+   "note": "Key sets tourniquet limits of 1 hour warm and 30 minutes cold; WHO gives no such limit, says record the time and never loosen without a clinician."
+  },
+  {
+   "id": "10-46",
+   "kind": "key_vs_law",
+   "note": "Key bans all medicines; IFRC allows helping with the person's own medicine and suggesting aspirin for a suspected heart attack."
+  },
+  {
+   "id": "10-51",
+   "kind": "key_vs_law",
+   "note": "Key adds applying cold after covering the burn; IFRC warns against ice. Giving water is not covered by the pages checked."
+  }
+ ],
+ "review_findings": [
+  {
+   "id": "1-54",
+   "severity": "misleading",
+   "issue": "The motorcycle has its left indicator on (crop: glow on its left side), so it is turning into the same road as you. The explanation says your paths do not meet and hides the real reason: a left-turning vehicle yields to an oncoming one going right (point 99, not cited)."
+  },
+  {
+   "id": "1-48",
+   "severity": "misleading",
+   "issue": "The picture shows a traffic light on the far right corner with its red lamp lit and facing the driver. The explanation reasons only from sign 2.4 and never mentions it, although point 173 puts the light above priority signs. If the light is the driver's, the stated reason fails; needs a human look at the picture."
+  },
+  {
+   "id": "1-116",
+   "severity": "wrong",
+   "issue": "Says the reversing 'starts from the stop area'. In the picture the car stands past the yard entrance and the reversing arc starts there, well after the yellow 1.17 stop marking ends. The ban comes from point 50(6): the carriageway section that has a stop."
+  },
+  {
+   "id": "5-48",
+   "severity": "key_vs_law",
+   "issue": "The bus has its right indicator on (crop), so it turns into the motorcycle's road and their paths do not cross. The explanation still says the bus yields to the motorcycle and never mentions the turn. By the logic of 5-24 and 5-65 (a right turn does not cross, so it does not wait; in 5-65 the key lets you go before a motorcycle on your right) the two could pass together; the options offer no such order, so the key rests only on a literal reading of point 98. Needs a human decision."
+  },
+  {
+   "id": "1-112",
+   "severity": "misleading",
+   "issue": "Says there is no pedestrian crossing here, but the picture shows a crossing sign (5.19) on the far side of the intersection (crop). The answer holds only because neither path reaches that crossing, which is the point the learner needs."
+  },
+  {
+   "id": "4-100",
+   "severity": "citation",
+   "issue": "The picture shows the crossed-out city silhouette, which is 5.24.2. 5.24.1 is the version with the place name, matching the 5.23.1 (name) / 5.23.2 (silhouette) split that 4-131 uses. The meaning stays right, only the number is off."
+  },
+  {
+   "id": "7-6",
+   "severity": "key_vs_law",
+   "issue": "Rule 86(4) bans parking closer than 50 m to a railway crossing, and 50 m is one of the options, so the official 25 m contradicts the law. The explanation says only that 25 m is not in the rules, never states the real 50 m, and tells the learner to memorize internal question numbers (7-6, 7-43, 7-68) that mean nothing to them."
+  },
+  {
+   "id": "7-43",
+   "severity": "key_vs_law",
+   "issue": "Rule 86(4) bans parking closer than 50 m to a railway crossing, and 50 m is an offered option, so the official 15 m contradicts the law. The explanation says 15 m belongs to bus stops but never states the 50 m rule, so the learner is not told the real distance."
+  },
+  {
+   "id": "7-75",
+   "severity": "key_vs_law",
+   "issue": "The picture marks 3 m from the curb to the line, and the motorcycle stands at the curb, so less than 3 m remains to the solid line. Rule 84(3) bans stopping there and 86(1) therefore bans parking, so the motorcycle also violates. Item 7-96 teaches exactly this for a motorcycle in the same 3 m layout. The explanation hides the conflict behind 'the official answer does not count it'."
+  },
+  {
+   "id": "10-5",
+   "severity": "key_vs_law",
+   "issue": "The explanation defends 'do not touch and wait'. The cited CDC page says the opposite for a generalized seizure: turn the person gently onto one side, put something soft under the head, time the seizure and call for help if it lasts over 5 minutes. Only holding them down and putting things in the mouth are forbidden. A learner would leave a convulsing person on their back with an unprotected head."
+  },
+  {
+   "id": "10-21",
+   "severity": "misleading",
+   "issue": "The rule 'move the victim only when there is danger' also fits the rejected option, a power line on the car, which is plainly a danger. A learner would conclude they should pull the victim out. MedlinePlus 000053 says to stay 6 m away from live high-voltage contact, and that people in a vehicle struck by a power line stay inside unless there is a fire (the app's own 10-35)."
+  },
+  {
+   "id": "10-15",
+   "severity": "misleading",
+   "issue": "'If a spinal injury is suspected, leave them in the same position' drops two conditions from the cited MedlinePlus 000022: only 'as long as breathing continues', and if the person vomits, roll the whole body to the side as one unit. Without them a learner may leave a vomiting unconscious person on their back."
+  },
+  {
+   "id": "10-13",
+   "severity": "citation",
+   "issue": "The cited IFRC 2025 guideline does not say to seat the person, and gives no 'healthy lung works better' reason. It says to help them lie down in a comfortable position, for a chest injury possibly 'lying semi-propped up on their affected side'. The explanation presents the exam wording as if the source said it."
+  }
+ ]
+}

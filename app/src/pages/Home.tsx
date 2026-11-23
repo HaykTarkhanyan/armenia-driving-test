@@ -40,14 +40,14 @@ export function Home() {
     <>
       {progress.activeExam && (
         <div className="card notice">
-          Ունես չավարտված փորձնական քննություն։ <a href={link('exam')}>Շարունակել</a>
+          Ունեք չավարտված փորձնական քննություն։ <a href={link('exam')}>Շարունակել</a>
         </div>
       )}
       <Readiness />
       <TodayCard />
       {canInstall && !installDismissed && (
         <div className="card">
-          <b>Տեղադրիր հեռախոսում</b>
+          <b>Տեղադրեք հեռախոսում</b>
           <p className="muted small">Հավելվածը կբացվի առանձին պատուհանով՝ առանց բրաուզերի։</p>
           <div className="actions">
             <button type="button" className="primary" onClick={() => void installApp()}>
@@ -71,7 +71,7 @@ export function Home() {
           <Chevron />
         </a>
       ) : (
-        <div className="card">Սովորել ես բոլոր {QUESTIONS.length} հարցերը։ Ստուգիր քեզ փորձնական քննությամբ։</div>
+        <div className="card">Սովորել եք բոլոր {QUESTIONS.length} հարցերը։ Ստուգեք ինքներդ ձեզ փորձնական քննությամբ։</div>
       )}
       {mistakes.length > 0 && (
         <a className="row-link" href={link('practice', 'mistakes', 'all')}>
@@ -80,7 +80,7 @@ export function Home() {
           </span>
           <div>
             <b>Կրկնել սխալները</b>
-            <small>{mistakes.length} հարց, որին վերջին անգամ սխալ ես պատասխանել</small>
+            <small>{mistakes.length} հարց, որին վերջին անգամ սխալ եք պատասխանել</small>
           </div>
           <Chevron />
         </a>

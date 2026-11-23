@@ -42,14 +42,14 @@ export function SettingsPage() {
       setMessage({ ok: false, text: err.message })
       return
     }
-    const question = `Ավելացնե՞լ «${file.name}» ֆայլի ${incoming.answers.length} պատասխանը և ${incoming.exams.length} քննությունը քո առաջընթացին։`
+    const question = `Ավելացնե՞լ «${file.name}» ֆայլի ${incoming.answers.length} պատասխանը և ${incoming.exams.length} քննությունը ձեր առաջընթացին։`
     if (!window.confirm(question)) return
     updateProgress((p) => mergeLocal(p, incoming))
     setMessage({ ok: true, text: `«${file.name}» ֆայլը ներմուծվեց։` })
   }
 
   function onReset() {
-    const where = sync.account ? 'քո հաշվի' : 'այս բրաուզերի'
+    const where = sync.account ? 'ձեր հաշվի' : 'այս բրաուզերի'
     if (!window.confirm(`Ջնջե՞լ ${where} ամբողջ առաջընթացը (${progress.answers.length} պատասխան, ${progress.exams.length} քննություն)։`)) return
     setMessage(null)
     resetProgress().catch((err: unknown) => setMessage({ ok: false, text: err instanceof Error ? err.message : String(err) }))
@@ -89,16 +89,16 @@ export function SettingsPage() {
       {canInstall && (
         <section className="card">
           <h2>Հավելված</h2>
-          <p className="muted">Տեղադրիր հեռախոսում, որ բացվի առանձին պատուհանով՝ առանց բրաուզերի։</p>
+          <p className="muted">Տեղադրեք հեռախոսում, որ բացվի առանձին պատուհանով՝ առանց բրաուզերի։</p>
           <button type="button" className="primary" onClick={() => installApp().catch((err: unknown) => setMessage({ ok: false, text: err instanceof Error ? err.message : String(err) }))}>
             Տեղադրել
           </button>
         </section>
       )}
       <section className="card">
-        <h2>Քո տվյալները</h2>
+        <h2>Ձեր տվյալները</h2>
         <p className="muted">
-          {progress.answers.length} պատասխան, {progress.exams.length} քննություն։ Կարող ես արտահանել դրանք ֆայլով՝ որպես պատճեն, և ներմուծել այլ սարքում։
+          {progress.answers.length} պատասխան, {progress.exams.length} քննություն։ Կարող եք արտահանել դրանք ֆայլով՝ որպես պատճեն, և ներմուծել այլ սարքում։
         </p>
         <div className="actions">
           <button type="button" onClick={() => downloadText(JSON.stringify(progress), exportFileName())}>

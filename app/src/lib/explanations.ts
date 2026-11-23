@@ -11,18 +11,20 @@ export const SOURCES = {
   rules: { label: 'Երթևեկության կանոններ (955-Ն)', url: RULES_URL },
   faults: { label: 'Շահագործումն արգելող անսարքություններ (955-Ն, հավելված 2)', url: RULES_URL },
   law: { label: 'ՀՀ օրենք ՀՕ-166-Ն', url: 'https://www.arlis.am/hy/acts/1857/latest' },
-  cdc: { label: 'CDC', url: 'https://www.cdc.gov/epilepsy/first-aid-for-seizures/index.html' },
-  mayo: { label: 'Mayo Clinic', url: 'https://www.mayoclinic.org/first-aid/first-aid-basics/art-20056604' },
 } as const
 
-const ExplanationSchema = z.strictObject({
-  text: z.string().min(1),
-  source: z.enum(['rules', 'faults', 'law', 'cdc', 'mayo']),
-  /** Which point of the source, or null when the source is one page. */
-  ref: z.string().min(1).nullable(),
-})
+const ExplanationSchema = z.discriminatedUnion('source', [
+  /** `ref` is the point of the act. */
+  z.strictObject({ text: z.string().min(1), source: z.enum(['rules', 'faults', 'law']), ref: z.string().min(1) }),
+  /** First aid is not in the traffic acts: `ref` is the organization and `url` its page. */
+  z.strictObject({ text: z.string().min(1), source: z.literal('web'), ref: z.string().min(1), url: z.url({ protocol: /^https$/ }) }),
+])
 const FileSchema = z.strictObject({ edition: z.string(), explanations: z.record(z.string(), ExplanationSchema) })
 export type Explanation = z.infer<typeof ExplanationSchema>
+
+export function citation(e: Explanation): { label: string; url: string } {
+  return e.source === 'web' ? { label: e.ref, url: e.url } : { label: `${SOURCES[e.source].label}, ${e.ref}`, url: SOURCES[e.source].url }
+}
 
 /** Question numbers belong to an edition, so a file from another edition would explain the wrong questions. */
 export function parseExplanations(raw: unknown): Map<string, Explanation> {
@@ -68,7 +70,7 @@ export function useExplanation(id: string): ExplanationState {
       })
       .catch((err: unknown) => {
         console.error('Could not load the explanations', err)
-        if (current) setMessage('Բացատրությունը չհաջողվեց բեռնել։ Ստուգիր կապը և բացիր հաջորդ հարցը։')
+        if (current) setMessage('Բացատրությունը չհաջողվեց բեռնել։ Ստուգեք կապը և բացեք հաջորդ հարցը։')
       })
     return () => {
       current = false

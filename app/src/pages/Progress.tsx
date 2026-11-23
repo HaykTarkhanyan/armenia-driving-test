@@ -52,7 +52,7 @@ export function ProgressPage() {
           ))}
         </ol>
         <p className="muted small" style={{ margin: '10px 0 0' }}>
-          Այսօր՝ {done} / {goal} հարց։ Օրը հաշվվում է, երբ պատասխանում ես գոնե մեկ հարցի։
+          Այսօր՝ {done} / {goal} հարց։ Օրը հաշվվում է, երբ պատասխանում եք գոնե մեկ հարցի։
         </p>
       </section>
 
@@ -77,7 +77,7 @@ export function ProgressPage() {
 
       {!started && (
         <div className="card">
-          <p>Պատասխանիր առաջին հարցերին, և այստեղ կերևան քո գրաֆիկները։</p>
+          <p>Պատասխանեք առաջին հարցերին, և այստեղ կերևան ձեր գրաֆիկները։</p>
           <a className="button primary" href={link('practice', 'today', '0')}>
             Սկսել պարապմունքը
           </a>
@@ -170,7 +170,7 @@ export function ProgressPage() {
           </>
         ) : (
           <>
-            <p className="muted">Դեռ փորձնական քննություն չես հանձնել։</p>
+            <p className="muted">Դեռ փորձնական քննություն չեք հանձնել։</p>
             <a className="button" href={link('exam')}>
               Սկսել քննություն
             </a>

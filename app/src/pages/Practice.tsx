@@ -49,7 +49,7 @@ function buildSession(source: string, arg: string): Session | string {
     return {
       title: 'Իմ սխալները',
       ids: lastWrong(getProgress().answers, ALL_IDS),
-      empty: 'Կրկնելու սխալ չկա. բոլոր սխալ պատասխանած հարցերին արդեն ճիշտ ես պատասխանել։',
+      empty: 'Կրկնելու սխալ չկա. բոլոր սխալ պատասխանած հարցերին արդեն ճիշտ եք պատասխանել։',
       allHref: null,
       next: null,
     }
@@ -66,7 +66,7 @@ function buildSession(source: string, arg: string): Session | string {
     return {
       title: `${groupTitle(group)} · դեռ չսովորած`,
       ids: ids.filter((id) => statuses.get(id) !== 'known'),
-      empty: 'Այս խմբի բոլոր հարցերն արդեն սովորել ես։',
+      empty: 'Այս խմբի բոլոր հարցերն արդեն սովորել եք։',
       allHref: link('practice', String(group), 'all'),
       next,
     }

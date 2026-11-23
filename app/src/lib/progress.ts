@@ -89,7 +89,7 @@ export function parseProgress(text: string, source: string): Progress {
   const steps = migrationPath(result.data.edition)
   if (steps === null) {
     throw new ProgressError(
-      `${source} պահվել է հարցաշարի ${result.data.edition} տարբերակով, որը հավելվածի այս տարբերակը չի ճանաչում (այժմ՝ ${EDITION})։ Թարմացրու էջը։`,
+      `${source} պահվել է հարցաշարի ${result.data.edition} տարբերակով, որը հավելվածի այս տարբերակը չի ճանաչում (այժմ՝ ${EDITION})։ Թարմացրեք էջը։`,
       text,
     )
   }
