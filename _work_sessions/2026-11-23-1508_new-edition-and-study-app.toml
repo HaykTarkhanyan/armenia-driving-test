@@ -1,33 +1,75 @@
-title = "New official edition (2026-11-06) and the Armenian study app"
+title = "New official edition, Armenian study app with accounts, shortcuts, stats and privacy, and fixes from an independent review"
 date = "2026-11-23"
 time = "15:08"
-areas = ["app/", ".github/workflows/", "scripts/", "data/", "questions/", "results/", "reports/", "_knowledge/"]
+areas = ["app/", "backend/", ".github/workflows/", "scripts/", "data/", "questions/", "results/", "reports/", "_knowledge/", "_learnings/"]
 
 done = [
-  "Downloaded all 20 PDFs (118 s): every file had a new version stamp, 2026-11-06, from a new PDF generator",
-  "Updated the parser to the new colors and font sizes; all checks pass, Armenian and English agree on all 1,050 answers",
-  "scripts/non_essential/diff_editions.py compared the editions by wording, options and picture hash: 0 added, 0 removed, 1 answer changed (6-84), 1 option corrected (2-77), 4 moved to another group, 181 renumbered",
-  "Re-ran the old-pool match, the shortcut analysis and the report; shortcut numbers moved by at most 1 question (95% pass: 518 -> 519 answers)",
-  "Built the study app: practice by group, not-known-yet rounds, mistakes, timed mock exam with the official 2+2+1+15 draw, shuffled options, exact pass chance, progress export/import, old questions as a separate set, warnings on 7-6, 7-43, 3-42 and 6-84",
-  "Checks: 18 unit tests (the pass chance matches the Python model), build, GitHub Actions build and deploy, Playwright on the live site at 390 px: 5 pages, pictures in 7 sampled questions, old pool, a full mock exam, 0 console errors",
-  "Android install like nemeceren: manifest, icons, network-only service worker; Chrome reports 0 installability errors on the live site",
-  "Accounts: new free Neon project, Google sign-in, Hono API, password sign-up closed, per-account limits; guest progress moves into the account; sync_check.py passes 19 checks on the live site with two browser devices",
-  "Shortcut guide in Armenian for all 10 groups, a general page, and a hint after each answer (254 questions); 162 stated facts checked by script against the official key",
-  "New interface: bottom tabs, road meter to 18, topics grouped under the 4 exam parts, tap-to-zoom pictures, Noto Sans Armenian; no overflow at 320-1280 px",
-  "Stats page (streak, totals, score trend, daily bars, calendar, topics, hardest questions, exams), bright/dark/auto theme, daily goal with today's practice, question search, exam breakdown by part, install button, large text, settings page",
-  "Privacy page in Armenian based on the real auth schema, and Delete my account (login and progress in one transaction); 30 checks passed on a temporary Neon branch, which was then deleted",
-  "Independent Opus review: 15 findings, all reproduced or checked against the key. Fixed: wrong-account protection, durable reset (generation), editions by content with id migrations, refused rows no longer block sync, daily limits and storage cap, expired sign-in keeps progress, guests make no auth request, full data export, neutral answer markers, picture labels, guide errors. 55 unit tests; 19 sync and 56 account checks passed on a temporary branch before the live migration, and the sync check passed again on the live site",
+  "Data: downloaded all 20 PDFs (118 s). Every file had a new version stamp, 2026-11-06, from a new PDF generator, so the parser was updated to its colors and font sizes. All checks pass, and Armenian and English agree on all 1,050 answers",
+  "Edition diff (scripts/non_essential/diff_editions.py, by wording, options and picture hash): 0 added, 0 removed, 1 answer changed (6-84), 1 option corrected (2-77), 4 moved to another group, 181 renumbered inside their group",
+  "Re-ran the old-pool match, the shortcut analysis and the report. Shortcut numbers moved by at most 1 question (95% pass: 518 -> 519 answers)",
+  "Study app (React + Vite on GitHub Pages, Armenian only): practice by group, not-known-yet rounds, mistakes, timed mock exam with the official 2+2+1+15 draw, shuffled options, exact pass chance, old questions as a separate set, warnings on 7-6, 7-43, 3-42 and 6-84",
+  "Android install like nemeceren: manifest, icons, network-only service worker, and an install button. Chrome reports 0 installability errors on the live site",
+  "Accounts: new free Neon project (noisy-smoke-18644029), Google sign-in through Neon Auth, Hono API, password sign-up closed. The app works without an account, and guest progress moves into the account at sign-in",
+  "Shortcuts: an Armenian guide for all 10 groups, a general page, and a hint after each answer on 255 questions (never during a mock exam). 162 stated facts were checked by script against the official key",
+  "Topics now open with 'the exam is 20 questions' and group the topics under the 4 exam parts, which removes the '15 questions from 7 groups' confusion",
+  "Interface: bottom tabs, a road meter to 18, tap-to-zoom pictures, Noto Sans Armenian, bright/dark/device theme, larger text, settings page, question search, exam result by part, daily goal with one-tap practice",
+  "Stats page: streak, totals, expected score over 30 days, daily answers, activity calendar, topics, hardest questions, mock exams. Chart colors passed the dataviz validator in both themes",
+  "Privacy: an Armenian notice written from the real auth schema, a note at the Google button, Delete my account (login and progress in one transaction), and a full data export without login tokens",
+  "Independent Opus review of the whole app: 15 findings, each reproduced or checked against the key. All fixed except the two decisions listed under pending",
+  "Review fixes: tokens must match the account on screen, reset lasts across devices (generation), editions change only with the questions and carry id migrations (data/edition.json, enforced by a test), refused rows no longer block sync, daily limits and a 400 MB storage cap, expired sign-ins keep progress on screen, guests make no request to Neon, neutral answer markers, correct picture labels, and corrected guides (first aid, tram, groups 7, 8, 9)",
+  "Final checks: 55 unit tests; 19 sync and 56 account checks on a temporary Neon branch before the live migration; the sync check, install check, guest check and Google redirect passed on the live site after the deploy",
 ]
 pending = [
-  "Hayk has not reviewed the Armenian interface wording, the group titles or the shortcut guides, which I wrote",
-  "The privacy notice names only the GitHub account as contact; Hayk decides on a real contact",
-  "Google's screen shows Neon's name until Hayk adds his own Google OAuth client (backend/README.md)",
-  "The report copy made on the Desktop on 2026-10-22 is no longer there; the current report is reports/patterns_report.html",
+  "A real Google login has not been run through the final version. The database shows one Google login from before the review fixes; the automated checks use a test account and stop at Google's login page",
+  "Android install on a real phone and anything on iPhone Safari (cross-site sign-in cookie) are untested",
+  "Hayk has not reviewed the Armenian interface wording, the group titles, the shortcut guides or the privacy notice, which I wrote. No lawyer has reviewed the notice",
+  "Q8: which name and contact email the privacy page should show. It lists only the GitHub account, because nothing personal goes into a public repo without his OK",
+  "Q10: whether inactive accounts should be deleted automatically after a set time. They are kept until the user deletes them, and the notice says so",
+  "Q6: his own Google OAuth client, so the sign-in screen shows the app's name instead of Neon's (steps in backend/README.md)",
+  "Q2: whether to put the updated report back on the Desktop. The copy from 2026-10-22 is gone; the current one is reports/patterns_report.html",
 ]
 next = [
-  "Hayk tries the app on his phone",
-  "If a new edition appears: re-run download, build_dataset, diff_editions, build_old_pool, and add a progress migration before deploying (DEFERRED_TODO.md)",
+  "Hayk installs the app on his phone, signs in with Google, answers a few questions and checks that they appear on a second device",
+  "Hayk reads the Armenian text and answers Q8, Q10 and Q6 before sharing the link widely",
+  "On a new official edition: download_pdfs, build_dataset, diff_editions --before <commit> --label <date>, new_edition --label <date>, build_old_pool, mine_patterns, build_hints, then map the question numbers cited in app/src/content/guides.ts and notes.ts and run the app tests",
 ]
-files = ["app/", ".github/workflows/pages.yml", "scripts/build_dataset.py", "scripts/non_essential/diff_editions.py", "results/edition_diff_2026-11-06.json", "PATTERNS.md", "DECISIONS.md", "README.md", "DEFERRED_TODO.md"]
-commits = ["17bd0b6 New official edition (2026-11-06): parser, data, analysis", "d987bcd Study app in Armenian: practice, mock exam, progress, old questions", "b30a6fb App installable on Android", "20b58b7 Accounts and progress sync", "a14fac2 Shortcut guides for every group, hints after answers, new interface"]
-notes = "No API spend. Whether the exam computer already uses the new key for 6-84 is not published. The 3 psychological questions are not public, so the mock exam has only the 20 knowledge questions."
+files = [
+  "app/src/lib/sync.ts",
+  "app/src/lib/progress.ts",
+  "app/src/lib/editions.ts",
+  "app/src/lib/sync.test.ts",
+  "app/src/content/guides.ts",
+  "app/src/pages/Privacy.tsx",
+  "app/src/pages/Progress.tsx",
+  "app/src/pages/Settings.tsx",
+  "backend/src/progress.ts",
+  "backend/src/usage.ts",
+  "backend/db/migrations/002_reset_and_usage.sql",
+  "backend/scripts/non_essential/sync_check.py",
+  "backend/scripts/non_essential/delete_check.py",
+  "scripts/build_dataset.py",
+  "scripts/build_hints.py",
+  "scripts/non_essential/diff_editions.py",
+  "scripts/non_essential/new_edition.py",
+  "data/edition.json",
+  "data/hints.json",
+  "results/edition_diff_2026-11-06.json",
+  "PATTERNS.md",
+  "DECISIONS.md",
+  "DEFERRED_TODO.md",
+]
+commits = [
+  "17bd0b6 New official edition (2026-11-06): parser, data, analysis",
+  "d987bcd Study app in Armenian: practice, mock exam, progress, old questions",
+  "178c8bd Session log 2026-11-23: new edition and study app",
+  "b30a6fb App installable on Android: manifest, icons, network-only service worker",
+  "20b58b7 Accounts and progress sync: Google sign-in, Neon backend, two-device check",
+  "a14fac2 Shortcut guides for every group, hints after answers, new interface",
+  "0fd3caf Docs: hints build step and session log",
+  "1e33198 Stats page with streak, bright and dark themes, today's practice",
+  "2885f8f Privacy page and account deletion",
+  "0d23c26 Fix all 15 findings from the independent review",
+  "cafb2fd Session log: exact check counts for the review fixes",
+  "this commit: the full session log",
+]
+notes = "No paid API spend; Neon stays on the Free plan. Live changes outside git: Neon migrations 001 and 002 and the API function on branch main. The temporary branches delete-test and fixes-test were deleted. Claude's password test account stays, with its login only in the gitignored .env.local. The review used one Opus agent (about 406k tokens, 24 minutes) in a private clone with no access to production. Known limits: requests sent directly to Neon Auth are outside the app's rate limits, and if the shared daily limit is reached, syncing pauses for everyone until the next UTC day while progress keeps saving on devices. Still unknown: whether the exam computer already uses the new key for 6-84, and the 3 psychological questions, which are not public."
