@@ -2,6 +2,13 @@
 
 Newest first.
 
+## 21. The first-aid guide separates the exam answer from real-life advice
+
+- **Date / status:** 2026-11-23, active. Hayk chose this after a heads-up note that the guide still taught risky exam answers as plain facts.
+- **Why:** Someone may remember this page in a real emergency. A note at the top of group 10 says these are exam answers, and gives the safer advice for seizures (CDC), tourniquets (WHO) and medicine (IFRC). The power-line rule already had its warning (Q15). Exam answers and grading do not change.
+- **Alternatives rejected:** one general line only (it would not say what to do instead); leaving the guide as it was; changing the answers (learners would fail the real exam).
+- **What would change this:** a corrected official key, or medical review of the first-aid text. No medical professional has read it.
+
 ## 20. All 1,050 explanations are live, address the reader in the plural, and were checked by two independent reviewers
 
 - **Date / status:** 2026-11-23, active. Extends #19. After the pilot Hayk approved 10 writers and 2 reviewers, and asked to apply the Armenian guidelines to the app's existing text.
