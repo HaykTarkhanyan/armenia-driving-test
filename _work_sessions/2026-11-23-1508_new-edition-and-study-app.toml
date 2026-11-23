@@ -19,6 +19,7 @@ done = [
   "Review fixes: tokens must match the account on screen, reset lasts across devices (generation), editions change only with the questions and carry id migrations (data/edition.json, enforced by a test), refused rows no longer block sync, daily limits and a 400 MB storage cap, expired sign-ins keep progress on screen, guests make no request to Neon, neutral answer markers, correct picture labels, and corrected guides (first aid, tram, groups 7, 8, 9)",
   "Final checks: 55 unit tests; 19 sync and 56 account checks on a temporary Neon branch before the live migration; the sync check, install check, guest check and Google redirect passed on the live site after the deploy",
   "Explanations pilot: 30 questions across all 10 groups, written from the traffic rules and the road safety law with the point cited, first aid from CDC and Mayo Clinic. Follows the Armenian guide in sample_problems_qysu; its lint reports 0 errors. Shown after answering, never in a mock exam. 57 unit tests pass",
+  "Hayk approved the 30 pilot explanations. Writers finished 469 of the other 1,020 (batches g1a, g1b, g2_g3, g4a, g8_g10), all with 0 validator errors and 36 flags; not merged and not live. They used 1,459,065 tokens, about 3,100 per question",
 ]
 pending = [
   "A real Google login has not been run through the final version. The database shows one Google login from before the review fixes; the automated checks use a test account and stop at Google's login page",
@@ -28,10 +29,13 @@ pending = [
   "Q10: whether inactive accounts should be deleted automatically after a set time. They are kept until the user deletes them, and the notice says so",
   "Q6: his own Google OAuth client, so the sign-in screen shows the app's name instead of Neon's (steps in backend/README.md)",
   "Q2: whether to put the updated report back on the Desktop. The copy from 2026-10-22 is gone; the current one is reports/patterns_report.html",
-  "Hayk reviews the 30 pilot explanations (reports/explanations_review.html) before the other 1,020 are written; that rollout is estimated at 4-6 million new tokens",
+  "Paused at Hayk's request on 2026-11-23: 551 questions are still to be written (g4b, g5, g6, g7, g9), then the independent review, the 36 flags, the merge and the deploy. Working files and exact steps: _wip_explanations/RESUME.md (ignored by git)",
+  "12 first-aid answers in the official key differ from current medical guidance. The serious one is 10-28: the key says to move a fallen power line, MedlinePlus says to stay 6 m away",
+  "Uncommitted, tested: the web source for first-aid citations (explanations.ts, QuestionCard.tsx, app.test.ts, data/explanations.json, build_explanations_review.py). It goes in with the merge",
   "1-54: a dark object at the picture edge may be a traffic light; the explanation assumes no working signal",
 ]
 next = [
+  "Resume the explanations from _wip_explanations/RESUME.md",
   "Hayk installs the app on his phone, signs in with Google, answers a few questions and checks that they appear on a second device",
   "Hayk reads the Armenian text and answers Q8, Q10 and Q6 before sharing the link widely",
   "On a new official edition: download_pdfs, build_dataset, diff_editions --before <commit> --label <date>, new_edition --label <date>, build_old_pool, mine_patterns, build_hints, then map the question numbers cited in app/src/content/guides.ts and notes.ts and run the app tests",
