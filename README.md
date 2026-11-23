@@ -2,14 +2,18 @@
 
 All 1,050 official questions of the Armenian theory exam for a car licence, in Armenian, with the
 correct answer and the picture of every picture question, taken from the Road Police's own PDFs and
-checked against their English version. Facts checked on 2026-10-21.
+checked against their English version. Facts checked on 2026-10-21, questions from the official edition of
+2026-11-06 (downloaded 2026-11-23).
+
+**Study app (Armenian): https://hayktarkhanyan.github.io/armenia-driving-test/** - practice by group, mistakes,
+mock exams with the official 20-question draw, and the old questions as a separate set.
 
 Status: dataset, exam rules, the previous pool (2022-2026) with a question-by-question diff, and a
-group-by-group shortcut and logic analysis are done. Parked: study app, lessons, exam-day guide.
+group-by-group shortcut and logic analysis, and the study app are done. Parked: lessons, exam-day guide.
 
 **Shortcuts, in one line:** none get near a pass (the exam needs 18 of 20; guessing scores 7.2, all
-rules together 9.3), but the logic in the pool cuts what you must memorize for a 95% pass from 952
-answers to 714, or to 518 if you also answer every unlearned question with the longest option and learn
+rules together 9.25), but the logic in the pool cuts what you must memorize for a 95% pass from 952
+answers to 715, or to 519 if you also answer every unlearned question with the longest option and learn
 only where that fails; and three answers in the official key contradict the law. Start with
 [`PATTERNS.md`](PATTERNS.md).
 
@@ -62,7 +66,7 @@ byte-identical picture for every question. Two random pages were also compared b
 extracted text.
 
 Repatarmenia.org and other pages still quote 1,116 questions; that is the old pool. The current
-A/B/C pool has 1,050 (145, 82, 59, 179, 136, 95, 129, 55, 119, 51 per group).
+A/B/C pool has 1,050 (147, 82, 59, 181, 136, 95, 127, 53, 119, 51 per group, edition of 2026-11-06).
 
 ## Rebuild
 
