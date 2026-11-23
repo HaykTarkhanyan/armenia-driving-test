@@ -86,7 +86,23 @@ async function api(path: string, init: RequestInit = {}, fresh = false): Promise
   throw new ApiError(res.status, code, `Սերվերի սխալ (${res.status} ${code}). ${body?.error?.message ?? ''}`)
 }
 
+/** The account no longer exists (deleted here or on another device): forget its local copy and continue as a guest. */
+function leaveDeletedAccount(message: string): void {
+  const account = state.account
+  if (timer !== null) {
+    window.clearTimeout(timer)
+    timer = null
+  }
+  if (account) removeStoredAccount(account.id)
+  useStorageOf(null)
+  setState({ phase: 'guest', account: null, message, otherEditionAnswers: 0 })
+}
+
 function report(err: unknown): void {
+  if (err instanceof ApiError && err.code === 'account_deleted') {
+    leaveDeletedAccount('Այս հաշիվը ջնջված է։')
+    return
+  }
   if (err instanceof AuthFailure && err.network) {
     setState({ phase: 'offline', message: null })
     return
@@ -217,6 +233,16 @@ export async function signOutNow(): Promise<void> {
   if (account && left === 0) removeStoredAccount(account.id)
   useStorageOf(null)
   setState({ phase: 'guest', account: null, message: null, otherEditionAnswers: 0 })
+}
+
+/** Removes the login and all progress from the server, then this device's copy of them. Cannot be undone. */
+export async function deleteAccountNow(): Promise<void> {
+  if (state.account === null) throw new Error('Մուտք գործած չես։')
+  if (uploading) await uploading
+  await api('/v1/account', { method: 'DELETE' })
+  // The session no longer exists on the server; this only clears the browser's cookie and the SDK's cache.
+  await signOut().catch((err: unknown) => console.error('Sign-out after deleting the account failed', err))
+  leaveDeletedAccount('Հաշիվդ և ամբողջ առաջընթացդ ջնջվեցին։')
 }
 
 /** "Reset": for an account the server's rows go first, or they would come back at the next load. */

@@ -15,10 +15,11 @@ done = [
   "Shortcut guide in Armenian for all 10 groups, a general page, and a hint after each answer (254 questions); 162 stated facts checked by script against the official key",
   "New interface: bottom tabs, road meter to 18, topics grouped under the 4 exam parts, tap-to-zoom pictures, Noto Sans Armenian; no overflow at 320-1280 px",
   "Stats page (streak, totals, score trend, daily bars, calendar, topics, hardest questions, exams), bright/dark/auto theme, daily goal with today's practice, question search, exam breakdown by part, install button, large text, settings page",
+  "Privacy page in Armenian based on the real auth schema, and Delete my account (login and progress in one transaction); 30 checks passed on a temporary Neon branch, which was then deleted",
 ]
 pending = [
   "Hayk has not reviewed the Armenian interface wording, the group titles or the shortcut guides, which I wrote",
-  "A real Google sign-in has not been completed: the automated check stops at Google's login page",
+  "The privacy notice names only the GitHub account as contact; Hayk decides on a real contact",
   "Google's screen shows Neon's name until Hayk adds his own Google OAuth client (backend/README.md)",
   "The report copy made on the Desktop on 2026-10-22 is no longer there; the current report is reports/patterns_report.html",
 ]

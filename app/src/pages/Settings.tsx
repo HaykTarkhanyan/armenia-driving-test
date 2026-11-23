@@ -1,7 +1,9 @@
 import { useState, type ChangeEvent, type ReactNode } from 'react'
 import { AccountCard } from '../components/Account.tsx'
+import { Chevron } from '../components/Icons.tsx'
 import { installApp, useCanInstall } from '../lib/install.ts'
 import { downloadText, exportFileName, mergeLocal, parseProgress, ProgressError, updateProgress, useProgress } from '../lib/progress.ts'
+import { link } from '../lib/router.ts'
 import { DAILY_GOALS, settingsProblem, updateSettings, useSettings } from '../lib/settings.ts'
 import { resetProgress, useSyncState } from '../lib/sync.ts'
 
@@ -112,6 +114,13 @@ export function SettingsPage() {
         </div>
         {message && <p className={message.ok ? 'ok-text' : 'bad-text'}>{message.text}</p>}
       </section>
+      <a className="row-link" href={link('privacy')}>
+        <div>
+          <b>Գաղտնիություն</b>
+          <small>Ինչ է պահվում, որտեղ և ինչպես ջնջել</small>
+        </div>
+        <Chevron />
+      </a>
     </>
   )
 }

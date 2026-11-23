@@ -9,6 +9,7 @@ import { ExamPage, finishExpiredExam } from './pages/Exam.tsx'
 import { GroupPage } from './pages/GroupPage.tsx'
 import { Home } from './pages/Home.tsx'
 import { Practice } from './pages/Practice.tsx'
+import { Privacy } from './pages/Privacy.tsx'
 import { ProgressPage } from './pages/Progress.tsx'
 import { SettingsPage } from './pages/Settings.tsx'
 import { Shortcuts } from './pages/Shortcuts.tsx'
@@ -101,6 +102,8 @@ function Page({ route }: { route: string[] }) {
       return <ProgressPage />
     case 'settings':
       return <SettingsPage />
+    case 'privacy':
+      return <Privacy />
     default:
       return (
         <div className="card">

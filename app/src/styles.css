@@ -1812,6 +1812,41 @@ td.num {
   box-shadow: 0 1px 2px rgb(0 0 0 / 0.18);
 }
 
+.delete-link {
+  color: var(--red-text);
+  font-size: 0.9rem;
+}
+
+.danger-box {
+  padding: 12px;
+  border: 1.5px solid var(--red);
+  border-radius: 10px;
+  background: var(--red-soft);
+}
+
+.danger-box p {
+  margin: 4px 0 0;
+  font-size: 0.92rem;
+}
+
+/* ---------- privacy ---------- */
+.privacy h2 {
+  margin-top: 18px;
+}
+
+.privacy h2:first-of-type {
+  margin-top: 6px;
+}
+
+.privacy ul {
+  margin: 0 0 10px;
+  padding-left: 20px;
+}
+
+.privacy li {
+  margin-bottom: 4px;
+}
+
 /* ---------- search ---------- */
 .search {
   width: 100%;

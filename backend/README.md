@@ -28,6 +28,7 @@ Postgres (tables in db/migrations/)
 | `GET /v1/state?edition=2026-11-06` | yes | This user's answers and exams for that edition, plus how many answers belong to other editions |
 | `POST /v1/sync` | yes | `{ edition, answers: [...], exams: [...] }`, at most 500 answers and 20 exams. Idempotent: a stored id is skipped, so retries are safe |
 | `DELETE /v1/progress` | yes | Removes all of this user's progress ("Reset" in the app) |
+| `DELETE /v1/account` | yes | Removes this user's progress and login in one transaction (Google link and tokens, sessions, IP addresses). A token of a deleted account gets 410 `account_deleted` |
 
 Only `https://hayktarkhanyan.github.io` and localhost ports 5175 and 4179 may call it from a browser. Each account may
 keep 30,000 answers and 300 exams (`src/config.ts`), because anyone with a Google account can sign up.
@@ -60,5 +61,7 @@ uv run backend/scripts/migrate.py status
 uv run backend/scripts/migrate.py apply
 uv run backend/scripts/non_essential/sync_check.py --base https://hayktarkhanyan.github.io/armenia-driving-test/   # ~25 s
 ```
+
+To test account deletion, never use `main`: create a temporary branch (`neon branches create --name delete-test --expires-at <time>`), deploy to it, open password sign-up on it only, build the app with its `VITE_AUTH_URL` and `VITE_API_URL`, and run `delete_check.py --env <branch env file>`. Delete the branch afterwards.
 
 Never edit an applied migration; add a new `NNN_*.sql`. When the app's answer or exam shape changes, update `src/schema.ts` too.

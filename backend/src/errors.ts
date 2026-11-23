@@ -17,6 +17,7 @@ export type ErrorCode =
   | 'unsupported_media_type'
   | 'payload_too_large'
   | 'quota_exceeded'
+  | 'account_deleted'
   | 'not_found'
   | 'auth_unavailable'
   | 'internal'

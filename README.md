@@ -9,7 +9,8 @@ checked against their English version. Facts checked on 2026-10-21, questions fr
 mock exams with the official 20-question draw, and the old questions as a separate set. Installs on Android from
 Chrome, works without an account, and with Google sign-in saves progress across devices ([`backend/`](backend/README.md)).
 Every topic has a shortcut guide in Armenian, and after an answer the app shows the shortcut that applies. Stats with
-streak and charts, a daily goal with one-tap practice, question search, and bright and dark themes.
+streak and charts, a daily goal with one-tap practice, question search, bright and dark themes, a privacy page, and
+account deletion.
 
 Status: dataset, exam rules, the previous pool (2022-2026) with a question-by-question diff, and a
 group-by-group shortcut and logic analysis, and the study app are done. Parked: lessons, exam-day guide.

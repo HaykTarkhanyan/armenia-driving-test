@@ -3,6 +3,7 @@
 //   GET    /v1/state?edition=    auth: this user's answers and exams for one edition of the question pool
 //   POST   /v1/sync              auth: one batched, idempotent upload of answers and exams
 //   DELETE /v1/progress          auth: removes all of this user's progress ("Reset" in the app)
+//   DELETE /v1/account           auth: removes this user's progress and login for good
 import { Hono } from 'hono'
 import { bodyLimit } from 'hono/body-limit'
 import { compress } from 'hono/compress'
@@ -11,7 +12,7 @@ import { DatabaseError } from 'pg'
 import { requireUser } from './auth.ts'
 import { ALLOWED_ORIGINS, API_VERSION, isAllowedOrigin, MAX_BODY_BYTES } from './config.ts'
 import { errorResponse, HttpError, zodDetails } from './errors.ts'
-import { applySync, deleteProgress, loadState } from './progress.ts'
+import { applySync, deleteAccount, deleteProgress, loadState } from './progress.ts'
 import { Edition, SyncBody } from './schema.ts'
 import type { AppEnv } from './types.ts'
 
@@ -94,6 +95,8 @@ app.post(
 )
 
 app.delete('/v1/progress', requireUser, async (c) => c.json(await deleteProgress(c.get('userId'))))
+
+app.delete('/v1/account', requireUser, async (c) => c.json(await deleteAccount(c.get('userId'))))
 
 app.notFound((c) => errorResponse(c, new HttpError(404, 'not_found', `No route for ${c.req.method} ${c.req.path}.`)))
 

@@ -3,10 +3,18 @@ import { USER_LIMITS } from './config.ts'
 import { withTransaction } from './db.ts'
 import { HttpError } from './errors.ts'
 import type { AnswerRow, ExamRow, SyncBody } from './schema.ts'
+import type { PoolClient } from 'pg'
+
+/** A token stays valid for up to 15 minutes after its account is deleted: it must not be able to bring data back. */
+async function requireAccount(client: PoolClient, userId: string): Promise<void> {
+  const { rowCount } = await client.query('SELECT 1 FROM neon_auth."user" WHERE id = $1::uuid', [userId])
+  if (rowCount !== 1) throw new HttpError(410, 'account_deleted', 'This account has been deleted.')
+}
 
 /** Everything for one edition, from one snapshot, plus how many answers belong to other editions. */
 export async function loadState(userId: string, edition: string) {
   return withTransaction('BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY', async (client) => {
+    await requireAccount(client, userId)
     const answers = await client.query(
       `SELECT id, qid, chosen, correct, at, mode FROM answers WHERE user_id = $1 AND edition = $2 ORDER BY at, id`,
       [userId, edition],
@@ -46,6 +54,7 @@ export async function applySync(userId: string, body: SyncBody) {
   return withTransaction('BEGIN', async (client) => {
     // One sync per user at a time, so the limit check below cannot be raced.
     await client.query('SELECT pg_advisory_xact_lock(hashtextextended($1, 0))', [userId])
+    await requireAccount(client, userId)
     let answersInserted = 0
     if (body.answers.length > 0) {
       const a = body.answers
@@ -84,9 +93,24 @@ export async function applySync(userId: string, body: SyncBody) {
   })
 }
 
+/** "Delete my account": progress and the login go together or not at all. Removing the user also removes their Google
+ * link and tokens, sessions, IP addresses and device details (foreign keys ON DELETE CASCADE in neon_auth). */
+export async function deleteAccount(userId: string) {
+  return withTransaction('BEGIN', async (client) => {
+    await client.query('SELECT pg_advisory_xact_lock(hashtextextended($1, 0))', [userId]) // waits for a running sync
+    await requireAccount(client, userId)
+    const answers = await client.query('DELETE FROM answers WHERE user_id = $1', [userId])
+    const exams = await client.query('DELETE FROM exams WHERE user_id = $1', [userId])
+    const user = await client.query('DELETE FROM neon_auth."user" WHERE id = $1::uuid', [userId])
+    if (user.rowCount !== 1) throw new Error(`deleteAccount removed ${user.rowCount} users`)
+    return { ok: true, answersDeleted: answers.rowCount ?? 0, examsDeleted: exams.rowCount ?? 0 }
+  })
+}
+
 /** "Reset" in the app: removes all of this user's progress, in every edition. */
 export async function deleteProgress(userId: string) {
   return withTransaction('BEGIN', async (client) => {
+    await requireAccount(client, userId)
     const answers = await client.query('DELETE FROM answers WHERE user_id = $1', [userId])
     const exams = await client.query('DELETE FROM exams WHERE user_id = $1', [userId])
     return { ok: true, answersDeleted: answers.rowCount ?? 0, examsDeleted: exams.rowCount ?? 0 }

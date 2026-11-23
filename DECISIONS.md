@@ -2,6 +2,15 @@
 
 Newest first.
 
+## 17. A privacy page and "Delete my account": login and progress are removed in one transaction
+
+- **Date / status:** 2026-11-23, active. Hayk asked for it after the note that public Google sign-in stored personal data with no notice and no way to delete it.
+- **Why:** The notice lists what the database actually holds, read from the `neon_auth` structure on 2026-11-23: name, email, picture link, Google account id, Google access and id tokens, and sessions with IP address and device details, plus answers and exams. It is also linked right at the Google button. `DELETE /v1/account` removes answers, exams and the auth user in one transaction; foreign keys with ON DELETE CASCADE remove the Google link, tokens and sessions. A signed token stays valid for up to 15 minutes, so every data route checks that the account still exists (410 `account_deleted`), or another device could write rows back. Deleted data can remain in Neon's restore history for up to 6 hours (`history_retention_seconds` = 21600), and the notice says so.
+- **Checked:** `delete_check.py` on a temporary Neon branch, 30 checks: everything of the user is gone, another user is untouched, an old token can neither read nor write, and the button in the app works with its second step and cancel. The script refuses to run against the main branch.
+- **Alternatives rejected:** Better Auth's `/delete-user` (a separate call from the progress delete, so a failure could leave half an account); the Neon management API (would put an admin key in the function); deleting progress only (the personal data would stay).
+- **Open:** the notice names the GitHub account and its issue page as the contact, because no email or legal name may go into a public repo without Hayk's OK. GDPR expects an identifiable, reachable controller, so this needs his decision. The notice has not been reviewed by a lawyer.
+- **What would change this:** a real contact from Hayk; his own Google OAuth client (then the sentence about Neon's sign-in screen goes); a new processor or new stored field (the notice must change with it).
+
 ## 16. A stats page, an explicit bright/dark theme, and "today's practice" as the main action
 
 - **Date / status:** 2026-11-23, active. Hayk asked for a stats page with streak and progress, more UX improvements, and a bright theme, because the app only followed the phone's dark setting.
