@@ -2,6 +2,14 @@
 
 Newest first.
 
+## 15. Shortcuts live in the app: an Armenian guide per group, a hint after each answer, and a road-sign interface
+
+- **Date / status:** 2026-11-23, active. Hayk asked for a shortcut text per group, the shortcuts in the app, UI/UX improvements, and a fix for "15 questions from 7 groups", which read as if the exam had far more than 20 questions.
+- **Why:** Topics now open with the 20 squares of the exam and group the topics under its four parts; a traffic-rule topic shows its average share (3, 3, 2, 2, 2, 1, 2, which add up to 15). Each topic page holds its guide (`app/src/content/guides.ts`). `scripts/build_hints.py` reuses the rule functions of `mine_patterns.py`, so a hint after an answer counts the same thing as PATTERNS.md (254 of 1,050 questions get one, and it says so when the question is an exception). Hints never show during a mock exam. Sign shapes carry meaning: round blue = rule, warning triangle = tendency, red circle = never pick, yellow diamond = exception. Noto Sans Armenian (`@fontsource-variable/noto-sans-armenian` 5.3.0, self-hosted, about 47 KB for Armenian) replaces whatever font each phone happened to have.
+- **Checked:** all 254 cited question numbers exist in the November edition; 162 stated facts were compared by script with the official answer; no sideways overflow at 320, 360, 390 and 1280 px on 10 pages.
+- **Alternatives rejected:** keeping the count on every topic row ("15 from 7 groups", the confusion itself); showing hints before answering (practice results would mean nothing); a separate shortcuts-only section with no link to practice (the guide is most useful next to the questions); showing the 4 weakest tells as per-question hints.
+- **What would change this:** Hayk's reading of the Armenian text; a new edition (cited numbers must be mapped with `diff_editions.py`, and `build_hints.py` re-run).
+
 ## 14. Progress is saved to accounts: Google sign-in, Neon in its own project, and the app keeps working without an account
 
 - **Date / status:** 2026-11-23, active. Hayk asked for progress saving "like in nemeceren", then chose Google sign-in (Q3), device saving for people without an account (Q4) and a new Neon project (Q5). Existing local progress is dropped, because "there aren't really any" users.

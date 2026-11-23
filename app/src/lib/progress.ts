@@ -196,6 +196,14 @@ export function useLoadError(): ProgressError | null {
   return useSyncExternalStore(subscribe, getLoadError)
 }
 
+/** Safe with unreadable stored data, unlike useProgress: the app frame uses it before the error page is shown. */
+export function useHasActiveExam(): boolean {
+  return useSyncExternalStore(subscribe, () => {
+    ensureLoaded()
+    return current?.activeExam != null
+  })
+}
+
 /** Called after every local change; sync.ts uses it to schedule an upload. */
 export function onSaved(listener: () => void): () => void {
   saveListeners.add(listener)

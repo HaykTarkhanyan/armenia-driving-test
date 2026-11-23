@@ -1,20 +1,14 @@
 import { useMemo } from 'react'
-import { StatusBar } from '../components/StatusBar.tsx'
+import { ExamMix } from '../components/ExamMix.tsx'
+import { Chevron } from '../components/Icons.tsx'
 import { groupIds, QUESTIONS } from '../lib/data.ts'
-import { SECTIONS } from '../lib/exam.ts'
-import { GROUP_NUMBERS, groupTitle } from '../lib/groups.ts'
+import { EXAM, SECTIONS } from '../lib/exam.ts'
+import { groupTitle } from '../lib/groups.ts'
 import { useProgress } from '../lib/progress.ts'
 import { link } from '../lib/router.ts'
-import { countStatuses, lastWrong, statusById, type Status } from '../lib/stats.ts'
+import { countStatuses, lastWrong, perExam, statusById, type Status } from '../lib/stats.ts'
 
 const ALL_IDS = QUESTIONS.map((q) => q.id)
-
-/** How many questions of this group a test contains; the traffic-rule groups share 15. */
-function perTest(group: number): string {
-  const section = SECTIONS.find((s) => (s.groups as readonly number[]).includes(group))
-  if (!section) throw new Error(`group ${group} is in no exam section`)
-  return section.groups.length === 1 ? `քննությունում՝ ${section.draw} հարց` : `քննությունում՝ ${section.draw} հարց ${section.groups.length} խմբից`
-}
 
 export function Topics() {
   const progress = useProgress()
@@ -23,8 +17,9 @@ export function Topics() {
   return (
     <>
       <div className="card">
-        <h1>Թեմաներ</h1>
-        <p className="muted">{QUESTIONS.length} հարց՝ ճանապարհային ոստիկանության 10 պաշտոնական խմբերով։</p>
+        <h1>Քննությունը {EXAM.questions} հարց է</h1>
+        <p className="muted">Դրանք ընտրվում են {QUESTIONS.length} հարցից՝ միշտ այս բաժանմամբ։</p>
+        <ExamMix />
         {mistakes.length > 0 && (
           <div className="actions">
             <a className="button primary" href={link('practice', 'mistakes', 'all')}>
@@ -33,11 +28,26 @@ export function Topics() {
           </div>
         )}
       </div>
-      <div className="card">
-        {GROUP_NUMBERS.map((g) => (
-          <GroupRow key={g} group={g} statuses={statuses} />
-        ))}
-      </div>
+      {SECTIONS.map((s) => (
+        <section key={s.key} className={`part-${s.key}`}>
+          <div className="part">
+            <h2>
+              {s.name}՝ {s.draw} հարց
+            </h2>
+            {s.groups.length > 1 && <p>Այս {s.draw} հարցը ընտրվում է ներքևի {s.groups.length} թեմաներից միասին։ Թեմայի տակ գրված է, թե միջինում քանիսն է դրանից ընկնում։</p>}
+          </div>
+          {s.groups.map((g) => (
+            <GroupRow key={g} group={g} statuses={statuses} />
+          ))}
+        </section>
+      ))}
+      <a className="row-link" href={link('old')} style={{ marginTop: 20 }}>
+        <div>
+          <b>Հին հարցեր</b>
+          <small>Նախորդ հարցաշարը՝ առանձին</small>
+        </div>
+        <Chevron />
+      </a>
     </>
   )
 }
@@ -45,28 +55,21 @@ export function Topics() {
 function GroupRow({ group, statuses }: { group: number; statuses: ReadonlyMap<string, Status> }) {
   const ids = groupIds(group)
   const counts = countStatuses(ids, statuses)
-  const open = ids.length - counts.known
+  const share = perExam(group)
   return (
-    <div className="topic">
+    <a className="group-row" href={link('topics', String(group))}>
+      <span className="group-num">{group}</span>
       <div>
-        <b>
-          {group}. {groupTitle(group)}
-        </b>{' '}
-        <span className="muted small">
-          {ids.length} հարց · {perTest(group)}
-        </span>
+        <b>{groupTitle(group)}</b>
+        <small>
+          {ids.length} հարց, քննությունում՝ {share.exact ? share.count : `մոտ ${share.count}`}
+        </small>
+        <div className="bar" aria-label={`${counts.known} սովորած ${ids.length}-ից`}>
+          <span className="seg known" style={{ width: `${(100 * counts.known) / ids.length}%` }} />
+          <span className="seg learning" style={{ width: `${(100 * counts.learning) / ids.length}%` }} />
+        </div>
       </div>
-      <StatusBar counts={counts} />
-      <div className="actions">
-        {open > 0 && (
-          <a className="button primary" href={link('practice', String(group), 'open')}>
-            Դեռ չսովորած ({open})
-          </a>
-        )}
-        <a className="button" href={link('practice', String(group), 'all')}>
-          Բոլորը ({ids.length})
-        </a>
-      </div>
-    </div>
+      <Chevron />
+    </a>
   )
 }

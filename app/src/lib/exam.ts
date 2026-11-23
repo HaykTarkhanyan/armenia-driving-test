@@ -4,10 +4,10 @@
 import { shuffle } from './random.ts'
 
 export const SECTIONS = [
-  { key: 'law', title: 'օրենքից', groups: [2], draw: 2 },
-  { key: 'faults', title: 'անսարքություններից', groups: [3], draw: 2 },
-  { key: 'firstAid', title: 'առաջին օգնությունից', groups: [10], draw: 1 },
-  { key: 'rules', title: 'երթևեկության կանոններից', groups: [1, 4, 5, 6, 7, 8, 9], draw: 15 },
+  { key: 'rules', name: 'Երթևեկության կանոններ', title: 'երթևեկության կանոններից', groups: [1, 4, 5, 6, 7, 8, 9], draw: 15 },
+  { key: 'law', name: 'Օրենք', title: 'օրենքից', groups: [2], draw: 2 },
+  { key: 'faults', name: 'Անսարքություններ', title: 'անսարքություններից', groups: [3], draw: 2 },
+  { key: 'firstAid', name: 'Առաջին օգնություն', title: 'առաջին օգնությունից', groups: [10], draw: 1 },
 ] as const
 
 export const EXAM = { questions: 20, passMark: 18, minutes: 30 } as const

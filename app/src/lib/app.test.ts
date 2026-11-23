@@ -6,7 +6,9 @@ import { correctIndices, finishExam, newExam } from './examFlow.ts'
 import { OLD_BY_ID, OLD_QUESTIONS, REMOVED_IDS } from './oldPool.ts'
 import { displayOrder, isLabelQuestion } from './options.ts'
 import { EDITION, emptyProgress, mergeFromServer, mergeLocal, parseProgress, ProgressError, type Answer, type Progress } from './progress.ts'
-import { lastWrong, readiness, sectionIds, statusById, statusOf } from './stats.ts'
+import { lastWrong, perExam, readiness, sectionIds, statusById, statusOf } from './stats.ts'
+import { GENERAL_ITEMS, GUIDES } from '../content/guides.ts'
+import { hintFor, hintText, statLabel } from './hints.ts'
 
 function seeded(seed = 509): () => number {
   let s = seed
@@ -162,6 +164,45 @@ describe('progress and status', () => {
   it('refuses a document from another edition', () => {
     const other = JSON.stringify({ ...emptyProgress(), edition: '2026-10-02' })
     expect(() => parseProgress(other, 'test')).toThrow(ProgressError)
+  })
+})
+
+describe('shortcut guides', () => {
+  it('has a guide for every group, and every cited question exists', () => {
+    expect(GUIDES.map((g) => g.group).sort((a, b) => a - b)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+    for (const item of [...GENERAL_ITEMS, ...GUIDES.flatMap((g) => g.items)]) {
+      for (const id of item.refs ?? []) expect(QUESTION_BY_ID.has(id), `${item.title}: ${id}`).toBe(true)
+      for (const [, id] of item.body.matchAll(/\((\d{1,2}-\d{1,3})\)/g)) expect(QUESTION_BY_ID.has(id), `${item.title}: ${id}`).toBe(true)
+    }
+  })
+
+  it('counts rules from the data, as in the analysis', () => {
+    expect(statLabel('design')).toBe('23 / 23')
+    expect(statLabel('tram_yes')).toBe('7 / 7')
+    expect(statLabel('pedestrians_too')).toBe('10 / 10')
+    expect(statLabel('g8_middle')).toBe('7 / 7')
+    expect(statLabel('g10_longest')).toBe('31 / 50')
+    expect(statLabel('all_both')).toBe('54 / 97')
+  })
+
+  it('never crosses out the official answer', () => {
+    for (const q of QUESTIONS) {
+      const hint = hintFor(q.id)
+      if (hint?.rule === 'never') expect(hint.options, q.id).not.toContain(q.answerIndex)
+    }
+  })
+
+  it('flags an exception instead of claiming the rule works', () => {
+    const wrong = QUESTIONS.map((q) => ({ q, hint: hintFor(q.id) })).find((x) => x.hint && !x.hint.works)
+    expect(wrong).toBeDefined()
+    if (wrong?.hint) expect(hintText(wrong.hint, wrong.q.options)).toContain('բացառություն')
+  })
+
+  it('the shares of the 7 traffic-rule groups add up to the 15 questions they share', () => {
+    expect([1, 4, 5, 6, 7, 8, 9].reduce((n, g) => n + perExam(g).count, 0)).toBe(15)
+    expect(perExam(2)).toEqual({ count: 2, exact: true })
+    expect(perExam(10)).toEqual({ count: 1, exact: true })
+    expect(perExam(4).exact).toBe(false)
   })
 })
 

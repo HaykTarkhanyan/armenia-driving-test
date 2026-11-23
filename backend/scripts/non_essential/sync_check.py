@@ -115,7 +115,7 @@ def answer_some(p: Page, group: int, n: int) -> None:
     p.wait_for_selector(".option")
     for _ in range(n):
         p.locator(".option").first.click()
-        p.locator(".feedback button").click()
+        p.locator(".action-bar button").click()
         p.wait_for_timeout(60)
 
 

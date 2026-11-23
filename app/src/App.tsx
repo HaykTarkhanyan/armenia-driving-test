@@ -1,28 +1,32 @@
-import { lazy, Suspense, useEffect, useRef } from 'react'
-import { downloadText, emptyProgress, replaceProgress, useLoadError, type ProgressError } from './lib/progress.ts'
+import { lazy, Suspense, useEffect, type ReactNode } from 'react'
+import { HeaderAccount } from './components/Account.tsx'
+import { ExamIcon, HomeIcon, ProgressIcon, ShortcutsIcon, TopicsIcon } from './components/Icons.tsx'
+import { downloadText, emptyProgress, replaceProgress, useHasActiveExam, useLoadError, type ProgressError } from './lib/progress.ts'
 import { link, useRoute } from './lib/router.ts'
 import { boot } from './lib/sync.ts'
-import { HeaderAccount } from './components/Account.tsx'
 import { ExamPage, finishExpiredExam } from './pages/Exam.tsx'
+import { GroupPage } from './pages/GroupPage.tsx'
 import { Home } from './pages/Home.tsx'
 import { Practice } from './pages/Practice.tsx'
 import { ProgressPage } from './pages/Progress.tsx'
+import { Shortcuts } from './pages/Shortcuts.tsx'
 import { Topics } from './pages/Topics.tsx'
 
 // The old pool (630 kB of questions) loads only when its page is opened.
 const OldQuestions = lazy(() => import('./pages/OldQuestions.tsx'))
 
-const NAV: [string, string][] = [
-  ['', 'Գլխավոր'],
-  ['topics', 'Թեմաներ'],
-  ['exam', 'Քննություն'],
-  ['old', 'Հին հարցեր'],
-  ['progress', 'Առաջընթաց'],
+const NAV: [string, string, ReactNode][] = [
+  ['', 'Գլխավոր', <HomeIcon key="home" />],
+  ['topics', 'Թեմաներ', <TopicsIcon key="topics" />],
+  ['shortcuts', 'Հնարքներ', <ShortcutsIcon key="shortcuts" />],
+  ['exam', 'Քննություն', <ExamIcon key="exam" />],
+  ['progress', 'Առաջընթաց', <ProgressIcon key="progress" />],
 ]
 
 export function App() {
   const route = useRoute()
   const loadError = useLoadError()
+  const examRunning = useHasActiveExam()
   const page = route[0] ?? ''
   const path = route.join('/')
   useEffect(() => {
@@ -31,29 +35,31 @@ export function App() {
   useEffect(() => {
     if (!loadError) finishExpiredExam()
   }, [path, loadError])
-  // On a phone the menu is one row that scrolls sideways: keep the current page's item in view.
-  const navRef = useRef<HTMLElement>(null)
   useEffect(() => {
-    const nav = navRef.current
-    const active = nav?.querySelector<HTMLElement>('a.active')
-    if (nav && active) nav.scrollLeft = active.offsetLeft - (nav.clientWidth - active.offsetWidth) / 2
-  }, [page])
+    window.scrollTo(0, 0)
+  }, [path])
+  // While answering, nothing competes with the question: no menu, and the thumb area belongs to "next".
+  const focus = page === 'practice' || (page === 'old' && route[1] === 'practice') || (page === 'exam' && route[1] === undefined && examRunning)
+  const activeTab = page === 'practice' || page === 'old' ? 'topics' : page
   return (
     <>
       <header>
         <a className="brand" href={link()}>
           Վարորդական քննություն
         </a>
+        {!focus && (
+          <nav className="tabbar" aria-label="Գլխավոր ընտրացանկ">
+            {NAV.map(([key, label, icon]) => (
+              <a key={key} href={link(...(key ? [key] : []))} className={activeTab === key ? 'active' : ''} aria-current={activeTab === key ? 'page' : undefined}>
+                {icon}
+                {label}
+              </a>
+            ))}
+          </nav>
+        )}
         <HeaderAccount />
-        <nav ref={navRef}>
-          {NAV.map(([key, label]) => (
-            <a key={key} href={link(...(key ? [key] : []))} className={page === key || (key === 'topics' && page === 'practice') ? 'active' : ''}>
-              {label}
-            </a>
-          ))}
-        </nav>
       </header>
-      <main>{loadError ? <Recovery error={loadError} /> : <Page route={route} />}</main>
+      <main className={focus ? 'focus' : ''}>{loadError ? <Recovery error={loadError} /> : <Page route={route} />}</main>
     </>
   )
 }
@@ -63,7 +69,9 @@ function Page({ route }: { route: string[] }) {
     case '':
       return <Home />
     case 'topics':
-      return <Topics />
+      return route[1] ? <GroupPage key={route[1]} group={Number(route[1])} /> : <Topics />
+    case 'shortcuts':
+      return <Shortcuts />
     case 'practice':
       return <Practice key={route.join('/')} source={route[1] ?? ''} arg={route[2] ?? 'all'} />
     case 'exam':

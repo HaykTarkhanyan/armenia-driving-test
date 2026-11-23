@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { QuestionCard } from '../components/QuestionCard.tsx'
 import { groupIds, QUESTION_BY_ID, QUESTIONS, type Question } from '../lib/data.ts'
 import { GROUP_NUMBERS, groupTitle } from '../lib/groups.ts'
@@ -69,7 +69,15 @@ export function Practice({ source, arg }: { source: string; arg: string }) {
       </div>
     )
   }
-  return <PracticeRunner session={session} questionOf={(id) => QUESTION_BY_ID.get(id)} backHref={link('topics')} backLabel="Թեմաներ" />
+  const inGroup = GROUP_NUMBERS.some((g) => String(g) === source)
+  return (
+    <PracticeRunner
+      session={session}
+      questionOf={(id) => QUESTION_BY_ID.get(id)}
+      backHref={inGroup ? link('topics', source) : link('topics')}
+      backLabel={inGroup ? 'Թեմա' : 'Թեմաներ'}
+    />
+  )
 }
 
 type RunnerProps = {
@@ -90,23 +98,18 @@ export function PracticeRunner({ session, questionOf, backHref, backLabel }: Run
   const [pos, setPos] = useState(0)
   const [chosen, setChosen] = useState<number | null>(null)
   const [results, setResults] = useState<{ id: string; correct: boolean }[]>([])
-  const feedbackRef = useRef<HTMLDivElement>(null)
 
   const current = pos < queue.length ? question(queue[pos]) : null
 
   // A new random option order each time a question comes up, as on the exam; stable while it is on screen.
   const [order, setOrder] = useState<number[]>(() => (current ? displayOrder(current.options.length, current.fixedOrder) : []))
 
-  // On a phone the feedback and "Next" land below the screen after a picture question: bring them into view.
-  useEffect(() => {
-    if (chosen !== null) feedbackRef.current?.scrollIntoView({ block: 'nearest', behavior: 'smooth' })
-  }, [chosen])
-
   function show(ids: string[], index: number) {
     const q = index < ids.length ? question(ids[index]) : null
     setOrder(q ? displayOrder(q.options.length, q.fixedOrder) : [])
     setChosen(null)
     setPos(index)
+    window.scrollTo(0, 0)
   }
 
   function choose(i: number) {
@@ -221,22 +224,14 @@ export function PracticeRunner({ session, questionOf, backHref, backLabel }: Run
       </div>
       <QuestionCard question={current} order={order} chosen={chosen} reveal={chosen !== null} onChoose={choose} />
       {chosen !== null && (
-        <div ref={feedbackRef} className={`card feedback ${right ? 'ok' : 'bad'}`}>
-          <span>
-            {right ? (
-              'Ճիշտ է։'
-            ) : (
-              <>
-                Սխալ է։ Ճիշտ պատասխանը՝ <b>{current.options[current.answerIndex]}</b>
-              </>
-            )}
-          </span>
+        <div className={`action-bar ${right ? 'ok' : 'bad'}`} role="status">
+          <b>{right ? 'Ճիշտ է' : 'Սխալ է'}</b>
           <button type="button" className="primary" onClick={next}>
-            Հաջորդը (Enter)
+            {pos + 1 < queue.length ? 'Հաջորդը' : 'Ավարտել'}
           </button>
         </div>
       )}
-      <p className="muted small hint keys">Ստեղներ. 1-5՝ պատասխանելու, Enter՝ հաջորդ հարցին անցնելու համար։</p>
+      <p className="muted small keys">Ստեղներ. 1-5՝ պատասխանելու, Enter՝ հաջորդ հարցին անցնելու համար։</p>
     </>
   )
 }

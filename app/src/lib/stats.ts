@@ -47,6 +47,16 @@ export function sectionIds(): string[][] {
   return SECTIONS.map((s) => s.groups.flatMap((g) => groupIds(g)))
 }
 
+/** How many exam questions come from this group. Exact when the group is its own section; for the 7 traffic-rule groups
+ * it is the average share of the 15, rounded (the split between them is not published). */
+export function perExam(group: number): { count: number; exact: boolean } {
+  const section = SECTIONS.find((s) => (s.groups as readonly number[]).includes(group))
+  if (!section) throw new Error(`group ${group} is in no exam section`)
+  if (section.groups.length === 1) return { count: section.draw, exact: true }
+  const total = section.groups.reduce((n, g) => n + groupIds(g).length, 0)
+  return { count: Math.round((section.draw * groupIds(group).length) / total), exact: false }
+}
+
 export function readiness(statuses: ReadonlyMap<string, Status>): { pass: number; expected: number; known: number } {
   const ps = sectionIds().map((ids) => ids.map((id) => (statuses.get(id) === 'known' ? 1 : 1 / questionById(id).options.length)))
   return {

@@ -1,7 +1,8 @@
 import { Fragment, useEffect, useState } from 'react'
+import { ExamMix } from '../components/ExamMix.tsx'
 import { QuestionCard } from '../components/QuestionCard.tsx'
 import { questionById } from '../lib/data.ts'
-import { EXAM, SECTIONS } from '../lib/exam.ts'
+import { EXAM } from '../lib/exam.ts'
 import { correctIndices, finishExam, formatClock, newExam, remainingMs } from '../lib/examFlow.ts'
 import { addFinishedExam, getProgress, updateProgress, useProgress, type ActiveExam, type ExamResult } from '../lib/progress.ts'
 import { go, link } from '../lib/router.ts'
@@ -31,10 +32,8 @@ function ExamStart({ exams }: { exams: ExamResult[] }) {
     <>
       <div className="card">
         <h1>Փորձնական քննություն</h1>
-        <ul>
-          <li>
-            {EXAM.questions} հարց՝ պաշտոնական բաշխմամբ. {SECTIONS.map((s) => `${s.draw}-ը ${s.title}`).join(', ')}
-          </li>
+        <ExamMix />
+        <ul style={{ paddingLeft: 20, marginTop: 14 }}>
           <li>{EXAM.minutes} րոպե. ժամանակը լրանալուն պես քննությունն ավարտվում է</li>
           <li>Հանձնված է առնվազն {EXAM.passMark} ճիշտ պատասխանի դեպքում. պատասխանները կտեսնես միայն վերջում</li>
           <li>Պատասխանների հերթականությունը խառն է, ինչպես իսկական քննության ժամանակ</li>
@@ -169,9 +168,7 @@ function RunningExam({ exam }: { exam: ActiveExam }) {
   return (
     <>
       <div className="exam-bar">
-        <span className={left < 5 * 60_000 ? 'bad-text' : ''}>
-          Մնաց <b>{formatClock(left)}</b>
-        </span>
+        <span className={`clock ${left < 5 * 60_000 ? 'low' : ''}`}>{formatClock(left)}</span>
         <span>
           {answered} / {EXAM.questions} պատասխանված
         </span>
@@ -207,7 +204,7 @@ function RunningExam({ exam }: { exam: ActiveExam }) {
           Հաջորդը →
         </button>
       </div>
-      <p className="muted small hint">
+      <p className="muted small" style={{ textAlign: 'center', marginTop: 14 }}>
         <span className="keys">Ստեղներ. 1-5՝ պատասխանելու, ←/→՝ տեղաշարժվելու համար։ </span>
         <button type="button" className="linklike" onClick={onCancel}>
           Չեղարկել քննությունը

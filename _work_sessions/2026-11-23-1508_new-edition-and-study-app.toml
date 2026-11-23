@@ -10,9 +10,15 @@ done = [
   "Re-ran the old-pool match, the shortcut analysis and the report; shortcut numbers moved by at most 1 question (95% pass: 518 -> 519 answers)",
   "Built the study app: practice by group, not-known-yet rounds, mistakes, timed mock exam with the official 2+2+1+15 draw, shuffled options, exact pass chance, progress export/import, old questions as a separate set, warnings on 7-6, 7-43, 3-42 and 6-84",
   "Checks: 18 unit tests (the pass chance matches the Python model), build, GitHub Actions build and deploy, Playwright on the live site at 390 px: 5 pages, pictures in 7 sampled questions, old pool, a full mock exam, 0 console errors",
+  "Android install like nemeceren: manifest, icons, network-only service worker; Chrome reports 0 installability errors on the live site",
+  "Accounts: new free Neon project, Google sign-in, Hono API, password sign-up closed, per-account limits; guest progress moves into the account; sync_check.py passes 19 checks on the live site with two browser devices",
+  "Shortcut guide in Armenian for all 10 groups, a general page, and a hint after each answer (254 questions); 162 stated facts checked by script against the official key",
+  "New interface: bottom tabs, road meter to 18, topics grouped under the 4 exam parts, tap-to-zoom pictures, Noto Sans Armenian; no overflow at 320-1280 px",
 ]
 pending = [
-  "Hayk has not reviewed the Armenian interface wording or the group titles, which I wrote",
+  "Hayk has not reviewed the Armenian interface wording, the group titles or the shortcut guides, which I wrote",
+  "A real Google sign-in has not been completed: the automated check stops at Google's login page",
+  "Google's screen shows Neon's name until Hayk adds his own Google OAuth client (backend/README.md)",
   "The report copy made on the Desktop on 2026-10-22 is no longer there; the current report is reports/patterns_report.html",
 ]
 next = [

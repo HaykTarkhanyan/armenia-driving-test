@@ -1,8 +1,10 @@
 import { useMemo } from 'react'
 import { SignInCard } from '../components/Account.tsx'
+import { Chevron, ExamIcon } from '../components/Icons.tsx'
+import { Sign } from '../components/Icons.tsx'
 import { Readiness } from '../components/Readiness.tsx'
 import { groupIds, QUESTIONS } from '../lib/data.ts'
-import { EXAM, SECTIONS } from '../lib/exam.ts'
+import { EXAM } from '../lib/exam.ts'
 import { groupTitle } from '../lib/groups.ts'
 import { useProgress } from '../lib/progress.ts'
 import { link } from '../lib/router.ts'
@@ -40,58 +42,46 @@ export function Home() {
         </div>
       )}
       <Readiness />
-      <SignInCard />
-      {mistakes.length > 0 && (
-        <div className="card">
-          <h2>Իմ սխալները</h2>
-          <p>{mistakes.length} հարց, որին վերջին անգամ սխալ ես պատասխանել՝ բոլոր թեմաներից և փորձնական քննություններից։</p>
-          <a className="button primary" href={link('practice', 'mistakes', 'all')}>
-            Կրկնել սխալները ({mistakes.length})
-          </a>
-        </div>
-      )}
-      <div className="card">
-        <h2>Հաջորդը</h2>
-        {next ? (
-          <>
-            <p>
-              <b>
-                {next.g}. {groupTitle(next.g)}
-              </b>{' '}
-              · դեռ չսովորած՝ {next.open} / {next.total}
-            </p>
-            <div className="actions">
-              <a className="button primary" href={link('practice', String(next.g), 'open')}>
-                Պարապել
-              </a>
-              <a className="button" href={link('topics')}>
-                Բոլոր թեմաները
-              </a>
-            </div>
-            <p className="muted small">Հերթականությունը՝ ըստ քննությունում հանդիպելու հավանականության. սկզբում՝ 3-րդ, 2-րդ և 10-րդ խմբերը։</p>
-          </>
-        ) : (
-          <p>Սովորել ես բոլոր {QUESTIONS.length} հարցերը։ Ստուգիր քեզ փորձնական քննությամբ։</p>
-        )}
-      </div>
-      <div className="card">
-        <h2>Փորձնական քննություն</h2>
-        <p className="muted">
-          {EXAM.questions} հարց ({SECTIONS.map((s) => s.draw).join(' + ')}), {EXAM.minutes} րոպե, հանձնելու համար՝ {EXAM.passMark} ճիշտ։
-        </p>
-        {lastExam && (
-          <p>
-            Վերջինը՝{' '}
-            <a href={link('exam', 'result', lastExam.id)}>
-              {lastExam.score} / {EXAM.questions}, {lastExam.passed ? 'հանձնված' : 'չհանձնված'}
-            </a>{' '}
-            · {daysAgo(lastExam.finishedAt)} · ընդամենը՝ {progress.exams.length}
-          </p>
-        )}
-        <a className="button" href={link('exam')}>
-          {progress.activeExam ? 'Շարունակել քննությունը' : 'Սկսել փորձնական քննություն'}
+      {next ? (
+        <a className="next-up" href={link('topics', String(next.g))}>
+          <small>Հաջորդ թեման</small>
+          <b>
+            {next.g}. {groupTitle(next.g)}
+          </b>
+          <small>
+            Մնացել է սովորել {next.open} հարց {next.total}-ից
+          </small>
         </a>
-      </div>
+      ) : (
+        <div className="card">Սովորել ես բոլոր {QUESTIONS.length} հարցերը։ Ստուգիր քեզ փորձնական քննությամբ։</div>
+      )}
+      {mistakes.length > 0 && (
+        <a className="row-link" href={link('practice', 'mistakes', 'all')}>
+          <span className="row-icon">
+            <Sign kind="lean" />
+          </span>
+          <div>
+            <b>Կրկնել սխալները</b>
+            <small>{mistakes.length} հարց, որին վերջին անգամ սխալ ես պատասխանել</small>
+          </div>
+          <Chevron />
+        </a>
+      )}
+      <a className="row-link" href={link('exam')}>
+        <span className="row-icon">
+          <ExamIcon />
+        </span>
+        <div>
+          <b>{progress.activeExam ? 'Շարունակել քննությունը' : 'Փորձնական քննություն'}</b>
+          <small>
+            {lastExam
+              ? `Վերջինը՝ ${lastExam.score} / ${EXAM.questions}, ${lastExam.passed ? 'հանձնված' : 'չհանձնված'}, ${daysAgo(lastExam.finishedAt)}`
+              : `${EXAM.questions} հարց, ${EXAM.minutes} րոպե, պետք է ${EXAM.passMark} ճիշտ`}
+          </small>
+        </div>
+        <Chevron />
+      </a>
+      <SignInCard />
     </>
   )
 }
