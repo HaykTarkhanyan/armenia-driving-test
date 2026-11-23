@@ -23,6 +23,7 @@ done = [
   "Explanations finished: 1,050 of 1,050 live, from the law and the rules with the point cited, first aid from medical sources. Two independent reviewers read all of them: 13 findings, 12 corrected. 30 explanations state that the official answer differs from the law or medical guidance",
   "Armenian pass over the app: articles, agreement, negation, decimals and punctuation fixed, and the interface, guides and explanations moved to the plural reader address required by the armenian-writing skill. Guides corrected: truck tread 1 mm, fallen power line warning",
   "First-aid guide now separates the exam answer from real-life advice for seizures, tourniquets and medicine (DECISIONS.md #21)",
+  "After Hayk pointed out 4-168 and 7-39, a scene-first pass opened all 715 pictures and 15 explanations changed. Statements that the key differs from the law or medical guidance fell from 30 to 21",
 ]
 pending = [
   "A real Google login has not been run through the final version. The database shows one Google login from before the review fixes; the automated checks use a test account and stop at Google's login page",
@@ -32,8 +33,8 @@ pending = [
   "Q10: whether inactive accounts should be deleted automatically after a set time. They are kept until the user deletes them, and the notice says so",
   "Q6: his own Google OAuth client, so the sign-in screen shows the app's name instead of Neon's (steps in backend/README.md)",
   "Q2: whether to put the updated report back on the Desktop. The copy from 2026-10-22 is gone; the current one is reports/patterns_report.html",
-  "No native speaker has read the 1,050 explanations. Start with reports/explanations_review.html (64 flagged questions)",
-  "1-48: a lit red traffic light may face the driver; the explanation follows the official answer",
+  "No native speaker has read the 1,050 explanations. Start with reports/explanations_review.html (54 flagged questions)",
+  "Six questions need Hayk's eye because the picture or the key looks wrong: 1-48, 5-9, 6-8, 6-9, 7-107, 7-119",
   "12 first-aid answers in the official key differ from current medical guidance. The serious one is 10-28: the key says to move a fallen power line, MedlinePlus says to stay 6 m away",
   "1-54: a dark object at the picture edge may be a traffic light; the explanation assumes no working signal",
 ]
@@ -87,6 +88,8 @@ commits = [
   "c0721bb Armenian text: apply the style guide across the app",
   "0bea5a3 Guides: correct the truck tread limit and warn about fallen power lines",
   "9f479a0 All 1,050 explanations, reviewed, in plural reader address",
-  "this commit: first-aid guide separates exam answers from real-life advice",
+  "611b489 First-aid guide: separate exam answers from real-life advice",
+  "8ab5233 Explanations: use the scene, not only the rule text",
+  "this commit: scene-first pass over all picture questions",
 ]
 notes = "No paid API spend; Neon stays on the Free plan. Live changes outside git: Neon migrations 001 and 002 and the API function on branch main. The temporary branches delete-test and fixes-test were deleted. Claude's password test account stays, with its login only in the gitignored .env.local. The review used one Opus agent in a private clone with no access to production. Known limits: requests sent directly to Neon Auth are outside the app's rate limits, and if the shared daily limit is reached, syncing pauses for everyone until the next UTC day while progress keeps saving on devices. Still unknown: whether the exam computer already uses the new key for 6-84, and the 3 psychological questions, which are not public."

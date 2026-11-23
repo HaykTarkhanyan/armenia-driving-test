@@ -2,6 +2,15 @@
 
 Newest first.
 
+## 22. Picture explanations start from the scene, assuming the official answer is right
+
+- **Date / status:** 2026-11-24, active. Corrects the count in #20. Hayk found that 4-168 and 7-39 blamed the official answer while the picture explains it: in 4-168 path B goes against oncoming traffic, and in 7-39 the red car blocks an arch entrance.
+- **Why:** The writers and the first two reviewers compared explanations with the rule text, so a rule that did not name the situation looked like a conflict. Two new agents opened all 715 pictures one by one and worked out why the official answer makes sense before reading the explanation. With my recheck, 15 explanations changed. Examples: 7-75 has the broken side of the line toward the motorcycle, 1-6 has a temporary sign that overrides a permanent one (point 172), and 1-82 is one-way up to the junction.
+- **Measured:** the two agents used 1,130,720 tokens. Statements that the official answer differs from the law or medical guidance fell from 30 to 21: 16 first aid and 5 traffic (3-42, 3-57, 7-6, 7-43, 7-107).
+- **Alternatives rejected:** fixing only the two reported questions (the method was at fault, and 13 more were found); trusting the earlier review; telling learners the key is wrong whenever no rule names the case.
+- **Not checked:** 10 of the 715 (5-86 to 5-95) were not judged blind. Six questions need Hayk's eye because the picture or key looks wrong: 1-48, 5-9, 6-8, 6-9, 7-107, 7-119.
+- **What would change this:** Hayk's answers on those six, or further examples of a reason we missed.
+
 ## 21. The first-aid guide separates the exam answer from real-life advice
 
 - **Date / status:** 2026-11-23, active. Hayk chose this after a heads-up note that the guide still taught risky exam answers as plain facts.

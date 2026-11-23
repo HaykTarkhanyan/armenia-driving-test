@@ -1,6 +1,6 @@
 {
  "date": "2026-11-23",
- "note": "Writers' flags and the independent reviewers' findings. Flag kinds: key_vs_law, picture_unclear, no_rule_found, other. Findings were checked by hand and applied, except that 1-48 needs a look at the picture.",
+ "note": "Open doubts after the writers, two reviewers and a scene-first pass over all 715 picture questions. needs_owner: the picture or the key looks wrong and Hayk should judge it.",
  "flags": [
   {
    "id": "1-4",
@@ -8,29 +8,14 @@
    "note": "The truck hides the lane line opposite the yard; the visible parts are solid, and a solid 1.1 could not be crossed, so the key holds only if the line is broken there."
   },
   {
-   "id": "1-6",
-   "kind": "other",
-   "note": "Signs 4.1.1 and 6.3.1 stand together and the rules set no precedence between them; the text follows the key, that 4.1.1 rules out the U-turn."
-  },
-  {
-   "id": "1-9",
-   "kind": "other",
-   "note": "Same picture as 1-6: 4.1.1 next to the U-turn sign 6.3.1, with no stated precedence in the rules."
-  },
-  {
    "id": "1-48",
-   "kind": "picture_unclear",
-   "note": "A red signal on the far right pole seems to face the driver; if it applies, nobody may enter. The text uses only sign 2.4 and point 99."
+   "kind": "needs_owner",
+   "note": "A red lamp on the right-hand pole seems to face the driver. If it is a working signal, the yield sign does not decide the order."
   },
   {
    "id": "1-59",
    "kind": "other",
    "note": "The key holds only if the truck has stopped (brake lights on): passing a moving truck by leaving the lane is overtaking, banned at intersections by point 77.1."
-  },
-  {
-   "id": "1-64",
-   "kind": "no_rule_found",
-   "note": "Both A and B start from the left edge lane; no point requires a U-turn to end in the right lane, so nothing found rules out B."
   },
   {
    "id": "1-80",
@@ -93,11 +78,6 @@
    "note": "Question says sign 3.31 removes all restrictions; the rule limits it to signs 3.16, 3.20, 3.22, 3.24 and 3.26-3.30."
   },
   {
-   "id": "4-60",
-   "kind": "key_vs_law",
-   "note": "Key says stop before the sign; sign 2.5 at a junction requires stopping before the stop line or, without one, before the edge of the crossing carriageway (before the sign applies only at railway crossings and quarantine posts)."
-  },
-  {
    "id": "4-78",
    "kind": "picture_unclear",
    "note": "A lit red traffic light is visible beyond the STOP sign; if it faces the driver, point 173 makes the light override sign 2.5. The text covers only the sign, as the key does."
@@ -123,19 +103,9 @@
    "note": "Key counts Customs (3.17.1) as needing permission to continue; the rules state permission only for 3.17.2, and 3.17.1 only bans passing without stopping."
   },
   {
-   "id": "4-168",
-   "kind": "key_vs_law",
-   "note": "Key is A or C, but sign 3.18.1 bans only the right turn (D); nothing in the picture or rules bans B, so the law supports all except D."
-  },
-  {
    "id": "5-9",
-   "kind": "picture_unclear",
-   "note": "The red van is drawn with its rear toward the junction, as if driving away; the key only works if it is entering, so the text does not rely on its direction."
-  },
-  {
-   "id": "5-70",
-   "kind": "key_vs_law",
-   "note": "Point 88 excepts only right and left turns from the no-entry-into-a-jam rule; the key also allows a U-turn."
+   "kind": "needs_owner",
+   "note": "The red van is drawn with its rear to the junction, as if driving away. The answer holds either way, so the explanation does not rely on it."
   },
   {
    "id": "5-107",
@@ -154,23 +124,18 @@
   },
   {
    "id": "6-8",
-   "kind": "picture_unclear",
-   "note": "Officer is drawn with both arms spread (old pool picture too), but the key only fits right arm forward toward the green car; the text says so."
+   "kind": "needs_owner",
+   "note": "The officer is drawn with both arms out, but the official answer only fits his right arm forward toward the green car."
   },
   {
    "id": "6-9",
-   "kind": "picture_unclear",
-   "note": "Same drawing as 6-8: both arms spread, while the key (red and green may turn right) only fits right arm forward toward the green car; the text says so."
+   "kind": "needs_owner",
+   "note": "The officer is drawn with both arms out, but the official answer only fits his right arm forward toward the green car."
   },
   {
    "id": "6-75",
    "kind": "picture_unclear",
    "note": "Officer's body is drawn facing the driver with the arm out to the side. The text takes the arm direction as his front (driver on his left, U-turning car at his back). Reading the driver as on his chest side also gives the key, through point 45."
-  },
-  {
-   "id": "7-39",
-   "kind": "key_vs_law",
-   "note": "Key says the red car on the left of a one-way road also broke the rule, but 3.28 acts only on its own side and 79.2 allows left-side parking; the L-shaped line in the picture may mean the sign covers both sides."
   },
   {
    "id": "7-52",
@@ -183,29 +148,19 @@
    "note": "Car C's ban relies on reading 84.4 'in the direction of movement' as the oncoming lane's direction; the rule does not spell this out and no distance is drawn for C."
   },
   {
-   "id": "7-75",
-   "kind": "picture_unclear",
-   "note": "A motorcycle at the curb with 3 m to the solid line would breach 84.3 if parked (as 7-96 treats it); the key clears it and the picture does not show whether it is riding or parked."
-  },
-  {
    "id": "7-79",
    "kind": "other",
    "note": "Answer rests on reading the drawn 5 m as measured along the curved curb, so the straight distance to the crossing edge is under 5 m; the rule does not say how to measure it."
   },
   {
    "id": "7-107",
-   "kind": "key_vs_law",
-   "note": "Key says No, but 2.4 and 1.13 only require yielding, so entering without hindering the car on the main road is not prohibited."
-  },
-  {
-   "id": "7-110",
-   "kind": "no_rule_found",
-   "note": "The current rules define the edge line 1.2 only as solid; no broken edge line for two-lane roads exists in Decision 955."
+   "kind": "needs_owner",
+   "note": "The official answer is No, although the question says entering would not hinder the car. No rule found that forbids it."
   },
   {
    "id": "7-119",
-   "kind": "picture_unclear",
-   "note": "The key describes a solid line (1.1), but the picture shows a broken centre line, which may be crossed."
+   "kind": "needs_owner",
+   "note": "The official answer describes a solid line, but the picture shows a broken centre line."
   },
   {
    "id": "9-8",
@@ -241,11 +196,6 @@
    "id": "9-86",
    "kind": "picture_unclear",
    "note": "The yellow car at the crest appears between the solid and broken lines, in what the answer treats as our own left lane."
-  },
-  {
-   "id": "9-102",
-   "kind": "key_vs_law",
-   "note": "Key says right indicator for a U-turn at a roundabout; point 37 ties the U-turn to the left signal and no rule sets a separate roundabout procedure."
   },
   {
    "id": "10-3",
@@ -388,6 +338,73 @@
    "id": "10-13",
    "severity": "citation",
    "issue": "The cited IFRC 2025 guideline does not say to seat the person, and gives no 'healthy lung works better' reason. It says to help them lie down in a comfortable position, for a chest injury possibly 'lying semi-propped up on their affected side'. The explanation presents the exam wording as if the source said it."
+  }
+ ],
+ "common_sense_findings": [
+  {
+   "id": "1-6",
+   "kind": "missed_reason",
+   "scene": "The straight-only sign stands on a portable tripod, the U-turn-place sign is permanent; the temporary sign wins under point 172, which the explanation never says."
+  },
+  {
+   "id": "1-9",
+   "kind": "missed_reason",
+   "scene": "Same picture as 1-6: the portable straight-only sign overrides the permanent U-turn sign (point 172), and the yard is on the left, so the right-turn exception does not help."
+  },
+  {
+   "id": "1-64",
+   "kind": "false_conflict",
+   "scene": "U-turn around the median at a crossroad: A crosses the crossroad's centre line and runs on its correct half; B hugs the median nose on the near half, which is the oncoming side of the crossroad. The explanation says nothing forbids B."
+  },
+  {
+   "id": "1-82",
+   "kind": "missed_reason",
+   "scene": "The end-of-one-way sign (5.6) shows your road is one-way up to this junction, so the lane left of the broken line is not oncoming. That is why B, which looks like driving into the oncoming lane, is the correct path."
+  },
+  {
+   "id": "5-9",
+   "kind": "missed_reason",
+   "scene": "The red van shows its rear and tail lights to the junction, so as drawn it is driving away and takes no part in the order; the explanation never mentions it although it is a wrong option. Image check advised: if the van was meant to approach with a left indicator it would go last, so the answer holds either way."
+  },
+  {
+   "id": "6-8",
+   "kind": "unresolved",
+   "scene": "PICTURE DEFECT. The officer is drawn from behind with both arms out, and the signal for arms out can only allow two OPPOSITE approaches (point 16(2)). The official answer allows two ADJACENT ones (blue/red and green) and only fits right arm forward at green (point 16(3)). Tried both body orientations; arms-out cannot give this answer, and the distractor (red banned) is exactly what arms-out would give. No older copy in data/old_pool. Fix the image: left arm down, right arm with baton pointing at the green car."
+  },
+  {
+   "id": "6-9",
+   "kind": "unresolved",
+   "scene": "PICTURE DEFECT, same as 6-8. Officer from behind with both arms out, but the official answer (red and green may turn right) needs right arm forward at green: red on his left side, green at his chest (point 16(3)). With arms out, adjacent approaches cannot both move. Fix the image: left arm down, right arm with baton pointing at the green car."
+  },
+  {
+   "id": "1-25",
+   "kind": "missed_reason",
+   "scene": "The railed pit is in the truck's own lane, so by the usual rule (point 46) the truck would yield. The answer is the opposite only because signs 2.7 and 2.6 override that. The explanation never mentions the pit, which is the whole trap."
+  },
+  {
+   "id": "1-48",
+   "kind": "unresolved",
+   "scene": "A red lamp on the right-hand pole appears to face the driver. If it is a working signal, sign 2.4 does not decide the order and the driver must wait, which the explanation ignores. If it is a leftover from the source photo, the official answer and the explanation both stand. Cropped and enlarged, but the picture cannot settle it; the owner should check it or clean the lamp from the image."
+  },
+  {
+   "id": "4-92",
+   "kind": "wrong",
+   "scene": "T-junction with a side road only on the right; the left side is just a gravel shoulder. Path C crosses the center line and bends back toward us on the oncoming side, so it is a U-turn, not the left turn the explanation calls it. Sign 4.1.4 has no left arrow, so it does not permit a U-turn."
+  },
+  {
+   "id": "4-70",
+   "kind": "missed_reason",
+   "scene": "Barrier in the lane with a 4.2.3 sign on it. Path B crosses the solid center line, which is what a learner would doubt. It is allowed because a temporary sign on a movable stand overrides the marking (point 174)."
+  },
+  {
+   "id": "7-107",
+   "kind": "unresolved",
+   "scene": "T-junction with sign 2.4 and marking 1.13; our car signals left; a grey car on the far lane comes from the right, at the junction mouth. Official 'No' contradicts the question's own condition (entry that does not hinder that car). Tried: center line is broken across the mouth, no sign bans the left turn, no stop line or 2.5 sign, point 1.13 text only requires stopping if necessary. The only scene argument is that the grey car is so close that any left turn would hinder it, but the question assumes it would not. Possibly a source key error or a picture swapped from a stop-line version."
+  },
+  {
+   "id": "7-119",
+   "kind": "unresolved",
+   "scene": "Country road with only a broken center line (1.5) and faint edges. The official answer (bans driving left of the line or over it) describes a solid line 1.1, which is not in the picture. Enlarged the road and found no solid line; the repo has no original of this image to compare. Likely the picture lost or never had the solid line, so the picture needs checking against the source."
   }
  ]
 }

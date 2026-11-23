@@ -29,6 +29,7 @@ SOURCES = {
     "law": ("ՀՀ օրենք ՀՕ-166-Ն", "https://www.arlis.am/hy/acts/1857/latest"),
 }
 SECTIONS = {
+    "needs_owner": "Needs your eye: the picture or the official answer looks wrong",
     "key_vs_law": "Official answer conflicts with the law or medical guidance",
     "picture_unclear": "Picture is unclear",
     "no_rule_found": "No rule found for the official answer",

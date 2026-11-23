@@ -10,5 +10,6 @@
 - Question numbers belong to an edition: the site renumbered 181 questions on 2026-11-06. After a new download run `scripts/non_essential/diff_editions.py`, then `new_edition.py`, which adds the id migration to `data/edition.json`. The app's tests fail the deploy until the two agree.
 - After a new edition, also re-run `scripts/build_hints.py` and map the question numbers cited in `app/src/content/guides.ts` and `data/explanations.json`.
 - New Armenian text goes through the `armenian-writing` skill and passes its lint. The reader is addressed in the plural («ստուգեք», «ձեր»), like the official questions. Never rewrite a phrase only because it sounds like a calque: ask Hayk.
+- Explain a picture question from the scene first: assume the official answer is right and work out why, as a driver would (road layout, oncoming carriageway, blocked entrances, which side of a line is broken, temporary signs). Call it a conflict only if the law explicitly says otherwise.
 - An explanation cites its source point, never names an option by position (options are shuffled), and says so when the official key contradicts the law.
 - A shortcut claim needs a count from code: fires, right, and what guessing gets (sum of 1/k). Rules found by reading are marked as such; held-out and out-of-sample (old questions removed in 2026) numbers are reported next to in-sample ones.
