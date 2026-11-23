@@ -1,4 +1,5 @@
 import { useMemo } from 'react'
+import { SignInCard } from '../components/Account.tsx'
 import { Readiness } from '../components/Readiness.tsx'
 import { groupIds, QUESTIONS } from '../lib/data.ts'
 import { EXAM, SECTIONS } from '../lib/exam.ts'
@@ -39,6 +40,7 @@ export function Home() {
         </div>
       )}
       <Readiness />
+      <SignInCard />
       {mistakes.length > 0 && (
         <div className="card">
           <h2>Իմ սխալները</h2>

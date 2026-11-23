@@ -3,8 +3,9 @@ import { QuestionCard } from '../components/QuestionCard.tsx'
 import { questionById } from '../lib/data.ts'
 import { EXAM, SECTIONS } from '../lib/exam.ts'
 import { correctIndices, finishExam, formatClock, newExam, remainingMs } from '../lib/examFlow.ts'
-import { getProgress, updateProgress, useProgress, type ActiveExam, type ExamResult } from '../lib/progress.ts'
+import { addFinishedExam, getProgress, updateProgress, useProgress, type ActiveExam, type ExamResult } from '../lib/progress.ts'
 import { go, link } from '../lib/router.ts'
+import { flush } from '../lib/sync.ts'
 
 export function ExamPage({ resultId }: { resultId: string | null }) {
   const progress = useProgress()
@@ -94,7 +95,8 @@ function finish(id: string, timedOut: boolean): boolean {
   const active = getProgress().activeExam
   if (!active || active.id !== id) return false
   const { result, logged } = finishExam(active, Date.now(), timedOut)
-  updateProgress((p) => ({ ...p, activeExam: null, exams: [...p.exams, result], answers: [...p.answers, ...logged] }))
+  addFinishedExam(result, logged)
+  void flush() // a finished exam is worth saving right away
   return true
 }
 

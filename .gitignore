@@ -8,3 +8,8 @@ app/dist/
 
 # official PDFs: ~15 MB each, re-downloadable; official/manifest.json pins URL, version and SHA-256
 official/**/*.pdf
+
+# Neon link and connection strings: never in git
+.neon
+.env
+.env.*

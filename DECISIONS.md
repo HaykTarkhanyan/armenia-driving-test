@@ -2,6 +2,15 @@
 
 Newest first.
 
+## 14. Progress is saved to accounts: Google sign-in, Neon in its own project, and the app keeps working without an account
+
+- **Date / status:** 2026-11-23, active. Hayk asked for progress saving "like in nemeceren", then chose Google sign-in (Q3), device saving for people without an account (Q4) and a new Neon project (Q5). Existing local progress is dropped, because "there aren't really any" users.
+- **Why:** Same stack as nemeceren (Neon Auth, a Hono function, Postgres), so nothing new to learn or pay for. A separate project means public sign-ups cannot touch nemeceren's learners or its monthly free limit. The app stays local-first: every answer is saved in the browser, then uploaded in idempotent batches, so a lost connection loses nothing. On first sign-in, guest progress moves into the account. Unlike nemeceren there is no allowlist, because anyone may join; the gates are Google sign-in, closed password sign-up, and a limit of 30,000 answers and 300 exams per account.
+- **Checked:** `sync_check.py` in real Chrome with two separate devices: 19 checks passed. The Google redirect itself cannot be automated, so only a real sign-in on a phone proves it.
+- **Alternatives rejected:** sign-in required (Hayk chose device saving); sharing nemeceren's project (shared limits and user list); storing one JSON document per user (each sync would re-upload everything); a closed list of accounts (every new user would need Hayk).
+- **Known limits:** it uses Neon's shared Google credentials for now, so Google's screen names Neon, and Neon calls those development-only. A new edition of the questions still needs an id migration (#12).
+- **What would change this:** Hayk adding his own Google OAuth client; Free-plan compute running out; browsers blocking the partitioned sign-in cookie.
+
 ## 13. The app is installable on Android: a manifest, our own icon, and a service worker that caches nothing
 
 - **Date / status:** 2026-11-23, active. Hayk asked for it to install from Chrome "like nemeceren"; this is nemeceren's setup (its DECISIONS.md #89).

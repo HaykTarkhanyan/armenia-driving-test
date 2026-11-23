@@ -34,7 +34,7 @@ export function finishExam(exam: ActiveExam, now: number, timedOut: boolean): { 
   const logged: Answer[] = []
   exam.questionIds.forEach((qid, i) => {
     const chosen = exam.answers[i]
-    if (chosen !== null) logged.push({ qid, chosen, correct: chosen === correct[i], at, mode: 'exam' })
+    if (chosen !== null) logged.push({ id: crypto.randomUUID(), qid, chosen, correct: chosen === correct[i], at, mode: 'exam' })
   })
   return { result: { ...exam, finishedAt: end, score, passed: score >= EXAM.passMark, timedOut }, logged }
 }

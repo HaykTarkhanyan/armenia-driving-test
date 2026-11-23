@@ -5,7 +5,7 @@ import { drawExam, EXAM, expectedScore, passProbability, scoreExam, sectionDistr
 import { correctIndices, finishExam, newExam } from './examFlow.ts'
 import { OLD_BY_ID, OLD_QUESTIONS, REMOVED_IDS } from './oldPool.ts'
 import { displayOrder, isLabelQuestion } from './options.ts'
-import { EDITION, emptyProgress, parseProgress, ProgressError, type Answer } from './progress.ts'
+import { EDITION, emptyProgress, mergeFromServer, mergeLocal, parseProgress, ProgressError, type Answer, type Progress } from './progress.ts'
 import { lastWrong, readiness, sectionIds, statusById, statusOf } from './stats.ts'
 
 function seeded(seed = 509): () => number {
@@ -16,7 +16,14 @@ function seeded(seed = 509): () => number {
   }
 }
 
-const answer = (qid: string, correct: boolean): Answer => ({ qid, chosen: 0, correct, at: '2026-11-23T00:00:00.000Z', mode: 'practice' })
+const answer = (qid: string, correct: boolean, at = '2026-11-23T00:00:00.000Z'): Answer => ({
+  id: crypto.randomUUID(),
+  qid,
+  chosen: 0,
+  correct,
+  at,
+  mode: 'practice',
+})
 
 describe('data', () => {
   it('has the current pool with valid answers', () => {
@@ -155,5 +162,40 @@ describe('progress and status', () => {
   it('refuses a document from another edition', () => {
     const other = JSON.stringify({ ...emptyProgress(), edition: '2026-10-02' })
     expect(() => parseProgress(other, 'test')).toThrow(ProgressError)
+  })
+})
+
+describe('merging devices', () => {
+  const doc = (answers: Answer[], pending: string[] = []): Progress => ({ ...emptyProgress(), answers, pending: { answers: pending, exams: [] } })
+
+  it('joins the server and the device in time order and sends only what the server lacks', () => {
+    const onBoth = answer('1-1', true, '2026-11-23T10:00:00.000Z')
+    const serverOnly = answer('1-1', true, '2026-11-23T12:00:00.000Z')
+    const localOnly = answer('1-1', false, '2026-11-23T11:00:00.000Z')
+    const merged = mergeFromServer(doc([onBoth, localOnly], [localOnly.id]), { answers: [onBoth, serverOnly], exams: [] })
+    expect(merged.answers.map((a) => a.id)).toEqual([onBoth.id, localOnly.id, serverOnly.id])
+    expect(merged.pending.answers).toEqual([localOnly.id])
+    expect(statusOf(merged.answers)).toBe('learning') // wrong at 11:00, right at 12:00: the last two are not both right
+  })
+
+  it('is idempotent: merging the same server rows twice changes nothing', () => {
+    const a = answer('2-1', true)
+    const once = mergeFromServer(doc([a]), { answers: [a], exams: [] })
+    expect(mergeFromServer(once, { answers: [a], exams: [] })).toEqual(once)
+    expect(once.pending.answers).toEqual([])
+  })
+
+  it("moves a guest's answers into an account and marks them for upload", () => {
+    const mine = answer('3-1', true, '2026-11-23T09:00:00.000Z')
+    const guest = answer('3-2', false, '2026-11-23T08:00:00.000Z')
+    const merged = mergeLocal(doc([mine]), doc([guest], [guest.id]))
+    expect(merged.answers.map((a) => a.id)).toEqual([guest.id, mine.id])
+    expect(merged.pending.answers).toEqual([guest.id])
+  })
+
+  it('gives every logged exam answer its own id', () => {
+    const exam = newExam(0, seeded())
+    const { logged } = finishExam({ ...exam, answers: correctIndices(exam.questionIds) }, 60_000, false)
+    expect(new Set(logged.map((a) => a.id)).size).toBe(20)
   })
 })

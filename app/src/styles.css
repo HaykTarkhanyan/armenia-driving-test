@@ -546,6 +546,47 @@ tr.group td {
   }
 }
 
+/* account link in the header */
+.account-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 40vw;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 0.85rem;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.sync-dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.sync-dot.ok {
+  background: var(--ok);
+}
+
+.sync-dot.wait {
+  background: var(--learning);
+}
+
+.sync-dot.bad {
+  background: var(--bad);
+}
+
+@media (min-width: 701px) {
+  .account-link {
+    order: 3;
+  }
+}
+
 /* where the official key contradicts the law or changed */
 .key-note {
   margin: 10px 0 0;

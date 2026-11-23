@@ -6,7 +6,8 @@ checked against their English version. Facts checked on 2026-10-21, questions fr
 2026-11-06 (downloaded 2026-11-23).
 
 **Study app (Armenian): https://hayktarkhanyan.github.io/armenia-driving-test/** - practice by group, mistakes,
-mock exams with the official 20-question draw, and the old questions as a separate set.
+mock exams with the official 20-question draw, and the old questions as a separate set. Installs on Android from
+Chrome, works without an account, and with Google sign-in saves progress across devices ([`backend/`](backend/README.md)).
 
 Status: dataset, exam rules, the previous pool (2022-2026) with a question-by-question diff, and a
 group-by-group shortcut and logic analysis, and the study app are done. Parked: lessons, exam-day guide.

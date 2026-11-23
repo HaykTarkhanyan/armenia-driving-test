@@ -1,6 +1,8 @@
 import { lazy, Suspense, useEffect, useRef } from 'react'
 import { downloadText, emptyProgress, replaceProgress, useLoadError, type ProgressError } from './lib/progress.ts'
 import { link, useRoute } from './lib/router.ts'
+import { boot } from './lib/sync.ts'
+import { HeaderAccount } from './components/Account.tsx'
 import { ExamPage, finishExpiredExam } from './pages/Exam.tsx'
 import { Home } from './pages/Home.tsx'
 import { Practice } from './pages/Practice.tsx'
@@ -24,6 +26,9 @@ export function App() {
   const page = route[0] ?? ''
   const path = route.join('/')
   useEffect(() => {
+    void boot()
+  }, [])
+  useEffect(() => {
     if (!loadError) finishExpiredExam()
   }, [path, loadError])
   // On a phone the menu is one row that scrolls sideways: keep the current page's item in view.
@@ -39,6 +44,7 @@ export function App() {
         <a className="brand" href={link()}>
           Վարորդական քննություն
         </a>
+        <HeaderAccount />
         <nav ref={navRef}>
           {NAV.map(([key, label]) => (
             <a key={key} href={link(...(key ? [key] : []))} className={page === key || (key === 'topics' && page === 'practice') ? 'active' : ''}>
