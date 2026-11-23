@@ -81,6 +81,7 @@ uv run python scripts/download_old_pool.py   # ~5-15 min, the 2022 pool from the
 uv run python scripts/build_old_pool.py   # ~20 s -> data/old_pool/, results/pool_diff.json
 uv run python scripts/mine_patterns.py   # ~1-2.5 min (measured 152 s) -> results/patterns.json (needs the old pool)
 uv run python scripts/build_pattern_report.py   # ~2 s -> reports/patterns_report.html
+uv run python scripts/build_hints.py   # ~2 s -> data/hints.json (the hint after each answer in the app)
 ```
 
 ## Sources

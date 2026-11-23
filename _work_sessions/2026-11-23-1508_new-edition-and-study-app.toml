@@ -26,5 +26,5 @@ next = [
   "If a new edition appears: re-run download, build_dataset, diff_editions, build_old_pool, and add a progress migration before deploying (DEFERRED_TODO.md)",
 ]
 files = ["app/", ".github/workflows/pages.yml", "scripts/build_dataset.py", "scripts/non_essential/diff_editions.py", "results/edition_diff_2026-11-06.json", "PATTERNS.md", "DECISIONS.md", "README.md", "DEFERRED_TODO.md"]
-commits = ["17bd0b6 New official edition (2026-11-06): parser, data, analysis", "d987bcd Study app in Armenian: practice, mock exam, progress, old questions"]
+commits = ["17bd0b6 New official edition (2026-11-06): parser, data, analysis", "d987bcd Study app in Armenian: practice, mock exam, progress, old questions", "b30a6fb App installable on Android", "20b58b7 Accounts and progress sync", "a14fac2 Shortcut guides for every group, hints after answers, new interface"]
 notes = "No API spend. Whether the exam computer already uses the new key for 6-84 is not published. The 3 psychological questions are not public, so the mock exam has only the 20 knowledge questions."
