@@ -2,6 +2,13 @@
 
 Newest first.
 
+## 13. The app is installable on Android: a manifest, our own icon, and a service worker that caches nothing
+
+- **Date / status:** 2026-11-23, active. Hayk asked for it to install from Chrome "like nemeceren"; this is nemeceren's setup (its DECISIONS.md #89).
+- **Why:** Chrome offers the install only with a web app manifest, icons of 192 and 512 px, and HTTPS. The service worker passes everything to the network, so a new deploy (for example a new edition of the questions) is always what loads, and it shows a short Armenian page when there is no internet.
+- **Alternatives rejected:** vite-plugin-pwa / Workbox precaching (a new dependency, and a cached old version could keep teaching an outdated answer key after a deploy); full offline use (the pictures are 60 MB, too much to store on a phone unasked).
+- **What would change this:** Hayk wanting to study without internet, then cache pictures per group on request.
+
 ## 12. Study app: same stack as the German app, official groups as topics, saved progress tied to the edition
 
 - **Date / status:** 2026-11-23, active. Hayk asked to start the app; stack, Armenian only, shuffled options and the separate old set were decided on 2026-10-21. Using the 10 official groups as topics is my default for the open question.
