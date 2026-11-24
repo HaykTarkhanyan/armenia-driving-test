@@ -2,6 +2,13 @@
 
 Newest first.
 
+## 23. Six doubtful questions stay in the pool with a visible "not verified" note
+
+- **Date / status:** 2026-11-24, active. Hayk: "include that they are not tested in the app itself and park this for future".
+- **Why:** In 1-48, 5-9, 6-8, 6-9, 7-107 and 7-119 the picture or the official answer looks wrong, and nobody has settled it. After answering, the app now says the question is not verified yet and to mark the official answer on the exam. They stay in practice and mock exams, because the real exam can ask them. Grading still follows the official key.
+- **Alternatives rejected:** removing them from the pool (the real exam can still ask them, and the pass estimate would no longer match the official draw); guessing a corrected answer or redrawing the pictures.
+- **What would change this:** Hayk checks the pictures, or a new official edition corrects them. If he meant they should leave the practice and mock exams, that is a separate change.
+
 ## 22. Picture explanations start from the scene, assuming the official answer is right
 
 - **Date / status:** 2026-11-24, active. Corrects the count in #20. Hayk found that 4-168 and 7-39 blamed the official answer while the picture explains it: in 4-168 path B goes against oncoming traffic, and in 7-39 the red car blocks an arch entrance.

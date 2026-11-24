@@ -1,6 +1,16 @@
 // Shown after answering. The exam computer grades against the official key, so the app does too, and says where that
 // key contradicts the law or changed recently (_knowledge/answer_key_errors.md).
+const UNVERIFIED =
+  'Ուշադրություն. այս հարցը դեռ ստուգված չէ, որովհետև նկարը կամ պաշտոնական պատասխանը կարող է սխալ լինել։ Քննության ժամանակ նշեք պաշտոնական պատասխանը։'
+
 export const KEY_NOTES: Record<string, string> = {
+  // The picture or the key looks wrong and no one has settled it yet (DEFERRED_TODO.md).
+  '1-48': UNVERIFIED,
+  '5-9': UNVERIFIED,
+  '6-8': UNVERIFIED,
+  '6-9': UNVERIFIED,
+  '7-107': UNVERIFIED,
+  '7-119': UNVERIFIED,
   '7-6':
     'Ուշադրություն. պաշտոնական պատասխանը 25 մ է, բայց ըստ 955-Ն որոշման 1-ին հավելվածի 86-րդ կետի՝ կայանումն արգելվում է գծանցին 50 մ-ից մոտ։ Քննության ժամանակ նշեք 25 մ։',
   '7-43':

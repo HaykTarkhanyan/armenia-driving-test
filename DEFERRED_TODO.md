@@ -9,7 +9,7 @@ Parked ideas, not started.
 - **Own Google OAuth client** - sign-in uses Neon's shared credentials, so Google's screen shows Neon's name. Steps are in `backend/README.md`.
 - **A real contact in the privacy notice** - it names the GitHub account and issue page. GDPR expects an identifiable, reachable controller; Hayk decides what to publish (DECISIONS.md #17, #18).
 - **Native read of the explanations** - all 1,050 are live and reviewed by agents, but no native speaker has read them. Start with `reports/explanations_review.html` (54 flagged questions).
-- **Six questions for Hayk to judge** - the picture or official answer looks wrong in 1-48, 5-9, 6-8, 6-9, 7-107 and 7-119 (DECISIONS.md #22). They are first on the review page.
+- **Six unverified questions** - the picture or official answer looks wrong in 1-48, 5-9, 6-8, 6-9, 7-107 and 7-119. The app shows a "not verified yet" note after answering (DECISIONS.md #23). Parked for Hayk to check; they are first on the review page. When one is settled, remove its entry from `app/src/lib/notes.ts`.
 - **Medical read of the first-aid text** - the guide now separates exam answers from real-life advice (DECISIONS.md #21), but no medical professional has read it.
 - **A retention period for inactive accounts** - accounts are kept until the user deletes them, and the notice says so. Deleting people's accounts automatically is Hayk's decision.
 - **Bookmark a question** - needs a new synced table in the backend.
